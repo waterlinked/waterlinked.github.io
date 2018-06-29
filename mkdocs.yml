@@ -1,23 +1,4 @@
 site_name: Documentation
-theme:
-    name: material
-    theme_dir: docstheme/material
-    logo: 'img/waterlinked_logo_new.png'
-    favicon: 'img/favicon_water_linked.jpg'
-    palette:
-        primary: blue-grey
-        accent: blue
-
-markdown_extensions:
-  - markdown.extensions.admonition
-  - markdown.extensions.codehilite(guess_lang=false)
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.meta
-
-
-extra_css:
-    - css/extra.css
 
 pages:
     
