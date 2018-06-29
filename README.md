@@ -3,7 +3,7 @@
 1. [https://waterlinked.com/](https://waterlinked.com/).
 
 
-2. For documentation on the explorer kit locator visit [https://waterlinked.github.io/explorer-kit-docs/](https://waterlinked.github.io/explorer-kit-docs/).
+2. For documentation on the explorer kit visit [https://waterlinked.github.io/explorer-kit-docs/](https://waterlinked.github.io/explorer-kit-docs/).
 
 3. For documentation on the d1 locator visit [https://waterlinked.github.io/d1-docs/](https://waterlinked.github.io/d1-docs/).
 
