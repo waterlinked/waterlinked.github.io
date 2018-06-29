@@ -1,0 +1,17 @@
+.md-header {
+    height:8.8rem;
+}
+.md-header-nav {
+    padding: 1.4rem;
+}
+
+.md-logo {
+    width:1740;
+    height:87;
+}
+.md-content__icon {
+    position: relative;
+    margin: .8rem 0;
+    padding: 0;
+    float: right
+}

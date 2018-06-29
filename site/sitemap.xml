@@ -1,64 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>None/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>None/warnings/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/warnings/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/introduction/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/introduction/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/general/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/general/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/hardware-setup/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/hardware-setup/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/software/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/software/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/spesifications/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/spesifications/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/diagnostics/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/diagnostics/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>None/helpful-links/</loc>
-     <lastmod>2018-06-25</lastmod>
+     <loc>/helpful-links/</loc>
+     <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
 </urlset>

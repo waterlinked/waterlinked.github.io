@@ -1,0 +1,239 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Water Linked Documentation\n\n\n \n\n\nFor full documentation visit \nwaterlinked.com\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#water-linked-documentation", 
+            "text": "For full documentation visit  waterlinked.com .", 
+            "title": "Water Linked Documentation"
+        }, 
+        {
+            "location": "/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/warnings/", 
+            "text": "Warnings\n\n\nTo avoid the risk of damage to the Underwater GPS, please read this user manual carefully before it is installed and used for the first time. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOperation area\n\n\nThe Underwater GPS  ONLY  work in water. It does not work in air.\n\n\n\n\n\n\nMax voltage\n\n\nThe absolute maximum voltage rating of the equipment is 18V. Voltages above this will \ndamage the electronics.\n\n\n\n\n\n\nReverse voltage\n\n\nThe board does not have reverse polarity protection. Do not apply a negative voltage to \nred power wire since this will damage the electronics.\n\n\n\n\n\n\nTemperature\n\n\nMake sure the system does not overheat. Avoid placing in direct sunlight over extended \nperiods of time.\n\n\n\n\n\n\nSalt water\n\n\nThe Master-D1 Electronics will quickly corrode if it comes in contact with salt water. \nKeep the housing lid closed when in the field to avoid salt water to get in contact with \nany electronics.\n\n\n\n\n\n\nForce\n\n\nAvoid using excessive force on connectors, screws and other parts of the system since \nthis can lead to mechanical damage.", 
+            "title": "Warnings"
+        }, 
+        {
+            "location": "/warnings/#warnings", 
+            "text": "To avoid the risk of damage to the Underwater GPS, please read this user manual carefully before it is installed and used for the first time.            Operation area  The Underwater GPS  ONLY  work in water. It does not work in air.    Max voltage  The absolute maximum voltage rating of the equipment is 18V. Voltages above this will  damage the electronics.    Reverse voltage  The board does not have reverse polarity protection. Do not apply a negative voltage to  red power wire since this will damage the electronics.    Temperature  Make sure the system does not overheat. Avoid placing in direct sunlight over extended  periods of time.    Salt water  The Master-D1 Electronics will quickly corrode if it comes in contact with salt water.  Keep the housing lid closed when in the field to avoid salt water to get in contact with  any electronics.    Force  Avoid using excessive force on connectors, screws and other parts of the system since  this can lead to mechanical damage.", 
+            "title": "Warnings"
+        }, 
+        {
+            "location": "/introduction/", 
+            "text": "Introduction\n\n\nThe Underwater GPS is a robust and reliable acoustic positioning system with a range of 100m. The purpose of the system is to give a live GPS position of ROVs, surface-supplied divers and other moving objects below\nthe water surface. \n\n\n\n\nThe Underwater GPS system is based on Short Baseline (SBL) acoustic positioning. The Locator is placed on a ROV or diver and functions as a beacon that sends out an acoustic pulse. Near the surface, there are four receiver hydrophones lowered into the water. The receivers listen for the pulse from the locator. Time-of-arrival to each receiver is used to calculate the Locator\u2019s position. SBL systems, compared to the USBL systems, have the advantage of working well in shallow water and noisy acoustic environments, such as in a fish cage.\n\n\nOnce the position is known relative to the receivers, the global position can be found by adding that to the position obtained by a GPS receiver. The Underwater GPS system does that part internally so that it can provide the actual global position of the ROV as it's output.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/introduction/#introduction", 
+            "text": "The Underwater GPS is a robust and reliable acoustic positioning system with a range of 100m. The purpose of the system is to give a live GPS position of ROVs, surface-supplied divers and other moving objects below\nthe water surface.    The Underwater GPS system is based on Short Baseline (SBL) acoustic positioning. The Locator is placed on a ROV or diver and functions as a beacon that sends out an acoustic pulse. Near the surface, there are four receiver hydrophones lowered into the water. The receivers listen for the pulse from the locator. Time-of-arrival to each receiver is used to calculate the Locator\u2019s position. SBL systems, compared to the USBL systems, have the advantage of working well in shallow water and noisy acoustic environments, such as in a fish cage.  Once the position is known relative to the receivers, the global position can be found by adding that to the position obtained by a GPS receiver. The Underwater GPS system does that part internally so that it can provide the actual global position of the ROV as it's output.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/general/", 
+            "text": "General\n\n\nKit content\n\n\n\n\n\n\n\n\nQty\n\n\nPart number\n\n\nName\n\n\nImage\n\n\n\n\n\n\n\n\n\n\n1\n\n\nWL-11001\n\n\nUnderwater GPS Housing\n with Master-D1 electronics\n\n\n\n\n\n\n\n\n4\n\n\nWL-21005\n\n\nReceiver-D1 with 10m cable\n\n\n\n\n\n\n\n\n(1)\n\n\nWL-21009\n\n\nLocator-A1 with 1m cable and\n no connector\n\n\n\n\n\n\n\n\n(1)\n\n\nWL-21016\n\n\nLocator-D1 with 100m cable.\n The Locator-D1 does not\n come as standard.\n\n\n\n\n\n\n\n\n1\n\n\n\n\n3m Ethernet cable\n\n\n\n\n\n\n\n\n1\n\n\n\n\n3m power cable\n\n\n\n\n\n\n\n\n1\n\n\n\n\nExternal GPS antenna\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnectors\n\n\n\n\nMaster-D1 Electronics", 
+            "title": "General"
+        }, 
+        {
+            "location": "/general/#general", 
+            "text": "", 
+            "title": "General"
+        }, 
+        {
+            "location": "/general/#kit-content", 
+            "text": "Qty  Part number  Name  Image      1  WL-11001  Underwater GPS Housing  with Master-D1 electronics     4  WL-21005  Receiver-D1 with 10m cable     (1)  WL-21009  Locator-A1 with 1m cable and  no connector     (1)  WL-21016  Locator-D1 with 100m cable.  The Locator-D1 does not  come as standard.     1   3m Ethernet cable     1   3m power cable     1   External GPS antenna", 
+            "title": "Kit content"
+        }, 
+        {
+            "location": "/general/#connectors", 
+            "text": "", 
+            "title": "Connectors"
+        }, 
+        {
+            "location": "/general/#master-d1-electronics", 
+            "text": "", 
+            "title": "Master-D1 Electronics"
+        }, 
+        {
+            "location": "/hardware-setup/", 
+            "text": "Hardware Setup\n\n\nNetwork\n\n\nAt power-up, the Master-D1 reads the DIP-switch settings. The network mode depends on the GP0 and GP1 position. \n\n\n\n\n\n\n\n\nGP0\n\n\nGP1\n\n\nNetwork mode\n\n\nDHCP client example mode\n\n\n\n\n\n\n\n\n\n\nON\n\n\nON\n\n\nDHCP client\n\n\n\n\n\n\n\n\nOFF\n\n\nON\n\n\nStatic IP 192.168.2.94\n\n\n\n\n\n\n\n\nON\n\n\nOFF\n\n\nStatic IP 10.11.12.94\n\n\n\n\n\n\n\n\nOFF\n\n\nOFF\n\n\nDHCP Server, 192.168.0.1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe BS0 and BS1 positions on the dip switch shall both be ON. These boot-select pins are used in factory programming only.\n\n\nUse the supplied Ethernet cable to connect the Underwater GPS to a network switch or directly into the host computer. \n\n\nAcoustics\n\n\n\u2022 Connect the four Receiver-D1 cables to channel 1 to 4 on the housing, ref chapter 2.2\n\n\n\u2022 If using the Locator-D1, connect this to the D1 connector on the housing, ref chapter 2.2\n\n\n\u2022 If using the Locator-A1, connect this to the A1 connector on the housing, ref chapter 2.2\n\n\n\n\nPower\n\n\n\n\nThe power cable comes with stripped jacket. Connect the stripped cables to your favorite 12V power source.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlack   :\n\n\nNegative\n\n\n\n\n\n\nRed     :\n\n\nPositive\n\n\n\n\n\n\nVoltage :\n\n\n10 \u2013 18V\n\n\n\n\n\n\nCurrent :\n\n\n0.7A  (12V nominal)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocators\n\n\n\n\nThe Underwater GPS can be used with two different types of Locators, Locator-A1 and Locator-D1. The Locator-A1 is recommended when integrating on ROVs. See comparison table bellow.\n\n\n\n\n\n\n\n\nParameter\n\n\nLocator-D1\n\n\nLocator-A1\n\n\n\n\n\n\n\n\n\n\nTechnology\n\n\nDigital\n\n\nAnalog\n\n\n\n\n\n\nIntended use\n\n\nRetrofit ROV or compressed diving\n\n\nFull ROV integration\n\n\n\n\n\n\nSignal\n\n\n3x twisted pair (RX, TX and power)\n\n\n1x twisted pair (TX)\n\n\n\n\n\n\nCable length\n\n\nMax 100m\n\n\nMax 300m\n\n\n\n\n\n\nDepth sensor\n\n\nIntegrated\n\n\nNo depth sensor. The ROV control system\n must write the ROV depth using the API to \nthe Master-D1 electronics.\n\n\n\n\n\n\nBlock diagram\n\n\n\n\n\n\n\n\n\n\nPicture\n\n\nINSERT IMAGE HERE\n\n\nINSERT IMAGE HERE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReference Systems\n\n\nIn order to calculate the absolute position of the Locator we need to define two reference systems, the acoustic and the global reference system. The global reference system is defined by latitude and longitude and is the reference system used by the GPS and in maps.\n\n\n\n\nThe acoustic reference system  (the x and y axis) is defined by the orientation of the housing. The housing is by definition located in origin (x=0, y=0).  A label on top of the lid indicates the x-y coordinate system. The position of the receivers and the search area are specified in the Acoustic reference system.\n\n\n\n\n\n\nGuidelines\n\n\nYou can in principle place the receivers at any location within 100m from the origin of the acoustic reference system. In order to ensure the best performance, you should follow a few guidelines:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLine-of-sight\n\n\nTry to place the receivers so they all have a free line-of-sight to the Locator.\n\n\n\n\n\n\nGood Separation\n\n\nThe system performs better when there is a large distance between the \n receivers. More separation is better, but 2x2 meters is sufficient for good\n performance.\n\n\n\n\n\n\nMax Range\n\n\nThere should be maximum 100m from any receiver to the Locator\n\n\n\n\n\n\nReceiver depth\n\n\nPlace the receivers at a few meters depth. Near the surface there are typically \nsmall air bubbles caused by waves. These small air bubbles attenuate the \nacoustic signal and can reduce the system performance.\n\n\n\n\n\n\nLimit search area\n\n\nYou will get a better position if you help the search algorithm to narrow the \nsearch area. Limit the search range setting to the area where the Locator is \nexpected to be.\n\n\n\n\n\n\nDirectivity\n\n\nThe Receivers have less sensitivity in backward direction (where cable enters). \nAlso, the Locator has less acoustic gain in the direction of the cable entry.\n\n\n\n\n\n\nReceiver stability\n\n\nAdd some weight to the receivers so they hang straight down in the water\n\n\n\n\n\n\nOn board GPS\n\n\nIf the master electronics is static during operation it is recommended to use the \nstatic option for the GPS. This is to remove the inaccuracy of the GPS receiver \nin global position. Only use onboard GPS when the reference system is moving \neg. if mounted to a boat.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoat Example\n\n\nThe illustration bellow shows a typical receiver configuration when installed on a boat. The receivers are hanging from the side of the boat, one in each corner. The depth of the receivers are typically 2-4m, deep enough to get below the hull and get free line-of-sight to the Locator. Notice how the housing defines the origin and coordinate system of the acoustic reference system.\n\n\n\n\nGPS\n\n\nThe on-board GPS module is used to position the system in a global reference system. An external antenna with integrated amplifier is used to improve GPS reception. The signal strength of the GPS can be seen on the top bar in the web GUI.\n\n\nGPS-antenna assembly\n\n\nThe GPS-antenna can be mounted anywhere you want, but remember the GPS-antenna is the origin of the master electronics position. Therefor it is recommended to fasten the antenna on the lid of the pelican case. With the 3M double sided tape, attach the GPS- antenna to the lid of the pelican case.\n\n\n\n\nConnect the GPS-antenna cable to the SMA connector on the master electronics. Torque the SMA nut to 3\u20135 in\u00b7lbf (0.3 to 0.6 N\u00b7m) or slightly more than finger tight.\n\n\n\n\nIMU\n\n\nThe master electronics has an built in IMU used to provide the orientation of the master electronics. This is used in combination with the acoustic position and GPS to generate the global position of the Locator.\n\n\nIMU Calibration\n\n\nFor the IMU to work properly it needs to be calibrated. The calibration data is stored when full calibration is obtained for faster calibration on restart of the system. If the system is started on a new location a new calibration is needed for the IMU to work as intended. \n\n\nTo calibrate the IMU disconnect all Recivers and Locator cables, but leave power and Ethernet connected. While looking at the top bar in the web GUI on the IMU status bar move the pelican case in a figure of 8 until all the bars are green.", 
+            "title": "Hardware Setup"
+        }, 
+        {
+            "location": "/hardware-setup/#hardware-setup", 
+            "text": "", 
+            "title": "Hardware Setup"
+        }, 
+        {
+            "location": "/hardware-setup/#network", 
+            "text": "At power-up, the Master-D1 reads the DIP-switch settings. The network mode depends on the GP0 and GP1 position.      GP0  GP1  Network mode  DHCP client example mode      ON  ON  DHCP client     OFF  ON  Static IP 192.168.2.94     ON  OFF  Static IP 10.11.12.94     OFF  OFF  DHCP Server, 192.168.0.1            The BS0 and BS1 positions on the dip switch shall both be ON. These boot-select pins are used in factory programming only.  Use the supplied Ethernet cable to connect the Underwater GPS to a network switch or directly into the host computer.", 
+            "title": "Network"
+        }, 
+        {
+            "location": "/hardware-setup/#acoustics", 
+            "text": "\u2022 Connect the four Receiver-D1 cables to channel 1 to 4 on the housing, ref chapter 2.2  \u2022 If using the Locator-D1, connect this to the D1 connector on the housing, ref chapter 2.2  \u2022 If using the Locator-A1, connect this to the A1 connector on the housing, ref chapter 2.2", 
+            "title": "Acoustics"
+        }, 
+        {
+            "location": "/hardware-setup/#power", 
+            "text": "The power cable comes with stripped jacket. Connect the stripped cables to your favorite 12V power source.           Black   :  Negative    Red     :  Positive    Voltage :  10 \u2013 18V    Current :  0.7A  (12V nominal)", 
+            "title": "Power"
+        }, 
+        {
+            "location": "/hardware-setup/#locators", 
+            "text": "The Underwater GPS can be used with two different types of Locators, Locator-A1 and Locator-D1. The Locator-A1 is recommended when integrating on ROVs. See comparison table bellow.     Parameter  Locator-D1  Locator-A1      Technology  Digital  Analog    Intended use  Retrofit ROV or compressed diving  Full ROV integration    Signal  3x twisted pair (RX, TX and power)  1x twisted pair (TX)    Cable length  Max 100m  Max 300m    Depth sensor  Integrated  No depth sensor. The ROV control system  must write the ROV depth using the API to  the Master-D1 electronics.    Block diagram      Picture  INSERT IMAGE HERE  INSERT IMAGE HERE", 
+            "title": "Locators"
+        }, 
+        {
+            "location": "/hardware-setup/#reference-systems", 
+            "text": "In order to calculate the absolute position of the Locator we need to define two reference systems, the acoustic and the global reference system. The global reference system is defined by latitude and longitude and is the reference system used by the GPS and in maps.   The acoustic reference system  (the x and y axis) is defined by the orientation of the housing. The housing is by definition located in origin (x=0, y=0).  A label on top of the lid indicates the x-y coordinate system. The position of the receivers and the search area are specified in the Acoustic reference system.", 
+            "title": "Reference Systems"
+        }, 
+        {
+            "location": "/hardware-setup/#guidelines", 
+            "text": "You can in principle place the receivers at any location within 100m from the origin of the acoustic reference system. In order to ensure the best performance, you should follow a few guidelines:           Line-of-sight  Try to place the receivers so they all have a free line-of-sight to the Locator.    Good Separation  The system performs better when there is a large distance between the   receivers. More separation is better, but 2x2 meters is sufficient for good  performance.    Max Range  There should be maximum 100m from any receiver to the Locator    Receiver depth  Place the receivers at a few meters depth. Near the surface there are typically  small air bubbles caused by waves. These small air bubbles attenuate the  acoustic signal and can reduce the system performance.    Limit search area  You will get a better position if you help the search algorithm to narrow the  search area. Limit the search range setting to the area where the Locator is  expected to be.    Directivity  The Receivers have less sensitivity in backward direction (where cable enters).  Also, the Locator has less acoustic gain in the direction of the cable entry.    Receiver stability  Add some weight to the receivers so they hang straight down in the water    On board GPS  If the master electronics is static during operation it is recommended to use the  static option for the GPS. This is to remove the inaccuracy of the GPS receiver  in global position. Only use onboard GPS when the reference system is moving  eg. if mounted to a boat.", 
+            "title": "Guidelines"
+        }, 
+        {
+            "location": "/hardware-setup/#boat-example", 
+            "text": "The illustration bellow shows a typical receiver configuration when installed on a boat. The receivers are hanging from the side of the boat, one in each corner. The depth of the receivers are typically 2-4m, deep enough to get below the hull and get free line-of-sight to the Locator. Notice how the housing defines the origin and coordinate system of the acoustic reference system.", 
+            "title": "Boat Example"
+        }, 
+        {
+            "location": "/hardware-setup/#gps", 
+            "text": "The on-board GPS module is used to position the system in a global reference system. An external antenna with integrated amplifier is used to improve GPS reception. The signal strength of the GPS can be seen on the top bar in the web GUI.", 
+            "title": "GPS"
+        }, 
+        {
+            "location": "/hardware-setup/#gps-antenna-assembly", 
+            "text": "The GPS-antenna can be mounted anywhere you want, but remember the GPS-antenna is the origin of the master electronics position. Therefor it is recommended to fasten the antenna on the lid of the pelican case. With the 3M double sided tape, attach the GPS- antenna to the lid of the pelican case.   Connect the GPS-antenna cable to the SMA connector on the master electronics. Torque the SMA nut to 3\u20135 in\u00b7lbf (0.3 to 0.6 N\u00b7m) or slightly more than finger tight.", 
+            "title": "GPS-antenna assembly"
+        }, 
+        {
+            "location": "/hardware-setup/#imu", 
+            "text": "The master electronics has an built in IMU used to provide the orientation of the master electronics. This is used in combination with the acoustic position and GPS to generate the global position of the Locator.", 
+            "title": "IMU"
+        }, 
+        {
+            "location": "/hardware-setup/#imu-calibration", 
+            "text": "For the IMU to work properly it needs to be calibrated. The calibration data is stored when full calibration is obtained for faster calibration on restart of the system. If the system is started on a new location a new calibration is needed for the IMU to work as intended.   To calibrate the IMU disconnect all Recivers and Locator cables, but leave power and Ethernet connected. While looking at the top bar in the web GUI on the IMU status bar move the pelican case in a figure of 8 until all the bars are green.", 
+            "title": "IMU Calibration"
+        }, 
+        {
+            "location": "/software/", 
+            "text": "Software\n\n\nSignal flow\n\n\nThe diagram below shows the major signal processing blocks and how they are connected.\n\n\n\n\nArchitecture\n\n\nThe block diagram below shows how the Web GUI and API are interconnected with the rest of the internal system. \n\n\n\n\nGUI\n\n\nThe Underwater GPS GUI is web based. Using your favorite web browser, go the IP address as defined in chapter 3.1. We currently support and recommended Chrome, Firefox and Safari. \n\n\nNB: Internet Explorer is not supported as of now.\n\n\nConfiguration page\n\n\n\n\n\n\n\n\n\n\n#\n\n\nDescription\n\n\nAPI\n\n\n\n\n\n\n\n\n\n\n1\n\n\nThe system configuration is stored on the server. Press \u201cStore configuration\u201d to \nsave current configuration. The current setting are automatically loaded when the \npage is opened.\n\n\n\n\n\n\n\n\n2\n\n\nConfiguration of the receiver position. Set the coordinates (x,y,depth) of all four \nreceivers [meters]. The depth is always a positive number.\n\n\n/config/receivers\n\n\n\n\n\n\n3\n\n\nThe visualization sector gives a graphical representation of the receiver positions. \nThis makes it easier to verify that the configuration is correct.\n\n\n\n\n\n\n\n\n4\n\n\nThis button sets search area to \u00b1 100m\n\n\n\n\n\n\n\n\n5\n\n\nConfiguration of the active search range. Set the maximum/minimum of the x and \ny search area. To improve the quality of the position estimation it is a good idea to \ndefine a small search area and leave out \u201cimpossible\u201d position sectors.\n\n\n/config/generic\n\n\n\n\n\n\n6\n\n\nSetting of the acoustic frequency. This can be used in case other acoustic devices \noperate in the area, like sonars, echo sounders and modems. In case of \ninterference, change the carrier frequency.\n\n\n/config/generic\n\n\n\n\n\n\n7\n\n\nConfiguration of the master (housing) position. This configuration selects how to \nmap the two reference systems, the Global and the Acoustic reference system. \nThere are three sources of this\n \u2022 On-board GPS. With this setting the global position of the master is based \n  on the on-board GPS. \n\u2022 Static. The latitude and longitude are static numbers and configured \ndirectly in GUI. \n\u2022 External. The GPS position in provided through the API, typically from the \n boat navigation system.\n\n\n\n\n\n\n\n\n8\n\n\nConfiguration of the orientation of the master. \nThere are three sources of this\n\u2022 On-board IMU. With this setting the orientation of the master is based on \n    the on-board IMU.\n\u2022 Static. The heading of the master is static. The heading is configured \ndirectly in GUI. \n\u2022 External. The heading is provided through the API, typically from the boat \nnavigation system or compass.\n\n\n\n\n\n\n\n\n9\n\n\nLocator selection. When using Locator-A1, the depth must be written to the \nsystem. This is done via the HTTP interface described in the Open API \nSpecification (OAS)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAPI\n\n\nThe Underwater GPS comes with an easy-to-use API. This API uses a HTTP-based scheme to interact with the system. Through the API the user can among others\n\n\n\u2022 set configuration settings\n\n\n\u2022 read acoustic and global position data\n\n\n\u2022 read GPS and IMU raw data\n\n\nSWAGGER is used for API documentation. See \n\ndemo.waterlinked.com/swagger\n for more information.\n\n\nSW update\n\n\n\n\nA SW update package (.wlup) includes all files required to update the system. Some SW updates also requires an update of the low-level FPGA image. The FPGA image is encrypted with a unique key. To generate a new FPGA image for your board, Water Linked needs to know the Chip ID of your bard. The Chip ID can be found in the About tab of the GUI. To get the latest software package for your kit, go to \nupdate.waterlinked.com\n and enter the Chip ID of your kit. \n\n\n\n\n\n\n\n\nStep\n\n\nDescription\n\n\nAPI\n\n\n\n\n\n\n\n\n\n\n1\n\n\nPower off the system\n\n\n\n\n\n\n\n\n2\n\n\nSet Master-D1 to fixed IP \u201c192.168.2.94\u201d\n\n\nSee chapter 3.1\n\n\n\n\n\n\n3\n\n\nSet the IP on your own computer to be on the same \nsub-net\n\n\n\n\n\n\n\n\n4\n\n\nPower up the system while at the same time keeping \nthe GP0 pin on the GPIO connector grounded\n\n\n\n\n\n\n\n\n5\n\n\nGo to web GUI \nhttp://192.168.2.94\n\n\n\n\n\n\n\n\n6\n\n\nAfter the system has booted and you see the \nupgrader GUI, remove the grounding of GP0.\n\n\n\n\n\n\n\n\n7\n\n\nClick \u201cBrowse file\u201d and select correct \n.wlup file\n\n\n\n\n\n\n\n\n8\n\n\nWait for update process to complete\n\n\n\n\n\n\n\n\n9\n\n\nWhen the update process is complete and successful,\nthe system will automatically reboot to standard mode\n\n\n\n\n\n\n\n\n10\n\n\nVerify that the SW version has updated", 
+            "title": "Software"
+        }, 
+        {
+            "location": "/software/#software", 
+            "text": "", 
+            "title": "Software"
+        }, 
+        {
+            "location": "/software/#signal-flow", 
+            "text": "The diagram below shows the major signal processing blocks and how they are connected.", 
+            "title": "Signal flow"
+        }, 
+        {
+            "location": "/software/#architecture", 
+            "text": "The block diagram below shows how the Web GUI and API are interconnected with the rest of the internal system.", 
+            "title": "Architecture"
+        }, 
+        {
+            "location": "/software/#gui", 
+            "text": "The Underwater GPS GUI is web based. Using your favorite web browser, go the IP address as defined in chapter 3.1. We currently support and recommended Chrome, Firefox and Safari.   NB: Internet Explorer is not supported as of now.", 
+            "title": "GUI"
+        }, 
+        {
+            "location": "/software/#configuration-page", 
+            "text": "#  Description  API      1  The system configuration is stored on the server. Press \u201cStore configuration\u201d to  save current configuration. The current setting are automatically loaded when the  page is opened.     2  Configuration of the receiver position. Set the coordinates (x,y,depth) of all four  receivers [meters]. The depth is always a positive number.  /config/receivers    3  The visualization sector gives a graphical representation of the receiver positions.  This makes it easier to verify that the configuration is correct.     4  This button sets search area to \u00b1 100m     5  Configuration of the active search range. Set the maximum/minimum of the x and  y search area. To improve the quality of the position estimation it is a good idea to  define a small search area and leave out \u201cimpossible\u201d position sectors.  /config/generic    6  Setting of the acoustic frequency. This can be used in case other acoustic devices  operate in the area, like sonars, echo sounders and modems. In case of  interference, change the carrier frequency.  /config/generic    7  Configuration of the master (housing) position. This configuration selects how to  map the two reference systems, the Global and the Acoustic reference system.  There are three sources of this  \u2022 On-board GPS. With this setting the global position of the master is based    on the on-board GPS.  \u2022 Static. The latitude and longitude are static numbers and configured  directly in GUI.  \u2022 External. The GPS position in provided through the API, typically from the   boat navigation system.     8  Configuration of the orientation of the master.  There are three sources of this \u2022 On-board IMU. With this setting the orientation of the master is based on      the on-board IMU. \u2022 Static. The heading of the master is static. The heading is configured  directly in GUI.  \u2022 External. The heading is provided through the API, typically from the boat  navigation system or compass.     9  Locator selection. When using Locator-A1, the depth must be written to the  system. This is done via the HTTP interface described in the Open API  Specification (OAS)", 
+            "title": "Configuration page"
+        }, 
+        {
+            "location": "/software/#api", 
+            "text": "The Underwater GPS comes with an easy-to-use API. This API uses a HTTP-based scheme to interact with the system. Through the API the user can among others  \u2022 set configuration settings  \u2022 read acoustic and global position data  \u2022 read GPS and IMU raw data  SWAGGER is used for API documentation. See  demo.waterlinked.com/swagger  for more information.", 
+            "title": "API"
+        }, 
+        {
+            "location": "/software/#sw-update", 
+            "text": "A SW update package (.wlup) includes all files required to update the system. Some SW updates also requires an update of the low-level FPGA image. The FPGA image is encrypted with a unique key. To generate a new FPGA image for your board, Water Linked needs to know the Chip ID of your bard. The Chip ID can be found in the About tab of the GUI. To get the latest software package for your kit, go to  update.waterlinked.com  and enter the Chip ID of your kit.      Step  Description  API      1  Power off the system     2  Set Master-D1 to fixed IP \u201c192.168.2.94\u201d  See chapter 3.1    3  Set the IP on your own computer to be on the same  sub-net     4  Power up the system while at the same time keeping  the GP0 pin on the GPIO connector grounded     5  Go to web GUI  http://192.168.2.94     6  After the system has booted and you see the  upgrader GUI, remove the grounding of GP0.     7  Click \u201cBrowse file\u201d and select correct  .wlup file     8  Wait for update process to complete     9  When the update process is complete and successful, the system will automatically reboot to standard mode     10  Verify that the SW version has updated", 
+            "title": "SW update"
+        }, 
+        {
+            "location": "/spesifications/", 
+            "text": "Specifications\n\n\nSee [1] \u2013 [5] for detailed specifications of the different parts of the system.\n\n\nDimensions\n\n\nThe diagrams below shows the mechanical dimensions of the Master-D1 electronics.\n\n\n\n\n\n\nD1 interface\n\n\nThe tables below shows the pinning of the D1 interface connectors.\n\n\n\n\n\n\nA1 interface\n\n\nThe tables below shows the pinning of the A1 interface connectors.\n\n\n\n\n\n\nReceiver interface\n\n\nThe tables below shows the pinning of the Receiver interface connectors.", 
+            "title": "Spesifications"
+        }, 
+        {
+            "location": "/spesifications/#specifications", 
+            "text": "See [1] \u2013 [5] for detailed specifications of the different parts of the system.", 
+            "title": "Specifications"
+        }, 
+        {
+            "location": "/spesifications/#dimensions", 
+            "text": "The diagrams below shows the mechanical dimensions of the Master-D1 electronics.", 
+            "title": "Dimensions"
+        }, 
+        {
+            "location": "/spesifications/#d1-interface", 
+            "text": "The tables below shows the pinning of the D1 interface connectors.", 
+            "title": "D1 interface"
+        }, 
+        {
+            "location": "/spesifications/#a1-interface", 
+            "text": "The tables below shows the pinning of the A1 interface connectors.", 
+            "title": "A1 interface"
+        }, 
+        {
+            "location": "/spesifications/#receiver-interface", 
+            "text": "The tables below shows the pinning of the Receiver interface connectors.", 
+            "title": "Receiver interface"
+        }, 
+        {
+            "location": "/diagnostics/", 
+            "text": "Diagnostics\n\n\nD1 interface\n\n\nMake sure the LED is ON for all D1 interfaces that are connected. The digital D1 interfaces all have a separate LED to show if the communication link is in lock. When a Receiver-D1 or Locator-D1 cable is connected to the master board, the corresponding LED should be continuously ON. The silkscreen marking of the channel LEDs on the PCB are 0-indexed. The channel labels on the housing are 1-index. We thus get following LED channel mapping:\n\n\n\n\n\n\n\n\nInterface\n\n\nLED\n\n\n\n\n\n\n\n\n\n\nReceiver, channel 1\n\n\n0\n\n\n\n\n\n\nReceiver, channel 2\n\n\n1\n\n\n\n\n\n\nReceiver, channel 3\n\n\n2\n\n\n\n\n\n\nReceiver, channel 4\n\n\n3\n\n\n\n\n\n\nLocator-D1\n\n\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe LED on the Locator-A1 interface is not in use. \n\n\nWEB diagnostics\n\n\nVerify receiver signal strength in the diagnostic page on the web GUI.  Set your browser to 192.168.2.94/#/diagnostic. This view will show the signal strength from all receivers. It should look somethinglike\n\n\n\n\nIn the diagnostic plot we should see the signal from all 4 receivers. The signals should be above the noise floor.\n\n\nInterference\n\n\nAcoustic interference can be observed in the diagnostic plot. Echo sounders from nearby boats typically appears like burst noise.\n\n\n\n\nIn case of interference from other acoustic sources, use the GUI to change the carrier frequency of the system.", 
+            "title": "Diagnostics"
+        }, 
+        {
+            "location": "/diagnostics/#diagnostics", 
+            "text": "", 
+            "title": "Diagnostics"
+        }, 
+        {
+            "location": "/diagnostics/#d1-interface", 
+            "text": "Make sure the LED is ON for all D1 interfaces that are connected. The digital D1 interfaces all have a separate LED to show if the communication link is in lock. When a Receiver-D1 or Locator-D1 cable is connected to the master board, the corresponding LED should be continuously ON. The silkscreen marking of the channel LEDs on the PCB are 0-indexed. The channel labels on the housing are 1-index. We thus get following LED channel mapping:     Interface  LED      Receiver, channel 1  0    Receiver, channel 2  1    Receiver, channel 3  2    Receiver, channel 4  3    Locator-D1  6         The LED on the Locator-A1 interface is not in use.", 
+            "title": "D1 interface"
+        }, 
+        {
+            "location": "/diagnostics/#web-diagnostics", 
+            "text": "Verify receiver signal strength in the diagnostic page on the web GUI.  Set your browser to 192.168.2.94/#/diagnostic. This view will show the signal strength from all receivers. It should look somethinglike   In the diagnostic plot we should see the signal from all 4 receivers. The signals should be above the noise floor.", 
+            "title": "WEB diagnostics"
+        }, 
+        {
+            "location": "/diagnostics/#interference", 
+            "text": "Acoustic interference can be observed in the diagnostic plot. Echo sounders from nearby boats typically appears like burst noise.   In case of interference from other acoustic sources, use the GUI to change the carrier frequency of the system.", 
+            "title": "Interference"
+        }, 
+        {
+            "location": "/helpful-links/", 
+            "text": "Helpful links\n\n\nHome page: \nwaterlinked.com\n\n\nWeb demo: \ndemo.waterlinked.com\n\n\nAPI: \ndemo.waterlinked.com/swagger\n\n\nAPI examples: \nwaterlinked/examples\n\ntest\nFAQ: \nwaterlinked.com/faq", 
+            "title": "Helpful Links"
+        }, 
+        {
+            "location": "/helpful-links/#helpful-links", 
+            "text": "Home page:  waterlinked.com  Web demo:  demo.waterlinked.com  API:  demo.waterlinked.com/swagger  API examples:  waterlinked/examples \ntest\nFAQ:  waterlinked.com/faq", 
+            "title": "Helpful links"
+        }
+    ]
+}
