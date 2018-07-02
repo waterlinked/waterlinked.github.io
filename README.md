@@ -14,3 +14,5 @@
 6. For documentation on the s1 locator visit [https://waterlinked.github.io/doc-s1/](https://waterlinked.github.io/doc-s1/).
 
 7. For documentation on the u1 locator visit [https://waterlinked.github.io/doc-u1/](https://waterlinked.github.io/doc-u1/).
+
+8. For documentation on the OEM visit [https://waterlinked.github.io/doc-oem/](https://waterlinked.github.io/doc-oem/).
