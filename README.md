@@ -28,18 +28,24 @@ mkdocs serve
 After the changes have been tested and they work, push the changes to the master branch and Github will build the website under waterlinked.github.io/docs subfolder.
 
 Once you're satisfied with the results, you can build the updated website on waterlinked.github.io itself. It is recommended to do this the following way:
-- Have both the "docs" and "waterlinked.github.io" repositories in the same folder on your local machine.
-    /Local Folder
-	    /docs <-repo
-		    /docs
-		    mkdocs.yml
-		/waterlinked.github.io <-repo
-- Make the changes in the "docs" repo.
-- Navigate to the "waterlinked.github.io" directory.
-    cd ../waterlinked.github.io/
-- Use the mkdocs gh-deploy to build the webpage
-    mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master
+* Have both the "docs" and "waterlinked.github.io" repositories in the same folder on your local machine.
+```
+/Local Folder
+    /docs <-repo
+	    /docs
+	    mkdocs.yml
+	/waterlinked.github.io <-repo
+```
+* Make the changes in the "docs" repo.
+* Navigate to the "waterlinked.github.io" directory.
+```
+cd ../waterlinked.github.io/
+```
+* Use the mkdocs gh-deploy to build the webpage
+```
+mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master
+```
     
-You may then want to pull the updated "waterlinked.github.io" repo, although not necessary.
-The website should now be updated.
+The website should now be updated. You may then want to pull the updated "waterlinked.github.io" repo, although not necessary.
+
 
