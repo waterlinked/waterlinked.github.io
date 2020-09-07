@@ -1,0 +1,1565 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://waterlinked.github.io/underwater-gps/bluerov-integration/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon_water_linked.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>BlueROV2 integration - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#introduction" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://waterlinked.github.io" title="Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/waterlinked_logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                BlueROV2 integration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/waterlinked/docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://waterlinked.github.io" title="Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../img/waterlinked_logo.png" width="48" height="48">
+      
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/waterlinked/docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Underwater GPS G2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Underwater GPS G2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../warnings/" title="Warnings" class="md-nav__link">
+      Warnings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../power-supply/" title="Power supply" class="md-nav__link">
+      Power supply
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../network-settings/" title="Network settings" class="md-nav__link">
+      Network settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hardware/" title="Hardware" class="md-nav__link">
+      Hardware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        BlueROV2 integration
+      </label>
+    
+    <a href="./" title="BlueROV2 integration" class="md-nav__link md-nav__link--active">
+      BlueROV2 integration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parts-and-tools" title="Parts and tools" class="md-nav__link">
+    Parts and tools
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-will-need" title="You will need" class="md-nav__link">
+    You will need
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-locator-a1-on-the-bluerov2" title="Installing the Locator-A1 on the BlueROV2" class="md-nav__link">
+    Installing the Locator-A1 on the BlueROV2
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-blank-penetrator" title="Removing a blank penetrator" class="md-nav__link">
+    Removing a blank penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-locator-a1-penetrator" title="Install Locator-A1 penetrator" class="md-nav__link">
+    Install Locator-A1 penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasemble-bluerov2-electronics-enclosure" title="Reasemble BlueROV2 electronics enclosure" class="md-nav__link">
+    Reasemble BlueROV2 electronics enclosure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-the-locator-a1-to-the-bluerov2-frame" title="Mounting the Locator-A1 to the BlueROV2 frame" class="md-nav__link">
+    Mounting the Locator-A1 to the BlueROV2 frame
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifications-inside-underwater-gps-housing" title="Modifications inside Underwater GPS housing" class="md-nav__link">
+    Modifications inside Underwater GPS housing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting-ethernet-cable" title="Connecting ethernet cable" class="md-nav__link">
+    Connecting ethernet cable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-plc-module" title="Installing the PLC module" class="md-nav__link">
+    Installing the PLC module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-electronics-modification-optional" title="Interface Electronics modification (Optional)" class="md-nav__link">
+    Interface Electronics modification (Optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifications-to-fxti" title="Modifications to FXTI" class="md-nav__link">
+    Modifications to FXTI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ardusub-companion-software-update" title="ArduSub Companion software update" class="md-nav__link">
+    ArduSub Companion software update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-setup" title="Software setup" class="md-nav__link">
+    Software setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-external-depth-error" title="No External Depth error" class="md-nav__link">
+    No External Depth error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-linked-software-update" title="Water Linked software update" class="md-nav__link">
+    Water Linked software update
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      GUI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        GUI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gui/position/" title="Position" class="md-nav__link">
+      Position
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gui/receivers/" title="Receivers" class="md-nav__link">
+      Receivers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gui/settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gui/diagnostic/" title="Diagnostic" class="md-nav__link">
+      Diagnostic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gui/api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quickstart/" title="Quickstart" class="md-nav__link">
+      Quickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trouble-shooting/" title="Trouble shooting" class="md-nav__link">
+      Trouble shooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Underwater GPS Explorer Kit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Underwater GPS Explorer Kit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/warnings/" title="Warnings" class="md-nav__link">
+      Warnings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/power-supply/" title="Power supply" class="md-nav__link">
+      Power supply
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/network-settings/" title="Network settings" class="md-nav__link">
+      Network settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/hardware/" title="Hardware" class="md-nav__link">
+      Hardware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      GUI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        GUI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/gui/position/" title="Position" class="md-nav__link">
+      Position
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/gui/receivers/" title="Receivers" class="md-nav__link">
+      Receivers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/gui/settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/gui/diagnostic/" title="Diagnostic" class="md-nav__link">
+      Diagnostic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/gui/api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/upgrader/" title="Software Update" class="md-nav__link">
+      Software Update
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/quickstart/" title="Quickstart" class="md-nav__link">
+      Quickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explorer-kit/trouble-shooting/" title="Trouble shooting" class="md-nav__link">
+      Trouble shooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Locators
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Locators
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../locators/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../locators/locator-a1/" title="Locator-A1" class="md-nav__link">
+      Locator-A1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../locators/locator-d1/" title="Locator-D1" class="md-nav__link">
+      Locator-D1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../locators/locator-s1/" title="Locator-S1" class="md-nav__link">
+      Locator-S1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../locators/locator-u1/" title="Locator-U1" class="md-nav__link">
+      Locator-U1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../receiver-d1/" title="Receiver-D1" class="md-nav__link">
+      Receiver-D1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../master-d1/" title="Master-D1" class="md-nav__link">
+      Master-D1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Modems
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Modems
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modems/modem-m64/" title="Modem-M64" class="md-nav__link">
+      Modem-M64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modems/modem-m64-protocol/" title="Protocol" class="md-nav__link">
+      Protocol
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      DVLs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        DVLs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      DVL A50
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        DVL A50
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dvl/dvl-a50/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dvl/dvl-a50-details/" title="Details" class="md-nav__link">
+      Details
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dvl/dvl-protocol/" title="Protocol" class="md-nav__link">
+      Protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dvl/io-interface/" title="IO Interface" class="md-nav__link">
+      IO Interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sw-update/" title="Software update" class="md-nav__link">
+      Software update
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../channels/" title="Channel overview" class="md-nav__link">
+      Channel overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/" title="Tutorials" class="md-nav__link">
+      Tutorials
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../helpful-links/" title="Helpful Links" class="md-nav__link">
+      Helpful Links
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parts-and-tools" title="Parts and tools" class="md-nav__link">
+    Parts and tools
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-will-need" title="You will need" class="md-nav__link">
+    You will need
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-locator-a1-on-the-bluerov2" title="Installing the Locator-A1 on the BlueROV2" class="md-nav__link">
+    Installing the Locator-A1 on the BlueROV2
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-blank-penetrator" title="Removing a blank penetrator" class="md-nav__link">
+    Removing a blank penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-locator-a1-penetrator" title="Install Locator-A1 penetrator" class="md-nav__link">
+    Install Locator-A1 penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasemble-bluerov2-electronics-enclosure" title="Reasemble BlueROV2 electronics enclosure" class="md-nav__link">
+    Reasemble BlueROV2 electronics enclosure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-the-locator-a1-to-the-bluerov2-frame" title="Mounting the Locator-A1 to the BlueROV2 frame" class="md-nav__link">
+    Mounting the Locator-A1 to the BlueROV2 frame
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifications-inside-underwater-gps-housing" title="Modifications inside Underwater GPS housing" class="md-nav__link">
+    Modifications inside Underwater GPS housing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting-ethernet-cable" title="Connecting ethernet cable" class="md-nav__link">
+    Connecting ethernet cable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-plc-module" title="Installing the PLC module" class="md-nav__link">
+    Installing the PLC module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-electronics-modification-optional" title="Interface Electronics modification (Optional)" class="md-nav__link">
+    Interface Electronics modification (Optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifications-to-fxti" title="Modifications to FXTI" class="md-nav__link">
+    Modifications to FXTI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ardusub-companion-software-update" title="ArduSub Companion software update" class="md-nav__link">
+    ArduSub Companion software update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-setup" title="Software setup" class="md-nav__link">
+    Software setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-external-depth-error" title="No External Depth error" class="md-nav__link">
+    No External Depth error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water-linked-software-update" title="Water Linked software update" class="md-nav__link">
+    Water Linked software update
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/waterlinked/docs/edit/master/docs/underwater-gps/bluerov-integration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>BlueROV2 integration</h1>
+                
+                <h2 id="introduction">Introduction</h2>
+<p>The revised Water Linked Underwater GPS is designed with a connection interface that has power-line communication (PLC) capabilities through the <a href="https://waterlinked.com/store/">BlueROV2 Integration Kit</a>.</p>
+<p>The Water Linked BlueROV2 Integration Kit provides the necessary components to seamlessly connect the BlueROV2 and the Underwater GPS.</p>
+<p>This page specifically covers using the BlueROV2 Integration Kit to connect the Underwater GPS with the BlueRobotics BlueROV2.</p>
+<h2 id="parts-and-tools">Parts and tools</h2>
+<p>The <a href="../../locators/locator-a1/">Locator-A1</a> and <a href="../../locators/locator-u1/">Locator-U1</a> are the only Locators that will work together with the BlueROV2 Integration Kit as the Locator bulkhead on the Underwater GPS will be altered and used for connection to the BlueROV2.</p>
+<h3 id="you-will-need">You will need</h3>
+<p><img alt="bluerov2_front" src="../../img/bluerov2_front_300x300.png" /></p>
+<ul>
+<li><a href="https://bluerobotics.com/store/rov/bluerov2/bluerov2/">BlueROV2</a></li>
+</ul>
+<p><img alt="hex_set" src="../../img/hex_set-300x300.png" /></p>
+<ul>
+<li><a href="https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/">Hex Key Set</a></li>
+</ul>
+<p><img alt="penetrator_wrench" src="../../img/penetrator_wrench-300x300.png" /></p>
+<ul>
+<li><a href="https://bluerobotics.com/store/cables-connectors/tools/tool-penetrator-wrench-r1/">Penetrator Wrench</a></li>
+</ul>
+<p><img alt="blurerov2_integration_kit" src="https://waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg" /></p>
+<ul>
+<li><a href="https://waterlinked.com/product/bluerov2-integration-kit/">BlueROV2 Integration Kit</a></li>
+</ul>
+<p>You will also need:</p>
+<ul>
+<li>#1 Phillips head screwdriver</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li>Bottle of treadlocker</li>
+<li>Soldering iron</li>
+</ul>
+<h2 id="installing-the-locator-a1-on-the-bluerov2">Installing the Locator-A1 on the BlueROV2</h2>
+<p>You will need to install the Locator-A1 on the BlueROV2 using components from the BlueROV2 Integration Kit. The Locator will use one of the spare cable penetrations in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. You can find a 3D model of a suitable mounting bracket <a href="https://waterlinked.com/wp-content/uploads/2017/06/Locator_A1_Mounting_Bracket.zip">here</a> which you can 3D print as is, or modify to your needs. Altenativly you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the Receivers near the surface.</p>
+</div>
+<h3 id="removing-a-blank-penetrator">Removing a blank penetrator</h3>
+<p>To remove a blank penetrator from your BlueROV2, you will need the following tools:</p>
+<ul>
+<li>2.5 mm hex driver</li>
+<li>#1 Phillips head screwdriver</li>
+<li>Penetrator wrench</li>
+</ul>
+<p>To ensure your ROV is completely powered off, please remove the battery completely from the 3” enclosure and place to the side.</p>
+<p><img alt="bluerov2-remove-battery" src="../../img/bluerov2-remove-battery-1024x768.jpg" /></p>
+<p>Remove the fairings and buoyancy blocks by removing the self-tapping screws that hold the fairings to the frame.</p>
+<p><img alt="bluerov2-remove-fairings" src="../../img/bluerov2-remove-fairings-1024x674.png" /></p>
+<p>Remove the 4” electronics enclosure from the ROV by removing the M3x16 screws that mount the enclosure to the ROV cradle.</p>
+<p><img alt="bluerov2-remove-electronic" src="../../img/bluerov2-remove-electronic-1024x743.png" /></p>
+<p>Remove the Vent Plug from the Vent Penetrator Bolt on the electronics enclosure. Remove the 4″ tube and forward dome assembly from the rear end cap.</p>
+<p><img alt="bluerov2-remove-vent" src="../../img/bluerov2-remove-vent-1024x1024.jpg" /></p>
+<p>Remove the blank penetrator as pictured from the 4” End Cap with the penetrator wrench that came with the BlueROV2 kit.</p>
+<p><img alt="bluerov2-end-cap-remove" src="../../img/bluerov2-end-cap-remove-1024x576.jpg" /></p>
+<h3 id="install-locator-a1-penetrator">Install Locator-A1 penetrator</h3>
+<p>To install Locator-A1 into the end cap, you will need the following parts and tools:</p>
+<ul>
+<li>Locator-A1 with pre-installed cable penetrator</li>
+<li>Penetrator Nut (Black)</li>
+<li>Penetrator O-ring</li>
+<li>Silicone Grease – 10g Tube</li>
+<li>Isopropyl Alcohol Wipe</li>
+<li>Penetrator wrench</li>
+</ul>
+<p>Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.</p>
+<p>Remove the O-ring from the bag and apply silicone grease to it.</p>
+<p><img alt="bluerov2-grease-o-ring" src="../../img/bluerov2-grease-o-ring-1024x683.png" /></p>
+<p>Install the O-ring onto the Locator-A1 cable penetrator.
+Install the Locator-A1 cable penetrator on to the end cap in the hole you previously removed the blank penetrator from. Tighten to finger tight, then use the provided wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.</p>
+<p><img alt="bluerov2-end-cap-A1" src="../../img/bluerov2-end-cap-A1-1024x576.jpg" /></p>
+<p>Using the pre-crimped header pin connector on the Locator-A1, connect the Locator wires (green/white) to a spare twisted pair of the tether (green/white).</p>
+<h3 id="reasemble-bluerov2-electronics-enclosure">Reasemble BlueROV2 electronics enclosure</h3>
+<p>To reassemble your BlueROV2 Electronics Enclosure, you will need the following parts and tools:</p>
+<ul>
+<li>4 x M3x16 screws that were placed off to the side during disassembly</li>
+<li>Silicone Grease – 10g Tube</li>
+<li>2.5 mm hex driver</li>
+</ul>
+<p>Reinstall 4” Watertight Enclosure onto ROV with the following steps:</p>
+<p>Apply silicone grease to the two radial O-rings on the O-Ring Flange (4” Series) that is attached to the Electronics Tray then install the Watertight Enclosure (4” Series) with installed Dome End Cap to the O-Ring Flange (4” Series).</p>
+<p>Mount the Electronics Enclosure to the frame using the M3x16 screws so that the dome is on the same side as the front center panels (the center panels without the 3 large holes). Install the M3x16 screws through the clips and into the Enclosure Cradle (4” Series). It is easier to install these screws if the clips are not fully tightened until all screws are through the clips and threading into the Enclosure Cradle (4” Series). This allows clips to rotate so you can find the threaded hole in the Enclosure Cradle (4” Series) easily.</p>
+<p><img alt="bluerov2-remove-electronic" src="../../img/bluerov2-remove-electronic-1024x743.png" /></p>
+<h3 id="mounting-the-locator-a1-to-the-bluerov2-frame">Mounting the Locator-A1 to the BlueROV2 frame</h3>
+<p>To mount the Locator-A1 to the BlueROV2 frame, you will need the following parts and tools:</p>
+<ul>
+<li>Aluminum Locator-A1 mounting bracket (2 halves)4 x M3x16 socket head cap screws (Not included)</li>
+<li>2 x M5x12 button head cap screws</li>
+<li>2.5 mm hex driver</li>
+<li>3 mm hex driver</li>
+<li>(Optional) Bottle of threadlocker</li>
+</ul>
+<p>Route the Locator to one side of the ROV.</p>
+<p>Attach the aluminum mounting bracket to the Locator-A1 using the M3x16 socket head screws. (Optional) add threadlocker to screw threads before securing.</p>
+<p>Secure the mounting bracket to the existing holes on the ROV frame.</p>
+<h2 id="modifications-inside-underwater-gps-housing">Modifications inside Underwater GPS housing</h2>
+<h3 id="connecting-ethernet-cable">Connecting ethernet cable</h3>
+<p>To connect ethernet from the Interface Electronics board to the Master Electronics board, you will need the following part:</p>
+<ul>
+<li>Ethernet cable (included in the BlueROV2 Integration Kit)</li>
+</ul>
+<p>Locate the ethernet ports on the Interface Electronics board and the Master Electronics board.</p>
+<p><img alt="topside-ethernet-ports" src="../../img/topside-ethernet-ports.png" /></p>
+<p>Connect the included ethernet cable to the two ports.</p>
+<p><img alt="topside-ethernet-cable" src="../../img/topside-ethernet-cable.png" /></p>
+<h3 id="installing-the-plc-module">Installing the PLC module</h3>
+<p>To install the PLC module to the Interface Electronics board, you will need the following part:</p>
+<ul>
+<li>LX200V30 PLC Homeplug module with press-fit standoffs(included in the BlueROV2 Integration Kit)</li>
+</ul>
+<p>Locate the socket for the Homeplug module on the Interface board.</p>
+<p><img alt="topside-plc-socket" src="../../img/topside-plc-socket.png" /></p>
+<p>Press the PLC module into the socket, making sure that the press-fit standoffs latch into the holes in the Interface Electronics board.</p>
+<p><img alt="topside-plc-standoffs" src="../../img/topside-plc-standoffs.png" /></p>
+<h3 id="interface-electronics-modification-optional">Interface Electronics modification (Optional)</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Skipping this step leaves a regulated 12V power source from the Underwater GPS on the PLC lines (pins 1 (GND) and 2 (12V) on the Locator bulkhead). Connecting non-isolated equipment to the PLC lines may damage the Underwater GPS or any external equipment.</p>
+</div>
+<p>The Interface Electronics board in the Underwater GPS housing comes with the resistors R2 and R3 attached. These put GND on pin 1 and 12V on pin 2 of the bulkhead connector with the label “Locator”. The configuration of the FXTI, BlueROV2 and the Locator-A1 as presented in this guide is not affected by leaving these resistors on the board. In any other configuration, you should assess whether or not removing R2 and R3 is necessary for safe operation.</p>
+<p><img alt="topside-interface-resistors" src="../../img/topside-interface-resistors.png" /></p>
+<h2 id="modifications-to-fxti">Modifications to FXTI</h2>
+<p>The connections made inside the FXTI will connect the ROV, Topside Computer, and Water Linked systems to each other. Here’s a high level diagram of what that will look like:</p>
+<p><img alt="topside-fxti_connection_diagram" src="../../img/topside-fxti_connection_diagram.png" /></p>
+<p>To enable connection between the Underwater GPS and the FXTI, you need the following parts and tools:</p>
+<ul>
+<li>Bulkhead wire assembly (included in the BlueROV2 Integration Kit)</li>
+<li>Brown/white jumper lead (included in the BlueROV2 Integration Kit)</li>
+<li>2 mm hex driver</li>
+</ul>
+<p>Unscrew the bulkhead panel from the FXTI and remove one of the black plastic plugs from one of the auxiliary ports.</p>
+<p><img alt="fxti-remove-plug" src="../../img/fxti-remove-plug-1024x1024.png" /></p>
+<p>Thread the FXTI Binder pigtail wire assembly into the open port and secure in place with the included bulkhead nut.</p>
+<p><img alt="fxti-add-bulkhead" src="../../img/fxti-add-bulkhead.png" /></p>
+<p>Connect the blue and white wire pair into the FXTI Tether Connection PCB matching the orientation of the pre-installed blue and white wire connections.</p>
+<p><img alt="fxti-connect-plc" src="../../img/fxti-connect-plc.png" /></p>
+<p>Connect the green and green/white Locator-A1 wire pair into the brown and brown/white pair on the Binder connector pigtail with the included female-to-female adapter.</p>
+<p><img alt="fxti-connect-locator-a1" src="../../img/fxti-connect-locator-a1.png" /></p>
+<p>Reassemble the FXTI box.</p>
+<p><img alt="fxti-final" src="../../img/fxti-final-1024x1024.png" /></p>
+<h2 id="ardusub-companion-software-update">ArduSub Companion software update</h2>
+<p>To work properly, the Water Linked UGPS system requires ArduSub Companion image version <strong>0.0.21</strong> or newer and the most recent stable release of QGroundControl for your operating system. If your Companion image is out of date, please follow the BlueROV2 Software <a href="http://docs.bluerobotics.com/brov2/software-setup/#update-software">Update procedures</a>.</p>
+<h2 id="software-setup">Software setup</h2>
+<p>Configure the Water Linked system with a static IP address of 192.168.2.94 according to the <a href="../network-settings/">Network section</a> of the Water Linked Documentation.</p>
+<p>Connect the topside computer to the FXTI. Connect the BlueROV2 to the FXTI and power the BlueROV2 normally.</p>
+<p>Connect the FXTI to the Water Linked Box using the 3m deck extension cable from the BlueROV2 Integration Kit.</p>
+<p>Follow the <a href="../quickstart/">Quickstart</a> from the Water Linked Documentation for:</p>
+<ul>
+<li>Powering the Water Linked box.</li>
+<li>Calibrating the IMU.</li>
+<li>Deploying receivers.</li>
+<li>Making Receiver-D1 connections to the box.</li>
+</ul>
+<p>To configure the receiver location Water Linked Underwater GPS system, navigate to <code>http://192.168.2.94/#/receivers</code> in your browser. Please refer to the <a href="../../receiver-d1/">Receivers section</a> for further information on configuration.</p>
+<p>Power on the BlueROV2 and dive so the Locator is submerged a few inches below the surface.</p>
+<p>If everything is operating correctly, you should now find an ROV position on the map in QGroundControl. The ROV position is indicated by a BlueROV2 image. The position of the surface vessel or Water Linked Master Electronics housing is indicated by a red arrow. The small ‘H’ icon indicates the ‘home position’, the location of the ROV’s first GPS lock.</p>
+<p><img alt="qgc-display" src="../../img/qgc-display-1024x599.png" /></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="no-external-depth-error">No External Depth error</h3>
+<p>If the error message <em>No external depth received. Is it being sent correctly?</em> is displayed in the UGPS UI, then conduct the following:</p>
+<ol>
+<li>Ensure you are using the latest versions of ArduSub Companion and QGroundControl: <a href="https://bluerobotics.com/learn/bluerov2-software-setup/#update-software">Update Software</a></li>
+<li>In the Companion Web Interface, go to the <a href="http://www.ardusub.com/operators-manual/companion-web.html#mavproxy">MAVProxy</a> page: <a href="http://192.168.2.2:2770/mavproxy">http://192.168.2.2:2770/mavproxy</a></li>
+<li>Click on the “Restore Default Options” button.</li>
+<li>Power cycle the BlueROV2.</li>
+</ol>
+<h2 id="water-linked-software-update">Water Linked software update</h2>
+<p>Check the Water Linked system for available software updates. You can check the Underwater GPS software version at <a href="192.168.2.94/#/about">192.168.2.94/#/about</a>. The update process is documented in the <a href="../upgrader/">Software Update section</a>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../hardware/" title="Hardware" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Hardware
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../gui/position/" title="Position" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Position
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Water Linked 2018-2019
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/waterlinked/" class="md-footer-social__link fa fa-"></a>
+    
+      <a href="https://www.facebook.com/waterlinked/" class="md-footer-social__link fa fa-"></a>
+    
+      <a href="https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/" class="md-footer-social__link fa fa-"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
