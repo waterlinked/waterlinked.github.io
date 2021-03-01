@@ -982,6 +982,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#transducer-report" class="md-nav__link">
+    Transducer report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#checksum" class="md-nav__link">
     Checksum
   </a>
@@ -1161,6 +1168,13 @@
           <li class="md-nav__item">
   <a href="#velocity-report" class="md-nav__link">
     Velocity report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transducer-report" class="md-nav__link">
+    Transducer report
   </a>
   
 </li>
@@ -1386,6 +1400,44 @@ wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
 <pre><code>wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
 wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
 wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
+</code></pre>
+<h3 id="transducer-report">Transducer report</h3>
+<p>Transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz.</p>
+<p>The distances measured form each transducer is on the following format:
+<code>wrt,</code><em>[dist_1],[dist_2],[dist_3],[dist_4]</em></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dist_1</td>
+<td>Measured distance to bottom from trancduser 1 (m)</td>
+</tr>
+<tr>
+<td>dist_2</td>
+<td>Measured distance to bottom from trancduser 2 (m)</td>
+</tr>
+<tr>
+<td>dist_3</td>
+<td>Measured distance to bottom from trancduser 3 (m)</td>
+</tr>
+<tr>
+<td>dist_4</td>
+<td>Measured distance to bottom from trancduser 4 (m)</td>
+</tr>
+</tbody>
+</table>
+<p>Example where velocities are valid:</p>
+<pre><code>wrt,15.00,15.20,14.90,14.20*b1
+wrt,14.90,15.10,14.80,14.10*ac
+</code></pre>
+<p>Example where distance is not valid on transducer 4:</p>
+<pre><code>wrt,14.90,15.10,14.80,-1.00*53
+wrt,15.00,15.20,14.90,-1.00*71
 </code></pre>
 <h3 id="checksum">Checksum</h3>
 <p>The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
