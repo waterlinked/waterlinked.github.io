@@ -909,8 +909,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#axis-convensions" class="md-nav__link">
-    Axis convensions
+  <a href="#axis-conventions" class="md-nav__link">
+    Axis conventions
   </a>
   
 </li>
@@ -1040,6 +1040,60 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      DVL A125
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="DVL A125" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        DVL A125
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dvl-a125" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dvl-a125-details" title="Details" class="md-nav__link">
+      Details
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../dvl-protocol/" title="Protocol" class="md-nav__link">
       Protocol
@@ -1138,8 +1192,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#axis-convensions" class="md-nav__link">
-    Axis convensions
+  <a href="#axis-conventions" class="md-nav__link">
+    Axis conventions
   </a>
   
 </li>
@@ -1261,7 +1315,7 @@
                 
                 
                 <h1 id="dvl-a50-details">DVL-A50 details</h1>
-<h2 id="axis-convensions">Axis convensions</h2>
+<h2 id="axis-conventions">Axis conventions</h2>
 <p>The axis on the DVL-A50 are oriented North-East-Down (NED)</p>
 <ul>
 <li>X axis is pointing forward (LED is forward, cable backward)</li>
@@ -1289,7 +1343,7 @@ For convenience the DVL supports mDNS to easily discover the assigned IP address
 The mDNS name used for the DVL is: <code>waterlinked-dvl</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If no DHCP server is avaiable on the network, it is recommended to configure a static ip address as the DVL can use up to 5 minutes searching for a DHCP server.</p>
+<p>If no DHCP server is available on the network, it is recommended to configure a static ip address as the DVL can use up to 5 minutes searching for a DHCP server.</p>
 </div>
 <h3 id="web-gui">Web GUI</h3>
 <p>On operating systems supporting mDNS you can open the web GUI via the following URL: <a href="http://waterlinked-dvl">http://waterlinked-dvl</a>.
@@ -1305,7 +1359,7 @@ The web GUI also allows for network configuration.</p>
 <p>Once the IP configuration is modified the DVL needs to be rebooted for the settings take effect.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The boot time, i.e. the time it takes from the DVL-A50 receives power until it starts operating normally, will vary based on the network configuration. Using the <a href="#fallback-ip">fallback IP</a>, the boot time can be as much as 1 min 30 sec. The lowest observed boot time is 20 sec with static IP.</p>
+<p>The boot time, i.e. the time it takes from the DVL receives power until it starts operating normally, will vary based on the network configuration. Using the <a href="#fallback-ip">fallback IP</a>, the boot time can be as much as 1 min 30 sec. The lowest observed boot time is 20 sec with static IP.</p>
 </div>
 <h3 id="tcp-output">TCP Output</h3>
 <p>The DVL supports sending measurements updates using the Transmission Control Protocol (TCP). A TCP server is available on port <strong>16171</strong> which outputs the latest measurements to all the connected clients. In the web GUI you can see the number of connected clients and the format of the output message. See <a href="../dvl-protocol/">description of the output protocol</a>.</p>
