@@ -1,0 +1,91 @@
+site_name: Documentation
+site_url: 'https://waterlinked.github.io'
+repo_url: https://github.com/waterlinked/waterlinked.github.io
+theme:
+    name: material
+    theme_dir: docstheme/material
+    logo: img/waterlinked_logo.png
+    favicon: img/favicon_water_linked.ico
+    palette:
+        accent: blue
+extra:
+    social:
+      - icon: fontawesome/brands/github
+        link: https://github.com/waterlinked/
+      - icon: fontawesome/brands/facebook
+        link: https://www.facebook.com/waterlinked/
+      - icon: fontawesome/brands/youtube
+        link: https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/
+
+markdown_extensions:
+  - markdown.extensions.admonition
+#  - markdown.extensions.codehilite(guess_lang=false)
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+
+extra_css:
+    - css/extra.css
+
+nav:
+    - Home: index.md
+    - Underwater GPS G2:
+        - Introduction: underwater-gps/introduction.md
+        - Warnings: underwater-gps/warnings.md
+        - Power supply: underwater-gps/power-supply.md
+        - Network settings: underwater-gps/network-settings.md
+        - Hardware: underwater-gps/hardware.md
+        - BlueROV2 integration: underwater-gps/bluerov-integration.md
+        - GUI:
+            - Position: underwater-gps/gui/position.md
+            - Receivers: underwater-gps/gui/receivers.md
+            - Settings: underwater-gps/gui/settings.md
+            - Diagnostic: underwater-gps/gui/diagnostic.md
+            - API: underwater-gps/gui/api.md
+        - Quickstart: underwater-gps/quickstart.md
+        - Trouble shooting: underwater-gps/trouble-shooting.md
+    - Underwater GPS Explorer Kit:
+        - Introduction: explorer-kit/introduction.md
+        - Warnings: explorer-kit/warnings.md
+        - Power supply: explorer-kit/power-supply.md
+        - Network settings: explorer-kit/network-settings.md
+        - Hardware: explorer-kit/hardware.md
+        - Master-D1: master-d1.md
+        - GUI:
+            - Position: explorer-kit/gui/position.md
+            - Receivers: explorer-kit/gui/receivers.md
+            - Settings: explorer-kit/gui/settings.md
+            - Diagnostic: explorer-kit/gui/diagnostic.md
+            - API: explorer-kit/gui/api.md
+        - Software Update: explorer-kit/upgrader.md
+        - Quickstart: explorer-kit/quickstart.md
+        - Trouble shooting: explorer-kit/trouble-shooting.md
+
+    - Locators:
+        - Introduction: locators/introduction.md
+        - Locator-A1: locators/locator-a1.md
+        - Locator-D1: locators/locator-d1.md
+        - Locator-S1: locators/locator-s1.md
+        - Locator-U1: locators/locator-u1.md
+
+    - Receiver-D1: receiver-d1.md
+    - Antenna: antenna.md
+    - Modems:
+        - Modem-M64: modems/modem-m64.md
+        - Protocol: modems/modem-m64-protocol.md
+    - DVLs:
+        - DVL A50:
+          - Introduction: dvl/dvl-a50.md
+          - Details: dvl/dvl-a50-details.md
+          - BlueROV2 integration: dvl/bluerov-integration.md
+        - DVL A125:
+          - Introduction: dvl/dvl-a125.md
+          - Details: dvl/dvl-a125-details.md
+        - Protocol: dvl/dvl-protocol.md
+        - IO Interface: dvl/io-interface.md
+    - Software update: sw-update.md
+    - Channel overview: channels.md
+    - Tutorials: tutorials.md
+    - Helpful Links: helpful-links.md
+
+copyright: © Water Linked 2018-2021
