@@ -158,12 +158,12 @@ Press the PLC module into the socket, making sure that the press-fit standoffs l
 
 ![topside-plc-standoffs](../img/topside-plc-standoffs.png)
 
-### Interface Electronics modification (Optional)
+### Interface Electronics modification
 
 !!! Warning
 	Skipping this step leaves a regulated 12V power source from the Underwater GPS on the PLC lines (pins 1 (GND) and 2 (12V) on the Locator bulkhead). Connecting non-isolated equipment to the PLC lines may damage the Underwater GPS or any external equipment.
 
-The Interface Electronics board in the Underwater GPS housing comes with the resistors R2 and R3 attached. These put GND on pin 1 and 12V on pin 2 of the bulkhead connector with the label “Locator”. The configuration of the FXTI, BlueROV2 and the Locator-A1 as presented in this guide is not affected by leaving these resistors on the board. In any other configuration, you should assess whether or not removing R2 and R3 is necessary for safe operation.
+The Interface Electronics board in the Underwater GPS housing comes with the resistors R2 and R3 which put GND on pin 1 and 12V on pin 2 of the bulkhead connector with the label “Locator”. The configuration of the FXTI, BlueROV2 and the Underwater GPS G2 *are* affected by leaving these resistors on the board, so they *must* be removed for normal operation. The resistors can be removed using a soldering iron. Note that Locator-D1 cannot be used unless the resistors are soldered back on to the Interface Electronics.
 
 ![topside-interface-resistors](../img/topside-interface-resistors.png)
 
@@ -205,22 +205,25 @@ To work properly, the Water Linked UGPS system requires ArduSub Companion image 
 
 ## Software setup
 
-Configure the Water Linked system with a static IP address of 192.168.2.94 according to the [Network section](network-settings.md) of the Water Linked Documentation.
+1. Configure the Water Linked system with a static IP address of 192.168.2.94 according to the [Network section](network-settings.md) of the Water Linked Documentation.
 
-Connect the topside computer to the FXTI. Connect the BlueROV2 to the FXTI and power the BlueROV2 normally.
+2. Connect the topside computer to the FXTI and configure the topside computer to static IP address 192.168.2.1.
 
-Connect the FXTI to the Water Linked Box using the 3m deck extension cable from the BlueROV2 Integration Kit.
+3. Connect the BlueROV2 to the FXTI and power the BlueROV2 normally.
 
-Follow the [Quickstart](quickstart.md) from the Water Linked Documentation for:
+4. Start QGroundControl and verify the connection to the BlueROV2.
 
-* Powering the Water Linked box.
-* Calibrating the IMU.
-* Deploying receivers.
-* Making Receiver-D1 connections to the box.
+5. Connect the FXTI to the Water Linked Box using the deck extension cable from the BlueROV2 Integration Kit.
 
-To configure the receiver location Water Linked Underwater GPS system, navigate to `http://192.168.2.94/#/receivers` in your browser. Please refer to the [Receivers section](../receiver-d1.md) for further information on configuration.
+6. Follow the [Quickstart](quickstart.md) from the Water Linked Documentation for:
+	* Powering the Water Linked box.
+	* Calibrating the IMU.
+	* Deploying receivers.
+	* Making Antenna/Receiver-D1 connections to the box.
 
-Power on the BlueROV2 and dive so the Locator is submerged a few inches below the surface.
+7. To configure the receiver locations on the Water Linked Underwater GPS system, navigate to `http://192.168.2.94/#/receivers` in your browser. Please refer to the [Receivers section](../receiver-d1.md) for further information on configuration.
+
+8. Dive the BlueROV2 so the Locator is submerged a few inches below the surface.
 
 If everything is operating correctly, you should now find an ROV position on the map in QGroundControl. The ROV position is indicated by a BlueROV2 image. The position of the surface vessel or Water Linked Master Electronics housing is indicated by a red arrow. The small ‘H’ icon indicates the ‘home position’, the location of the ROV’s first GPS lock.
 
@@ -236,6 +239,13 @@ If the error message *No external depth received. Is it being sent correctly?* i
 2. In the Companion Web Interface, go to the [MAVProxy](http://www.ardusub.com/operators-manual/companion-web.html#mavproxy) page: [http://192.168.2.2:2770/mavproxy](http://192.168.2.2:2770/mavproxy)
 3. Click on the “Restore Default Options” button.
 4. Power cycle the BlueROV2.
+
+### Slow or no connection
+
+If QGroundControl is not able to connect to the BlueROV2 and [192.168.2.94](http://192.168.2.94/#) is unavailable, there may be some issue with the PLC Homeplug network. Try the following:
+
+1. Make sure you did not skip [Interface Electronics modification](#interface-electronics-modification).
+2. Try isolating the problem by disconnecting the Underwater GPS G2 and ping the BlueROV2 on 192.168.2.2 in a terminal. Repeat for the Underwater GPS G2 by reconnecting the Underwater GPS G2 and disconnecting the BlueROV2. Ping 192.168.2.94 
 
 ## Water Linked software update
 
