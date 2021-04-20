@@ -56,7 +56,7 @@ You will also need:
 
 The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the IO Interface board. We recommend you do so near the end where the IO Interface board is to begin with.
 
-![cut-dvl-cable](../img/cut_io_interface.png)
+![cut-io-interface-rev3](../img/cut-io-interface-rev3.jpeg)
 
 !!! Warning
 	The DVL-A50 cable is permanently attached and non-replacable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!
@@ -80,18 +80,24 @@ If your BlueROV2 has the Heavy Configuration upgrade, the BlueROV2 mounting brac
 
 * Mark 2 hole positions on the BlueROV2 frame for attaching the BlueROV2 mounting bracket and drill through the frame using a 5 mm universal drill bit.
 
-![drilling-holes-in-bluerov-frame](../img/placeholder-300x300.jpg)
+![mark-hole-positions-in-bluerov-frame](../img/mark-hole-positions-in-bluerov-frame.jpeg) ![drilling-holes-in-bluerov-frame](../img/drilling-holes-in-bluerov-frame.jpeg)
 
-Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x16 mm screws, but do not secure the bracket in place as more work is needed on the cable end.
+Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x16 mm screws. No need to secure the bracket in place as more work must be done on the cable end.
+
+![check-a50-bracket-fit](../img/check-a50-bracket-fit.jpeg)
 
 ### Final cable lenght
 
 With the DVL-A50 now attached to the BlueROV2 frame, find the appropriate cable length needed by leading the cable back to the penetrator end cap of the BlueROV2 and add the length of the electronics enclosure (30 cm) to the cable. This is the *minimum* required cable length.
 
-!!! Note
+![measure-cable-length-of-a50](../img/measure-cable-length-of-a50.jpeg)
+
+!!! Tip
 	We recommend adding atleast another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.
 
 Cut the cable to the final length.
+
+![cutting-final-cabel-length-a50](../img/cutting-final-cabel-length-a50.jpeg)
 
 ## Installation
 
@@ -106,15 +112,17 @@ To prepare the IO Interface Board you will need:
 * Tweezers or nose pliers
 * Solder wick and/or desoldering pump
 
-* Cut off the zip tie holding the cable onto the IO Interface board.
+Cut off the zip tie holding the cable onto the IO Interface board.
 
-![cut_zip_tie](../img/placeholder-300x300.jpg)
+![cut-zip-tie-io-interface](../img/cut-zip-tie-io-interface.jpeg)
 
-* Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with a tweezer or nose pliers.
+Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with a tweezer or nose pliers.
 
-![remove_wires](../img/placeholder-300x300.jpg)
+![remove-wires-io-interface](../img/remove-wires-io-interface.jpeg)
 
-* Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove any excess solder from the now desoldered through hole pads.
+Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove any excess solder from the now desoldered through hole pads.
+
+![desoldered-io-interface](../img/desoldered-io-interface.jpeg)
 
 !!! Warning
 	Using too much force or heat may delaminate the IO Interface PCB, rendering the IO Interface board useless.
@@ -131,28 +139,28 @@ To add a penetrator to the cable you will need:
 !!! Note
 	The penetrator will be pottet using a potting compound. Most potting compounds need several hours or days to harden, so prepare a space where the potting can be left undisturbed for longer periods. Note also that working with potting compounds may get messy, so place old newspapers or some cardboard over the work area, and have single-use tissue nearby to clean any mess.
 
-* Strip off 25-30 cm of the cable jacket using a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping [here](https://bluerobotics.com/learn/cable-stripping/).
+Strip off 25-30 cm of the cable jacket using a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping [here](https://bluerobotics.com/learn/cable-stripping/).
 
-![stripped_cable](../img/placeholder-300x300.jpg)
+![stripped-a50-cable](../img/stripped-a50-cable.jpeg)
 
-* Feed the now exposed leads through the penetrator starting from the head, and continue feeding until the cable jacket is situated within the shoulder of the penetrator.
+Feed the now exposed leads through the penetrator starting from the head, and continue feeding until the cable jacket is situated within the shoulder of the penetrator.
 
-![labeled-penetrator-cutaway](../img/labeled-penetrator-cutaway.png)
+![a50-cable-through-penetrator](../img/a50-cable-through-penetrator.jpeg) ![labeled-penetrator-cutaway](../img/labeled-penetrator-cutaway.png)
 
-* With the threads of the penetrator pointing downwards and the cable pointing upwards, pour potting compound into the space between the cable and the penetrator. Fill with potting compound until it is flush with the top of the penetrator.
+With the threads of the penetrator pointing downwards and the cable pointing upwards, pour potting compound into the space between the cable and the penetrator. Fill with potting compound until it is flush with the top of the penetrator.
 
-![potting_cable](../img/placeholder-300x300.jpg)
+![potting-penetrator-rear](../img/potting-penetrator-rear.jpeg) ![potted-penetrator-rear](../img/potted-penetrator-rear.jpeg)
 
 !!! Tip
 	Use a clamping vice to hold the penetrator in place while pouring the potting compund.
 
-* Let the potting compound harden before proceeding.
+Let the potting compound harden before proceeding.
 
-* Turn the penetrator upside downs and fill the gap between the leads with more potting compound.
+Turn the penetrator upside downs and fill the gap between the leads with more potting compound.
 
-![potting_wires](../img/placeholder-300x300.jpg)
+![potting-penetrator-front](../img/potting-penetrator-front.jpeg) ![potted-penetrator-front](../img/potted-penetrator-front.jpeg)
 
-* Let the potting compound fully cure before proceeding.
+Let the potting compound fully cure before proceeding.
 
 ### Removing a blank penetrator
 
@@ -194,18 +202,22 @@ To install DVL-A50 into the end cap, you will need the following parts and tools
 
 Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.
 
-Remove the O-ring from the bag and apply silicone grease to it.
+Remove the O-ring from the bag
 
-![bluerov2-grease-o-ring](../img/bluerov2-grease-o-ring-1024x683.png)
+Install the O-ring onto the DVL-A50 cable penetrator and apply silicone grease to it.
 
-Install the O-ring onto the DVL-A50 cable penetrator.
+![grease-o-ring-on-a50-penetrator](../img/grease-o-ring-on-a50-penetrator.jpeg) ![o-ring-on-a50-penetrator](../img/o-ring-on-a50-penetrator.jpeg)
 
-Install the DVL-A50 cable penetrator on to the end cap in the hole you previously removed the blank penetrator from. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+Push the wires throught the hole in the end cap where you previously removed a blank penetrator from.
 
-![bluerov2-end-cap-A1](../img/bluerov2-end-cap-A50-1024x576.jpg)
+![a50-wires-through-bluerov2-end-cap](../img/a50-wires-through-bluerov2-end-cap.jpeg)
 
 !!! Tip
 	Since the penetrator has to be screwed on, adding a bit of tape around the end of the wires helps them stay untangles while turning. Also twisting the DVL-A50 cable in a clock-wise direction will aid in screwing on the penetrator.
+
+Screw on the DVL-A50 cable penetrator to the end cap. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+
+![screwed-in-a50-penetrator](../img/screwed-in-a50-penetrator.jpeg) ![tightened-a50-penetrator](../img/tightened-a50-penetrator.jpeg)
 
 ### Reinstall IO Interface Board
 
@@ -216,7 +228,9 @@ To reinstall the IO Interface Board onto the DVL-A50 cable you will need:
 * Solder wire
 * Zip tie
 
-With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below.
+With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below. The blue pair can be removed as it is not used for the DVL-A50.
+
+![stripped-wires-a50](../img/stripped-wires-a50.jpeg)
 
 !!! Warning
 	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complemeting color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire!
@@ -234,9 +248,11 @@ Resolder the leads of the DVL-A50 cable to the IO Interface board following the 
 | ![4tp2p_white-brown_lead](../img/4tp2p_white-brown_lead.png)   | TX               | Serial UART TX | 0.4 mm        | 26    |
 | ![4tp2p_brown_lead](../img/4tp2p_brown_lead.png)               | RX               | Serial UART RX | 0.4 mm        | 26    |
 
-![io_interface_wires](../img/io_interface_wires.png)
+![io-interface-wires](../img/io-interface-wires-300px.png)  ![soldered-wires-to-io-interface](../img/soldered-wires-to-io-interface.jpeg)
 
 Zip tie the soldered wires to the IO Interface board to protect the solder joints.
+
+![zip-tied-wires-a50](../img/zip-tied-wires-a50.jpeg)
 
 ### Connect to BlueROV2
 
