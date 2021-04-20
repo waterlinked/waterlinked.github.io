@@ -1,6 +1,6 @@
 # W-DN-17002 User Manuals
 
-[![Build Status](https://github.com/waterlinked/docs/workflows/Deploy%20Water%20Linked%20Docs/badge.svg)](https://github.com/waterlinked/docs/actions)
+[![Deploy Water Linked Docs](https://github.com/waterlinked/waterlinked.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/waterlinked/waterlinked.github.io/actions/workflows/build.yml)
 
 We are using mkdocs to manage our documentation.
 
@@ -14,8 +14,8 @@ This is done by creating a pull request.
 Make sure you have Python3 installed.
 
 ```
-git clone --recursive https://github.com/waterlinked/docs
-cd docs
+git clone https://github.com/waterlinked/waterlinked.github.io
+cd waterlinked.github.io
 
 python -m venv venv
 source venv/bin/activate (Linux)
@@ -32,25 +32,5 @@ mkdocs serve
 * Fire up your browser and go to localhost:8000
 
 ## Deploy changes to server
-After the changes have been tested and they work, push the changes to the master branch and Github will build the website under waterlinked.github.io/docs subfolder.
+After the changes have been tested and they work, push the changes to the master branch and Github will build the website and publish it on https://waterlinked.github.io.
 
-Once you're satisfied with the results, you can build the updated website on waterlinked.github.io itself. It is recommended to do this the following way:
-* Have both the "docs" and "waterlinked.github.io" repositories in the same folder on your local machine.
-```
-/Local Folder
-    /docs <-repo
-	    /docs
-	    mkdocs.yml
-	/waterlinked.github.io <-repo
-```
-* Make the changes in the "docs" repo.
-* Navigate to the "waterlinked.github.io" directory.
-```
-cd ../waterlinked.github.io/
-```
-* Use the mkdocs gh-deploy to build the webpage
-```
-mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master
-```
-
-The website should now be updated. You may then want to pull the updated "waterlinked.github.io" repo, although not necessary.
