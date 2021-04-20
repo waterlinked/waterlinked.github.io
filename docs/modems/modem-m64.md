@@ -27,14 +27,14 @@ The M64 sets a new market standard with its record-breaking physical size, low p
 
 ## Wiring interface
 
-The tables below shows the pinning of the Modem-M64 interface.
+The tables below shows the pinning of the Modem-M64 interface. Depending on which cable type is used, the power wires may have different colors.
 
-| Interface           | Color |
-| :------------------ | :-- |
-| Positive (10-18V) | Orange  |
-| Negative/Ground | Orange/White   |
-| UART RX | Brown  |
-| UART TX | Brown/White   |
+| Interface           | Color (Belden) | Color (4TP1P) |
+| :------------------ | :------------- | :------------ |
+| Positive (10-18V)   | Orange         | Red |
+| Negative/Ground     | Orange/White   | Black |
+| UART RX             | Brown          | Brown |
+| UART TX             | Brown/White    | Brown/White |
 
 ## Terminal Interface
 
