@@ -42,15 +42,15 @@ The Modem-M64 has a 3.3 volt UART interface.
 
 Modem M64 supports channels 1-7.
 
-| From (kHz) | To (kHz) | Channels using this frequency band | Comment |
-|-------|------|------|---------|
-| 31.25 | 62.25 | 1 | |
-| 62.25 | 93.75 | 2 (16) | |
-| 93.75 | 125.00 | 3 (16) | |
-| 125.00 | 156.00 |  4 (17) | |
-| 156.00 | 187.00 | 5 (17) | |
-| 187.00 | 218.00 | 6 (18) | |
-| 218.00 | 250.00 | 7 (18) | |
+| From (kHz) | To (kHz) | Channels using this frequency band |
+|-------|------|------|
+| 31.25 | 62.25 | 1 |
+| 62.25 | 93.75 | 2 (16) |
+| 93.75 | 125.00 | 3 (16) |
+| 125.00 | 156.00 |  4 (17) |
+| 156.00 | 187.00 | 5 (17) |
+| 187.00 | 218.00 | 6 (18) |
+| 218.00 | 250.00 | 7 (18) |
 
 Please note that the Underwater GPS Explorer kit channels 16, 17, 18 overlaps and all channels overlaps with Underwater GPS G2.
 
