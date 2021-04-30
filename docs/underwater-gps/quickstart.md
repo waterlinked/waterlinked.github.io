@@ -28,8 +28,8 @@ At the top bar on the GUI you will see a calibration bar for the IMU. To calibra
 Select the right Locator and choose which channal to listen on. This is configurated on the setting page of the web GUI. The Water Linked standard is to use channel 2. This is also the default channel for the Locator-U1.
 
 !!! warning
-    If you are using the Locator-A1 you need to provide depth information to the topside unit. Description on how to do this is found [here](gui/api.md#providing-depth-to-system-when-using-locator-a1).
-	
+    If you are using the Locator-A1 you need to provide depth information to the topside unit. Description on how to do this is found [here](integration/api.md#providing-depth-to-system-when-using-locator-a1).
+
 ## Deploying of Antenna/Receivers
 
 ### Antenna

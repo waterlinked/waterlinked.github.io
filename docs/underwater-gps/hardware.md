@@ -6,7 +6,7 @@
 
 ![pelicase_connectors](../img/pelicase_g2_connectors.png)
 
-\* *Locator-D1 is not compatible with the [BlueROV2 Integration Kit](bluerov-integration.md).*
+\* *Locator-D1 is not compatible with the [BlueROV2 Integration Kit](./integration/bluerov-integration.md).*
 
 ### Internal
 
@@ -14,9 +14,9 @@
 
 !!! Note
 	*NC*: Not Connected.
-	
+
 	*DNC*: Do Not Connect, pins used for production.
-	
+
 	**GND**: Boldface indicate power lines (12 V, 3.3 V, VIN, GND).
 
 #### 40 pin Molex Interface

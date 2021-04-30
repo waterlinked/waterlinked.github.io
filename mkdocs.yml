@@ -29,63 +29,85 @@ extra_css:
 
 nav:
     - Home: index.md
-    - Underwater GPS G2:
-        - Introduction: underwater-gps/introduction.md
-        - Warnings: underwater-gps/warnings.md
-        - Power supply: underwater-gps/power-supply.md
-        - Network settings: underwater-gps/network-settings.md
-        - Hardware: underwater-gps/hardware.md
-        - BlueROV2 integration: underwater-gps/bluerov-integration.md
-        - GUI:
-            - Position: underwater-gps/gui/position.md
-            - Receivers: underwater-gps/gui/receivers.md
-            - Settings: underwater-gps/gui/settings.md
-            - Diagnostic: underwater-gps/gui/diagnostic.md
-            - API: underwater-gps/gui/api.md
+    - Underwater GPS:
+      - G2:
         - Quickstart: underwater-gps/quickstart.md
-        - Trouble shooting: underwater-gps/trouble-shooting.md
-    - Underwater GPS Explorer Kit:
+        - Introduction: underwater-gps/introduction.md
+        - Topside:
+          - Hardware: underwater-gps/hardware.md
+          - Power supply: underwater-gps/power-supply.md
+          - Network settings: underwater-gps/network-settings.md
+        - Baseline:
+          - Antenna: antenna.md
+          - Receiver-D1: receiver-d1.md
+        - Locator:
+          - Locator-A1: locators/locator-a1.md
+          - Locator-D1: locators/locator-d1.md
+          - Locator-U1: locators/locator-u1.md
+        - GUI:
+          - Position: underwater-gps/gui/position.md
+          - Baseline: underwater-gps/gui/receivers.md
+          - Settings: underwater-gps/gui/settings.md
+          - Diagnostic: underwater-gps/gui/diagnostic.md
+          - Diagnostic report: underwater-gps/gui/diagnostic-report.md
+          - Warnings: underwater-gps/gui/warnings.md
+          - Demo GUI: underwater-gps/gui/demo-gui.md
+        - Integration:
+          - API: underwater-gps/integration/api.md
+          - BlueROV2 integration: underwater-gps/integration/bluerov-integration.md
+          - Code examples: underwater-gps/integration/code-examples.md
+        - Software update: underwater-gps/sw-update.md
+      - Explorer Kit:
+        - Quickstart: explorer-kit/quickstart.md
         - Introduction: explorer-kit/introduction.md
         - Warnings: explorer-kit/warnings.md
         - Power supply: explorer-kit/power-supply.md
         - Network settings: explorer-kit/network-settings.md
         - Hardware: explorer-kit/hardware.md
         - Master-D1: master-d1.md
+        - Receiver-D1: receiver-d1.md
+        - Locators:
+          - Locator-A1: locators/locator-a1.md
+          - Locator-D1: locators/locator-d1.md
+          - Locator-S1: locators/locator-s1.md
+          - Locator-U1: locators/locator-u1.md
         - GUI:
-            - Position: explorer-kit/gui/position.md
-            - Receivers: explorer-kit/gui/receivers.md
-            - Settings: explorer-kit/gui/settings.md
-            - Diagnostic: explorer-kit/gui/diagnostic.md
-            - API: explorer-kit/gui/api.md
+          - Position: explorer-kit/gui/position.md
+          - Receivers: explorer-kit/gui/receivers.md
+          - Settings: explorer-kit/gui/settings.md
+          - Diagnostic: explorer-kit/gui/diagnostic.md
+          - API: explorer-kit/gui/api.md
         - Software Update: explorer-kit/upgrader.md
-        - Quickstart: explorer-kit/quickstart.md
-        - Trouble shooting: explorer-kit/trouble-shooting.md
-
-    - Locators:
-        - Introduction: locators/introduction.md
-        - Locator-A1: locators/locator-a1.md
-        - Locator-D1: locators/locator-d1.md
-        - Locator-S1: locators/locator-s1.md
-        - Locator-U1: locators/locator-u1.md
-
-    - Receiver-D1: receiver-d1.md
-    - Antenna: antenna.md
-    - Modems:
-        - Modem-M64: modems/modem-m64.md
-        - Protocol: modems/modem-m64-protocol.md
-    - DVLs:
-        - DVL A50:
-          - Introduction: dvl/dvl-a50.md
-          - Details: dvl/dvl-a50-details.md
-          - BlueROV2 integration: dvl/bluerov-integration.md
-        - DVL A125:
-          - Introduction: dvl/dvl-a125.md
-          - Details: dvl/dvl-a125-details.md
-        - Protocol: dvl/dvl-protocol.md
+    - DVL:
+      - DVL A50:
+        - Introduction: dvl/dvl-a50.md
+        - Details: dvl/dvl-a50-details.md
+        #- Power supply: dvl/power-supply.md
         - IO Interface: dvl/io-interface.md
-    - Software update: sw-update.md
-    - Channel overview: channels.md
-    - Tutorials: tutorials.md
-    - Helpful Links: helpful-links.md
+      - DVL A125:
+        - Introduction: dvl/dvl-a125.md
+        - Details: dvl/dvl-a125-details.md
+        #- Power supply: dvl/power-supply.md
+        - IO Interface: dvl/io-interface.md
+      - GUI:
+      #  - Dashboard: dvl/a125/gui/position.md
+      #  - Outputs: dvl/a125/gui/position.md
+      #  - Configuration: dvl/a125/gui/position.md
+      #  - Diagnostic: dvl/a125/gui/position.md
+        - Diagnostic report: dvl/gui/diagnostic-report.md
+        - Demo GUI: dvl/gui/demo-gui.md
+      - Integration:
+        #- API: dvl/api.md
+        - Protocol: dvl/dvl-protocol.md
+        - BlueROV2 integration: dvl/bluerov-integration.md
+      - Software update: dvl/sw-update.md
+    - Modem:
+      - Modem-M64:
+        - Introduction: modem/modem-m64.md
+        #- Details: modem/modem-m64-details.md
+        #- Power supply: modem/power-supply.md
+        #- IO Interface: modem/io-interface.md
+      - Integration:
+        - Protocol: modem/modem-m64-protocol.md
 
 copyright: © Water Linked 2018-2021

@@ -1,5 +1,7 @@
 # DVL-A50
 
+[Buy DVL-A50 here!](https://waterlinked.com/product/dvl-a50/)
+
 ![dvl_a50](../img/DVL-A50.jpg)
 
 ## Description
@@ -8,17 +10,6 @@ The DVL-A50 is – by far – the world’s smallest commercially available Dopp
 The A50 is establishing a new market standard with its high performance, ultra-small 4 beam setup, open interface protocol and low cost.
 
 The DVL estimates velocity relative to the sea bottom by sending acoustic waves from the four angled transducers and then measure the frequency shift (doppler effect) from the received echo. By combining the measurements of all four transducers and the time between each acoustic pulse, it is possible to very accurately estimate the speed and direction of movement.
-
-## Key specifications
-
-* 0.05 - 50 meter range
-* 1 MHz transducer frequency
-* 4-26 Hz ping rate (altitude dependent)
-* 2 m/s max velocity
-* ± 0.1 cm/s long term accuracy
-* 300 meter depth rating
-* 10-30 V input voltage (reversed-polarity protection)
-* Ethernet and UART
 
 !!! Note
 	The DVL-A50 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performace edition.

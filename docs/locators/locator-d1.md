@@ -1,5 +1,7 @@
 # Locator-D1
 
+[Buy Locator-D1 here!](https://waterlinked.com/product/locator-d1/)
+
 ## Description
 
 The Locator-D1 carries its own depth sensor and can therefore operate fully stand-alone and independent of the device you want to position.
@@ -19,5 +21,7 @@ The tables below shows the pinning of the D1 interface connectors.
 ## Dimensions
 
 ![d1_dimensions](../img/d1_dimensions.png)
+
+## Datasheet
 
 [Datasheet](https://www.waterlinked.com/datasheets/locator-d1/)

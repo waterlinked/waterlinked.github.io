@@ -27,7 +27,7 @@
         </a>
     </div>
     <div  class="col-xs-12 col-sm-6 col-md-4 col-l-4 col-xl-3 col-3">
-        <a href="./modems/modem-m64">
+        <a href="./modem/modem-m64">
             <img src="https://waterlinked.com/wp-content/uploads/2019/02/DSC02201-Edit-300x300.jpg" /><br>
             <h4>Modem-M64</h4>
         </a>

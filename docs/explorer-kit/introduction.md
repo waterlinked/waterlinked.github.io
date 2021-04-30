@@ -1,6 +1,6 @@
 # Introduction
 
-## Underwater GPS Explorer Kit 
+## Underwater GPS Explorer Kit
 
 <div style="text-align: center;"><img src="../../img/pelicase.png" style="width: 550px;"></div><br>
 
@@ -14,8 +14,8 @@ Once the position is known relative to the Receivers, the global position can be
 
 ## Kit content
 
-* 1 x Underwater GPS Housing with Master-D1 electronics 
-* 4 x Receiver-D1 with 10m cable 
+* 1 x Underwater GPS Housing with Master-D1 electronics
+* 4 x Receiver-D1 with 10m cable
 * 1 x Locator of choice
 * 1 x 3m Ethernet cable
 * 1 x 3m power cable
@@ -39,5 +39,7 @@ This document is created using markdown and is hosted on GitHub. If you find som
 
 If you have more questions which is not answered on this page please go to our [forum](https://waterlinked.com/forums/forum/underwater-gps/) where we will be happy to answer you.
 
+
+## Datasheet
 
 [Datasheet](https://www.waterlinked.com/datasheets/underwater-gps-explorer-kit/)

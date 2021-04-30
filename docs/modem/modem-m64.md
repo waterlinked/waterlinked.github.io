@@ -1,20 +1,12 @@
 # Modem-M64
 
+[Buy Modem-M64 here!](https://waterlinked.com/product/modem-m64/)
+
 ## Description
 
 The Modem M64 is a two-way half-duplex 64bps acoustic modem with a robust and user configurable data link.
 
 The M64 sets a new market standard with its record-breaking physical size, low power requirement and cost. All this combined with a very useful technical specification, the M64 opens new possibilities for underwater communication in both existing and new areas.
-
-## Key specifications
-
-* Two-way communication
-
-* 64 bit per second net data link, both ways
-
-* Latency 1.5 – 2.5 sec
-
-* 200 meter range
 
 ## LED Signals
 
@@ -48,7 +40,19 @@ The Modem-M64 has a 3.3 volt UART interface.
 
 ## Channels
 
-Modem M64 supports channels 1-7. Channel overveiw can be found [here](../channels.md).
+Modem M64 supports channels 1-7.
+
+| From (kHz) | To (kHz) | Channels using this frequency band | Comment |
+|-------|------|------|---------|
+| 31.25 | 62.25 | 1 | |
+| 62.25 | 93.75 | 2 (16) | |
+| 93.75 | 125.00 | 3 (16) | |
+| 125.00 | 156.00 |  4 (17) | |
+| 156.00 | 187.00 | 5 (17) | |
+| 187.00 | 218.00 | 6 (18) | |
+| 218.00 | 250.00 | 7 (18) | |
+
+Please note that the Underwater GPS Explorer kit channels 16, 17, 18 overlaps and all channels overlaps with Underwater GPS G2.
 
 ## Libraries and code examples
 
@@ -59,3 +63,8 @@ Example code and libraries that can be used to communicate with the modem on the
 ## Dimensions
 
 ![modem_m64_dimensions](../img/modem_m64_dimensions.png)
+
+## Datasheet
+
+[Datasheet](https://waterlinked.com/datasheets/modem-m64/)
+

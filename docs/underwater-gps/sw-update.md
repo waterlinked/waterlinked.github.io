@@ -6,9 +6,7 @@ Products currently supported for updates:
 
 | Product                     | GUI Link |
 | --------------------------- | :--- |
-| DVL-A50                     | [http://waterlinked-dvl:9000/](http://waterlinked-dvl:9000/) |
 | Underwater GPS G2           | [http://waterlinked-ugps:9000/](http://waterlinked-ugps:9000/) |
-| Underwater GPS Explorer Kit | See [Explorer Kit Software Update ](../explorer-kit/upgrader/) |
 
 ## Automatic software update
 
