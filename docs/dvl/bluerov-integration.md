@@ -59,7 +59,7 @@ The first thing you will have to do before going about any of the installation o
 ![cut-io-interface-rev3](../img/cut-io-interface-rev3.jpeg)
 
 !!! Warning
-	The DVL-A50 cable is permanently attached and non-replacable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!
+	The DVL-A50 cable is permanently attached and non-replaceable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!
 
 ### Attaching the BlueROV2 mounting bracket
 
@@ -93,7 +93,7 @@ With the DVL-A50 now attached to the BlueROV2 frame, find the appropriate cable 
 ![measure-cable-length-of-a50](../img/measure-cable-length-of-a50.jpeg)
 
 !!! Tip
-	We recommend adding atleast another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.
+	We recommend adding at least another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.
 
 Cut the cable to the final length.
 
@@ -116,7 +116,7 @@ Cut off the zip tie holding the cable onto the IO Interface board.
 
 ![cut-zip-tie-io-interface](../img/cut-zip-tie-io-interface.jpeg)
 
-Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with a tweezer or nose pliers.
+Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with tweezers or nose pliers.
 
 ![remove-wires-io-interface](../img/remove-wires-io-interface.jpeg)
 
@@ -152,7 +152,7 @@ With the threads of the penetrator pointing downwards and the cable pointing upw
 ![potting-penetrator-rear](../img/potting-penetrator-rear.jpeg) ![potted-penetrator-rear](../img/potted-penetrator-rear.jpeg)
 
 !!! Tip
-	Use a clamping vice to hold the penetrator in place while pouring the potting compund.
+	Use a clamping vice to hold the penetrator in place while pouring the potting compound.
 
 Let the potting compound harden before proceeding.
 
@@ -233,9 +233,9 @@ With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the 
 ![stripped-wires-a50](../img/stripped-wires-a50.jpeg)
 
 !!! Warning
-	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complemeting color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire!
+	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complementing color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire!
 
-Resolder the leads of the DVL-A50 cable to the IO Interface board following the table below:
+Re-solder the leads of the DVL-A50 cable to the IO Interface board following the table below:
 
 | DVL-A50 cable                                                  | IO Interface pad | Function       | Diameter (mm) | AWG\# |
 | -------------------------------------------------------------- | :--------------- | :------------- | :------------ | :---- |
@@ -281,7 +281,7 @@ To provide power to the DVL-A50 you can either use (A) a 2-pin [Molex MicroFit3.
 !!! Warning
 	The Power Terminal Blocks are unregulated and directly connected to the battery. Any short may generate several amps which will fry most circuits. Check that the wires are secured properly in both ends.
 
-Providing power to the ethernet switch is dependent on choosen ethernet switch. For the switch we [recommend](https://www.aliexpress.com/item/32854568356.html) you will additionaly need a [DC/DC converter](https://octopart.com/7812sr-c-murata+power+solutions-49447769) to not exceed the 12V rating. The recommended switch comes with a JST-to-Barrel-plug cable assembly which is used in this guide:
+Providing power to the ethernet switch is dependent on chosen ethernet switch. For the switch we [recommend](https://www.aliexpress.com/item/32854568356.html) you will additionally need a [DC/DC converter](https://octopart.com/7812sr-c-murata+power+solutions-49447769) to not exceed the 12V rating. The recommended switch comes with a JST-to-Barrel-plug cable assembly which is used in this guide:
 
 * Cut off the wires near the barrel plug.
 * Strip off 2-3 mm of the cut wire ends.
@@ -295,18 +295,21 @@ Providing power to the ethernet switch is dependent on choosen ethernet switch. 
 * Connect the two 30 cm wires to the Power Terminal Blocks in the same fashion as with the DVL-A50 power.
 * Connect JST header from the now modified JST-to-Barrel-plug cable assembly to the ethernet switch.
 
+!!! Warning
+	Improper insulation of exposed pads and wires may cause electrical shorts and pose a fire hazard. Insulate exposed leads, pads, and components using appropriate insulation materials and methods such as wrapping in electrical tape.
+
 With power now sorted, we will connect up the ethernet cables:
 
-* Disconnect the ethernet cable attached to the Raspberry Pi comming from the Fathom-X Tether Interface Board.
+* Disconnect the ethernet cable attached to the Raspberry Pi coming from the Fathom-X Tether Interface Board.
 * Connect the ethernet from the Fathom-X Tether Interface Board to the ethernet switch.
 * Connect a 6" ethernet cable from the Raspberry Pi to the ethernet switch.
 * Connect a 6" ethernet cable from the IO Interface Board to the ethernet switch.
 
 !!! Tip
-	Insulate exposed leads and components using electrical tape. Some thick double-sided sticky tape and zip ties can be used to secure the IO Interface, the ethernet switch, the DC/DC converter and wires to the electroncs frame inside the BlueROV2.
+	Some thick double-sided sticky tape and zip ties can be used to secure the IO Interface, the ethernet switch, the DC/DC converter and wires to the electroncs frame inside the BlueROV2.
 
 
-### Reasemble BlueROV2 electronics enclosure
+### Reassemble BlueROV2 electronics enclosure
 
 To reassemble your BlueROV2 Electronics Enclosure, you will need the following parts and tools:
 
@@ -320,7 +323,7 @@ Reinstall 4” Watertight Enclosure onto ROV with the following steps:
 * Install the Watertight Enclosure (4” Series) with installed Dome End Cap to the O-Ring Flange (4” Series).
 
 !!! Warning
-	Use caution when sliding the 4" Watertight Enclosure over the electronics as space may be tight (collides with electroncis) and wires can get trapped between the 4" tube and the 4" end cap.
+	Use caution when sliding the 4" Watertight Enclosure over the electronics as space may be tight (collides with electronics) and wires can get trapped between the 4" tube and the 4" end cap.
 
 Mount the Electronics Enclosure to the frame using the M3x16 screws so that the dome is on the same side as the front center panels (the center panels without the 3 large holes). Install the M3x16 screws through the clips and into the Enclosure Cradle (4” Series). It is easier to install these screws if the clips are not fully tightened until all screws are through the clips and threading into the Enclosure Cradle (4” Series). This allows clips to rotate so you can find the threaded hole in the Enclosure Cradle (4” Series) easily.
 
