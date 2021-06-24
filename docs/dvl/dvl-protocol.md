@@ -118,6 +118,37 @@ wrt,14.90,15.10,14.80,-1.00*53
 wrt,15.00,15.20,14.90,-1.00*71
 ```
 
+### Local position
+
+Local position reports current position based on dead reckoning calculation. The expected update rate is 5-10 Hz. Rotation measures from gyro are published together with dead reckoning.
+
+The format are:  
+`wrp,`*[time_stamp],[x],[y],[z],[pos_std],[roll],[pitch],[yaw],[status]*
+
+Variable    | Description 
+------------|-------------
+time_stamp  | Time stamp for each published position
+x           | Distance in x direction (m/s)
+y           | Distance in x direction (m/s)
+z           | Distance in downward direction (m/s)
+pos_std     | Standard deviaton (Figure of merit) for position
+roll        | Rotation around Y axis
+pitch       | Rotation around X axis
+yaw         | Rotation around Z axis (heading)
+
+Example where position are valid:
+
+```
+wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,0*de
+wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,0*e2
+```
+
+Example where position is not valid:
+
+```
+wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,1*d9
+wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,1*e5
+```
 ### Checksum
 
 The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
@@ -145,9 +176,9 @@ else:
 
 ### Overview
 
-The DVL supports sending velocity updates using the Transmission Control Protocol (TCP). The DVL runs a TCP server on port 16171.
+The DVL supports sending velocity and position updates using the Transmission Control Protocol (TCP). The DVL runs a TCP server on port 16171.
 
-Each packet sent contains a velocity report from the DVL on JSON format.
+Each packet are sent in JSON format.
 
 ### Velocity report
 
@@ -161,10 +192,11 @@ Velocity report is outputted after each measurement has been completed. The expe
 | vz | Measured velocity in z direction (m/s) |
 | fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
 | altitude | Measured altitude to the bottom  (m) |
+| transducers | Is a list containing information from each transducer: [id, velocity, distance, rssi, nsd, beam_valid] |
 | velocity_valid | If valid is true the DVL has lock on the bottom and the altitude and velocities are valid (true/false) |
 | status | Reports if there are any issues with the DVL. 0 means no errors |
-| format | Format type and version for the velocity report |
-| transducers | Is a list containing information from each transducer: [id, velocity, distance, rssi, nsd, beam_valid] |
+| format | Format type and version for the velocity report , eg "json_v2"|
+| type | Report type. For velocity report it will be "velocity" |
 
 Example of TCP report. (indented for readability)
 
@@ -212,7 +244,45 @@ Example of TCP report. (indented for readability)
   ],
   "velocity_valid": true,
   "status": 0,
-  "format": "json_v1"
+  "format": "json_v1",
+  "type": "velocity"
+}
+```
+
+### Local position
+
+Local position reports current position based on dead reckoning calculation. The expected update rate is 5-10 Hz. Rotation measures from gyro are published together with dead reckoning.
+
+Variable    | Description 
+------------|-------------
+ts          | Time stamp for each published position
+x           | Distance in x direction (meters)
+y           | Distance in x direction (meters)
+z           | Distance in downward direction (meters)
+pos_std     | Standard deviaton (Figure of merit) for position
+roll        | Rotation around Y axis
+pitch       | Rotation around X axis
+yaw         | Rotation around Z axis (heading)
+type        | Report type will be "position_local"
+status      | Reports if there are any issues with the DVL. 0 means no errors
+format      | Format type and version for the position report, eg "json_v2"
+
+
+Example of position report.
+
+```
+{
+  "ts": 49056.809,
+  "x": 12.43563613697886467,
+  "y": 64.617631152402609587,
+  "z": 1.767641898933798075,
+  "pos_std": 0.001959984190762043,
+  "roll": 0.6173566579818726,
+  "pitch": 0.6173566579818726,
+  "jaw": 0.6173566579818726,
+  "type": "position_local",
+  "status": 0,
+  "format": "json_v2"
 }
 
 ```

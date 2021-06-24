@@ -90,7 +90,7 @@ nav:
         #- Power supply: dvl/power-supply.md
         - IO Interface: dvl/io-interface.md
       - GUI:
-      #  - Dashboard: dvl/a125/gui/position.md
+        - Dashboard: dvl/gui/dashboard.md
       #  - Outputs: dvl/a125/gui/position.md
       #  - Configuration: dvl/a125/gui/position.md
       #  - Diagnostic: dvl/a125/gui/position.md
