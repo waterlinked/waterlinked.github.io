@@ -1,14 +1,14 @@
 # Dashboard
 
-Using your favorite web browser, navigate to the IP address as described in [details](../dvl-a50-details.md#web-gui) section. 
+All our DVLs provide a web based GUI, where you can get various information and manage configuration. Use your favorite browser and navigate to the IP address as described in [details](../dvl-a50-details.md#web-gui). 
 
-Default page is the dashboard where you will get current status and values along with dead reckoning on a map.
+The default page will be a dashboard. The dashboard will display current status, some measured values and a calculated [position](../../dead-reckoning/). Position will be visualizes in a map along the current values.
 
 
 ![](../../img/dvl_gui_dashboard.png)
 
 
-# Map controll
+# Map controlls
 Button                                  |Description
 ----------------------------------------|-----------------------------------------------------------------
 +/-/[ ]                                 |Zoom and fullscreen controlls 
