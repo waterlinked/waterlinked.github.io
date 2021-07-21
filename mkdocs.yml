@@ -90,12 +90,10 @@ nav:
         #- Power supply: dvl/power-supply.md
         - IO Interface: dvl/io-interface.md
       - GUI:
-      #  - Dashboard: dvl/a125/gui/position.md
-      #  - Outputs: dvl/a125/gui/position.md
-      #  - Configuration: dvl/a125/gui/position.md
-      #  - Diagnostic: dvl/a125/gui/position.md
+        - Dashboard: dvl/gui/dashboard.md
         - Diagnostic report: dvl/gui/diagnostic-report.md
         - Demo GUI: dvl/gui/demo-gui.md
+      - Dead reckoning: dvl/dead-reckoning.md
       - Integration:
         #- API: dvl/api.md
         - Protocol: dvl/dvl-protocol.md

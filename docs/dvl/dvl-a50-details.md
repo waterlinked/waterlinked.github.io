@@ -2,7 +2,7 @@
 
 ## Axis conventions
 
-The axis on the DVL-A50 are oriented North-East-Down (NED)
+The axis on the DVL-A50  are oriented as follows:
 
 * X axis is pointing forward (LED is forward, cable backward)
 * Y axis is pointing right
@@ -49,8 +49,7 @@ The mDNS name used for the DVL is: `waterlinked-dvl`.
 On operating systems supporting mDNS you can open the web GUI via the following URL: [http://waterlinked-dvl](http://waterlinked-dvl).
 If mDNS is not supported you need to obtain the IP address of the DVL and use that in your browser (http://IP_ADDRESS).
 
-The web GUI shows the status of the DVL (velocity and altitude) as well as diagnostic information.
-The web GUI also allows for network configuration.
+From the web [GUI](../gui/dashboard) you can watch statuses, measurements and do some configuration.
 
 ### Network configuration
 
