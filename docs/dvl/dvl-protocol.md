@@ -118,9 +118,9 @@ wrt,14.90,15.10,14.80,-1.00*53
 wrt,15.00,15.20,14.90,-1.00*71
 ```
 
-### Local position
+### Dead reckoning position report
 
-Local position reports current position based on dead reckoning calculation. The expected update rate is 5-10 Hz. Rotation measures from gyro are published together with dead reckoning.
+Local position reports outputs current position calculated by the dead reckoning algorithm. The expected update rate is 5 Hz. The orientation of the DVL, roll, pitch and yaw angles are  published together with dead reckoning. See [details](../dead-reckoning/).
 
 The format are:  
 `wrp,`*[time_stamp],[x],[y],[z],[pos_std],[roll],[pitch],[yaw],[status]*
@@ -128,13 +128,14 @@ The format are:
 Variable    | Description 
 ------------|-------------
 time_stamp  | Time stamp for each published position
-x           | Distance in x direction (m/s)
-y           | Distance in x direction (m/s)
+x           | Distance in X direction (m/s)
+y           | Distance in Y direction (m/s)
 z           | Distance in downward direction (m/s)
 pos_std     | Standard deviaton (Figure of merit) for position
-roll        | Rotation around Y axis
-pitch       | Rotation around X axis
+roll        | Rotation around X axis
+pitch       | Rotation around Y axis
 yaw         | Rotation around Z axis (heading)
+status      | Reports if there are any issues with the DVL. 0 means no errors |
 
 Example where position are valid:
 
@@ -249,19 +250,19 @@ Example of TCP report. (indented for readability)
 }
 ```
 
-### Local position
+### Dead reckoning position report
 
-Local position reports current position based on dead reckoning calculation. The expected update rate is 5-10 Hz. Rotation measures from gyro are published together with dead reckoning.
+Local position reports outputs current position calculated by the dead reckoning algorithm. The expected update rate is 5 Hz. The orientation of the DVL, roll, pitch and yaw angles are  published together with dead reckoning. See [details](../dead-reckoning/).
 
 Variable    | Description 
 ------------|-------------
 ts          | Time stamp for each published position
-x           | Distance in x direction (meters)
-y           | Distance in x direction (meters)
+x           | Distance in X direction (meters)
+y           | Distance in Y direction (meters)
 z           | Distance in downward direction (meters)
 pos_std     | Standard deviaton (Figure of merit) for position
-roll        | Rotation around Y axis
-pitch       | Rotation around X axis
+roll        | Rotation around X axis
+pitch       | Rotation around Y axis
 yaw         | Rotation around Z axis (heading)
 type        | Report type will be "position_local"
 status      | Reports if there are any issues with the DVL. 0 means no errors
