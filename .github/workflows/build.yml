@@ -17,6 +17,7 @@ jobs:
         python-version: 3.6
     - name: Install dependencies
       run: |
+        sudo apt install build-essential
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
 
