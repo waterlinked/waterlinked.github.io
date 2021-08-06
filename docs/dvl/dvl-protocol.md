@@ -41,7 +41,7 @@ To support any Water Linked DVL the connection procedure is to:
 
 !!!note
     Checksum is optional when sending commands to the DVL. The DVL always returns a checksum. The checksum algorithm
-    is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`).
+    is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`). See [below](#checksum) for details.
 
 ### Commands
 
@@ -58,9 +58,11 @@ Commands in the table are shown **without** the checksum for readability.
 
 ### Velocity report
 
-Velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz. The X, Y, Z axis are oriented according to the marking on the DVL.
+A velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude, but will be in the range 2-26 Hz.
 
-The velocities measured response is on the following format:
+The X, Y, Z axes are with respect to the body frame of the DVL, oriented as marked on the DVL, and as summarised in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
+
+The report is in the following format:
 `wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]*
 
 | Variable | Description |
@@ -71,7 +73,7 @@ The velocities measured response is on the following format:
 | vz | Measured velocity in z direction (m/s) |
 | fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
 | altitude | Measured altitude to the bottom (m) |
-| valid | If valid is "y" the DVL has lock on the bottom and the altitude and velocities are valid (y/n) |
+| valid | If valid is "y", the DVL has lock on the bottom and the altitude and velocities are valid (y/n) |
 | status | 0 for normal operation, 1 for high temperature warning |
 
 Example where velocities are valid:
@@ -82,7 +84,7 @@ wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
 wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
 ```
 
-Example where velocity and altitude is not valid and high temperature warning is given:
+Example where velocities and altitude are not valid and a high temperature warning occurs:
 
 ```
 wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
@@ -92,26 +94,26 @@ wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
 
 ### Transducer report
 
-Transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz.
+A transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz.
 
-The distances measured form each transducer is on the following format:
+The report provides the distances measured from each transducer, in the following format:
 `wrt,`*[dist_1],[dist_2],[dist_3],[dist_4]*
 
 | Variable | Description |
 |----------|-------------|
-| dist_1 | Measured distance to bottom from trancduser 1 (m) |
-| dist_2 | Measured distance to bottom from trancduser 2 (m) |
-| dist_3 | Measured distance to bottom from trancduser 3 (m) |
-| dist_4 | Measured distance to bottom from trancduser 4 (m) |
+| dist_1 | Measured distance to bottom from transducer 1 (m) |
+| dist_2 | Measured distance to bottom from transducer 2 (m) |
+| dist_3 | Measured distance to bottom from transducer 3 (m) |
+| dist_4 | Measured distance to bottom from transducer 4 (m) |
 
-Example where velocities are valid:
+Example where all distances are valid:
 
 ```
 wrt,15.00,15.20,14.90,14.20*b1
 wrt,14.90,15.10,14.80,14.10*ac
 ```
 
-Example where distance is not valid on transducer 4:
+Example where distance is not valid for transducer 4:
 
 ```
 wrt,14.90,15.10,14.80,-1.00*53
@@ -120,24 +122,26 @@ wrt,15.00,15.20,14.90,-1.00*71
 
 ### Dead reckoning position report
 
-Local position reports outputs current position calculated by the dead reckoning algorithm. The expected update rate is 5 Hz. The orientation of the DVL, roll, pitch and yaw angles are  published together with dead reckoning. See [details](../dead-reckoning/).
+A local position report outputs the current position of the DVL as calculated by [dead reckoning](../dead-reckoning). The expected update rate is 5 Hz. The orientation of the DVL in terms of roll, pitch and yaw angles is included along with the position.
 
-The format are:  
+The position and orientation data is all in an Earth-related (NED) reference frame defined by the position of the X, Y, Z axes of the DVL upon the last pressing of the reset button ![](../img/dvl_gui_icon_reset.png) in the dashboard, as described in the [Orientation](../dead-reckoning/#orientation) section of the manual page on the DVL's dead reckoning.
+
+The format is:
 `wrp,`*[time_stamp],[x],[y],[z],[pos_std],[roll],[pitch],[yaw],[status]*
 
-Variable    | Description 
+Variable    | Description
 ------------|-------------
-time_stamp  | Time stamp for each published position
-x           | Distance in X direction (m/s)
-y           | Distance in Y direction (m/s)
-z           | Distance in downward direction (m/s)
-pos_std     | Standard deviaton (Figure of merit) for position
+time_stamp  | Time stamp (milliseconds since last press of reset button)
+x           | Distance in X direction (m)
+y           | Distance in Y direction (m)
+z           | Distance in downward direction (m)
+pos_std     | Standard deviation (Figure of merit) for position
 roll        | Rotation around X axis
 pitch       | Rotation around Y axis
 yaw         | Rotation around Z axis (heading)
 status      | Reports if there are any issues with the DVL. 0 means no errors |
 
-Example where position are valid:
+Example where position is valid:
 
 ```
 wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,0*de
@@ -150,6 +154,7 @@ Example where position is not valid:
 wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,1*d9
 wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,1*e5
 ```
+
 ### Checksum
 
 The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
@@ -173,17 +178,70 @@ else:
     print("CRC invalid")
 ```
 
+The [crcmod](https://pypi.org/project/crcmod/) python package can generate code in other languages. Here is an example (subject to the [MIT License](https://opensource.org/licenses/MIT)) for C which should be straightforward to adapt to other languages.
+
+```
+static const uint8_t lookup_table[256] = {
+    0x00U,0x07U,0x0EU,0x09U,0x1CU,0x1BU,0x12U,0x15U,
+    0x38U,0x3FU,0x36U,0x31U,0x24U,0x23U,0x2AU,0x2DU,
+    0x70U,0x77U,0x7EU,0x79U,0x6CU,0x6BU,0x62U,0x65U,
+    0x48U,0x4FU,0x46U,0x41U,0x54U,0x53U,0x5AU,0x5DU,
+    0xE0U,0xE7U,0xEEU,0xE9U,0xFCU,0xFBU,0xF2U,0xF5U,
+    0xD8U,0xDFU,0xD6U,0xD1U,0xC4U,0xC3U,0xCAU,0xCDU,
+    0x90U,0x97U,0x9EU,0x99U,0x8CU,0x8BU,0x82U,0x85U,
+    0xA8U,0xAFU,0xA6U,0xA1U,0xB4U,0xB3U,0xBAU,0xBDU,
+    0xC7U,0xC0U,0xC9U,0xCEU,0xDBU,0xDCU,0xD5U,0xD2U,
+    0xFFU,0xF8U,0xF1U,0xF6U,0xE3U,0xE4U,0xEDU,0xEAU,
+    0xB7U,0xB0U,0xB9U,0xBEU,0xABU,0xACU,0xA5U,0xA2U,
+    0x8FU,0x88U,0x81U,0x86U,0x93U,0x94U,0x9DU,0x9AU,
+    0x27U,0x20U,0x29U,0x2EU,0x3BU,0x3CU,0x35U,0x32U,
+    0x1FU,0x18U,0x11U,0x16U,0x03U,0x04U,0x0DU,0x0AU,
+    0x57U,0x50U,0x59U,0x5EU,0x4BU,0x4CU,0x45U,0x42U,
+    0x6FU,0x68U,0x61U,0x66U,0x73U,0x74U,0x7DU,0x7AU,
+    0x89U,0x8EU,0x87U,0x80U,0x95U,0x92U,0x9BU,0x9CU,
+    0xB1U,0xB6U,0xBFU,0xB8U,0xADU,0xAAU,0xA3U,0xA4U,
+    0xF9U,0xFEU,0xF7U,0xF0U,0xE5U,0xE2U,0xEBU,0xECU,
+    0xC1U,0xC6U,0xCFU,0xC8U,0xDDU,0xDAU,0xD3U,0xD4U,
+    0x69U,0x6EU,0x67U,0x60U,0x75U,0x72U,0x7BU,0x7CU,
+    0x51U,0x56U,0x5FU,0x58U,0x4DU,0x4AU,0x43U,0x44U,
+    0x19U,0x1EU,0x17U,0x10U,0x05U,0x02U,0x0BU,0x0CU,
+    0x21U,0x26U,0x2FU,0x28U,0x3DU,0x3AU,0x33U,0x34U,
+    0x4EU,0x49U,0x40U,0x47U,0x52U,0x55U,0x5CU,0x5BU,
+    0x76U,0x71U,0x78U,0x7FU,0x6AU,0x6DU,0x64U,0x63U,
+    0x3EU,0x39U,0x30U,0x37U,0x22U,0x25U,0x2CU,0x2BU,
+    0x06U,0x01U,0x08U,0x0FU,0x1AU,0x1DU,0x14U,0x13U,
+    0xAEU,0xA9U,0xA0U,0xA7U,0xB2U,0xB5U,0xBCU,0xBBU,
+    0x96U,0x91U,0x98U,0x9FU,0x8AU,0x8DU,0x84U,0x83U,
+    0xDEU,0xD9U,0xD0U,0xD7U,0xC2U,0xC5U,0xCCU,0xCBU,
+    0xE6U,0xE1U,0xE8U,0xEFU,0xFAU,0xFDU,0xF4U,0xF3U,
+};
+
+uint8_t crc8(uint8_t *message, int message_length) {
+    uint8_t checksum = 0;
+    while (message_length > 0) {
+        checksum = lookup_table[*message ^ checksum];
+        message++;
+        message_length--;
+    }
+    return checksum;
+}
+```
+
 ## Ethernet protocol (TCP)
 
 ### Overview
 
-The DVL supports sending velocity and position updates using the Transmission Control Protocol (TCP). The DVL runs a TCP server on port 16171.
+The DVL supports sending velocity, transducer, and position updates using the Transmission Control Protocol (TCP). The DVL runs a TCP server on port 16171.
 
-Each packet are sent in JSON format.
+The format of each packet is JSON.
 
-### Velocity report
+### Velocity and transducer report
 
-Velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude. The X, Y, Z axis are oriented according to the DVL. The messages are delimited by newline.
+A velocity and transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude, but will be in the range 2-26 Hz.
+
+The X, Y, Z axes are with respect to the body frame of the DVL, oriented as marked on the DVL, and as summarised in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
+
+The messages are delimited by newline.
 
 | Variable | Description |
 |----------|-------------|
@@ -199,7 +257,7 @@ Velocity report is outputted after each measurement has been completed. The expe
 | format | Format type and version for the velocity report , eg "json_v2"|
 | type | Report type. For velocity report it will be "velocity" |
 
-Example of TCP report. (indented for readability)
+Example of TCP report (indented for legibility)
 
 ```
 {
@@ -252,21 +310,24 @@ Example of TCP report. (indented for readability)
 
 ### Dead reckoning position report
 
-Local position reports outputs current position calculated by the dead reckoning algorithm. The expected update rate is 5 Hz. The orientation of the DVL, roll, pitch and yaw angles are  published together with dead reckoning. See [details](../dead-reckoning/).
+A local position report outputs the current position of the DVL as calculated by [dead reckoning](../dead-reckoning). The expected update rate is 5 Hz. The orientation of the DVL in terms of roll, pitch and yaw angles is included along with the position.
 
-Variable    | Description 
+The position and orientation data is all in an Earth-related (NED) reference frame defined by the position of the X, Y, Z axes of the DVL upon the last pressing of the reset button ![](../img/dvl_gui_icon_reset.png) in the dashboard, as described in the [Orientation](../dead-reckoning/#orientation) section of the manual page on the DVL's dead reckoning.
+
+
+Variable    | Description
 ------------|-------------
-ts          | Time stamp for each published position
-x           | Distance in X direction (meters)
-y           | Distance in Y direction (meters)
-z           | Distance in downward direction (meters)
+ts          | Time stamp (milliseconds since last press of reset button)
+x           | Distance in X direction (m)
+y           | Distance in Y direction (m)
+z           | Distance in downward direction (m)
 pos_std     | Standard deviaton (Figure of merit) for position
 roll        | Rotation around X axis
 pitch       | Rotation around Y axis
 yaw         | Rotation around Z axis (heading)
-type        | Report type will be "position_local"
+type        | Report type: "position_local"
 status      | Reports if there are any issues with the DVL. 0 means no errors
-format      | Format type and version for the position report, eg "json_v2"
+format      | Format type and version for the position report, e.g. "json_v2"
 
 
 Example of position report.
@@ -280,7 +341,7 @@ Example of position report.
   "pos_std": 0.001959984190762043,
   "roll": 0.6173566579818726,
   "pitch": 0.6173566579818726,
-  "jaw": 0.6173566579818726,
+  "yaw": 0.6173566579818726,
   "type": "position_local",
   "status": 0,
   "format": "json_v2"

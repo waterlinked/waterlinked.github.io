@@ -50,7 +50,7 @@ The modem with role B will go back to listen mode if several consecutive packets
     Payload where every byte is \0 is reserved. It is used to keep modems in sync if no data packet is queued by the user. This sync packet is filtered out by the receiver. Avoid this payload by compressing the data or otherwise ensuring atleast 1 bit is non-zero.
 
 Checksum is optional when sending commands to the modem. The modem always returns a checksum. The checksum algorithm
-is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`).
+is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`). See the [checksum section](../../dvl/dvl-protocol/#checksum) of the manual for our DVL product (which uses the same CRC-8 algorithm) for further details and example code.
 
 ## Commands
 
