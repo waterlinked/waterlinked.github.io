@@ -42,4 +42,4 @@ If you have more questions which is not answered on this page please go to our [
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/underwater-gps-explorer-kit/)
+[Datasheet](https://store.waterlinked.com/datasheets/underwater-gps-explorer-kit/)

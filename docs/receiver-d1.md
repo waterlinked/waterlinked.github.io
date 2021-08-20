@@ -1,6 +1,6 @@
 # Receiver-D1
 
-[Buy Receiver-D1 here!](https://waterlinked.com/product/receiver-d1/)
+[Buy Receiver-D1 here!](https://store.waterlinked.com/product/receiver-d1/)
 
 ## Description
 
@@ -26,4 +26,4 @@ The tables below shows the pinning of the Receiver interface connectors.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/receiver-d1/)
+[Datasheet](https://store.waterlinked.com/datasheets/receiver-d1/)

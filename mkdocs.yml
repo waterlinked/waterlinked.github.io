@@ -8,6 +8,8 @@ theme:
     favicon: img/favicon_water_linked.ico
     palette:
         accent: blue
+    font:
+        text: Open Sans
 extra:
     social:
       - icon: fontawesome/brands/github

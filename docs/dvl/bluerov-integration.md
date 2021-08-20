@@ -1,6 +1,6 @@
 ## Introduction
 
-The Water Linked [DVL-A50](https://waterlinked.com/product/dvl-a50/) is designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between a customer gets the DVL-A50 and to having it up and running on their hardware platform, the DVL-A50 is shipped with an attached IO interface providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs the DVL-A50 has to be integrated with the on-board electronics through a penetrator or a subsea connector.
+The Water Linked [DVL-A50](https://store.waterlinked.com/product/dvl-a50/) is designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between a customer gets the DVL-A50 and to having it up and running on their hardware platform, the DVL-A50 is shipped with an attached IO interface providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs the DVL-A50 has to be integrated with the on-board electronics through a penetrator or a subsea connector.
 
 This guide details how the DVL-A50 can be integrated with the BlueROV2.
 
@@ -12,9 +12,9 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 ### You will need
 
-<img src="https://waterlinked.com/wp-content/uploads/2020/03/DSC04478_1600_web.jpg" alt="dvl-a50" width="300" height="300">
+<img src="https://store.waterlinked.com/wp-content/uploads/2020/03/DSC04478_1600_web.jpg" alt="dvl-a50" width="300" height="300">
 
-* [DVL-A50](https://waterlinked.com/product/dvl-a50/)
+* [DVL-A50](https://store.waterlinked.com/product/dvl-a50/)
 
 ![bluerov2_front](../img/bluerov2_front_300x300.png)
 
@@ -24,9 +24,9 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 * Small ethernet switch. We recommend [this one](https://www.aliexpress.com/item/32854568356.html). Requires a 12V DC/DC converter such as [this one](https://octopart.com/7812sr-c-murata+power+solutions-49447769).
 
-<img src="https://waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
+<img src="https://store.waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
 
-* [DVL-A50 Bracket](https://waterlinked.com/product/dvl-a50-mounting-bracket/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
+* [DVL-A50 Bracket](https://store.waterlinked.com/product/dvl-a50-mounting-bracket/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
 
 You will also need:
 
@@ -233,7 +233,7 @@ With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the 
 ![stripped-wires-a50](../img/stripped-wires-a50.jpeg)
 
 !!! Warning
-	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complementing color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire!
+	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complementing color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire! Also note that the wiring in the images below differ from that of the table below. Please follow the table!
 
 Re-solder the leads of the DVL-A50 cable to the IO Interface board following the table below:
 

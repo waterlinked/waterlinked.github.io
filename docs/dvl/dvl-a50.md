@@ -1,6 +1,6 @@
 # DVL-A50
 
-[Buy DVL-A50 here!](https://waterlinked.com/product/dvl-a50/)
+[Buy DVL-A50 here!](https://store.waterlinked.com/product/dvl-a50/)
 
 ![dvl_a50](../img/DVL-A50.jpg)
 
@@ -85,4 +85,4 @@ See [details](./dvl-a50-details.md) for description of axis conventions, transdu
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/dvl-a50/)
+[Datasheet](https://store.waterlinked.com/datasheets/dvl-a50/)

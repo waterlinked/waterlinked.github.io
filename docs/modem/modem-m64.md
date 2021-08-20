@@ -1,6 +1,6 @@
 # Modem-M64
 
-[Buy Modem-M64 here!](https://waterlinked.com/product/modem-m64/)
+[Buy Modem-M64 here!](https://store.waterlinked.com/product/modem-m64/)
 
 ## Description
 
@@ -66,5 +66,5 @@ Example code and libraries that can be used to communicate with the modem on the
 
 ## Datasheet
 
-[Datasheet](https://waterlinked.com/datasheets/modem-m64/)
+[Datasheet](https://store.waterlinked.com/datasheets/modem-m64/)
 

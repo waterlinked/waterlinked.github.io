@@ -51,4 +51,4 @@ The Locator-S1 has a simple 3.3 volt UART interface which is used to change the 
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/locator-s1/)
+[Datasheet](https://store.waterlinked.com/datasheets/locator-s1/)

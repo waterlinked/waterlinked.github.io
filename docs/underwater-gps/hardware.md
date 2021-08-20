@@ -106,7 +106,7 @@ Fits Molex Micro-Fit 3.0 43645 series.
 
 * If using the Locator-U1, no connections to the housing is needed. Just power the Locator and make sure both status leds on U1 and Master-D1 are solid green.
 
-![pelicase_cables_connected](../img/placeholder-300x300.jpg)
+![pelicase_cables_connected](../img/topside-with-locator-and-receivers.jpg)
 
 ## IMU
 

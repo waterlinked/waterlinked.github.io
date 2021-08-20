@@ -1,10 +1,10 @@
 ## Introduction
 
-The revised Water Linked Underwater GPS is designed with a connection interface that has power-line communication (PLC) capabilities through the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/).
+The revised Water Linked Underwater GPS is designed with a connection interface that has power-line communication (PLC) capabilities through the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/).
 
 The Water Linked BlueROV2 Integration Kit provides the necessary components to seamlessly connect the BlueROV2 and the Underwater GPS.
 
-The following steps specifically covers using the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/) to connect the Underwater GPS with the BlueRobotics BlueROV2. For other configurations, see [BlueROV2 integration without integration kit](#bluerov2-integration-without-integration-kit).
+The following steps specifically covers using the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/) to connect the Underwater GPS with the BlueRobotics BlueROV2. For other configurations, see [BlueROV2 integration without integration kit](#bluerov2-integration-without-integration-kit).
 
 ## Parts and tools
 
@@ -24,9 +24,10 @@ The [Locator-A1](../../locators/locator-a1.md) and [Locator-U1](../../locators/l
 
 * [Penetrator Wrench](https://bluerobotics.com/store/cables-connectors/tools/tool-penetrator-wrench-r1/)
 
-![blurerov2_integration_kit](https://waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg)
 
-* [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/)
+<img src="https://store.waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg" alt="dvl-a50" width="300" height="300">
+
+* [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/)
 
 You will also need:
 

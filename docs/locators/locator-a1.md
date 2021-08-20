@@ -1,6 +1,6 @@
 # Locator-A1
 
-[Buy Locator-A1 here!](https://waterlinked.com/product/locator-a1/)
+[Buy Locator-A1 here!](https://store.waterlinked.com/product/locator-a1/)
 
 ## Description
 
@@ -21,4 +21,4 @@ The tables below shows the pinning of the A1 interface connectors.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/locator-a1/)
+[Datasheet](https://store.waterlinked.com/datasheets/locator-a1/)

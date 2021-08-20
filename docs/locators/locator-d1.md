@@ -1,6 +1,6 @@
 # Locator-D1
 
-[Buy Locator-D1 here!](https://waterlinked.com/product/locator-d1/)
+[Buy Locator-D1 here!](https://store.waterlinked.com/product/locator-d1/)
 
 ## Description
 
@@ -24,4 +24,4 @@ The tables below shows the pinning of the D1 interface connectors.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/locator-d1/)
+[Datasheet](https://store.waterlinked.com/datasheets/locator-d1/)

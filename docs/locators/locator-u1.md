@@ -1,6 +1,6 @@
 # Locator-U1
 
-[Buy Locator-U1 here!](https://waterlinked.com/product/locator-u1/)
+[Buy Locator-U1 here!](https://store.waterlinked.com/product/locator-u1/)
 
 ## Description
 
@@ -64,4 +64,4 @@ Because the U1 is battery powered the only interface for it is the charing port 
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/locator-u1/)
+[Datasheet](https://store.waterlinked.com/datasheets/locator-u1/)

@@ -1,6 +1,6 @@
 # DVL-A125
 
-[Buy DVL-A125 here!](https://waterlinked.com/product/dvl-a125/)
+[Buy DVL-A125 here!](https://store.waterlinked.com/product/dvl-a125/)
 
 ![dvl_A125](../img/dvl-a125-coin-light-white.png)
 
@@ -85,4 +85,4 @@ See [details](./dvl-a125-details.md) for description of axis conventions, transd
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/dvl-a125/)
+[Datasheet](https://store.waterlinked.com/datasheets/dvl-a125/)
