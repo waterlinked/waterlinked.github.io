@@ -341,17 +341,4 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 
 ## Software
 
-Integration of the DVL-A50 into ArduPilot Companion currently exists as a branch to the ArduPilot Companion Git repository:
-
-[https://github.com/bluerobotics/companion/tree/dvl](https://github.com/bluerobotics/companion/tree/dvl)
-
-Follow these steps to use the DVL code:
-
-* Go to the DVL GUI "Configuration" page. In "Network configuration" set "Static IP" with IP address 192.168.2.95 (subnet prefix 24, gateway: 192.168.2.1 dns 192.168.2.1). Click "Apply" and the power cycle the DVL.
-* Start from Companion v0.0.22 (see [https://bluerobotics.com/learn/bluerov2-software-setup/#update-software](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software) to check if you're using v0.0.22)
-* Make sure the ROV is connected to the internet
-* Navigate to [http://192.168.2.2:2770/git](http://192.168.2.2:2770/git)
-* Click "origin" -> "branches" -> "dvl"
-* Click "update"
-* Wait until the update is over and the Companion reboots
-* Refresh the page and "Water Linked" should show up in the navbar
+Integration of the DVL-A50 into ArduPilot Companion currently exists in BETA stage. Details on how to get the BETA version of DVL integration with ArduSub can be found on the [ArduSub Developers website](https://www.ardusub.com/developers/dvl-integration.html).
