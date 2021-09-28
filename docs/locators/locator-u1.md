@@ -18,7 +18,7 @@ Insert included USB-C cable into a wall adapter and connect it to the Locator-U1
 
 *Note*: If battery is fully discharged the pulsating will not be activated. The Locator will still charge regardless of the LED not showing the charge indication. The Locator will in this cause show searching for GPS lock or GPS lock achieved indication.
 
-*Note*: Some Locator-U1 units are produced with a fault that causes them to never be able to show the charge indication. The Loctor will still charge and operate as normal during use.
+*Note*: Some Locator-U1 units are produced with a fault that causes them to never be able to show the charge indication. The Locator will still charge and operate as normal during use.
 
 Charging time is 7 hours.
 
