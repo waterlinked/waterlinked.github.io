@@ -19,9 +19,12 @@ Start by connecting power to the topside unit. We do this first because we want 
 
 Connect to the WiFi access point **UnderwaterGPS** on your PC/tablet/smartphone. Password for WiFi is **waterlinked**. Navigate to [http://192.168.7.1/](http://192.168.7.1/) in a web browser to access the Underwater GPS web GUI.
 
-## Calibrate IMUs
+## Set heading
 
-At the top bar on the GUI you will see a calibration bar for the IMU. To calibrate the IMU rotate it in a figure of 8 and keep doing it until the IMU calibration bar becomes full and green.
+In the top bar of the GUI you will see a warning about missing heading. Click the link, click to zero the gyros and set compass heading to a reference heading (analog compass, compass app or boat compass).
+
+!!! info
+    Setting the heading replaces IMU calibration as of release 3.3.0.
 
 ## Select Locator and channel
 

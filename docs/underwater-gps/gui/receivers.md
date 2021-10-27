@@ -1,11 +1,12 @@
-# Receivers
+# Baseline
 
-## Quick deply Antenna Guidelines
+## Quick deploy Antenna Guidelines
 
 You may place the Antenna at any location up to 10m from the Topside housing (limited by cable).
 
 !!! Note
-	The Forward direction of the Antenna must align with the Forward direction of the Topside to get correct global position.
+	The Forward direction of the Antenna must align with the Forward direction of the Topside to obtain a correct global position.
+	In "Antenna configuration" -> "Advanced settings" a rotation can be specified if aligning forward arrows is impractical.
 
 ![antenna-setup-illustration](../../img/Boat_antenna_conf.png)
 
