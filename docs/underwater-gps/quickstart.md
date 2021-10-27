@@ -13,7 +13,7 @@ This is a guide on how to start using the Underwater GPS system. The steps are:
 
 ## Power the topside unit
 
-Start by connecting power to the topside unit. We do this first because we want the GPS Receiver to start receiving signals and acheive a lock while we setup the rest of the system. If you are using the Locator-U1, power it on now so it also have time to get GPS lock.
+Start by connecting power to the topside unit. We do this first because we want the GPS Receiver to start receiving signals and achieve a lock while we setup the rest of the system. If you are using the Locator-U1, power it on now so it also have time to get GPS lock.
 
 ## Connect with Underwater GPS
 
@@ -54,7 +54,7 @@ When connecting the Receiver cables to the Topside unit remember the numbering y
 
 ## Configure Antenna/Receiver placement and seach range in GUI
 
-After selecting the correct Locator, you need to provide the correct placement of the Antenna/Receivers to the GUI for the positioning to work correctly. This is done by either drag'n drop of each Receiver to the correct placment relative to the topside unit, or by entering the Receiver positions manually.
+After selecting the correct Locator, you need to provide the correct placement of the Antenna/Receivers to the GUI for the positioning to work correctly. This is done by either drag'n drop of each Receiver to the correct placement relative to the topside unit, or by entering the Receiver positions manually.
 
 ![receiver_configuration_g2](../img/receiver_configuration_g2.png)
 
@@ -67,6 +67,6 @@ Limit the search area by changing the radius, direction and sector size.
 ![search_configuration_g2](../img/search_configuration_g2.png)
 
 !!! tip
-    Reducing the search range helps to improve the performance of the system. It is recomended to limith this range if you are operating in a smaller area. This is especially important in tanks and pools.
+    Reducing the search range helps to improve the performance of the system. It is recommended to limit this range if you are operating in a smaller area. This is especially important in tanks and pools.
 
 You are now ready to explore the underwater world while knowing where you are!

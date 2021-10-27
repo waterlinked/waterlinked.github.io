@@ -18,7 +18,7 @@ The Antenna is a quick deployable analog hydro acoustic receiver compatible with
 
 * Highly robust operation in areas with reflections (shallow water, around installations etc.)
 
-* Includes C-Size RAM Mount fixtures for universial mounting capabilities.
+* Includes C-Size RAM Mount fixtures for universal mounting capabilities.
 
 ## Wiring interface
 

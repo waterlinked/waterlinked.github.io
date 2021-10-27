@@ -12,11 +12,11 @@ The Underwater GPS system comes with an easy-to-use software API. This API uses 
 
 See [demo.waterlinked.com/swagger](http://demo.waterlinked.com/swagger) for more information.
 
-Beacuse the API is based on HTTP and it is possible to use multiple different programing languages to interface it. In our examples on Github we use Python 2.7. How to install the requirements needed when using the API with Python is explained below.
+Because the API is based on HTTP and it is possible to use multiple different programing languages to interface it. In our examples on Github we use Python 2.7. How to install the requirements needed when using the API with Python is explained below.
 
 ## How to install requirements needed to use Water Linked API examples
 
-When starting to use the Water Linked software API you need to make sure you have all the requriments installed. First install Python 2.7 and pip:
+When starting to use the Water Linked software API you need to make sure you have all the requirements installed. First install Python 2.7 and pip:
 
 * Windows: [Guide](https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation)
 * Mac: It should be preinstalled. Check by using these command:

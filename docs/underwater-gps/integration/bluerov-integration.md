@@ -266,4 +266,4 @@ The [Locator-A1](../../locators/locator-a1.md) needs to be integrated with the B
 
 ### Locator-D1
 
-The [Locator-D1](../../locators/locator-d1.md) comes with a seperate cable which must run parallel with the BlueROV2 tether to the Topside. Since the Locator-D1 is a stand-alone unit, no further integration with the BlueROV2 is needed.
+The [Locator-D1](../../locators/locator-d1.md) comes with a separate cable which must run parallel with the BlueROV2 tether to the Topside. Since the Locator-D1 is a stand-alone unit, no further integration with the BlueROV2 is needed.
