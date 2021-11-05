@@ -321,7 +321,7 @@ ts          | Time stamp (milliseconds since last press of reset button)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
-pos_std     | Standard deviaton (Figure of merit) for position
+std         | Standard deviation (Figure of merit) for position
 roll        | Rotation around X axis
 pitch       | Rotation around Y axis
 yaw         | Rotation around Z axis (heading)
@@ -338,7 +338,7 @@ Example of position report.
   "x": 12.43563613697886467,
   "y": 64.617631152402609587,
   "z": 1.767641898933798075,
-  "pos_std": 0.001959984190762043,
+  "std": 0.001959984190762043,
   "roll": 0.6173566579818726,
   "pitch": 0.6173566579818726,
   "yaw": 0.6173566579818726,
