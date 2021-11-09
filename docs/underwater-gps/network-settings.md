@@ -11,6 +11,8 @@ The local Underwater GPS WiFi is configured as:
 | Password : | waterlinked   |
 | Security : | WPA2-Personal | 
 
+Once connected to the UnderwaterGPS WiFi the GUI is available on: [http://192.168.7.1/](http://192.168.7.1/)
+
 ## Ethernet
 
 At power-up, the Master-D1 reads the IP switch settings. The ethernet network mode depends on the switch position.
