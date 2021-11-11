@@ -131,7 +131,7 @@ The format is:
 
 Variable    | Description
 ------------|-------------
-time_stamp  | Time stamp (milliseconds since last press of reset button)
+time_stamp  | Time stamp of report (Unix timestamp)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
@@ -317,7 +317,7 @@ The position and orientation data is all in an Earth-related (NED) reference fra
 
 Variable    | Description
 ------------|-------------
-ts          | Time stamp (milliseconds since last press of reset button)
+ts          | Time stamp of report (Unix timestamp)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
