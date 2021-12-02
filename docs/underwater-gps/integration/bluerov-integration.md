@@ -161,6 +161,9 @@ Press the PLC module into the socket, making sure that the press-fit standoffs l
 
 ### Interface Electronics modification
 
+!!! Note
+	This step is only necessary for Underwater GPS G2 bought *before* June 2021. For units produced after June 2021, this step is not necessary.
+
 !!! Warning
 	Skipping this step leaves a regulated 12V power source from the Underwater GPS on the PLC lines (pins 1 (GND) and 2 (12V) on the Locator bulkhead). Connecting non-isolated equipment to the PLC lines may damage the Underwater GPS or any external equipment.
 
