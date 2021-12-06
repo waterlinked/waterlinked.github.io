@@ -2,12 +2,15 @@
 
 ## Axis conventions
 
-The axis on the DVL-A50  are oriented as follows:
+The body reference axis on the DVL-A50 are oriented as follows:
 
 * X axis is pointing forward (LED is forward, cable backward)
 * Y axis is pointing right
 * Z axis is pointing down (mounting holes are up, transducers are down)
 
+The "mounted" reference axis represents the coordinate system when mounted on an ROV. The "mounted" reference axis is the body reference axis rotated by the "mounting rotation offset" (degrees) around the Z axis. (Z still pointing down, X and Y are rotated)
+
+Sometimes it is practical to mount the DVL backwards while still get velocities measured with X pointing forward. This can be achieved by setting the "mounting rotation offset" to 180.
 
 ## Transducer numbering
 

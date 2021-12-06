@@ -7,10 +7,13 @@ This document describes the Water Linked DVL protocols (serial and ethernet).
 * DVL - Doppler Velocity Log - Hydro-acoustic unit which uses acoustic beams to measure distance to bottom surface and the velocity which the unit is moving across the surface.
 * ACK - Acknowledgement. The command issued was successful.
 * NAK - Negative acknowledgement. The command issued failed.
+* Ping - A pulse of sound sent by the DVL
+* Time of validity - Timestamp of the bottom reflection (center of ping)
+* Time of transmission - Timestamp taken directly before sending data on protocol serial/JSON. This time includes: time of flight from center of ping to the reception, acoustic signal decoding and internal processing.
 
 ## Version
 
-This document describes protocol version 2.0.x (major.minor.patch)
+This document describes protocol version 2.3.x (major.minor.patch)
 
 The protocol versioning follows semantic versioning in that:
 
@@ -41,86 +44,113 @@ To support any Water Linked DVL the connection procedure is to:
 
 !!!note
     Checksum is optional when sending commands to the DVL. The DVL always returns a checksum. The checksum algorithm
-    is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`). See [below](#checksum) for details.
+    is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case characters (ex: `*c3`). See [below](#checksum) for details.
 
-### Commands
+### Command overview
 
 Commands in the table are shown **without** the checksum for readability.
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
-| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.1.0` |
+| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.3.0` |
 | `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,1.4.0,0xfedcba98765432` or `wrw,dvl-a50,1.4.0,0xfedcba98765432,10.11.12.140` |
+| `wcs`   | Set configuration | `wra` / `wr?` | Set configuration |
+| `wcc`   | Get configuration | `wrc,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]* | Get configuration |
 |         |             |          |              |
-|         |             | `wrx,`*[details below]* | Velocities measured. See details below |
+|         |             | `wrz,`*[details below]* | Velocities measured. See details below |
+|         |             | `wru,`*[details below]* | Transducer information. See details below |
+|         |             | `wrx,`*[details below]* | DEPRECATED: Velocities measured. See details below |
+|         |             | `wrt,`*[details below]* | DEPRECATED: Transducer information. See details below |
 |         |             | `wr?` | Malformed request: Response when packet cannot be understood |
 |         |             | `wr!` | Malformed request: Packet does not match the given checksum |
 
-### Velocity report
+
+### Velocity report (wrz)
 
 A velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude, but will be in the range 2-26 Hz.
 
-The X, Y, Z axes are with respect to the body frame of the DVL, oriented as marked on the DVL, and as summarised in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
+The X, Y, Z axes are with respect to the mounted frame of the DVL, and as summarized in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
 
 The report is in the following format:
-`wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]*
+`wrz,`*[vx],[vy],[vz],[valid],[altitude],[fom],[cov],[tov],[tot],[time],[status]*
+
 
 | Variable | Description |
 |----------|-------------|
-| time | Milliseconds since last velocity report (ms) |
 | vx | Measured velocity in x direction (m/s) |
 | vy | Measured velocity in y direction (m/s) |
 | vz | Measured velocity in z direction (m/s) |
-| fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
-| altitude | Measured altitude to the bottom (m) |
 | valid | If valid is "y", the DVL has lock on the bottom and the altitude and velocities are valid (y/n) |
+| altitude | Measured altitude to the bottom (m) |
+| fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
+| cov | Covariance matrix. 9 numbers separated by ; |
+| tov | Time of validity, timestamp of center of echo. Unix timestamp in microseconds (integer) |
+| tot | Time of transmission, timestamp right before sending message on serial. Unix timestamp in microseconds (integer) |
+| time | Milliseconds since last velocity report (ms) |
 | status | 0 for normal operation, 1 for high temperature warning |
 
 Example where velocities are valid:
 
 ```
-wrx,112.83,0.007,0.017,0.006,0.000,0.93,y,0*d2
-wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
-wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
+wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
 ```
 
-Example where velocities and altitude are not valid and a high temperature warning occurs:
-
-```
-wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
-wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
-wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
-```
-
-### Transducer report
+### Transducer report (wrt)
 
 A transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz.
 
 The report provides the distances measured from each transducer, in the following format:
-`wrt,`*[dist_1],[dist_2],[dist_3],[dist_4]*
+`wrt,`*[id],[velocity],[distance],[rssi],[nsd]*
+
 
 | Variable | Description |
 |----------|-------------|
-| dist_1 | Measured distance to bottom from transducer 1 (m) |
-| dist_2 | Measured distance to bottom from transducer 2 (m) |
-| dist_3 | Measured distance to bottom from transducer 3 (m) |
-| dist_4 | Measured distance to bottom from transducer 4 (m) |
+| id | Transducer number |
+| velocity | Velocity measured by transducer (m/s) |
+| distance | Distance to bottom from this transducer (m) |
+| rssi | Signal strength on this transducer (dBm) |
+| nsd | Measured background noise on this transducer (dBm) |
 
 Example where all distances are valid:
 
 ```
-wrt,15.00,15.20,14.90,14.20*b1
-wrt,14.90,15.10,14.80,14.10*ac
+wru,0,0.070,1.10,-40,-95*9c
+wru,1,-0.500,1.25,-62,-104*f0
+wru,2,2.200,1.40,-56,-98*18
+wru,3,1.800,1.35,-58,-96*a3
 ```
 
-Example where distance is not valid for transducer 4:
+### Configuration (wcc / wcs)
+
+Configuration can be read by issuing the `wcc` command and modified with the `wcs` command. The commands share a common syntax:
 
 ```
-wrt,14.90,15.10,14.80,-1.00*53
-wrt,15.00,15.20,14.90,-1.00*71
+w_c,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode]
 ```
 
-### Dead reckoning position report
+Description of variables:
+
+| Variable | Description |
+|----------|-------------|
+| speed_of_sound | Speed of sound (1000-2000 m/s)  |
+| mounting_rotation_offset | Mounting rotation of the DVL. Typically 0 when LED is pointing forward on the ROV or 180 when the LED is pointing backward (0-360 degrees) |
+| acoustic_enabled | Y for normal operation of the DVL, N for disabled acoustic transmission from the transducers of the DVL |
+| dark_mode | Y for LED operating as normal. N for no blinking of LED (typically useful if LED is interfering with camera feed for ROV) |
+
+When setting configuration the parameters that shall not be modified can be omitted. For example setting dark mode without affecting the other parameters:
+
+```
+wcs,,,y
+```
+
+Reading back the configuration will show the changed parameter as well as current setting of other values:
+
+```
+wrc,1480,20,n,y*59
+```
+
+
+### Dead reckoning position report (wrp)
 
 A local position report outputs the current position of the DVL as calculated by [dead reckoning](../dead-reckoning). The expected update rate is 5 Hz. The orientation of the DVL in terms of roll, pitch and yaw angles is included along with the position.
 
@@ -155,10 +185,79 @@ wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,1*d9
 wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,1*e5
 ```
 
+### Reset dead reckoning (wcr)
+
+Dead reckoning position can be reset by issuing the `wcr` command. The reply will be a ack (`wra`) in case of success and nak if unsuccessful (`wrn`).
+
+### Velocity report (vrx) [Deprecated]
+
+A velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude, but will be in the range 2-26 Hz.
+
+The X, Y, Z axes are with respect to the body frame of the DVL, oriented as marked on the DVL, and as summarized in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
+
+The report is in the following format:
+`wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]*
+
+| Variable | Description |
+|----------|-------------|
+| time | Milliseconds since last velocity report (ms) |
+| vx | Measured velocity in x direction (m/s) |
+| vy | Measured velocity in y direction (m/s) |
+| vz | Measured velocity in z direction (m/s) |
+| fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
+| altitude | Measured altitude to the bottom (m) |
+| valid | If valid is "y", the DVL has lock on the bottom and the altitude and velocities are valid (y/n) |
+| status | 0 for normal operation, 1 for high temperature warning |
+
+Example where velocities are valid:
+
+```
+wrx,112.83,0.007,0.017,0.006,0.000,0.93,y,0*d2
+wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
+wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
+```
+
+Example where velocities and altitude are not valid and a high temperature warning occurs:
+
+```
+wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
+wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
+wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
+```
+
+### Transducer report (wrt) [Deprecated]
+
+A transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz.
+
+The report provides the distances measured from each transducer, in the following format:
+`wrt,`*[dist_1],[dist_2],[dist_3],[dist_4]*
+
+| Variable | Description |
+|----------|-------------|
+| dist_1 | Measured distance to bottom from transducer 1 (m) |
+| dist_2 | Measured distance to bottom from transducer 2 (m) |
+| dist_3 | Measured distance to bottom from transducer 3 (m) |
+| dist_4 | Measured distance to bottom from transducer 4 (m) |
+
+Example where all distances are valid:
+
+```
+wrt,15.00,15.20,14.90,14.20*b1
+wrt,14.90,15.10,14.80,14.10*ac
+```
+
+Example where distance is not valid for transducer 4:
+
+```
+wrt,14.90,15.10,14.80,-1.00*53
+wrt,15.00,15.20,14.90,-1.00*71
+```
+
+
 ### Checksum
 
 The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
-Checksum is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`).
+Checksum is formatted as a hexadecimal number using 2 lower-case characters (ex: `*c3`).
 
 Compatible implementations:
 
@@ -239,7 +338,7 @@ The format of each packet is JSON.
 
 A velocity and transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude, but will be in the range 2-26 Hz.
 
-The X, Y, Z axes are with respect to the body frame of the DVL, oriented as marked on the DVL, and as summarised in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
+The X, Y, Z axes are with respect to the mounted frame of the DVL, oriented as marked on the DVL, and as summarized in the section [Axis conventions](../dvl-a50-details/#axis-conventions) of this manual.
 
 The messages are delimited by newline.
 
@@ -250,61 +349,138 @@ The messages are delimited by newline.
 | vy | Measured velocity in y direction (m/s) |
 | vz | Measured velocity in z direction (m/s) |
 | fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
+| cov | Covariance matrix |
 | altitude | Measured altitude to the bottom  (m) |
 | transducers | Is a list containing information from each transducer: [id, velocity, distance, rssi, nsd, beam_valid] |
 | velocity_valid | If valid is true the DVL has lock on the bottom and the altitude and velocities are valid (true/false) |
 | status | Reports if there are any issues with the DVL. 0 means no errors |
-| format | Format type and version for the velocity report , eg "json_v2"|
+| time_of_validity | Timestamp of center of ping (Unix timestamp in microseconds) |
+| time_of_transmission | Timestamp directly before sending report (Unix timestamp in microseconds) |
+| format | Format type and version for the velocity report , eg "json_v3"|
 | type | Report type. For velocity report it will be "velocity" |
 
 Example of TCP report (indented for legibility)
 
 ```
 {
-  "time": 170.52674865722656,
-  "vx": -0.00563613697886467,
-  "vy": -0.007631152402609587,
-  "vz": -0.007641898933798075,
-  "fom": 0.001959984190762043,
-  "altitude": 0.6173566579818726,
+  "time": 106.3935775756836,
+  "vx": -3.713480691658333e-05,
+  "vy": 5.703703573090024e-05,
+  "vz": 2.4990416932269e-05,
+  "fom": 0.00016016385052353144,
+  "covariance": [
+    [
+      2.4471841442164077e-08,
+      -3.3937477272871774e-09,
+      -1.6659699175747278e-09
+    ],
+    [
+      -3.3937477272871774e-09,
+      1.4654466085062268e-08,
+      4.0409570134514183e-10
+    ],
+    [
+      -1.6659699175747278e-09,
+      4.0409570134514183e-10,
+      1.5971971523143225e-09
+    ]
+  ],
+  "altitude": 0.4949815273284912,
   "transducers": [
     {
       "id": 0,
-      "velocity": -0.007625679485499859,
-      "distance": 0.6769760251045227,
-      "rssi": 38.66838836669922,
-      "nsd": 18.295578002929688,
+      "velocity": 0.00010825289791682735,
+      "distance": 0.5568000078201294,
+      "rssi": -30.494251251220703,
+      "nsd": -88.73271179199219,
       "beam_valid": true
     },
     {
       "id": 1,
-      "velocity": -0.0034413286484777927,
-      "distance": 0.6769760251045227,
-      "rssi": 35.403541564941406,
-      "nsd": 19.518909454345703,
+      "velocity": -1.4719001228513662e-05,
+      "distance": 0.5663999915122986,
+      "rssi": -31.095735549926758,
+      "nsd": -89.5116958618164,
       "beam_valid": true
     },
     {
       "id": 2,
-      "velocity": -0.006717036943882704,
-      "distance": 0.6653040051460266,
-      "rssi": 41.03888702392578,
-      "nsd": 20.25017738342285,
+      "velocity": 2.7863150535267778e-05,
+      "distance": 0.537600040435791,
+      "rssi": -27.180519104003906,
+      "nsd": -96.98075103759766,
       "beam_valid": true
     },
     {
       "id": 3,
-      "velocity": -0.01045388076454401,
-      "distance": 0.6536320447921753,
-      "rssi": 31.09071922302246,
-      "nsd": 17.366933822631836,
+      "velocity": 1.9419496311456896e-05,
+      "distance": 0.5472000241279602,
+      "rssi": -28.006759643554688,
+      "nsd": -88.32147216796875,
       "beam_valid": true
     }
   ],
   "velocity_valid": true,
   "status": 0,
-  "format": "json_v1",
-  "type": "velocity"
+  "format": "json_v3",
+  "type": "velocity",
+  "time_of_validity": 1638191471563017,
+  "time_of_transmission": 1638191471752336
+}
+```
+
+### Configuration
+
+Configuration can be read by sending a packet over TCP:
+
+```
+{"command":"get_config"}
+```
+
+The reply is in the format (intended for readability):
+
+```
+{
+  "response_to":"get_config",
+  "success":true,
+  "error_message":"",
+  "result":{
+    "speed_of_sound":1475,
+    "acoustic_enabled":true,
+    "dark_mode":false,
+    "mounting_rotation_offset":20
+  },
+  "format":"json_v3",
+  "type":"response"}
+```
+
+
+Description of the parameters:
+
+| Variable | Description |
+|----------|-------------|
+| speed_of_sound | Speed of sound (1000-2000 m/s)  |
+| mounting_rotation_offset | Mounting rotation of the DVL. Typically 0 when LED is pointing forward on the ROV or 180 when the LED is pointing backward (0-360 degrees) |
+| acoustic_enabled | Y for normal operation of the DVL, N for disabled acoustic transmission from the transducers of the DVL |
+| dark_mode | Y for LED operating as normal. N for no blinking of LED (typically useful if LED is interfering with camera feed for ROV) |
+
+
+Setting the configuration is performed by using the "set_config" command and including the value to change and it's new value:
+
+```
+{"command":"set_config","parameters":{"speed_of_sound":1480}}
+```
+
+The response will be the format:
+
+```
+{
+  "response_to":"set_config",
+  "success":true,
+  "error_message":"",
+  "result":null,
+  "format":"json_v3",
+  "type":"response"
 }
 ```
 
@@ -347,4 +523,26 @@ Example of position report.
   "format": "json_v2"
 }
 
+```
+
+
+### Reset dead reckoning
+
+Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
+
+```
+{"command":"reset_dead_reckoning"}
+```
+
+The repsonse will be on the format:
+
+```
+{
+  "response_to":"reset_dead_reckoning",
+  "success":true,
+  "error_message":"",
+  "result":null,
+  "format":"json_v3",
+  "type":"response"
+}
 ```
