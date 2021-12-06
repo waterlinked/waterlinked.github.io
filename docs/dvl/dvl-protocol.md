@@ -534,7 +534,7 @@ Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
 {"command":"reset_dead_reckoning"}
 ```
 
-The repsonse will be on the format:
+The response will be on the format:
 
 ```
 {
