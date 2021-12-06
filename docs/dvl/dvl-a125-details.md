@@ -2,7 +2,7 @@
 
 ## Axis conventions
 
-The axis on the DVL-A125 are oriented North-East-Down (NED)
+The body reference axis on the DVL-A50 are oriented as follows:
 
 * X axis is pointing forward (LED is forward, cable backward)
 * Y axis is pointing right
