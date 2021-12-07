@@ -4,7 +4,7 @@ The DVL-A50 and DVL-A125 run a dead reckoning algorithm which estimates the orie
 
 ## Starting dead reckoning
 
-1. Calibrate the gyrometer by pressing *More -> Calibrate gyro* in the [GUI](../gui/dashboard) whilst the DVL is stationary.
+1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [GUI](../gui/dashboard) whilst the DVL is stationary.
 2. Click the 'Reset' button ![](../img/dvl_gui_icon_reset.png) in the [GUI](../gui/dashboard), or send a reset command over the TCP or serial [protocol](../dvl-protocol).
 
 Step 1. may sometimes be omitted, depending upon [yaw drift](#yaw-drift) requirements.
@@ -26,7 +26,7 @@ The position of the DVL can be viewed in the GUI [dashboard](../gui/dashboard/) 
 
 ## Orientation
 
-The calculation of the orientation of the DVL is based upon the accelerometer and gyrometer measurements of its IMU. The orientation is represented by roll, pitch, and yaw angles, and can be viewed in the GUI [dashboard](../gui/dashboard/) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
+The calculation of the orientation of the DVL is based upon the accelerometer and gyroscope measurements of its IMU. The orientation is represented by roll, pitch, and yaw angles, and can be viewed in the GUI [dashboard](../gui/dashboard/) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
 
 - Roll is a rotation around the X axis of the DVL
 - Pitch is a rotation around the Y axis of the DVL
@@ -42,5 +42,5 @@ When dead reckoning is [reset](#starting-dead-reckoning), the roll, pitch, and y
 ## Yaw drift
 
 !!! note
-    The yaw angle may experience drift. This drift can be decreased to 0.1-0.3&#176 per minute by [calibration](#starting-dead-reckoning) of the gyrometer.
+    The yaw angle may experience drift. This drift can be decreased to 0.1-0.3&#176 per minute by [calibration](#starting-dead-reckoning) of the gyroscope.
 
