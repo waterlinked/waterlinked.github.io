@@ -1,20 +1,23 @@
 # Dashboard
 
-All our DVLs provide a web based GUI, where you can get various information and manage configuration. Use your favorite browser and navigate to the IP address as described in [details](../dvl-a50-details.md#web-gui). 
+Both the DVL-A50 and the DVL-A125 have a web-based GUI. In your favorite web browser, simply navigate to the DVL's [IP address](../../networking).
 
-The default page will be a dashboard. The dashboard will display current status, some measured values and a calculated [position](../../dead-reckoning/). Position will be visualizes in a map along the current values.
+The default page is a dashboard which provides a summary and visualisation of both the velocity and [dead reckoning](../../dead-reckoning) data outputted by the DVL, as well as an indication of current status.
+
+## Screenshot
 
 
 ![](../../img/dvl_gui_dashboard.png)
 
 
-# Map controlls
+## Map controls
+
 Button                                  |Description
 ----------------------------------------|-----------------------------------------------------------------
-+/-/[ ]                                 |Zoom and fullscreen controlls 
-![](../../img/dvl_gui_icon_arrow.png)   | Center map to dvl position  
-![](../../img/dvl_gui_icon_reset.png)   | Reset calculated position and start position tracking from zero.  
-...                                     |More  
-                                        |Set trailing  
-                                        |Set grid  
-                                        |Calibrate gyro  
++/-/[ ]                                 |Zoom and fullscreen controls
+![](../../img/dvl_gui_icon_arrow.png)   | Center map to dvl position
+![](../../img/dvl_gui_icon_reset.png)   | Reset calculated position and start position tracking from zero.
+...                                     |More
+                                        |Set trailing
+                                        |Set grid
+                                        |Calibrate gyro

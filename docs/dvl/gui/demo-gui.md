@@ -1,1 +1,3 @@
-A demo of the web GUI can be found [here](https://dvl.demo.waterlinked.com)
+# Demo site
+
+We maintain a [demo](https://dvl.demo.waterlinked.com) of the DVL's GUI, running on simulated data.
