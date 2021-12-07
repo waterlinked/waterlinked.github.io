@@ -5,7 +5,7 @@ The DVL has several services available over ethernet:
 * [Multicast DNS](#multicast-dns-mdns) (mDNS) for easy discovery
 * Web [GUI](../gui/dashboard), providing a visualisation of the data outputted by the DVL, as well as configuration, [updating of software](../sw-update), diagnostics, and more.
 * TCP [data stream](#tcp-data-stream)
-* [Software updates](../sw-update.md)
+* [Software updates](../sw-update)
 
 ## Network configuration
 
