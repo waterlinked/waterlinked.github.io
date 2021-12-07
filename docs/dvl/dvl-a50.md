@@ -12,62 +12,10 @@ The A50 is establishing a new market standard with its high performance, ultra-s
 The DVL estimates velocity relative to the sea bottom by sending acoustic waves from the four angled transducers and then measure the frequency shift (doppler effect) from the received echo. By combining the measurements of all four transducers and the time between each acoustic pulse, it is possible to very accurately estimate the speed and direction of movement.
 
 !!! Note
-	The DVL-A50 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performace edition.
+	The DVL-A50 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performance edition.
 
 !!! Tip
-	Keep the DVL-A50 in a bucket of water to ensure sufficient cooling when doing development with the DVL.
-
-
-## LED Signals
-
-* No green light: Power is off.
-
-* Flashing green light (slow): DVL loocking for bottom lock.
-
-* Fixed green light: DVL has bottom lock. The LED is mostly on and blinks quickly to show we are alive.
-
-## Wiring interface
-
-The tables below shows the pinning of the DVL-A50 interface.
-
-| Interface           | Color |
-| :------------------ | :-- |
-| Positive (10-30V) | Red  |
-| Negative/Ground | Black   |
-| ETH TX+ | Orange/White   |
-| ETH TX- | Orange   |
-| ETH RX+ | Green/White  |
-| ETH RX- | Green  |
-| UART TX | Brown/White   |
-| UART RX | Brown  |
-
-## Terminal Interface
-
-The DVL-A50 has a 3.3 volt UART interface (5V tolerant).
-
-| Settings           | Value |
-| :------------------ | :-- |
-| Baud rate | 115200  |
-| Data parity stop | 8N1   |
-| Flow control | None  |
-
-!!! Warning
-	There can be a momentary (<10 us) power spike (~5 V) on the UART lines when power is applied to the DVL, which may damage equipment which is not 5V tolerant.
-
-Description of the [serial protocol](./dvl-protocol.md).
-
-## Ethernet Interface
-
-Description of the [ethernet services](./dvl-a50-details.md#ethernet-interface).
-
-<!--
-## Libraries and code examples
-
-Example code and libraries that can be used to communicate with the DVL on the terminal interface:
-
-* [Python](https://github.com/waterlinked/dvl-python)
- -->
-
+	Keep the DVL-A50 in a bucket of water to ensure sufficient cooling when using the DVL on a workbench.
 
 ## Dimensions
 
@@ -79,9 +27,21 @@ Example code and libraries that can be used to communicate with the DVL on the t
 ![dvl_a50_mounting_holes_drawing](../img/dvl_mounting_holes_drawing.png)
 
 
-## Other details
+## Transducer numbering
 
-See [details](./dvl-a50-details.md) for description of axis conventions, transducer numbering and other details.
+![dvl_a50_transducer_numbering](../img/dvl_transducer_numbering.jpg)
+
+
+## Transducer beam width
+
+![dvl_a50_transducer_beam](../img/dvl_transducer_directivity.svg)
+
+Half-power beam width is 4.4°
+
+
+## Line of sight
+
+![dvl_a50_transducer_line_of_sight](../img/dvl_line_of_sight.svg)
 
 ## Datasheet
 

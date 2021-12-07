@@ -81,33 +81,23 @@ nav:
           - API: explorer-kit/gui/api.md
         - Software Update: explorer-kit/upgrader.md
     - DVL:
-      - DVL A50:
-        - Introduction: dvl/dvl-a50.md
-        - Details: dvl/dvl-a50-details.md
-        #- Power supply: dvl/power-supply.md
-        - IO Interface: dvl/io-interface.md
-      - DVL A125:
-        - Introduction: dvl/dvl-a125.md
-        - Details: dvl/dvl-a125-details.md
-        #- Power supply: dvl/power-supply.md
-        - IO Interface: dvl/io-interface.md
+      - DVL-A50 — Introduction: dvl/dvl-a50.md
+      - DVL-A125 — Introduction: dvl/dvl-a125.md
+      - Interfaces: dvl/interfaces.md
+      - Networking: dvl/networking.md
+      - Axes: dvl/axes.md
+      - Protocol: dvl/dvl-protocol.md
       - GUI:
         - Dashboard: dvl/gui/dashboard.md
         - Diagnostic report: dvl/gui/diagnostic-report.md
         - Demo GUI: dvl/gui/demo-gui.md
       - Dead reckoning: dvl/dead-reckoning.md
       - Integration:
-        #- API: dvl/api.md
-        - Protocol: dvl/dvl-protocol.md
-        - BlueROV2 integration: dvl/bluerov-integration.md
-      - Software update: dvl/sw-update.md
+        - BlueROV2: dvl/bluerov-integration.md
+      - Software updates: dvl/sw-update.md
     - Modem:
       - Modem-M64:
         - Introduction: modem/modem-m64.md
-        #- Details: modem/modem-m64-details.md
-        #- Power supply: modem/power-supply.md
-        #- IO Interface: modem/io-interface.md
-      - Integration:
-        - Protocol: modem/modem-m64-protocol.md
+      - Protocol: modem/modem-m64-protocol.md
 
 copyright: © Water Linked 2018-2021

@@ -1,6 +1,6 @@
 ## Introduction
 
-The Water Linked [DVL-A50](https://store.waterlinked.com/product/dvl-a50/) is designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between a customer gets the DVL-A50 and to having it up and running on their hardware platform, the DVL-A50 is shipped with an attached IO interface providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs the DVL-A50 has to be integrated with the on-board electronics through a penetrator or a subsea connector.
+The Water Linked [DVL-A50](https://store.waterlinked.com/product/dvl-a50/) is designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between a customer gets the DVL-A50 and to having it up and running on their hardware platform, the DVL-A50 is shipped with an attached I/O interface providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs the DVL-A50 has to be integrated with the on-board electronics through a penetrator or a subsea connector.
 
 This guide details how the DVL-A50 can be integrated with the BlueROV2.
 
@@ -52,9 +52,9 @@ You will also need:
 
 ## Preparation
 
-### Seperate IO Interface from DVL-A50
+### Separate I/O Interface from DVL-A50
 
-The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the IO Interface board. We recommend you do so near the end where the IO Interface board is to begin with.
+The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the I/O Interface board. We recommend you do so near the end where the I/O Interface board is to begin with.
 
 ![cut-io-interface-rev3](../img/cut-io-interface-rev3.jpeg)
 
@@ -101,22 +101,22 @@ Cut the cable to the final length.
 
 ## Installation
 
-The DVL-A50 will be permanently installed on the BlueROV2 with the IO Interface board (supplied with the DVL-A50).
+The DVL-A50 will be permanently installed on the BlueROV2 with the I/O Interface board (supplied with the DVL-A50).
 
-### IO Interface preparation
+### I/O Interface preparation
 
-To prepare the IO Interface Board you will need:
+To prepare the I/O Interface Board you will need:
 
 * Soldering iron
 * Wire cutter
 * Tweezers or nose pliers
 * Solder wick and/or desoldering pump
 
-Cut off the zip tie holding the cable onto the IO Interface board.
+Cut off the zip tie holding the cable onto the I/O Interface board.
 
 ![cut-zip-tie-io-interface](../img/cut-zip-tie-io-interface.jpeg)
 
-Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with tweezers or nose pliers.
+Cut off the individual wires soldered onto the I/O Interface board. Leave enough wire to grab onto with tweezers or nose pliers.
 
 ![remove-wires-io-interface](../img/remove-wires-io-interface.jpeg)
 
@@ -125,7 +125,7 @@ Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove 
 ![desoldered-io-interface](../img/desoldered-io-interface.jpeg)
 
 !!! Warning
-	Using too much force or heat may delaminate the IO Interface PCB, rendering the IO Interface board useless.
+	Using too much force or heat may delaminate the I/O Interface PCB, rendering the I/O Interface board useless.
 
 ### Adding a penetrator
 
@@ -219,9 +219,9 @@ Screw on the DVL-A50 cable penetrator to the end cap. Tighten to finger tight, t
 
 ![screwed-in-a50-penetrator](../img/screwed-in-a50-penetrator.jpeg) ![tightened-a50-penetrator](../img/tightened-a50-penetrator.jpeg)
 
-### Reinstall IO Interface Board
+### Reinstall I/O Interface Board
 
-To reinstall the IO Interface Board onto the DVL-A50 cable you will need:
+To reinstall the I/O Interface Board onto the DVL-A50 cable you will need:
 
 * Wire stripping tool
 * Soldering iron
@@ -235,9 +235,9 @@ With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the 
 !!! Warning
 	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complementing color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire! Also note that the wiring in the images below differ from that of the table below. Please follow the table!
 
-Re-solder the leads of the DVL-A50 cable to the IO Interface board following the table below:
+Re-solder the leads of the DVL-A50 cable to the I/O Interface board following the table below:
 
-| DVL-A50 cable                                                  | IO Interface pad | Function       | Diameter (mm) | AWG\# |
+| DVL-A50 cable                                                  | I/O Interface pad | Function       | Diameter (mm) | AWG\# |
 | -------------------------------------------------------------- | :--------------- | :------------- | :------------ | :---- |
 | ![4tp2p_black_lead](../img/4tp2p_black_lead.png)               | GND              | Power ground   | 0.6 mm        | 22    |
 | ![4tp2p_red_lead](../img/4tp2p_red_lead.png)                   | VIN              | Power in       | 0.6 mm        | 22    |
@@ -250,7 +250,7 @@ Re-solder the leads of the DVL-A50 cable to the IO Interface board following the
 
 ![io-interface-wires](../img/io-interface-wires-300px.png)  ![soldered-wires-to-io-interface](../img/soldered-wires-to-io-interface.jpeg)
 
-Zip tie the soldered wires to the IO Interface board to protect the solder joints.
+Zip tie the soldered wires to the I/O Interface board to protect the solder joints.
 
 ![zip-tied-wires-a50](../img/zip-tied-wires-a50.jpeg)
 
@@ -303,10 +303,10 @@ With power now sorted, we will connect up the ethernet cables:
 * Disconnect the ethernet cable attached to the Raspberry Pi coming from the Fathom-X Tether Interface Board.
 * Connect the ethernet from the Fathom-X Tether Interface Board to the ethernet switch.
 * Connect a 6" ethernet cable from the Raspberry Pi to the ethernet switch.
-* Connect a 6" ethernet cable from the IO Interface Board to the ethernet switch.
+* Connect a 6" ethernet cable from the I/O Interface Board to the ethernet switch.
 
 !!! Tip
-	Some thick double-sided sticky tape and zip ties can be used to secure the IO Interface, the ethernet switch, the DC/DC converter and wires to the electroncs frame inside the BlueROV2.
+	Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface, the ethernet switch, the DC/DC converter and wires to the electroncs frame inside the BlueROV2.
 
 
 ### Reassemble BlueROV2 electronics enclosure
