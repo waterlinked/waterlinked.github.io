@@ -1,4 +1,4 @@
-# Details
+# Interfaces
 
 For both the DVL-A50 and the DVL-A125.
 
