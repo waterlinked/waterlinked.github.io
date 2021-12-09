@@ -130,7 +130,7 @@ A dead reckoning report outputs the current speed, position, and orientation of 
 
 Variable    | Description
 ------------|-------------
-ts          | Time stamp of report (Unix timestamp)
+ts          | Time stamp of report (Unix timestamp in seconds)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
@@ -352,7 +352,7 @@ The format is:
 
 Variable    | Description
 ------------|-------------
-time_stamp  | Time stamp of report (Unix timestamp)
+time_stamp  | Time stamp of report (Unix timestamp in seconds)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
