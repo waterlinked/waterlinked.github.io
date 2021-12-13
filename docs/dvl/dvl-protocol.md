@@ -424,7 +424,7 @@ wcs,1450,,n,
 The response will be an ack `wra` if the parameters are set, and a nak `wrn` if not. The new config will not be returned in the response, but can be obtained by issuing a `wcc` command as above.
 
 
-### Velocity report, old format (vrx) [Deprecated]
+### Velocity report, old format (wrx) [Deprecated]
 
 Same purpose as the [velocity report](#velocity-report), but in an older format:
 
