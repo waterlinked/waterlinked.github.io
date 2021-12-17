@@ -29,7 +29,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Transducer numbering
 
-![dvl_a50_transducer_numbering](../img/dvl_transducer_numbering.jpg)
+![dvl_a50_transducer_numbering](../img/WL-21035-3_DVL-A50_Front_1600_transducers_crop.jpg)
 
 
 ## Transducer beam width
