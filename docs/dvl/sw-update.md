@@ -2,6 +2,9 @@
 
 It is recommended to always run the latest DVL software where possible. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
 
+!!! Warning
+	The DVL can overheat if its software is updated whilst it is out of water, which can lead to structural damage and subsequent hardware failure. Placing it in a bucket of water, for example, should ensure sufficient cooling.
+
 
 ## Automatic software update
 
