@@ -2,7 +2,7 @@
 
 [Buy DVL-A50 here!](https://store.waterlinked.com/product/dvl-a50/)
 
-![dvl_a50](https://store.waterlinked.com/wp-content/uploads/2021/12/wl-21035-3_dvl-a50_side4_1600.jpg)
+![dvl_a50](../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg)
 
 ## Description
 The DVL-A50 is – by far – the world’s smallest commercially available Doppler Velocity Log.
