@@ -19,7 +19,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Dimensions
 
-![dvl_a50_dimensions](../img/dvl_dimensions.png)
+![dvl_a50_dimensions](../img/WL-21035-3_DVL-A50_Side3_1600_dimension_crop.jpg)
 
 
 ## Mounting Holes
