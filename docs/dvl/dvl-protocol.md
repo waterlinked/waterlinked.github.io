@@ -294,7 +294,7 @@ A velocity report is outputted for each velocity calculation of the DVL. The rat
 The X, Y, and Z axes are with respect to [body frame](../axes#body-frame) of the DVL, or the [vehicle frame](../axes#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
 The report has the following format:
-`wrz,`*[vx],[vy],[vz],[valid],[altitude],[fom],[cov],[tov],[tot],[time],[status]*
+`wrz,`*[vx],[vy],[vz],[valid],[altitude],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]*
 
 
 | Variable | Description |
@@ -305,9 +305,9 @@ The report has the following format:
 | valid | If `y`, the DVL has a lock on the reflecting surface, and the altitude and velocities are valid (y/n) |
 | altitude | Measured altitude to the bottom (m) |
 | fom | Figure of merit, a measure of the accuracy of the velocities (m/s) |
-| cov | Covariance matrix for the velocities. The figure of merit is calculated from this. 9 entries ((m/s)^2) separated by ; |
-| tov | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
-| tot | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds)  |
+| covariance | Covariance matrix for the velocities. The figure of merit is calculated from this. 9 entries ((m/s)^2) separated by ; |
+| time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
+| time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds)  |
 | time | Milliseconds since last velocity report (ms) |
 | status | 0 for normal operation, 1 for operational issues such as high temperature |
 
