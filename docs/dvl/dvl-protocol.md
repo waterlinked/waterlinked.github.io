@@ -44,9 +44,9 @@ The messages are delimited by newline.
 | fom | Figure of merit, a measure of the accuracy of the velocities (m/s) |
 | covariance | Covariance matrix for the velocities. The figure of merit is calculated from this (entries in (m/s)^2) |
 | altitude | Vertical distance to the reflecting surface (m) |
-| transducers | Is a list containing information from each transducer: [id, velocity, distance, rssi, nsd, beam_valid] |
+| transducers | Is a list containing information from each transducer: [id, velocity (m/s), distance (m), rssi (dBm), nsd (dBm), beam_valid (True/False)] |
 | velocity_valid | If true, the DVL has a lock on the reflecting surface, and the altitude and velocities are valid (True/False) |
-| status | Reports if there are any issues with the DVL. (0 for normal operation, 1 if operational issues such as high temperature) |
+| status | Reports if there are any issues with the DVL (0 for normal operation, 1 if operational issues such as high temperature) |
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
 | format | Format type and version for this report: `json_v3` |
@@ -134,12 +134,12 @@ ts          | Time stamp of report (Unix timestamp in seconds)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
-std         | Standard deviation (Figure of merit) for position
-roll        | Rotation around X axis
-pitch       | Rotation around Y axis
-yaw         | Rotation around Z axis (heading)
+std         | Standard deviation (figure of merit) for position (m)
+roll        | Rotation around X axis (degrees)
+pitch       | Rotation around Y axis (degrees)
+yaw         | Rotation around Z axis, i.e. heading (degrees)
 type        | Report type: `position_local`
-status      | Reports if there are any issues with the DVL. 0 means no errors
+status      | Reports if there are any issues with the DVL (0 if no errors, 1 otherwise)
 format      | Format type and version for this report: `json_v3`
 
 
@@ -317,12 +317,12 @@ Example where all velocities are valid:
 wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
 ```
 
-### Transducer report (wrt)
+### Transducer report (wru)
 
 A transducer report is outputted for each of the four transducers of the DVL for each velocity calculation of the DVL. The rate will be the same as that of the velocity report.
 
 The report has the following format:
-`wrt,`*[id],[velocity],[distance],[rssi],[nsd]*
+`wru,`*[id],[velocity],[distance],[rssi],[nsd]*
 
 
 | Variable | Description |
@@ -356,11 +356,11 @@ time_stamp  | Time stamp of report (Unix timestamp in seconds)
 x           | Distance in X direction (m)
 y           | Distance in Y direction (m)
 z           | Distance in downward direction (m)
-pos_std     | Standard deviation (Figure of merit) for position
-roll        | Rotation around X axis
-pitch       | Rotation around Y axis
-yaw         | Rotation around Z axis (heading)
-status      | Reports if there are any issues with the DVL. 0 means no errors |
+pos_std     | Standard deviation (Figure of merit) for position (m)
+roll        | Rotation around X axis (degrees)
+pitch       | Rotation around Y axis (degrees)
+yaw         | Rotation around Z axis, i.e. heading (degrees)
+status      | Reports if there are any issues with the DVL (0 if no errors, 1 otherwise) |
 
 Example:
 
