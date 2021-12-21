@@ -36,17 +36,18 @@ nav:
         - Quickstart: underwater-gps/quickstart.md
         - Introduction: underwater-gps/introduction.md
         - Reference frames: underwater-gps/reference-frames.md
-        - Topside:
-          - Hardware: underwater-gps/hardware.md
-          - Power supply: underwater-gps/power-supply.md
-          - Network settings: underwater-gps/network-settings.md
-        - Baseline:
-          - Antenna: antenna.md
-          - Receiver-D1: receiver-d1.md
-        - Locator:
-          - Locator-A1: locators/locator-a1.md
-          - Locator-D1: locators/locator-d1.md
-          - Locator-U1: locators/locator-u1.md
+        - Components:
+          - Topside:
+            - Hardware: underwater-gps/hardware.md
+            - Power supply: underwater-gps/power-supply.md
+            - Network settings: underwater-gps/network-settings.md
+          - Baseline:
+            - Antenna: antenna.md
+            - Receiver-D1: receiver-d1.md
+          - Locator:
+            - Locator-A1: locators/locator-a1.md
+            - Locator-D1: locators/locator-d1.md
+            - Locator-U1: locators/locator-u1.md
         - GUI:
           - Position: underwater-gps/gui/position.md
           - Baseline: underwater-gps/gui/receivers.md

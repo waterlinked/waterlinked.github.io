@@ -4,15 +4,15 @@ Select *Antenna* or *Receivers* in the tab at the top according to whether an [a
 
 ## Antenna
 
-The antenna can be placed anywhere up to 10m from the topside housing (limited by cable length). Go through the following.
+The antenna can be placed anywhere up to 10m from the topside housing (limited by cable length). Go through the following. By the _antenna base_ is meant the joining point of the three prongs with the receivers at their ends.
 
 
 |                     |                      |
 | ------------------- | :------------------- |
-| **Alignment**       | Ensure that the 'Forward' direction of the antenna as defined by a label on one of its prongs (see also the figure below) is aligned with the 'Forward' direction of the topside housing (indicated by a label on the lid). <br><br>If it is not possible physically align them, in *Baseline -> Antenna configuration -> Advanced settings*, specify the clockwise angle in degrees from the forward axis of the topside to the forward axis of the antenna. <br><br>If this alignment is not carried out, the [global](#reference-systems) position outputted by UGPS G2 will be incorrect.
+| **Alignment**       | Ensure that the 'Forward' direction of the antenna as defined by a label on one of its prongs (see also the figure below) is aligned with the 'Forward' direction of the topside housing (indicated by a label on the lid). <br><br>If it is not possible to physically align them, in *Baseline -> Antenna configuration -> Advanced settings*, specify the clockwise angle in degrees from the forward axis of the topside to the forward axis of the antenna. <br><br>If this alignment is not carried out, the [global](../../reference-frames#global) position outputted by UGPS G2 will be incorrect.
 | **Line-of-sight**   | Ensure that there will be line-of-sight between the antenna and locator.  |
-| **Antenna Depth**  | Ensure that the base of the antenna is at a depth of at least one metre (as indicated by a label upon the top folding joint of the pole of the antenna), to avoid acoustic disturbance |
-| **Antenna stability** | Secure the antenna tightly to the vessel using the provided Ram Mount |
+| **Antenna depth**  | Ensure that the base of the antenna is at a depth of at least one metre (as indicated by a label upon the top folding joint of the pole of the antenna), to avoid acoustic disturbance. <br><br>The depth of the antenna base (relative to the sea surface) must be specified in *Baseline -> Antenna configuration -> Advanced settings -> Antenna depth*. If it is not, both the [acoustic](../../reference-frames#acoustic) and [global](../../reference-frames#global) positions may be incorrect.  |
+| **Antenna stability** | Secure the antenna tightly to the vessel using the provided Ram Mount. |
 
 
 ![antenna-setup-illustration](../../img/Boat_antenna_conf.png)
@@ -25,7 +25,7 @@ Further points of note:
 
 ## Receivers
 
-Loose receivers can be placed anywhere up to 100m from the topside housing. Go through the following.
+Loose receivers can be placed anywhere up to 100m from the topside housing. Go through the following, and configure the placement of the receivers in the graphical pane at *Baseline -> Receiver and range configuration* so that their positions relative to the origin and their depths are correct.
 
 |                     |                      |
 | ------------------- | :------------------- |

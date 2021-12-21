@@ -25,11 +25,13 @@ UGPS G2 outputs positions in two reference frames: a _global_ frame and an _acou
 
 ## Global frame
 
-The positions of the global frame are in terms of latitude and longitude, as defined by the WGS 84 standard. The _Map position_ tab in the _Position_ panel of the GUI plots the global frame position.
+The positions of the global frame are in terms of latitude and longitude, as defined by the WGS 84 standard, and depth (relative to the sea surface). The _Map position_ tab in the _Position_ panel of the GUI plots the global frame position.
 
 ## Acoustic frame
 
-The x-axis of the acoustic frame is defined by the 'Forward' direction of the topside housing (indicated by a label on the lid, as shown in the figure below). The y-axes and z-axes are defined to be 'east' and 'down' respectively in relation to this x-axis. The _Relative position_ tab in the _Position_ panel of the GUI plots the acoustic frame position.<br><br>
+The x-axis of the acoustic frame is defined by the 'Forward' direction of the topside housing (indicated by a label on the lid, as shown in the figure below). The y-axes and z-axes are defined to be 'east' and 'down' respectively in relation to this x-axis. The _Relative position_ tab in the _Position_ panel of the GUI plots the acoustic frame position.
+
+The z-coordinate of the acoustic frame is always depth relative to the sea surface (not, say, relative to the antenna base, if using an antenna).<br><br>
 
 ![reference_system_pelicase](../../img/reference_system_pelicase_g2.png)
 
