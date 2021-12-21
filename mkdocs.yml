@@ -35,6 +35,7 @@ nav:
       - G2:
         - Quickstart: underwater-gps/quickstart.md
         - Introduction: underwater-gps/introduction.md
+        - Reference frames: underwater-gps/reference-frames.md
         - Topside:
           - Hardware: underwater-gps/hardware.md
           - Power supply: underwater-gps/power-supply.md
@@ -59,7 +60,7 @@ nav:
           - BlueROV2 integration: underwater-gps/integration/bluerov-integration.md
           - Code examples: underwater-gps/integration/code-examples.md
         - Software update: underwater-gps/sw-update.md
-      - Explorer Kit:
+      - Explorer Kit (retired):
         - Quickstart: explorer-kit/quickstart.md
         - Introduction: explorer-kit/introduction.md
         - Warnings: explorer-kit/warnings.md
