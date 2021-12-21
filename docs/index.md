@@ -23,7 +23,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-l-4 col-xl-3 col-3">
         <a href="./explorer-kit/introduction/">
             <img src="https://store.waterlinked.com/wp-content/uploads/2018/02/Explorer-Kit-S1-300x300.jpg" /><br>
-            <h4>Underwater GPS Explorer Kit</h4>
+            <h4>Underwater GPS Explorer Kit (retired)</h4>
         </a>
     </div>
     <div  class="col-xs-12 col-sm-6 col-md-4 col-l-4 col-xl-3 col-3">
@@ -41,7 +41,7 @@
     <div  class="col-xs-12 col-sm-6 col-md-4 col-l-4 col-xl-3 col-3">
         <a href="./locators/locator-s1/">
             <img src="https://store.waterlinked.com/wp-content/uploads/2018/02/WL-21022_Locator-S1_01small.jpg" /><br>
-            <h4>Locator-S1</h4>
+            <h4>Locator-S1 (retired)</h4>
         </a>
     </div>
     <div  class="col-xs-12 col-sm-6 col-md-4 col-l-4 col-xl-3 col-3">
