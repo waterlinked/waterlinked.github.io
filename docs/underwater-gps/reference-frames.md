@@ -15,11 +15,11 @@ UGPS G2 outputs positions in two reference frames: a _global_ frame and an _acou
   <text text-anchor="middle" x="30" y="25" font-size="0.275em">North (° latitude)</text>
   <text text-anchor="left" x="60" y="55" font-size="0.275em" alignment-baseline="middle">East (° longitude)</text>
   <text text-anchor="middle" x="140" y="5" font-size="0.3em">Acoustic frame</text>
-  <text text-anchor="middle" x="140" y="87.5" font-size="0.275em">y</text>
-  <text text-anchor="left" x="170" y="55" font-size="0.275em" alignment-baseline="middle">x (Forward)</text>
+  <text text-anchor="middle" x="140" y="25" font-size="0.275em">x (Forward)</text>
+  <text text-anchor="left" x="170" y="55" font-size="0.275em" alignment-baseline="middle">y</text>
   <line stroke="black" stroke-width="0.5" marker-start="url(#leftarrowhead)" x1="30" y1="30" x2="30" y2="80"/>
   <line stroke="black" stroke-width="0.5" marker-end="url(#rightarrowhead)" x1="5" y1="55" x2="55" y2="55"/>
-  <line stroke="black" stroke-width="0.5" marker-end="url(#rightarrowhead)" x1="140" y1="30" x2="140" y2="80"/>
+  <line stroke="black" stroke-width="0.5" marker-start="url(#leftarrowhead)" x1="140" y1="30" x2="140" y2="80"/>
   <line stroke="black" stroke-width="0.5" marker-end="url(#rightarrowhead)" x1="115" y1="55" x2="165" y2="55"/>
 </svg>
 
