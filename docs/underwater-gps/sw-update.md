@@ -1,27 +1,21 @@
-# Software update
+# Software updates
 
-To get the best performance of your Water Linked product it is recommended to always run the latest software. The update GUI can automatically check if a new software version is available.
-
-Products currently supported for updates:
-
-| Product                     | GUI Link |
-| --------------------------- | :--- |
-| Underwater GPS G2           | [http://waterlinked-ugps:9000/](http://waterlinked-ugps:9000/) |
+It is recommended to always run the latest UGPS G2 software where possible. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
 
 ## Automatic software update
 
-The easiest way of checking if a new version is available is to connect the product to the internet and let the upgrade GUI automatically check for a new version:
+The G2's [GUI](../gui/position) automatically checks and indicates if a new software version is available.
 
-* Connect the Water Linked products ethernet to a network where the internet is available and make sure the products network configuration allows access to the internet.
-* Go to http://[IP_ADDRESS]:9000.
-* The update GUI will automatically check if there is a new version available and allow installation of new update with a single click.
+* [Connect](../network-settings) the G2 topside unit over ethernet or wifi to a network connected to the internet. If on a personal computer, it may be necessary to make a network bridge between a network interface which has access to the internet and the interface through which the G2 topside is connected.
+* Go to http://[IP_ADDRESS_OF_THE_G2_TOPSIDE]:9000 in a web browser.
+* The GUI will automatically check if there is a new version available, and if so, initiate installation of it with a single click.
 
 ## Offline software update
 
-If you are unable to connect your Water Linked product to the internet, offline software update is available. The process is:
+If it is not possible to connect the G2 topside to the internet, one can proceed as follows.
 
-* Find the current version and chipid in the the "about" section of the web gui.
-* Manually download an update package (.wlup) from the [update server](https://update.waterlinked.com/) using the chipid.
-* Verify if the version downloaded is newer than the currently running version.
-* Go to http://[IP_ADDRESS]:9000.
-* Select "manual upload" and then upload the downloaded file.
+* Find the current version and chip ID of the G2 topside unit at *Menu -> About* in the [GUI](../gui/position).
+* Manually download an update package (`.wlup`) from the [update server](https://update.waterlinked.com/) using the chip ID.
+* Verify if the downloaded version is newer than the currently running version.
+* Navigate to http://[IP_ADDRESS_OF_THE_G2_TOPSIDE]:9000 in a web browser.
+* Select 'Manual upload' and then upload the downloaded `.wlup` file.

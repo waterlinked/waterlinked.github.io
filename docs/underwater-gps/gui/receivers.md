@@ -14,8 +14,9 @@ The antenna can be placed anywhere up to 10m from the topside housing (limited b
 | **Antenna depth**  | Ensure that the base of the antenna is at a depth of at least one metre (as indicated by a label upon the top folding joint of the pole of the antenna), to avoid acoustic disturbance. <br><br>The depth of the antenna base (relative to the sea surface) must be specified in *Baseline -> Antenna configuration -> Advanced settings -> Antenna depth*. If it is not, both the [acoustic](../../reference-frames#acoustic) and [global](../../reference-frames#global) positions may be incorrect.  |
 | **Antenna stability** | Secure the antenna tightly to the vessel using the provided Ram Mount. |
 
-
-![antenna-setup-illustration](../../img/Boat_antenna_conf.png)
+<div align="center">
+  <img src="../../../img/Boat_antenna_conf.png" width="275px" alt="Antenna configuration example">
+</div>
 
 Further points of note:
 
@@ -38,7 +39,9 @@ Further points of note:
 
 * **Limit search area** : a better position will likely be obtained if the search area is restricted as far as possible in the graphical configuration pane at *Baseline -> Antenna configuration*. <br><br>
 
-    ![receiver_placemet](../../img/receiver_placemet_g2.png)
+    <div align="center">
+      <img src="../../../img/receiver_placemet_g2.png" width="600px" alt="Receiver setup">
+    </div>
 
     <br>
 
@@ -47,4 +50,6 @@ Further points of note:
 
 The figure below indicates a typical loose receiver configuration when the topside unit is upon a boat. The receivers hang from the side of the boat. The origin of the the acoustic frame is in this case a point on the topside unit.
 
-![boat_example](../../img/boat_example_g2.png)
+<div align="center">
+  <img src="../../../img/boat_example_g2.png" width="325px" alt="Loose receivers configuration example">
+</div>

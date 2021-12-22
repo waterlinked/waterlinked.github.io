@@ -10,7 +10,7 @@ It is recommended to always run the latest DVL software where possible. The late
 
 The DVL's [GUI](../gui/dashboard) automatically checks and indicates if a new software version is available.
 
-* Connect the DVL over ethernet to a network connected to the internet. If on a personal computer, it may be necessary to make a network bridge between a network interface (such as wifi) which has access to the internet and the ethernet interface through which the DVL is connected
+* Connect the DVL over ethernet to a network connected to the internet. If on a personal computer, it may be necessary to make a network bridge between a network interface (such as wifi) which has access to the internet and the ethernet interface through which the DVL is connected.
 * Go to http://[IP_ADDRESS_OF_THE_DVL]:9000 in a web browser.
 * The GUI will automatically check if there is a new version available, and if so, initiate installation of it with a single click.
 
