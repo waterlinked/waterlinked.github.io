@@ -46,7 +46,7 @@
 
 \* *Used to control relays for switching between Receivers and Antenna.*
 
-#### 6 pin NMEA 0183 GPS + PPS
+#### 6 pin NMEA 0183 GPS + PPS (not currently implemented)
 
 | Signal       | Pin | Pin | Signal |
 | ------------ | --: | :-- | :----- |
@@ -54,7 +54,7 @@
 | NMEA GPS TX  | 3   | 4   | NMEA GPS RX |
 | NMEA GPS PPS | 5   | 6   | **GND** |
 
-#### 6 pin NMEA 0183 Compass
+#### 6 pin NMEA 0183 Compass (not currently implemented)
 
 | Signal           | Pin | Pin | Signal |
 | ---------------- | --: | :-- | :----- |
@@ -62,7 +62,7 @@
 | NMEAS COMPASS TX | 3   | 4   | NMEA COMPASS RX |
 | *NC*             | 5   | 6   | **GND** |
 
-#### 6 pin NMEA 0183 Out
+#### 6 pin NMEA 0183 Out (not currently implemented)
 
 | Signal       | Pin | Pin | Signal |
 | ------------ | --: | :-- | :----- |
