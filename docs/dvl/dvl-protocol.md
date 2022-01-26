@@ -157,7 +157,7 @@ Example of a dead reckoning report.
   "yaw": 0.6173566579818726,
   "type": "position_local",
   "status": 0,
-  "format": "json_v2"
+  "format": "json_v3"
 }
 
 ```
