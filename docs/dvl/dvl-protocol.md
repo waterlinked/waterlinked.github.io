@@ -319,7 +319,7 @@ wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,
 
 ### Transducer report (wru)
 
-A transducer report is outputted for each of the four transducers of the DVL for each velocity calculation of the DVL. The rate will be the same as that of the velocity report.
+A transducer report is outputted for each of the four transducers of the DVL for each velocity calculation of the DVL. The rate will be the same as that of the velocity report. If the transducer did not receive a signal which could be successfully decoded, `distance` will be set to -1, and `velocity` will be set to 0. RSSI and NSD will be outputted in all cases.
 
 The report has the following format:
 `wru,`*[id],[velocity],[distance],[rssi],[nsd]*
