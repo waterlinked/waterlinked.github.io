@@ -25,6 +25,10 @@ The tables below shows the pinning of the DVL-A50 interface.
 | UART TX | Brown/White   |
 | UART RX | Brown  |
 
+
+!!! Note
+	Power must be applied to the power terminals before applying voltage to UART pins
+
 ## Terminal Interface
 
 The DVL-A50 has a 3.3 volt UART interface (5V tolerant).

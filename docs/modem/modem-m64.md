@@ -28,6 +28,9 @@ The tables below shows the pinning of the Modem-M64 interface. Depending on whic
 | UART RX             | Brown          | Brown |
 | UART TX             | Brown/White    | Brown/White |
 
+!!! Note
+	Power must be applied to the power terminals before applying voltage to UART pins
+
 ## Terminal Interface
 
 The Modem-M64 has a 3.3 volt UART interface.
