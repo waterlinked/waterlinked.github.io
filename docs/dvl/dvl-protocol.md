@@ -184,27 +184,27 @@ The response will be as follows if the reset is successful. If unsuccessful, `su
 ```
 
 
-### Config
+### Configuration over TCP
 
-#### Config parameters
+#### Configuration parameters
 
 | Variable | Description |
 |----------|-------------|
-| speed_of_sound | Speed of sound (1000-2000 m/s)  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees) |
+| speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
+| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
 | dark_mode | `true` when the LED operates as [normal](../interfaces#led-signals), `false` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
 
 
-#### Fetching current config
+#### Fetching current configuration
 
-The current config of the DVL can be obtained by issuing the `get_config` command:
+The current configuration of the DVL can be obtained by issuing the `get_config` command:
 
 ```
 {"command": "get_config"}
 ```
 
-If the config is successfully fetched, the response will be in the following format. If not, `success` will be false, a non-empty `error_message` string will be provided, and `result` will be `null`.
+If the configuration is successfully fetched, the response will be in the following format. If not, `success` will be false, a non-empty `error_message` string will be provided, and `result` will be `null`.
 
 
 ```
@@ -223,9 +223,9 @@ If the config is successfully fetched, the response will be in the following for
 }
 ```
 
-#### Setting config parameters
+#### Setting configuration parameters
 
-Setting of config parameters can be carried out by issuing a `set_config` in the following format, including those parameters which are to be set:
+Setting of configuration parameters can be carried out by issuing a `set_config` in the following format, including those parameters which are to be set:
 
 ```
 {"command":"set_config","parameters":{"speed_of_sound":1480}}
@@ -254,11 +254,11 @@ If the parameters are successfully set, the response will be in the following fo
 
 The serial communication format is 115200 8-N-1 (no hardware flow control).
 
-Packets sent to and received from the DVL start with a `w` and end with LF or CR+LF. The packet format is:
+Packets sent to and received from the DVL start with a `w` and end with LF, CR+LF, or CR. The packet format is:
 
 | Start byte | Direction        | Command  | Options (0 to many)  | Checksum | End byte       |
 |------------|------------------|----------|----------------------|----------|----------------|
-| `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n` or `\r\n` |
+| `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n`, `\r\n`, or `\r` |
 
 `Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL.
 The commands can be sent as a string or entered one character at a time from a terminal.
@@ -270,20 +270,23 @@ The commands can be sent as a string or entered one character at a time from a t
 
 ### Command overview
 
-The commands in the table are shown without the checksum for readability.
+The commands in the table are shown without the checksum and without the mandatory line ending (any of `\n`, `\r\n`, or `\r`) for readability. In all cases, the response to a submitted command may be `wrn`, `wr?`, or `wr!` (see below for details), but only the format of a successful response is listed.
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
 | `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.3.0` |
 | `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,1.4.0,0xfedcba98765432` or `wrw,dvl-a50,1.4.0,0xfedcba98765432,10.11.12.140` |
-| `wcs,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]*    | Set configuration parameters | `wra` / `wr?` | Successfully set the parameters, or failed to do so |
-| `wcc`   | Get current configuration | `wrc,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]* | Entire current config |
+| `wcs,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
+| `wcc`   | Get current configuration | `wrc,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
+| `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](../dead-reckoning#starting-dead-reckoning) run |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wru,`*[details below]* | Transducer information |
+|         |             | `wrp,`*[details below]* | [Dead reckoning](../dead-reckoning) report |
 |         |             | `wrx,`*[details below]* | DEPRECATED: Velocities calculated (old format) |
 |         |             | `wrt,`*[details below]* | DEPRECATED: Transducer information (old format) |
 |         |             | `wr?` | Malformed request: packet cannot be understood |
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
+|         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
 
 
 
@@ -375,32 +378,32 @@ wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,0*e2
 Dead reckoning can be reset by issuing the `wcr` command. The reply will be an ack (`wra`) if the reset is successful, and a nak (`wrn`) if not.
 
 
-### Config
+### Configuration over serial
 
-#### Config parameters
+#### Configuration parameters
 
 | Variable | Description |
 |----------|-------------|
-| speed_of_sound | Speed of sound (1000-2000 m/s)  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees) |
+| speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
+| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
 | dark_mode | `y` when the LED operates as [normal](../interfaces#led-signals), `n` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
 
 
-####  Fetching current config
+####  Fetching current configuration
 
-The current config of the DVL can be obtained by issuing the `wcc` command.
+The current configuration of the DVL can be obtained by issuing the `wcc` command.
 
 
-If the config is successfully fetched, the response will be in the following format. If not, a nak `wrn` will be returned.
+If the configuration is successfully fetched, the response will be in the following format. If not, a nak `wrn` will be returned.
 
 ```
 wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode]
 ```
 
-#### Setting config parameters
+#### Setting configuration parameters
 
-Setting of config parameters can be carried out by issuing the `wcs` command in the following format.
+Setting of configuration parameters can be carried out by issuing the `wcs` command in the following format.
 
 
 ```
@@ -421,7 +424,9 @@ Example for setting speed of sound to 1450 m/s and disabling acoustics, without 
 wcs,1450,,n,
 ```
 
-The response will be an ack `wra` if the parameters are set, and a nak `wrn` if not. The new config will not be returned in the response, but can be obtained by issuing a `wcc` command as above.
+The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not an integer.
+
+The new configuration will not be returned in the response, but can be obtained by issuing a `wcc` command as above.
 
 
 ### Velocity report, old format (wrx) [Deprecated]
