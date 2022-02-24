@@ -6,7 +6,7 @@
 
 <div style="text-align: center;"><img src="../../img/UGPS_G2_Pelicase_Top_1600_web.jpg" style="width: 550px;"></div><br>
 
-The Underwater GPS G2 is a new and improved version of the Explorer Kit. It provides an even more robust and reliable acoustic positioning system with a range of up to 300m (R300 edition). The purpose of the system is to give a live GPS position of ROVs, divers and other moving objects below the water surface.
+[Underwater GPS G2](https://www.waterlinked.com/underwate-gps) is a new and improved version of the Explorer Kit. It provides an even more robust and reliable acoustic positioning system with a range of up to 300m (R300 edition). The purpose of the system is to give a live GPS position of ROVs, divers and other moving objects below the water surface.
 
 <div style="text-align: center;"><img src="../../img/gui_global_position_r300.png" style="width: 750px;" title="GUI Example"></div><br>
 
@@ -47,8 +47,8 @@ To avoid any damage to the Underwater GPS, please read these warnings carefully 
 
 ## Discussion
 
-If you have more questions which is not answered on this website please go to our [forum](https://waterlinked.com/forums/forum/underwater-gps/) where we will be happy to answer you.
+If you have questions, you are very welcome to contact our [customer support](https://support.waterlinked.com/en/knowledge), where we will be happy to help you.
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/underwater-gps-g2/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/UGPS_G2/W-MK-21025-1_G2.pdf)

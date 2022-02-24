@@ -5,7 +5,7 @@
 ![dvl_a50](../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg)
 
 ## Description
-The DVL-A50 is – by far – the world’s smallest commercially available Doppler Velocity Log.
+The [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50) is – by far – the world’s smallest commercially available Doppler Velocity Log.
 
 The A50 is establishing a new market standard with its high performance, ultra-small 4 beam setup, open interface protocol and low cost.
 
@@ -45,4 +45,4 @@ Half-power beam width is 4.4°
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/dvl-a50/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/DVL_A50/wl-21035-3_DVL_A50.pdf)

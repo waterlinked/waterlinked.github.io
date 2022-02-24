@@ -21,4 +21,4 @@ The tables below shows the pinning of the A1 interface connectors.
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/locator-a1/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/W-MK-17023-5_Locator_A1.pdf)

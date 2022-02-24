@@ -1,8 +1,8 @@
 ## Introduction
 
-The Water Linked [DVL-A50](https://store.waterlinked.com/product/dvl-a50/) is designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between a customer gets the DVL-A50 and to having it up and running on their hardware platform, the DVL-A50 is shipped with an attached I/O interface providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs the DVL-A50 has to be integrated with the on-board electronics through a penetrator or a subsea connector.
+The Water Linked [DVLs](https://www.waterlinked.com/dvl) are designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between receipt of a DVL and having it up and running, the DVLs are shipped with an attached I/O interface, providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs, the DVL has to be integrated with the on-board electronics through a penetrator or a subsea connector.
 
-This guide details how the DVL-A50 can be integrated with the BlueROV2.
+This guide details how the [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50) can be integrated with the BlueROV2. Exactly the same procedure can be carried out for the [DVL-A125](https://www.waterlinked.com/dvl/dvl-a125).
 
 ## Parts and tools
 
@@ -12,9 +12,9 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 ### You will need
 
-<img src="https://store.waterlinked.com/wp-content/uploads/2020/03/DSC04478_1600_web.jpg" alt="dvl-a50" width="300" height="300">
+<img src="../../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg" alt="dvl-a50" width="300" height="300">
 
-* [DVL-A50](https://store.waterlinked.com/product/dvl-a50/)
+* [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50)
 
 ![bluerov2_front](../img/bluerov2_front_300x300.png)
 

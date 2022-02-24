@@ -5,7 +5,7 @@
 ![dvl_A125](../img/dvl-a125-coin-light-white.png)
 
 ## Description
-The DVL-A125 is the next step up from the DVL-A50, providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
+The [DVL-A125](https://www.waterlinked.com/dvl/dvl-a125) is the next step up from the [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50), providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
 
 The DVL-A125 builds on the already impressive feats of the DVL-A50 with its increased performance, small 4 beam setup, open interface protocol and mid-to-low cost.
 
@@ -45,4 +45,4 @@ Half-power beam width is 4.3°
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/dvl-a125/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/DVL_A125/W-MK-21025-1_DVL_A125.pdf)

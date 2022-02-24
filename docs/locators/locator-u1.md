@@ -64,4 +64,4 @@ Because the U1 is battery powered the only interface for it is the charing port 
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/locator-u1/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/Locator_U1/W-MK-19008-3_Locator_U1.pdf)
