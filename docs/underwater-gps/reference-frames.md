@@ -33,7 +33,7 @@ The x-axis of the acoustic frame is defined by the 'Forward' direction of the to
 
 The z-coordinate of the acoustic frame is always depth relative to the sea surface (not, say, relative to the antenna base, if using an antenna).<br><br>
 
-![reference_system_pelicase](../../img/reference_system_pelicase_g2.png)
+![reference_system_pelicase](../img/reference_system_pelicase_g2.png)
 
 <br>
 

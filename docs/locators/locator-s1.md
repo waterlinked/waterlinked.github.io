@@ -19,7 +19,7 @@ As the Locator-S1 does not carry its own depth sensor, the depth needs to be pro
 
 * Flashing green light (once a second): Searching for GPS lock. The unit is **not ready** to dive.
 
-* Fixed green light: GPS lock is acheived. The unit is ready to dive.
+* Fixed green light: GPS lock is achieved. The unit is ready to dive.
 
 * Flashing green light (slow): GPS lock has been acheived but lost. The unit is ready to dive.
 
@@ -51,4 +51,4 @@ The Locator-S1 has a simple 3.3 volt UART interface which is used to change the 
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/locator-s1/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/W-MK-17104-3_Locator-S1.pdf)

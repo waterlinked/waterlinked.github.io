@@ -44,4 +44,4 @@ The diagrams below shows the mechanical dimensions of the Master-D1 electronics.
 
 ## Datasheet
 
-[Datasheet](https://store.waterlinked.com/datasheets/master-d1/)
+[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/W-MK-17025-5_Master-D1.pdf)
