@@ -14,13 +14,13 @@ The Locator-D1 carries its own depth sensor and can therefore operate fully stan
 
 The tables below shows the pinning of the D1 interface connectors.
 
-![d1_connector_gh](../img/d1_connector_gh.png)
+![d1_connector_gh](../../img/d1_connector_gh.png)
 
-![d1_connector_binder](../img/d1_connector_binder.png)
+![d1_connector_binder](../../img/d1_connector_binder.png)
 
 ## Dimensions
 
-![d1_dimensions](../img/d1_dimensions.png)
+![d1_dimensions](../../img/d1_dimensions.png)
 
 ## Datasheet
 

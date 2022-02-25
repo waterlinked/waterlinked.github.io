@@ -45,9 +45,9 @@ nav:
             - Antenna: antenna.md
             - Receiver-D1: receiver-d1.md
           - Locator:
-            - Locator-A1: locators/locator-a1.md
-            - Locator-D1: locators/locator-d1.md
-            - Locator-U1: locators/locator-u1.md
+            - Locator-A1: underwater-gps/locators/locator-a1.md
+            - Locator-D1: underwater-gps/locators/locator-d1.md
+            - Locator-U1: underwater-gps/locators/locator-u1.md
         - GUI:
           - Position: underwater-gps/gui/position.md
           - Baseline: underwater-gps/gui/receivers.md
@@ -59,8 +59,7 @@ nav:
         - Integration:
           - API: underwater-gps/integration/api.md
           - BlueROV2 integration: underwater-gps/integration/bluerov-integration.md
-          - Code examples: underwater-gps/integration/code-examples.md
-        - Software update: underwater-gps/sw-update.md
+        - Software updates: underwater-gps/sw-update.md
       - Explorer Kit (retired):
         - Quickstart: explorer-kit/quickstart.md
         - Introduction: explorer-kit/introduction.md
@@ -71,17 +70,17 @@ nav:
         - Master-D1: master-d1.md
         - Receiver-D1: receiver-d1.md
         - Locators:
-          - Locator-A1: locators/locator-a1.md
-          - Locator-D1: locators/locator-d1.md
-          - Locator-S1: locators/locator-s1.md
-          - Locator-U1: locators/locator-u1.md
+          - Locator-A1: explorer-kit/locators/locator-a1.md
+          - Locator-D1: explorer-kit/locators/locator-d1.md
+          - Locator-S1: explorer-kit/locators/locator-s1.md
+          - Locator-U1: explorer-kit/locators/locator-u1.md
         - GUI:
           - Position: explorer-kit/gui/position.md
           - Receivers: explorer-kit/gui/receivers.md
           - Settings: explorer-kit/gui/settings.md
           - Diagnostic: explorer-kit/gui/diagnostic.md
           - API: explorer-kit/gui/api.md
-        - Software Update: explorer-kit/upgrader.md
+        - Software updates: explorer-kit/upgrader.md
     - DVL:
       - DVL-A50 — Introduction: dvl/dvl-a50.md
       - DVL-A125 — Introduction: dvl/dvl-a125.md

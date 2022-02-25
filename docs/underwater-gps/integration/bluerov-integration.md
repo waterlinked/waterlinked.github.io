@@ -8,7 +8,7 @@ The following steps specifically covers using the [BlueROV2 Integration Kit](htt
 
 ## Parts and tools
 
-The [Locator-A1](../../locators/locator-a1.md) and [Locator-U1](../../locators/locator-u1.md) are the only Locators that will work together with the BlueROV2 Integration Kit as the Locator bulkhead on the Underwater GPS will be altered and used for connection to the BlueROV2. For other Locators, see [BlueROV2 integration without integration kit](#bluerov2-integration-without-integration-kit).
+The [Locator-A1](../locators/locator-a1.md) and [Locator-U1](../locators/locator-u1.md) are the only Locators that will work together with the BlueROV2 Integration Kit as the Locator bulkhead on the Underwater GPS will be altered and used for connection to the BlueROV2. For other Locators, see [BlueROV2 integration without integration kit](#bluerov2-integration-without-integration-kit).
 
 ### You will need
 
@@ -261,12 +261,12 @@ It is possible to integrate the Underwater GPS G2 with the BlueROV2 *without* th
 
 ### Locator-U1
 
-The [Locator-U1](../../locators/locator-u1.md) is a battery powered and has an integrated depth sensor, therefore you only need to charge it, attach it to the BlueROV2, turn it on, and configure it in the [Underwater GPS GUI](../gui/settings.md).
+The [Locator-U1](../locators/locator-u1.md) is a battery powered and has an integrated depth sensor, therefore you only need to charge it, attach it to the BlueROV2, turn it on, and configure it in the [Underwater GPS GUI](../gui/settings.md).
 
 ### Locator-A1
 
-The [Locator-A1](../../locators/locator-a1.md) needs to be integrated with the BlueROV2 following the steps in [Installing the Locator-A1](#installing-the-locator-a1-on-the-bluerov2) above. Since the Locator-A1 signals goes through the BlueROV2 tether and enters the FXTI, you will have to route the Locator-A1 signals to the *Locator* bulkhead on the Underwater GPS G2. The bulkheads on the Underwater GPS G2 mates with [Binder 770 Series NNC Miniature Cable Connectors](https://octopart.com/99-0771-002-08-binder-39031370) and uses pins 7 and 8 for the Locator-A1 signals. For the signal integrity of the Locator-A1 signal, use a Cat5e cable between the Topside and the FXTI. Using the Locator-A1, you will also need to provide external depth. See [Providing depth to system when using Locator-A1](./api.md#providing-depth-to-system-when-using-locator-a1) for more information.
+The [Locator-A1](../locators/locator-a1.md) needs to be integrated with the BlueROV2 following the steps in [Installing the Locator-A1](#installing-the-locator-a1-on-the-bluerov2) above. Since the Locator-A1 signals goes through the BlueROV2 tether and enters the FXTI, you will have to route the Locator-A1 signals to the *Locator* bulkhead on the Underwater GPS G2. The bulkheads on the Underwater GPS G2 mates with [Binder 770 Series NNC Miniature Cable Connectors](https://octopart.com/99-0771-002-08-binder-39031370) and uses pins 7 and 8 for the Locator-A1 signals. For the signal integrity of the Locator-A1 signal, use a Cat5e cable between the Topside and the FXTI. Using the Locator-A1, you will also need to provide external depth. See [Providing depth to system when using Locator-A1](./api.md#providing-depth-to-system-when-using-locator-a1) for more information.
 
 ### Locator-D1
 
-The [Locator-D1](../../locators/locator-d1.md) comes with a separate cable which must run parallel with the BlueROV2 tether to the Topside. Since the Locator-D1 is a stand-alone unit, no further integration with the BlueROV2 is needed.
+The [Locator-D1](../locators/locator-d1.md) comes with a separate cable which must run parallel with the BlueROV2 tether to the Topside. Since the Locator-D1 is a stand-alone unit, no further integration with the BlueROV2 is needed.

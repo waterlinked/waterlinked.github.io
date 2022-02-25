@@ -42,7 +42,6 @@ To avoid any damage to the Underwater GPS, please read these warnings carefully 
 | **Temperature** | Make sure the system does not overheat. Avoid placing it in direct sunlight over extended periods of time. |
 | **Salt water** | The contents of the Topside housing will corrode and/or short if in contact with salt water. Keep the housing lid closed when in the field to avoid salt water getting inside. |
 | **Force** | Avoid using excessive force on connectors, screws and other parts of the system as this can lead to mechanical failure. |
-|   |   |
 
 
 ## Discussion
