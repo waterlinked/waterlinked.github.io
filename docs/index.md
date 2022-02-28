@@ -27,19 +27,19 @@
 </a>
 </div>
 <div class="col" style="padding-right: 2em">
-<a href="./locators/locator-u1/">
+<a href="./underwater-gps/locators/locator-u1/">
 <img src="https://store.waterlinked.com/wp-content/uploads/2018/03/WL-21018_Locator-U1_1.jpg" style="width: auto; height: 8em; margin-left: -1.2em;"  /><br>
 <h4>Locator-U1</h4>
 </a>
 </div>
 <div class="col" style="padding-right: 2em">
-<a href="./locators/locator-a1/">
+<a href="./underwater-gps/locators/locator-a1/">
 <img src="https://store.waterlinked.com/wp-content/uploads/2017/06/WL_21009_Locator_A1-1.jpg" style="height: 8em; margin-left: -1.75em;" /><br>
 <h4>Locator-A1</h4>
 </a>
 </div>
 <div class="col" style="padding-right: 2em">
-<a href="./locators/locator-d1/">
+<a href="./underwater-gps/locators/locator-d1/">
 <img src="https://store.waterlinked.com/wp-content/uploads/2018/02/WL_21016_Locator_D1-20.jpg" style="height: 8em; margin-left: -1.75em; " /><br>
 <h4>Locator-D1</h4>
 </a>
