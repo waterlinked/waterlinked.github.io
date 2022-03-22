@@ -55,7 +55,7 @@ nav:
           - Diagnostic: underwater-gps/gui/diagnostic.md
           - Diagnostic report: underwater-gps/gui/diagnostic-report.md
           - Warnings: underwater-gps/gui/warnings.md
-          - Demo GUI: underwater-gps/gui/demo-gui.md
+          - Demo: underwater-gps/gui/demo-gui.md
         - Integration:
           - API: underwater-gps/integration/api.md
           - BlueROV2 integration: underwater-gps/integration/bluerov-integration.md

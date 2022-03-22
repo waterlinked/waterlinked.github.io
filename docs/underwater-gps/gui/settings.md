@@ -38,7 +38,7 @@ The frequency bands of the available channels are as follows. Lower frequency ty
 
     Typically one can expect a decrease in signal strength of around 6 dB for each doubling of distance due to spherical spreading, plus a little more due to additional absorption.
 
-## Topside Setup
+## Topside setup
 
 For best performance, we recommend input heading data, and also global GPS data, from an external device, via the UGPS [API](../../integration/api), as such a device will likely be more accurate than the topside unit's built-in GPS receiver and IMU. If your deployment of the system allows for static GPS and/or heading values can be used, this is even better, but would typically necessitate that the topside unit is on land.
 
