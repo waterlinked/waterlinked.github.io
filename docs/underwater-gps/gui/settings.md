@@ -17,14 +17,14 @@ Select the type of locator ([U1](../../locators/locator-u1), [A1](../../locators
 The frequency bands of the available channels are as follows. Lower frequency typically corresponds to greater range due to less acoustic absorption, though there are other factors involved: if you experience issues with signal quality (low RSSI or high NSD), try a different channel.
 
 | From (kHz) | To (kHz) | Channel |
-|-------|-------|------|
-| 31.25 | 62.5  | 1 |
-| 62.5  | 93.75 | 2 |
-| 93.75 | 125.0 | 3 |
-| 125.0 | 156.5 | 4 |
-| 156.5 | 187.0 | 5 |
-| 187.0 | 218.5 | 6 |
-| 218.5 | 250.0 | 7 |
+|------------|----------|---------|
+| 31.25      | 62.5     | 1       |
+| 62.5       | 93.75    | 2       |
+| 93.75      | 125.0    | 3       |
+| 125.0      | 156.25   | 4       |
+| 156.25     | 187.5    | 5       |
+| 187.5      | 218.75   | 6       |
+| 218.75     | 250.0    | 7       |
 
 !!! Tip
     Typically, NSD (_Noise spectral density_, displayed in the [Diagnostic](../diagnostic) pane of the GUI) is around -100 dBm (in the units of version 3.3.0 or later of the software; 15 nV/sqrt(Hz) in the units of earlier software versions), or a little higher or lower. If it is much higher than this, it is likely that there is acoustic interference in the chosen channel, and a different channel should be tried.
