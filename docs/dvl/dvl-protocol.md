@@ -387,7 +387,7 @@ Dead reckoning can be reset by issuing the `wcr` command. The reply will be an a
 | speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
 | mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode | `y` when the LED operates as [normal](../interfaces#led-signals), `n` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
+| dark_mode | `y` for no blinking of LED (e.g. if the LED is interfering with a camera), `n` when the LED operates as [normal](../interfaces#led-signals) |
 
 
 ####  Fetching current configuration
