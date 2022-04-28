@@ -20,9 +20,9 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 * [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/bluerov2/)
 
-![ethernet_switch](../img/3port_ethernet_switch.png)
+<img src="../../img/ETHSWITCH-R1-RP-1024x768.jpg" alt="ETHSWITCH-R1-RP" width="300" height="300">
 
-* Small ethernet switch. We recommend [this one](https://www.aliexpress.com/item/32854568356.html). Requires a 12V DC/DC converter such as [this one](https://octopart.com/7812sr-c-murata+power+solutions-49447769).
+* Small ethernet switch. The one pictured here is from [BlueRobotics](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/), and ideal for use in the BlueROV2.
 
 <img src="https://store.waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
 
@@ -31,11 +31,11 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 You will also need:
 
 * [Hex Key Set](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/) from Blue Robotics
-* [Penetrator Wrench](https://bluerobotics.com/store/cables-connectors/tools/tool-penetrator-wrench-r1/) from Blue Robotics
-* [M10 Cable Penetrator for 6mm Cable](https://bluerobotics.com/store/cables-connectors/penetrators/penetrator-10-25-a/) from Blue Robotics
-* Potting compound (possible options in appendix A)
-* (Optional) [Potting kit](https://bluerobotics.com/store/cables-connectors/tools/tool-potting-kit-r1/) from Blue Robotics
-* [Silicone grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-silicone-grease-10g-r1/)
+* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
+* [Plug Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) from Blue Robotics
+* (Optional) [Cable Jacket Stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/) from Blue Robotics
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [Silicone grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * 5 mm universal drill bit
 * 2 x M5x12 mm stainless steel pan head screws (included with BlueROV2 mounting bracket)
 * 4 x M3x4 mm stainless steel countersunk flat head screws (included with BlueROV2 mounting bracket)
@@ -48,7 +48,7 @@ You will also need:
 * Wire stripping tool
 * Zip ties
 * 4 x 30 cm (12") wires (options discussed under [Connect DVL-A50 and BlueROV2](#connect-dvl-a50-and-bluerov2)). If possible, use 2 x red and 2 x black wires.
-* 2 x 6" ethernet cables
+* 6" ethernet cable
 
 ## Preparation
 
@@ -131,43 +131,23 @@ Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove 
 
 To add a penetrator to the cable you will need:
 
-* [M10 Cable Penetrator for 6mm Cable](https://bluerobotics.com/store/cables-connectors/penetrators/penetrator-10-25-a/) from Blue Robotics
-* Potting compound (possible options in appendix A)
-* (Optional) [Potting kit](https://bluerobotics.com/store/cables-connectors/tools/tool-potting-kit-r1/) from Blue Robotics
+* [Plug Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) from Blue Robotics
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* (Optional) [Cable Jacket Stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/) from Blue Robotics
 * Utility knife
 
-!!! Note
-	The penetrator will be pottet using a potting compound. Most potting compounds need several hours or days to harden, so prepare a space where the potting can be left undisturbed for longer periods. Note also that working with potting compounds may get messy, so place old newspapers or some cardboard over the work area, and have single-use tissue nearby to clean any mess.
-
-Strip off 25-30 cm of the cable jacket using a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping [here](https://bluerobotics.com/learn/cable-stripping/).
+Strip off 25-30 cm of the cable jacket using a cable jacket stripper, a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping [here](https://bluerobotics.com/learn/cable-stripping/).
 
 ![stripped-a50-cable](../img/stripped-a50-cable.jpeg)
 
-Feed the now exposed leads through the penetrator starting from the head, and continue feeding until the cable jacket is situated within the shoulder of the penetrator.
-
-![a50-cable-through-penetrator](../img/a50-cable-through-penetrator.jpeg) ![labeled-penetrator-cutaway](../img/labeled-penetrator-cutaway.png)
-
-With the threads of the penetrator pointing downwards and the cable pointing upwards, pour potting compound into the space between the cable and the penetrator. Fill with potting compound until it is flush with the top of the penetrator.
-
-![potting-penetrator-rear](../img/potting-penetrator-rear.jpeg) ![potted-penetrator-rear](../img/potted-penetrator-rear.jpeg)
-
-!!! Tip
-	Use a clamping vice to hold the penetrator in place while pouring the potting compound.
-
-Let the potting compound harden before proceeding.
-
-Turn the penetrator upside downs and fill the gap between the leads with more potting compound.
-
-![potting-penetrator-front](../img/potting-penetrator-front.jpeg) ![potted-penetrator-front](../img/potted-penetrator-front.jpeg)
-
-Let the potting compound fully cure before proceeding.
+Follow the [WetLink Penetrator Assembly Guide](https://bluerobotics.com/learn/wetlink-penetrator-installation-guide/) by BlueRobotics to add a penetrator on the DVL-A50 cable.
 
 ### Removing a blank penetrator
 
 To remove a blank penetrator from your BlueROV2, you will need the following tools:
 
 * 2.5 mm hex driver
-* Penetrator wrench
+* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 
 To ensure your ROV is completely powered off, please remove the battery completely from the 3” enclosure and place to the side.
 
@@ -194,11 +174,10 @@ Remove a blank penetrator, sush as the one pictured below, from the 4” End Cap
 To install DVL-A50 into the end cap, you will need the following parts and tools:
 
 * DVL-A50 with installed cable penetrator
-* Penetrator Nut (Black) (included in [M10 Cable Penetrator for 6mm Cable](https://bluerobotics.com/store/cables-connectors/penetrators/penetrator-10-25-a/) from Blue Robotics)
-* Penetrator O-ring (included in [M10 Cable Penetrator for 6mm Cable](https://bluerobotics.com/store/cables-connectors/penetrators/penetrator-10-25-a/) from Blue Robotics)
+* Penetrator O-ring (included with [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics)
+* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 * Silicone Grease
 * Isopropyl Alcohol Wipe
-* Penetrator wrench
 
 Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.
 
@@ -259,12 +238,9 @@ Zip tie the soldered wires to the I/O Interface board to protect the solder join
 To connect the DVL-A50 to the BlueROV2 you will need:
 
 * 2 x 30 cm (12") wires for power to the DVL-A50
-* 2 x 30 cm (12") wires for power to the ethernet switch
-* [12V DC/DC converter](https://octopart.com/7812sr-c-murata+power+solutions-49447769)
-* 2 x 6" ethernet cables
+* [BlueRobotics ethernet switch](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/)
+* 6" ethernet cable
 * Zip ties
-
-Both the DVL-A50 and the ethernet switch will require power.
 
 To provide power to the DVL-A50 you can either use (A) a 2-pin [Molex MicroFit3.0 cable assembly](https://octopart.com/214751-2022-molex-109474124), (B) solder on a [Würth screw terminal](https://octopart.com/691137710002-w%C3%BCrth+elektronik-78871135), or (C) directly solder on 2 wires to the power pads.
 
@@ -281,32 +257,12 @@ To provide power to the DVL-A50 you can either use (A) a 2-pin [Molex MicroFit3.
 !!! Warning
 	The Power Terminal Blocks are unregulated and directly connected to the battery. Any short may generate several amps which will fry most circuits. Check that the wires are secured properly in both ends.
 
-Providing power to the ethernet switch is dependent on chosen ethernet switch. For the switch we [recommend](https://www.aliexpress.com/item/32854568356.html) you will additionally need a [DC/DC converter](https://octopart.com/7812sr-c-murata+power+solutions-49447769) to not exceed the 12V rating. The recommended switch comes with a JST-to-Barrel-plug cable assembly which is used in this guide:
+Install the BlueRobotics ethernet switch following the [Ethernet Switch Installation Guide for the BlueROV2](https://bluerobotics.com/learn/ethernet-switch-installation-guide-for-the-bluerov2/) by BlueRobotics.
 
-* Cut off the wires near the barrel plug.
-* Strip off 2-3 mm of the cut wire ends.
-* Solder the red wire to the DC/DC converters OUTPUT.
-* Strip off 2-3 mm on one end of both the 30 cm wires for power to the switch.
-* Solder both the black wire from the cut and stripped JST-to-Barrel-plug cable assembly and one of the 30 cm wires to the DC/DC converters GND.
-* Solder the remaining wire to the DC/DC converters INPUT.
-
-![murata_7812sr](../img/murata_7812sr.png)
-
-* Connect the two 30 cm wires to the Power Terminal Blocks in the same fashion as with the DVL-A50 power.
-* Connect JST header from the now modified JST-to-Barrel-plug cable assembly to the ethernet switch.
-
-!!! Warning
-	Improper insulation of exposed pads and wires may cause electrical shorts and pose a fire hazard. Insulate exposed leads, pads, and components using appropriate insulation materials and methods such as wrapping in electrical tape.
-
-With power now sorted, we will connect up the ethernet cables:
-
-* Disconnect the ethernet cable attached to the Raspberry Pi coming from the Fathom-X Tether Interface Board.
-* Connect the ethernet from the Fathom-X Tether Interface Board to the ethernet switch.
-* Connect a 6" ethernet cable from the Raspberry Pi to the ethernet switch.
-* Connect a 6" ethernet cable from the I/O Interface Board to the ethernet switch.
+With power and ethernet switch now sorted, connect a 6" ethernet cable from the ethernet switch to the IO Interface board.
 
 !!! Tip
-	Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface, the ethernet switch, the DC/DC converter and wires to the electroncs frame inside the BlueROV2.
+	Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface to the electroncs frame inside the BlueROV2.
 
 
 ### Reassemble BlueROV2 electronics enclosure
@@ -342,3 +298,6 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 ## Software
 
 Integration of the DVL-A50 into ArduPilot Companion currently exists in BETA stage. Details on how to get the BETA version of DVL integration with ArduSub can be found on the [ArduSub Developers website](https://www.ardusub.com/developers/dvl-integration.html).
+
+!!! Note
+	There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter `BARO_PROBE_EXT` to `768` and then reboot the ROV.
