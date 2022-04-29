@@ -2,16 +2,16 @@
 
 The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in several different ways, depending upon the choice of locator.
 
-* If using a [U1 locator](../../locators/locator-u1), the locator can simply be attached to the BlueROV2 in any convenient way. No further hardware integration is required. [Establish a network connection](#via-a-topside-computer) via a topside computer between the UGPS G2 topside unit and the BlueROV2, and follow the [final steps](#final-steps) of the guide below to complete the integration with ArduSub/QGroundControl.
-* If using an [A1 locator](../../locators/locator-a1), follow the guide below. There are two main configuration options. One connects the FXTI to the UGPS G2 topside unit by means of a connection interface built into the UGPS G2 topside unit with power-line communication (PLC) capabilities, making use of the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/).
+* If using a [Locator-U1](../../locators/locator-u1), the locator can simply be attached to the BlueROV2 in any convenient way. No further hardware integration is required. [Establish a network connection](#via-a-topside-computer) via a topside computer between the UGPS G2 topside unit and the BlueROV2, and follow the [final steps](#final-steps) of the guide below to complete the integration with ArduSub/QGroundControl.
+* If using a [Locator-A1](../../locators/locator-a1), follow the guide below. There are two main configuration options. One connects the FXTI to the UGPS G2 topside unit by means of a connection interface built into the UGPS G2 topside unit with power-line communication (PLC) capabilities, making use of the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/).
 
     The other connects the UGPS G2 topside to the BlueROV2 via your topside computer, by means of a network bridge. The Homeplug card of the BlueROV2 integration kit is not needed in this case, and you will likely wish to purchase directly a couple of simple [parts](#a1-integration-without-bluerov2-integration-kit) which are made use of in the guide.
 
-* If using a [D1 locator](../../locators/locator-d1), the simplest option is to use the D1's cable, and attach the D1 locator to the BlueROV2 in any convenient way. No further hardware integration is then required. As with the U1 locator, [establish a network connection](#via-a-topside-computer) via a topside computer between the UGPS G2 topside unit and the BlueROV2, and follow the [final steps](#final-steps) of the guide below to complete the integration with ArduSub/QGroundControl.
+* If using a [Locator-D1](../../locators/locator-d1), the simplest option is to use the D1's cable, and attach the D1 locator to the BlueROV2 in any convenient way. No further hardware integration is then required. As with the Locator-U1, [establish a network connection](#via-a-topside-computer) via a topside computer between the UGPS G2 topside unit and the BlueROV2, and follow the [final steps](#final-steps) of the guide below to complete the integration with ArduSub/QGroundControl.
 
-    To use the ROV tether rather than the D1's cable, use the same guide as for the A1 locator with certain [modifications](#integration-via-the-bluerov2-tether-when-using-a-d1-locator). This is an option if the ROV has a fibre-optic tether (the A1 locator cannot be used in that case).
+    To use the ROV tether rather than the D1's cable, use the same guide as for the Locator-A1 with certain [modifications](#integration-via-the-bluerov2-tether-when-using-a-d1-locator). This is an option if the ROV has a fiber-optic tether (the Locator-A1 cannot be used in that case).
 
-## Integration when using the A1 locator
+## Integration when using the Locator-A1
 
 ### You will need
 
@@ -23,9 +23,13 @@ The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in s
 
 * [Hex Key Set](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/)
 
-![penetrator_wrench](../../img/penetrator_wrench-300x300.png)
+![wetlink_penetrator](../../img/WLP-M10-6.5MM-R1-RP-2-300x300.jpg)
 
-* [Penetrator Wrench](https://bluerobotics.com/store/cables-connectors/tools/tool-penetrator-wrench-r1/)
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+
+![bulkhead_wrench](../../img/WL-M10-BULKHEAD-WRENCH-R1-RP-1-300x300.jpg)
+
+* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
 
 
 <img src="https://store.waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg" alt="dvl-a50" width="300" height="300">
@@ -46,7 +50,7 @@ Optional:
 You will need to install the Locator-A1 on the BlueROV2 using components from the BlueROV2 Integration Kit. The locator will use one of the spare cable penetrations in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether.
 
 !!! Note
-	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. We have a 3D model of a suitable [mounting bracket](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the antenna/receivers near the surface.
+	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. The bracket is included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/), but we also have a 3D model of a suitable [mounting bracket](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the antenna/receivers near the surface.
 
 #### Remove a blank penetrator
 
@@ -78,14 +82,27 @@ Remove the blank penetrator as pictured from the 4” End Cap with the penetrato
 
 #### Install Locator-A1 penetrator
 
-To install Locator-A1 into the end cap, you will need the following parts and tools:
+To install the Locator-A1 into the end cap, you will need the following parts and tools:
 
-* Locator-A1 with installed [cable penetrator](https://bluerobotics.com/product-category/cables-connectors/penetrators/) (if the locator was purchased [directly from Blue Robotics](https://bluerov-solutions.com/produkt/water-linked-locator-a1/), the penetrator may have been pre-installed)
-* Penetrator Nut (Black)
-* Penetrator O-ring
-* Silicone Grease – 10g Tube
+* [Locator-A1](https://store.waterlinked.com/product/locator-a1/)
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * Isopropyl Alcohol Wipe
-* Penetrator wrench
+* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
+* [Cable jacket stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/), a utility knife, or a sharp blade
+* Cutting pliers
+
+One pair of twisted wires from the Locator-A1 must be connected to a spare twisted pair on the BlueROV2 tether. This can be done permanently by soldering or splicing, or by crimping on an appropriate header. For the latter you'll need:
+
+* [1x3-Pin 0.1" (2.54mm) Crimp Connector Housing](https://www.pololu.com/product/1902)
+* 2x [Male Crimp Pins for 0.1" Housings](https://www.pololu.com/product/1931)
+* [Crimping tool](https://www.pololu.com/product/1928)
+
+Remove 10 cm of the cable jacket using a cable jacket stripper, a utility knife, or a sharp blade. Cut off everything except the blue and white/blue twisted pair using cutting pliers.
+
+Follow the BlueRobotics [WetLink Penetrator Assembly Guide](https://bluerobotics.com/learn/wetlink-penetrator-installation-guide/) and install the WetLink penetrator onto the Locator-A1 cable.
+
+If you intend to add a 1x3 connector, do so now.
 
 Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.
 
@@ -93,19 +110,20 @@ Remove the O-ring from the bag and apply silicone grease to it.
 
 ![bluerov2-grease-o-ring](../../img/bluerov2-grease-o-ring-1024x683.png)
 
-Install the O-ring onto the Locator-A1 cable penetrator.
-Install the Locator-A1 cable penetrator on to the end cap in the hole you previously removed the blank penetrator from. Tighten to finger tight, then use the provided wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+Install the O-ring onto the WetLink penetrator.
+
+Install the Locator-A1 with the WetLink penetrator onto the end cap in the hole you previously removed a blank penetrator from. Tighten to finger tight, then use the bulkhead wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
 
 ![bluerov2-end-cap-A1](../../img/bluerov2-end-cap-A1-1024x576.jpg)
 
-Using the pre-crimped header pin connector on the Locator-A1, connect the locator wires (green/white) to a spare twisted pair of the tether (green/white).
+Connect the Locator-A1 wires (green/white) to a spare twisted pair of the tether (green/white).
 
 #### Reassemble BlueROV2 electronics enclosure
 
 To reassemble your BlueROV2 Electronics Enclosure, you will need the following parts and tools:
 
 * 4 x M3x16 screws that were placed off to the side during disassembly
-* Silicone Grease – 10g Tube
+* [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * 2.5 mm hex driver
 
 Reinstall 4” Watertight Enclosure onto ROV with the following steps:
@@ -120,17 +138,21 @@ Mount the Electronics Enclosure to the frame using the M3x16 screws so that the 
 
 To mount the Locator-A1 to the BlueROV2 frame, you will need the following parts and tools:
 
-* Aluminum Locator-A1 mounting bracket (2 halves)4 x M3x16 socket head cap screws (Not included)
-* 2 x M5x12 button head cap screws
-* 2.5 mm hex driver
+* Locator-A1 mounting bracket (included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/), [printable 3D model available](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip))
+* 2 x M4x35 Socket head cap screws (included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/)
+* 2x M4 Lock Nuts (included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/)
 * 3 mm hex driver
-* (Optional) Bottle of threadlocker
+* 7 mm spanner or wrench
+* 4 mm drill bit
 
 Route the locator to one side of the ROV.
 
-Attach the aluminum mounting bracket to the Locator-A1 using the M3x16 socket head screws. (Optional) add threadlocker to screw threads before securing.
+Find an appropriate spot to attach the Locator-A1 mounting bracket to the frame of the BlueROV2. Drill out two holes spaced 49.25 mm apart using a 4 mm drill bit.
 
-Secure the mounting bracket to the existing holes on the ROV frame.
+![locator-a1_bracket_hole_spacing](../../img/locator-a1_bracket_hole_spacing.png)
+
+Attach the Locator-A1 to the Locator-A1 mounting bracket, and secure the bracket to the BlueROV2 using the M4x35 Socket head cap screws and lock nuts.
+
 
 ### Connect the UGPS G2 topside to the A1 locator via the BlueROV2 tether
 
@@ -278,7 +300,7 @@ If everything is operating correctly, you should now find an ROV position on the
 
 #### 'No External Depth' error, or QGroundControl connection issues
 
-This almost certainly means that the network between the UGPS G2 topside and the BlueROV2 has not been successfully established. First carry out the following styeps.
+This almost certainly means that the network between the UGPS G2 topside and the BlueROV2 has not been successfully established. First carry out the following steps:
 
 1. Ensure you are using the latest versions of ArduSub Companion and QGroundControl: [Update Software](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software)
 2. In the Companion Web Interface, go to the [MAVProxy](http://www.ardusub.com/operators-manual/companion-web.html#mavproxy) page: [http://192.168.2.2:2770/mavproxy](http://192.168.2.2:2770/mavproxy)
@@ -293,25 +315,25 @@ If none of this solves the problem, you are very welcome to [contact us](https:/
 
 Keep the Water Linked software [up to date](../../sw-update). The GUI should notify when an update is available, but the current version can also be checked at [192.168.2.94/#/about](http://192.168.2.94/#/about).
 
-## Integration via the BlueROV2 tether when using a D1 locator
+## Integration via the BlueROV2 tether when using a Locator-D1
 
 There are two options. The one we recommend is to proceed exactly as when [connecting the UGPS G2 topside to the A1 locator using the BlueROV2 tether](#connect-the-ugps-g2-topside-to-the-a1-locator-via-the-bluerov2-tether), except that where the green and white twisted pair of the A1 locator is referred to, instead both the orange and white twisted pair and the blue and white twisted pair of the [D1 locator](../../locators/locator-d1) should be used. Thus one will require three twisted pairs in the BlueROV2 tether if the [FXTI approach](#by-fxti-modifications) to establishing a network connection between the UGPS G2 topside and the BlueROV2 is chosen, and two if the [network bridge](#via-a-topside-computer) approach is chosen. If taking this approach, 'A1 locator' should be selected in the [GUI locator config](../../gui/settings/#locator-setup), not 'D1 locator' ('D1 locator' should only be selected if using the D1 locator with its supplied cable).
 
-If using a fibre-optic tether, the A1 locator cannot be used, as the electrical signal sent via the green and white pair can not easily be converted to an optical one. However, the D1 locator can be used via the integration of the previous paragraph, with the addition that a converter from RS-422 to optical should be used in between the UGPS G2 topside box and the tether, and a converter from optical to RS-422 should be used at the BlueROV2 end between the tether and the Locator-D1.
+If using a fiber-optic tether, the A1 locator cannot be used, as the electrical signal sent via the green and white pair can not easily be converted to an optical one. However, the D1 locator can be used via the integration of the previous paragraph, with the addition that a converter from RS-422 to optical should be used in between the UGPS G2 topside box and the tether, and a converter from optical to RS-422 should be used at the BlueROV2 end between the tether and the Locator-D1.
 
 !!! Note
 	Precise measurement of time-of-flight is crucial to the accuracy of the UGPS G2 positioning. Thus it is important that any latency from making conversions between RS-422 and optical signals is negligible. Latency of the order of nano-seconds, which many converters have, is fine.
 
-The other option is the same, except all twisted pairs of the D1 locator are used in the integration, rather than only two of them. This will enable the UGPS G2 topside to receive the depth of the locator from its depth sensor, and the [step](#establish-a-network-connection-between-the-ugps-g2-topside-unit-and-the-bluerov2) of establishing a network connection between the UGPS G2 topside unit and the BlueROV2 can be skipped. This requires three twisted pairs in the BlueROV2 tether. In this case, 'D1 locator' should be selected in the [GUI locator config](../../gui/settings/#locator-setup). This option is again possible in the case of a fibre-optic tether by means of conversion to and from RS-422 and optical.
+The other option is the same, except all twisted pairs of the D1 locator are used in the integration, rather than only two of them. This will enable the UGPS G2 topside to receive the depth of the locator from its depth sensor, and the [step](#establish-a-network-connection-between-the-ugps-g2-topside-unit-and-the-bluerov2) of establishing a network connection between the UGPS G2 topside unit and the BlueROV2 can be skipped. This requires three twisted pairs in the BlueROV2 tether. In this case, 'D1 locator' should be selected in the [GUI locator config](../../gui/settings/#locator-setup). This option is again possible in the case of a fiber-optic tether by means of conversion to and from RS-422 and optical.
 
 !!! Note
         The depth sensor of the D1 locator is likely to be less accurate than the BlueROV2's depth sensor, and it is for this reason that we recommend to integrate the D1 locator as if it were an A1 locator, in the manner described in the first paragraph of this section.
 
-## A1 integration without BlueROV2 integration kit
+## Locator-A1 integration without BlueROV2 integration kit
 
 In this case, the [network bridge](#via-a-topside-computer) approach must be chosen. Otherwise, the guide for the A1 locator above can be followed as-is, except that in order to [connect](#connect-the-ugps-g2-topside-to-the-a1-locator-via-the-bluerov2-tether) the UGPS G2 topside unit to the FXTI for sending of signals to the A1 locator, one will likely need a couple of parts. Specifically, in the guide, the following are used:
 
-1. A [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370) (pins 7 and 8) to connect to the 'Locator' bulkhead of the UGPS G2 topsiude unit.
+1. A [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370) (pins 7 and 8) to connect to the 'Locator' bulkhead of the UGPS G2 topside unit.
 2. A female-to-female jumper wire (in the FXTI modifications).
 
 For signal integrity, use a Cat5e cable between the UGPS G2 topside and the FXTI.
