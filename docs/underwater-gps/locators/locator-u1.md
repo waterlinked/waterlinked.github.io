@@ -14,13 +14,7 @@ The Locator has 3 mounting holes on each side for M3 screws. A default bracket i
 
 ## Charging
 
-Insert included USB-C cable into a wall adapter and connect it to the Locator-U1. The Locator LED will normally start pulsating while charging and turn solid green once charging has finished.
-
-*Note*: If battery is fully discharged the pulsating will not be activated. The Locator will still charge regardless of the LED not showing the charge indication. The Locator will in this cause show searching for GPS lock or GPS lock achieved indication.
-
-*Note*: Some Locator-U1 units are produced with a fault that causes them to never be able to show the charge indication. The Locator will still charge and operate as normal during use.
-
-Charging time is 7 hours.
+Insert included USB-C cable into a wall adapter and connect it to the Locator-U1. The Locator LED will start blinking/pulsating. Charge time is 7 hours. Once the Locator has charged for 7 hours disconnect the USB and the Locator is ready for use.
 
 ## Powering on/off
 
@@ -39,7 +33,7 @@ To power **off** the Locator-U1 unscrew the back lid until the LED turns off.
 
 * Flashing green light (slow): GPS lock has been acheived but lost. The unit is ready to dive.
 
-* Pulsating green light : The Locator-U1 is charging. The unit is **not ready** to dive. See charge description above.
+* Pulsating green light : The Locator-U1 is charging and after 7 hours will be fully charged allowing the Locator-U1 to be used for up to 6 hours.
 
 * Fast flashing green light (multiple times pr second): Error indication. The unit is **not ready** to dive. Typically this is caused by exceeding dive time and the pressure sensor needing to dry. Charging the Locator is the fastest way to dry the pressure sensor.
 
