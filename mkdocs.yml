@@ -42,8 +42,8 @@ nav:
             - Power supply: underwater-gps/power-supply.md
             - Network settings: underwater-gps/network-settings.md
           - Baseline:
-            - Antenna: antenna.md
-            - Receiver-D1: receiver-d1.md
+            - Antenna: underwater-gps/antenna.md
+            - Receiver-D1: underwater-gps/receiver-d1.md
           - Locator:
             - Locator-A1: underwater-gps/locators/locator-a1.md
             - Locator-D1: underwater-gps/locators/locator-d1.md
@@ -68,7 +68,7 @@ nav:
         - Network settings: explorer-kit/network-settings.md
         - Hardware: explorer-kit/hardware.md
         - Master-D1: master-d1.md
-        - Receiver-D1: receiver-d1.md
+        - Receiver-D1: explorer-kit/receiver-d1.md
         - Locators:
           - Locator-A1: explorer-kit/locators/locator-a1.md
           - Locator-D1: explorer-kit/locators/locator-d1.md

@@ -16,13 +16,13 @@ The Receiver-D1 is a digital low-noise, high sensitivity hydro acoustic receiver
 
 The tables below shows the pinning of the Receiver interface connectors.
 
-![receiver_connector_gh](img/receiver_connector_gh.png)
+![receiver_connector_gh](../img/receiver_connector_gh.png)
 
-![receiver_connector_binder](img/receiver_connector_binder.png)
+![receiver_connector_binder](../img/receiver_connector_binder.png)
 
 ## Dimensions
 
-![receiver_dimensions](img/receiver_dimensions.png)
+![receiver_dimensions](../img/receiver_dimensions.png)
 
 ## Datasheet
 

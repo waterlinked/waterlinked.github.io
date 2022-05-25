@@ -26,14 +26,14 @@ The Antenna comes with 10 meters of cable. This is the maximum cable length avai
 
 The table below shows the pinning of the Antenna connector.
 
-![receiver_connector_binder](img/antenna_connector_binder.png)
+![receiver_connector_binder](../img/antenna_connector_binder.png)
 
 ## Dimensions
 
 Top view
 
-![antenna_dimensions_top](img/antenna_dimensions_top.png)
+![antenna_dimensions_top](../img/antenna_dimensions_top.png)
 
 Side view
 
-![antenna_dimensions_side](img/antenna_dimensions_side.png)
+![antenna_dimensions_side](../img/antenna_dimensions_side.png)
