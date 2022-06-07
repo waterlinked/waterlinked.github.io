@@ -45,7 +45,7 @@
 </a>
 </div>
 <div  class="col" style="padding-right: 2em">
-<a href="./receiver-d1/">
+<a href="./underwater-gps/receiver-d1/">
 <img src="https://store.waterlinked.com/wp-content/uploads/2017/06/WL_21005_Receiver_D1-1.jpg" style="width: auto; height: 8em; margin-left: -1em;" /><br>
 <h4>Receiver-D1</h4>
 </a>
