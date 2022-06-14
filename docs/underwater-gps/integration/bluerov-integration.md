@@ -236,7 +236,15 @@ Connect the included ethernet cable to the two ports.
 
 To install the PLC module to the Interface Electronics board, you will need the following part:
 
-* LX200V30 PLC Homeplug module with press-fit standoffs (included in the BlueROV2 Integration Kit)
+* LX200V30 PLC Homeplug module with press-fit standoffs (included in the BlueROV2 Integration Kit).
+
+![homeplug_leds](../../img/LX200V30_LEDs.png)
+
+| LED | Definition | Function |
+|-----|------------|----------|
+| 1   | Power      | Lights when the Homeplug has power |
+| 2   | Ethernet   | Flashes when there is data flow from Master Electronics |
+| 3   | PLC        | Lights when a link is established with FXTI or BlueROV2 |
 
 Locate the socket for the Homeplug module on the Interface board.
 
@@ -306,6 +314,7 @@ This almost certainly means that the network between the UGPS G2 topside and the
 2. In the Companion Web Interface, go to the [MAVProxy](http://www.ardusub.com/operators-manual/companion-web.html#mavproxy) page: [http://192.168.2.2:2770/mavproxy](http://192.168.2.2:2770/mavproxy)
 3. Click on the “Restore Default Options” button.
 4. Power cycle the BlueROV2.
+5. Check that the PLC LED (3) on the Homeplug board.
 
 If the issue persists, if you are using the FXTI approach to the networking, you may wish to try the network bridge approach, as the FTXI sometimes fails to handle the connections satisfactorily. In addition, double-check that you did not skip the [interface electronics board modification](#modify-interface-electronics).
 
