@@ -13,13 +13,22 @@ Describes the Water Linked DVL protocols (serial and ethernet).
 
 ## Version
 
-This document describes protocol version 2.3.x (major.minor.patch):
+This document describes serial protocol version `2.4.x` (major.minor.patch) and JSON protocol `json_v3`:
 
 - MAJOR version increments represent incompatible API changes
 - MINOR version increments represent additional backwards-compatible functionality
 - PATCH version increments represent backwards-compatible bug fixes
 
-## Ethernet protocol (TCP)
+### Version history overview
+
+| Software release | Serial protocol version | Ethernet protocol version | Main protocol improvements |
+| -- | -- | -- | -- |
+| 2.2.1 | 2.4.0 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float
+| 2.1.0 | 2.3.0 | json_v3 | Add configuration, add time_of_validity/time_of_transmission, add covariance (JSON)
+| 2.0.8 | 2.2.0 | json_v2 | Add position estimation, add IMU output
+| 1.6.0 | 2.1.0 | - | Initial (velocity only)
+
+## JSON protocol (TCP)
 
 ### Overview
 
@@ -183,8 +192,28 @@ The response will be as follows if the reset is successful. If unsuccessful, `su
 }
 ```
 
+### Calibrate gyro
 
-### Configuration over TCP
+The gyro can be calibrated by issuing the `calibrate_gyro` command:
+
+```
+{"command":"calibrate_gyro"}
+```
+
+The response will be as follows if the calibration is successful. If unsuccessful, `success` will be `false`, and a non-empty `error_message` will be provided.
+
+```
+{
+  "response_to": "calibrate_gyro",
+  "success": true,
+  "error_message": "",
+  "result": null,
+  "format": "json_v3",
+  "type": "response"
+}
+```
+
+### Configuration over JSON
 
 #### Configuration parameters
 
@@ -193,7 +222,8 @@ The response will be as follows if the reset is successful. If unsuccessful, `su
 | speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
 | mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode | `true` when the LED operates as [normal](../interfaces#led-signals), `false` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
+| dark_mode_enabled | `true` when the LED operates as [normal](../interfaces#led-signals), `false` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
+| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
 
 
 #### Fetching current configuration
@@ -213,10 +243,11 @@ If the configuration is successfully fetched, the response will be in the follow
   "success":true,
   "error_message":"",
   "result":{
-    "speed_of_sound":1475,
+    "speed_of_sound":1475.00,
     "acoustic_enabled":true,
-    "dark_mode":false,
-    "mounting_rotation_offset":20
+    "dark_mode_enabled":false,
+    "mounting_rotation_offset":20.00,
+    "range_mode":"auto"
   },
   "format":"json_v3",
   "type":"response"
@@ -246,8 +277,6 @@ If the parameters are successfully set, the response will be in the following fo
 ```
 
 
-
-
 ## Serial Protocol
 
 ### Overview
@@ -274,11 +303,13 @@ The commands in the table are shown without the checksum and without the mandato
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
-| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.3.0` |
-| `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,1.4.0,0xfedcba98765432` or `wrw,dvl-a50,1.4.0,0xfedcba98765432,10.11.12.140` |
-| `wcs,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
-| `wcc`   | Get current configuration | `wrc,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
+| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.4.0` |
+| `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,2.2.1,0xfedcba98765432` or `wrw,dvl-a50,2.2.1,0xfedcba98765432,10.11.12.140` |
+| `wcs,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode_enabled]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
+| `wcc`   | Get current configuration | `wrc,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode_enabled]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
 | `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](../dead-reckoning#starting-dead-reckoning) run |
+| `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
+| `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wru,`*[details below]* | Transducer information |
 |         |             | `wrp,`*[details below]* | [Dead reckoning](../dead-reckoning) report |
@@ -377,6 +408,34 @@ wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,0*e2
 
 Dead reckoning can be reset by issuing the `wcr` command. The reply will be an ack (`wra`) if the reset is successful, and a nak (`wrn`) if not.
 
+### Calibrate gyro (wcg)
+
+The gyro can be calibrated by issuing the `wcg` command.  The reply will be an ack (`wra`) if the reset is successful, and a nak (`wrn`) if not.
+
+### Change serial output protocol (wcp)
+
+The serial output protocol in use can configured by issuing the `wcp` command. The selected protocol is persistent over reboots.
+
+```
+wcp,[protocol number]
+```
+
+The supported protocols are:
+
+| Protocol number | Name | Description |
+| --------------- | ---- | ----------- |
+| 0 | Output disabled | No output on serial. Recommended if serial port is not used to lower latency on ethernet protocols. |
+| 1 | Backward compatible | All output including the deprecated `wrx` and `wrt` sentences. |
+| 2 | PD6 | PD6 protocol output. See [PD6 protocol description](../dvl-protocol#pd6-protocol-tcpserial) |
+| 3 | Latest | All output excluding the deprecated `wrx` and `wrt` sentences. |
+
+The reply will be an ack (`wra`) if the protocol change is successful, and a nak (`wrn`) if not.
+
+Example setting configuring output to use protocol number 3:
+
+```
+wcp,3
+```
 
 ### Configuration over serial
 
@@ -384,11 +443,15 @@ Dead reckoning can be reset by issuing the `wcr` command. The reply will be an a
 
 | Variable | Description |
 |----------|-------------|
-| speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
+| speed_of_sound | Speed of sound (1000-2000 m/s). Float  |
+| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode | `y` for no blinking of LED (e.g. if the LED is interfering with a camera), `n` when the LED operates as [normal](../interfaces#led-signals) |
+| dark_mode_enabled | `n` when the LED operates as [normal](../interfaces#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
+| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
 
+!!!note
+    For backward compatibility the `range_mode` parameter is optional when setting the configuration. It will always be returned when reading the configuration (`wcc`).
+    Speed of sound and mounting rotation was changed from integer to float in serial protocol 2.4.0
 
 ####  Fetching current configuration
 
@@ -398,7 +461,7 @@ The current configuration of the DVL can be obtained by issuing the `wcc` comman
 If the configuration is successfully fetched, the response will be in the following format. If not, a nak `wrn` will be returned.
 
 ```
-wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode]
+wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode]
 ```
 
 #### Setting configuration parameters
@@ -407,7 +470,7 @@ Setting of configuration parameters can be carried out by issuing the `wcs` comm
 
 
 ```
-wcs,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode]
+wcs,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode]
 ```
 
 Those parameters which are not to be set can be left blank.
@@ -415,13 +478,13 @@ Those parameters which are not to be set can be left blank.
 Example for setting dark mode without changing the other parameters:
 
 ```
-wcs,,,,y
+wcs,,,,y,
 ```
 
 Example for setting speed of sound to 1450 m/s and disabling acoustics, without changing the other parameters:
 
 ```
-wcs,1450,,n,
+wcs,1450,,n,,
 ```
 
 The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not an integer.
@@ -562,3 +625,95 @@ uint8_t crc8(uint8_t *message, int message_length) {
 }
 ```
 
+## PD6 protocol (TCP/Serial)
+
+### Overview
+
+The PD6 support allows for integration with equipment that may already have a PD6 protocol interface, removing the necessity to create a driver based on the standard Water Linked protocol.
+PD6 protocol is supported for output via serial and ethernet.
+PD6 protocol over TCP is always enabled. The port in use is configurable in the GUI. The default port is TCP 1037.
+The serial output can be configured to output PD6 using the [Change serial output protocol](#change-serial-output-protocol-wcp) command.
+
+### Command overview
+
+Sentences TS, BI and BD are filled with relevant numbers. All other sentences are set to zero values.
+
+#### Timing and scaling data (TS)
+
+`:TS,YYMMDDHHmmsshh,SS.S,+TT.T,DDDD.D,CCCC.C,BBB <CR><LF>`
+
+| Field| Explanation | Value |
+| -- | -- | -- |
+|YYMMDDHHmmsshh | Year, month, day, hour, minute, second, hundredths of seconds | Report timestamp |
+| SS.S | Salinity in parts per thousand (ppt). | Always 0 |
+| DDDD.D | Depth of transducer face in meters. | Always 0 |
+| CCCC.C | Speed of sound in meters per second. | Configured speed of sound|
+| BBB | Built-in Test (BIT) result code. | Always 0 |
+
+#### Bottom track, instrument referenced velocity data (BI)
+
+`:BI,±XXXXX,±YYYYY,±ZZZZZ,±EEEEE,S <CR><LF>`
+
+| Field| Explanation | Value |
+| -- | -- | -- |
+| ±XXXXX | X-axis velocity data in mm/s | Current speed |
+| ±YYYYY | Y-axis velocity data in mm/s | Current speed |
+| ±ZZZZZ | Z-axis velocity data in mm/s | Current speed |
+| ±EEEEE | Error in velocity data in mm/s | Current error  |
+| S | Status of velocity | A = good. V = bad  |
+
+#### Bottom track, earth referenced distance data (BD)
+
+`:BD,±EEEEEEEE.EE,±NNNNNNNN.NN,±UUUUUUUU.UU,DDDD.DD,TTT.TT <CR><LF>`
+
+
+| Field| Explanation | Value |
+| -- | -- | -- |
+| ±EEEEEEEE.EE | East distance in meters. | Always 0 |
+| ±NNNNNNNN.NN | North distance in meters. | Always 0 |
+| ±UUUUUUUU.UU | Upward distance in meters. | Always 0 |
+| DDDD.DD | Range to bottom in meters | Current altitude |
+| TTT.TT | Time since last good velocity estimate in seconds. | Always 0 |
+
+
+#### Example output
+
+```
+:SA, +0.00, +0.00,  0.00
+:TS,22061420273470, 0.0, +0.0,   0.0,1475.0,  0
+:WI,    +0,    +0,    +0,    +0,V
+:WS,    +0,    +0,    +0,V
+:WE,    +0,    +0,    +0,V
+:WD,       +0.00,       +0.00,       +0.00,   0.00,  0.00
+:BI,  -167,  +211, -1770,    +0,A
+:BS,    +0,    +0,    +0,V
+:BE,    +0,    +0,    +0,V
+:BD,       +0.00,       +0.00,       +0.00,  19.17,  0.00
+```
+
+## Range mode configuration
+
+Range mode configuration can be used to instruct the DVL to only search for bottom lock in a limited altitude range. This can improve performance when operating in environments where you know the DVL minimum and/or maximum altitude. (Eg when operating in a river or pool)
+
+The format for configuring range mode can be as follows:
+
+| Range specifier | Behavior |
+| -- | -- |
+| `auto` | The DVL will search for bottom lock in it's full operational area (Default) |
+| `=a` | The DVL is locked to range mode `a` where `b` is a number from `0-4` |
+| `a<=b`| The DVL will search for bottom lock within range mode `a` and `b` |
+
+The available range modes are:
+
+| Range mode | Lower altitude (m) | Upper altitude (m) |
+| -- | -- | -- |
+| 0 | 0.05 | 0.6 |
+| 1 | 0.2 | 3.0 |
+| 2 | 1.5 | 14 |
+| 3 | 7.7 | 36 |
+| 4 | 15 | max |
+
+Examples:
+
+* `=3` The DVL will search for bottom lock between 7.7 and 36m
+* `2<=3` The DVL will search for bottom lock between 1.5 and 36m
