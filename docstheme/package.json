@@ -64,7 +64,7 @@
     "material-shadows": "^3.0.1",
     "modernizr-auto-loader": "^0.1.0",
     "modularscale-sass": "^3.0.8",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^2.1.6",
     "promise-polyfill": "^8.1.0",
     "sass-loader": "^6.0.7",
