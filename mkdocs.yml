@@ -90,6 +90,7 @@ nav:
       - Protocol: dvl/dvl-protocol.md
       - GUI:
         - Dashboard: dvl/gui/dashboard.md
+        - Configuration: dvl/gui/configuration.md
         - Diagnostic report: dvl/gui/diagnostic-report.md
         - Demo GUI: dvl/gui/demo-gui.md
       - Dead reckoning: dvl/dead-reckoning.md

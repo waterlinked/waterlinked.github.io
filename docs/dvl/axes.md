@@ -16,7 +16,7 @@ By default, the velocities outputted by the DVL are in this frame, and the axes 
 
 The DVL can be mounted at an angle to the forward direction of a vehicle to which it is attached.
 
-To be precise, the clockwise angle θ in degrees around the Z axis (i.e. in the X-Y plane) from the forward axis of the vehicle to the forward axis of the DVL can be entered as a 'mounting rotation offset' in the [GUI](../gui/dashboard) at *Menu -> Configuration -> Mounting*, or via the TCP or serial [protocols](../dvl-protocol/).
+To be precise, the clockwise angle θ in degrees around the Z axis (i.e. in the X-Y plane) from the forward axis of the vehicle to the forward axis of the DVL can be entered as a 'mounting rotation offset' in the [GUI](../gui/configuration), or via the TCP or serial [protocols](../dvl-protocol/).
 
 The DVL will then output data in the vehicle frame obtained by rotating the [DVL body frame](#body-frame) anti-clockwise around the Z-axis by θ  degrees: the X-axis of the velocities outputted by the DVL will be aligned with the forward axis of the vehicle, and, at time zero, the X-axis of the DVL's [frame](../dead-reckoning#frame) for dead reckoning will be aligned with the forward axis of the vehicle.
 
