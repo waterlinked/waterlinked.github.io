@@ -18,6 +18,6 @@ Button                                  |Description
 ![](../../img/dvl_gui_icon_arrow.png)   | Center map to dvl position
 ![](../../img/dvl_gui_icon_reset.png)   | Reset calculated position and start position tracking from zero.
 ...                                     |More
-                                        |Set trailing
-                                        |Set grid
+                                        |Set trail length
+                                        |Set grid size
                                         |Calibrate gyro
