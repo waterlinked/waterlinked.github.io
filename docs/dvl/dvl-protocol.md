@@ -708,7 +708,7 @@ The available range modes are:
 | Range mode | Lower altitude (m) | Upper altitude (m) |
 | -- | -- | -- |
 | 0 | 0.05 | 0.6 |
-| 1 | 0.2 | 3.0 |
+| 1 | 0.3 | 3.0 |
 | 2 | 1.5 | 14 |
 | 3 | 7.7 | 36 |
 | 4 | 15 | max |
