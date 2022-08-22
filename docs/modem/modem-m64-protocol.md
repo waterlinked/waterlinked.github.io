@@ -23,7 +23,7 @@ The protocol versioning follows semantic versioning in that:
 
 The serial communication format is 115200 8-N-1 (no hardware flow control).
 
-Packets sent to and received from the modem start with a `w` and end with end with LF or CR+LF. The packet format is:
+Packets sent to and received from the modem start with a `w` and end with LF or CR+LF. The packet format is:
 
 | Start byte | Direction        | Command  | Options (0 to many)  | Checksum | End byte       |
 |------------|------------------|----------|----------------------|----------|----------------|
@@ -42,9 +42,9 @@ For Water Linked Modem-M64 the payload size is 8 bytes.
 
 In order for two modems to communicate they must be configured to use different roles (A/B) on the same channel.
 The modem with role A will always transmit.
-The modem will role B will listen until it detects a signal from a modem of role A.
+The modem with role B will listen until it detects a signal from a modem of role A.
 It will then start transmitting responses back to the modem with role A.
-The modem with role B will go back to listen mode if several consecutive packets from the modem with role A cannot be decoded (ie signal is lost).
+The modem with role B will go back to listen mode if several consecutive packets from the modem with role A cannot be decoded (i.e. signal is lost).
 
 !!!note
     Payload where every byte is \0 is reserved. It is used to keep modems in sync if no data packet is queued by the user. This sync packet is filtered out by the receiver. Avoid this payload by compressing the data or otherwise ensuring atleast 1 bit is non-zero.
@@ -71,9 +71,9 @@ Commands in the table are shown **without** the checksum for readability.
 |         |             | `wr?` | Malformed request: Response when packet cannot be understood |
 |         |             | `wr!` | Malformed request: Packet does not match the given checksum |
 
-*[1]* `packet_count` is the number of packets received. If a packet cannot be decoded the `packet_loss_count` increments regardless of the packet being queued data or a sync packet from the other modem.
+*[1]* `packet_count` is the number of packets received. If a packet cannot be decoded the `packet_loss_count` increments regardless of the packet being queued is data or a sync packet from the other modem.
 
-*[2]* Payload with just zeros (`\0`) is reseved for keeping the modems in sync if no packet is queued. It will be filtered out by the receiving modem.
+*[2]* Payload with just zeros (`\0`) is reserved for keeping the modems in sync if no packet is queued. It will be filtered out by the receiving modem.
 
 
 ## Examples
