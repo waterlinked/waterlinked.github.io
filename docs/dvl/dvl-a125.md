@@ -11,9 +11,6 @@ The DVL-A125 builds on the already impressive feats of the DVL-A50 with its incr
 
 The DVL estimates velocity relative to the sea bottom by sending acoustic waves from the four angled transducers and then measure the frequency shift (doppler effect) from the received echo. By combining the measurements of all four transducers and the time between each acoustic pulse, it is possible to very accurately estimate the speed and direction of movement.
 
-!!! Note
-	The DVL-A125 uses a constant speed of sound equal to 1500 m/s (Release 1.5.1). This is configurable for the Performance edition.
-
 !!! Tip
 	Keep the DVL-A125 in a bucket of water to ensure sufficient cooling when using the DVL on a workbench.
 
