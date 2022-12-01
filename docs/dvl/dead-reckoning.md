@@ -7,7 +7,7 @@ The DVL-A50 and DVL-A125 run a dead reckoning algorithm which estimates the orie
 1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [GUI](../gui/dashboard) whilst the DVL is stationary.
 2. Click the 'Reset' button ![](../img/dvl_gui_icon_reset.png) in the [GUI](../gui/dashboard), or send a reset command over the TCP or serial [protocol](../dvl-protocol).
 
-Step 1. is necessary only once per DVL boot, and may be sometimes be omitted, depending upon [yaw drift](#yaw-drift) requirements: if calibration is omitted, there may be an additional degree of instability in the gyroscope readings compared to if the calibration is carried out.
+Failure to perform gyro calibration will result in less accurate dead reckoning.
 
 ## Frame
 
