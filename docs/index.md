@@ -16,37 +16,37 @@
 </div>
 <div class="col" style="padding-right: 2em">
 <a href="./underwater-gps/introduction/">
-<img src="https://store.waterlinked.com/wp-content/uploads/2020/04/UGPS_G2_Pelicase_Top_1600_web.jpg" style="width: auto; height: 8em" /><br>
+<img src="https://store.waterlinked.com/web/image/product.product/152/image_1024/%5BWL-11001-2-R100-U1-ANT%5D%20Underwater%20GPS%20G2%20Standard%20Kit%20%28100m%29?unique=7a8b0ee" style="width: auto; height: 8em" /><br>
 <h4>Underwater GPS G2</h4>
 </a>
 </div>
 <div  class="col" style="padding-right: 2em; paddding-top: 1.5em">
 <a href="./modem/modem-m64">
-<img src="https://store.waterlinked.com/wp-content/uploads/2019/02/DSC02201-Edit-300x300.jpg" style="width: auto; height: 8em; margin-left: -1em;" /><br>
+<img src="https://store.waterlinked.com/web/image/product.product/125/image_1024/%5BWL-21036-1%5D%20Modem%20M64?unique=9715760" style="width: auto; height: 8em; margin-left: -1em;" /><br>
 <h4>Modem-M64</h4>
 </a>
 </div>
 <div class="col" style="padding-right: 2em">
 <a href="./underwater-gps/locators/locator-u1/">
-<img src="https://store.waterlinked.com/wp-content/uploads/2018/03/WL-21018_Locator-U1_1.jpg" style="width: auto; height: 8em; margin-left: -1.2em;"  /><br>
+<img src="https://store.waterlinked.com/web/image/product.product/122/image_1024/%5BWL-21018-1%5D%20Locator%20U1?unique=9bfb473" style="width: auto; height: 8em; margin-left: -1.2em;"  /><br>
 <h4>Locator-U1</h4>
 </a>
 </div>
 <div class="col" style="padding-right: 2em">
 <a href="./underwater-gps/locators/locator-a1/">
-<img src="https://store.waterlinked.com/wp-content/uploads/2017/06/WL_21009_Locator_A1-1.jpg" style="height: 8em; margin-left: -1.75em;" /><br>
+<img src="https://store.waterlinked.com/web/image/product.product/120/image_1024/%5BWL-21009-1-N001%5D%20Locator%20A1?unique=844a728" style="height: 8em; margin-left: -1.75em;" /><br>
 <h4>Locator-A1</h4>
 </a>
 </div>
 <div class="col" style="padding-right: 2em">
 <a href="./underwater-gps/locators/locator-d1/">
-<img src="https://store.waterlinked.com/wp-content/uploads/2018/02/WL_21016_Locator_D1-20.jpg" style="height: 8em; margin-left: -1.75em; " /><br>
+<img src="https://store.waterlinked.com/web/image/product.product/143/image_1024/%5BWL-21016-1-B050%5D%20Locator%20D1%20%2850m%29?unique=c3275ae" style="height: 8em; margin-left: -1.75em; " /><br>
 <h4>Locator-D1</h4>
 </a>
 </div>
 <div  class="col" style="padding-right: 2em">
 <a href="./underwater-gps/receiver-d1/">
-<img src="https://store.waterlinked.com/wp-content/uploads/2017/06/WL_21005_Receiver_D1-1.jpg" style="width: auto; height: 8em; margin-left: -1em;" /><br>
+<img src="https://store.waterlinked.com/web/image/product.product/145/image_1024/%5BWL-21005-4-010%5D%20Receiver%20D1%20%2810m%29?unique=29fca3f" style="width: auto; height: 8em; margin-left: -1em;" /><br>
 <h4>Receiver-D1</h4>
 </a>
 </div>
