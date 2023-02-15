@@ -2,7 +2,7 @@
 
 ## Underwater GPS G2
 
-[Buy Underwater GPS G2 here!](https://store.waterlinked.com/product/underwater-gps-g2/)
+[Buy Underwater GPS G2 here!](https://waterlinked.com/product/underwater-gps-g2/)
 
 <div style="text-align: center;"><img src="../../img/UGPS_G2_Pelicase_Top_1600_web.jpg" style="width: 550px;"></div><br>
 

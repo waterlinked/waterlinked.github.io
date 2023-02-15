@@ -1,6 +1,6 @@
 # Locator-D1
 
-[Buy Locator-D1 here!](https://store.waterlinked.com/product/locator-d1/)
+[Buy Locator-D1 here!](https://waterlinked.com/product/locator-d1/)
 
 ## Description
 

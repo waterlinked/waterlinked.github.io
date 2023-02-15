@@ -1,6 +1,6 @@
 # Receiver-D1
 
-[Buy Receiver-D1 here!](https://store.waterlinked.com/product/receiver-d1/)
+[Buy Receiver-D1 here!](https://waterlinked.com/product/receiver-d1/)
 
 ## Description
 

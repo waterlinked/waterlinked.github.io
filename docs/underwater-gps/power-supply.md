@@ -39,7 +39,7 @@ Maximum battery width: 50 mm (2").
 
 ## Power usage
 
-The power usage of the Underwater GPS G2 will vary based on the supplied voltage, Receiver and Locator setup, and whether or not the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/) has been installed.
+The power usage of the Underwater GPS G2 will vary based on the supplied voltage, Receiver and Locator setup, and whether or not the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/) has been installed.
 
 The table below list the average current consumption for components used with Underwater GPS G2, assuming an input voltage of 12 VDC.
 

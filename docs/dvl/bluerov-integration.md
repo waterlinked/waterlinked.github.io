@@ -24,9 +24,9 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 * Small ethernet switch. The one pictured here is from [BlueRobotics](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/), and ideal for use in the BlueROV2.
 
-<img src="https://store.waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
+<img src="https://waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
 
-* [DVL-A50 Bracket](https://store.waterlinked.com/product/dvl-a50-mounting-bracket/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
+* [DVL-A50 Bracket](https://waterlinked.com/product/dvl-a50-mounting-bracket/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
 
 You will also need:
 

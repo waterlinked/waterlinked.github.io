@@ -3,7 +3,7 @@
 The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in several different ways, depending upon the choice of locator.
 
 * If using a [Locator-U1](../../locators/locator-u1), the locator can simply be attached to the BlueROV2 in any convenient way. No further hardware integration is required. [Establish a network connection](#via-a-topside-computer) via a topside computer between the UGPS G2 topside unit and the BlueROV2, and follow the [final steps](#final-steps) of the guide below to complete the integration with ArduSub/QGroundControl.
-* If using a [Locator-A1](../../locators/locator-a1), follow the guide below. There are two main configuration options. One connects the FXTI to the UGPS G2 topside unit by means of a connection interface built into the UGPS G2 topside unit with power-line communication (PLC) capabilities, making use of the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/).
+* If using a [Locator-A1](../../locators/locator-a1), follow the guide below. There are two main configuration options. One connects the FXTI to the UGPS G2 topside unit by means of a connection interface built into the UGPS G2 topside unit with power-line communication (PLC) capabilities, making use of the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/).
 
     The other connects the UGPS G2 topside to the BlueROV2 via your topside computer, by means of a network bridge. The Homeplug card of the BlueROV2 integration kit is not needed in this case, and you will likely wish to purchase directly a couple of simple [parts](#a1-integration-without-bluerov2-integration-kit) which are made use of in the guide.
 
@@ -32,9 +32,9 @@ The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in s
 * [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
 
 
-<img src="https://store.waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg" alt="dvl-a50" width="300" height="300">
+<img src="https://waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg" alt="dvl-a50" width="300" height="300">
 
-* [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/) if using the FXTI to establish a network connection between the UGPS G2 topside and the BlueROV2, or direct purchase of a couple of [parts](#a1-integration-without-bluerov2-integration-kit) in the integration kit if not
+* [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/) if using the FXTI to establish a network connection between the UGPS G2 topside and the BlueROV2, or direct purchase of a couple of [parts](#a1-integration-without-bluerov2-integration-kit) in the integration kit if not
 
 You will also need:
 
@@ -50,7 +50,7 @@ Optional:
 You will need to install the Locator-A1 on the BlueROV2 using components from the BlueROV2 Integration Kit. The locator will use one of the spare cable penetrations in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether.
 
 !!! Note
-	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. The bracket is included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/), but we also have a 3D model of a suitable [mounting bracket](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the antenna/receivers near the surface.
+	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. The bracket is included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/), but we also have a 3D model of a suitable [mounting bracket](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the antenna/receivers near the surface.
 
 #### Remove a blank penetrator
 
@@ -84,7 +84,7 @@ Remove the blank penetrator as pictured from the 4” End Cap with the penetrato
 
 To install the Locator-A1 into the end cap, you will need the following parts and tools:
 
-* [Locator-A1](https://store.waterlinked.com/product/locator-a1/)
+* [Locator-A1](https://waterlinked.com/product/locator-a1/)
 * [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
 * [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * Isopropyl Alcohol Wipe
@@ -138,9 +138,9 @@ Mount the Electronics Enclosure to the frame using the M3x16 screws so that the 
 
 To mount the Locator-A1 to the BlueROV2 frame, you will need the following parts and tools:
 
-* Locator-A1 mounting bracket (included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/), [printable 3D model available](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip))
-* 2 x M4x35 Socket head cap screws (included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/)
-* 2x M4 Lock Nuts (included in the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/)
+* Locator-A1 mounting bracket (included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/), [printable 3D model available](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip))
+* 2 x M4x35 Socket head cap screws (included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/)
+* 2x M4 Lock Nuts (included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/)
 * 3 mm hex driver
 * 7 mm spanner or wrench
 * 4 mm drill bit
@@ -193,7 +193,7 @@ There are two options:
 
 * Connect the UGPS G2 topside to your topside computer, and via the latter to the BlueROV2, by means of a network bridge.
 
-* Connect the FXTI to the UGPS G2 topside unit by means of a connection interface built into the UGPS G2 topside unit with power-line communication (PLC) capabilities, making use of the [BlueROV2 Integration Kit](https://store.waterlinked.com/product/bluerov2-integration-kit/).
+* Connect the FXTI to the UGPS G2 topside unit by means of a connection interface built into the UGPS G2 topside unit with power-line communication (PLC) capabilities, making use of the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/).
 
 #### Via a topside computer
 

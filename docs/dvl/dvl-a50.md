@@ -1,6 +1,6 @@
 # DVL-A50
 
-[Buy DVL-A50 here!](https://store.waterlinked.com/product/dvl-a50/)
+[Buy DVL-A50 here!](https://waterlinked.com/product/dvl-a50/)
 
 ![dvl_a50](../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg)
 

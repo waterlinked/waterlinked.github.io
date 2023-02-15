@@ -1,8 +1,8 @@
 # Antenna
 
-[Buy Antenna here!](https://store.waterlinked.com/product/antenna/)
+[Buy Antenna here!](https://waterlinked.com/product/antenna/)
 
-![antenna_expanded](https://store.waterlinked.com/wp-content/uploads/2020/08/Antenna_Expanded_1600_web.jpg)
+![antenna_expanded](https://waterlinked.com/wp-content/uploads/2020/08/Antenna_Expanded_1600_web.jpg)
 
 ## Description
 

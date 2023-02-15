@@ -1,6 +1,6 @@
 # Modem-M64
 
-[Buy Modem-M64 here!](https://store.waterlinked.com/product/modem-m64/)
+[Buy Modem-M64 here!](https://waterlinked.com/product/modem-m64/)
 
 ## Description
 

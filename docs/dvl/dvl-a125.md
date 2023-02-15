@@ -1,6 +1,6 @@
 # DVL-A125
 
-[Buy DVL-A125 here!](https://store.waterlinked.com/product/dvl-a125/)
+[Buy DVL-A125 here!](https://waterlinked.com/product/dvl-a125/)
 
 ![dvl_A125](../img/dvl-a125-coin-light-white.png)
 
