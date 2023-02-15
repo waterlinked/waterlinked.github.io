@@ -1,6 +1,6 @@
 # Software update
 
-As of software release 2.1.0 the system automaticly checks for updates when the host computer is connected to internet. If you have the latest release you will see a green checkmark as shown below. An exclamation mark will indicate if a newer release is available.
+As of software release 2.1.0 the system automatically checks for updates when the host computer is connected to internet. If you have the latest release you will see a green checkmark as shown below. An exclamation mark will indicate if a newer release is available.
 
 ![sw_version](../img/sw_version.png)
 
