@@ -44,4 +44,4 @@ The diagrams below shows the mechanical dimensions of the Master-D1 electronics.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/W-MK-17025-5_Master-D1.pdf)
+[Datasheet](https://waterlinked.com/underwater-gps-accessories#Downloads%2FResources)

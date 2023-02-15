@@ -24,4 +24,4 @@ The tables below shows the pinning of the D1 interface connectors.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/Locator_D1/W-MK-17024-4_Locator_D1.pdf)
+[Datasheet](https://waterlinked.com/underwater-gps-accessories#Downloads%2FResources)

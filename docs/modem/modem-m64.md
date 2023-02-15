@@ -69,5 +69,5 @@ Example code and libraries that can be used to communicate with the modem on the
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/Modem_M64/W-MK-21025-1_M64.pdf)
+[Datasheet](https://waterlinked.com/modem-m64#Downloads-%2F-Resources%E2%80%8B)
 

@@ -45,4 +45,4 @@ Half-power beam width is 4.4°
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/DVL_A50/wl-21035-3_DVL_A50.pdf)
+[Datasheet](https://waterlinked.com/dvl-a50#Downloads-%2F-Resources%E2%80%8B)

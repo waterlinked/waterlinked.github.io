@@ -26,4 +26,4 @@ The tables below shows the pinning of the Receiver interface connectors.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/Receiver_D1/W-MK-17022-5_Receiver-D1.pdf)
+[Datasheet](https://waterlinked.com/underwater-gps-accessories#Downloads%2FResources)

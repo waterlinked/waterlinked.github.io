@@ -21,7 +21,7 @@ Please select the update process that is best suited to you:
 To get the latest software package for your kit:
 
 * Download directly from the "About" page of the Underwater GPS GUI
-* Alternatively: Go to [update.waterlinked.com](http://update.waterlinked.com) and enter the Chip ID of your kit.
+* Alternatively: Go to [update.waterlinked.com](https://update.waterlinked.com) and enter the Chip ID of your kit.
 
 ### Update using static IP
 

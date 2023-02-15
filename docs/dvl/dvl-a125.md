@@ -42,4 +42,4 @@ Half-power beam width is 4.3°
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/DVL_A125/W-MK-21025-1_DVL_A125.pdf)
+[Datasheet](https://waterlinked.com/dvl-a125#Downloads-%2F-Resources%E2%80%8B)

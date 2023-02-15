@@ -51,4 +51,4 @@ The Locator-S1 has a simple 3.3 volt UART interface which is used to change the 
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/W-MK-17104-3_Locator-S1.pdf)
+[Datasheet](https://waterlinked.com/underwater-gps-accessories#Downloads%2FResources)
