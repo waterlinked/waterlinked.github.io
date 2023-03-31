@@ -38,7 +38,7 @@ The format of each packet is JSON.
 
 ### Velocity-and-transducer report
 
-A velocity-and-transducer report is sent for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (vertical distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
+A velocity-and-transducer report is sent for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
 
 The X, Y, and Z axes are with respect to [body frame](../axes#body-frame) of the DVL, or the [vehicle frame](../axes#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
@@ -52,7 +52,7 @@ The messages are delimited by newline.
 | vz | Velocity in z direction (m/s) |
 | fom | Figure of merit, a measure of the accuracy of the velocities (m/s) |
 | covariance | Covariance matrix for the velocities. The figure of merit is calculated from this (entries in (m/s)^2) |
-| altitude | Vertical distance to the reflecting surface (m) |
+| altitude | Distance to the reflecting surface along the Z axis (m) |
 | transducers | Is a list containing information from each transducer: [id, velocity (m/s), distance (m), rssi (dBm), nsd (dBm), beam_valid (True/False)] |
 | velocity_valid | If true, the DVL has a lock on the reflecting surface, and the altitude and velocities are valid (True/False) |
 | status | Reports if there are any issues with the DVL (0 for normal operation, 1 if operational issues such as high temperature) |
@@ -323,7 +323,7 @@ The commands in the table are shown without the checksum and without the mandato
 
 ### Velocity report (wrz)
 
-A velocity report is outputted for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (vertical distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
+A velocity report is outputted for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
 
 The X, Y, and Z axes are with respect to [body frame](../axes#body-frame) of the DVL, or the [vehicle frame](../axes#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
@@ -505,7 +505,7 @@ Same purpose as the [velocity report](#velocity-report), but in an older format:
 | vy | Velocity in y direction (m/s) |
 | vz | Velocity in z direction (m/s) |
 | fom | Figure of merit, a measure of the accuracy of the velocities  (m/s) |
-| altitude | Vertical distance to the reflecting surface (m) |
+| altitude | Distance to the reflecting surface along Z axis (m) |
 | valid | If `y`, the DVL has lock on the reflecting surface, and the altitude and velocities are valid (y/n) |
 | status | 0 for normal operation, 1 for operational issues such as high temperature |
 
