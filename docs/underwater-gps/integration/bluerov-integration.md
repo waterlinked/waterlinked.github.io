@@ -13,34 +13,43 @@ The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in s
 
 ## Integration when using the Locator-A1
 
-### You will need
+### Required components and tools
+
+ [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) from WaterLinked. It contains the following parts (purpose in parentheses)
+
+
+1.  Mechanical parts (for physical mounting of Locator-A1)
+    * Locator-A1 mounting bracket, [printable 3D model](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip)
+    * rubber pad
+    * 2 M4x35 Socket head cap screws
+    * 2 M4 Lock Nuts
+2.  A female-to-female jumper wire, white/green (for analog connection in FXTI)
+3.  A [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370), pins 7 and 8. white/brown+white/blue (analog connection and powerline connection in FXTI)
+4.  Powerline communication (PLC) module [LX200V30](https://www.rakwireless.com/en-us/products/plc-boards-and-modules/lx200v30-plc-homeplug-av-module) (for powerline connection in UGPS Topside)
+5.  30cm Cat5e cable (for powerline connection in UGPS Topside)
+6.  8 m cable with [Binder 770 connectors](https://www.binder-connector.com/en/products/miniature-circular-connectors/bayonet-ncc-1/99-0771-002-08-bayonet-ncc-male-cable-connector-contacts-8-60-80-mm-unshielded-solder-ip67) (for analog connection and powerline connection between FXTI and UGPS Topside))
+
+![BlueROV2 Integration Kit with labels](../../img/bluerov2_integration_kit_label.png)
+
+* Your [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/bluerov2/)
 
 ![bluerov2_front](../../img/bluerov2_front_300x300.png)
 
-* [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/bluerov2/)
-
-![hex_set](../../img/hex_set-300x300.png)
-
-* [Hex Key Set](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/)
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
 
 ![wetlink_penetrator](../../img/WLP-M10-6.5MM-R1-RP-2-300x300.jpg)
 
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) for WetLink Penetrators from BlueRobotics
 
 ![bulkhead_wrench](../../img/WL-M10-BULKHEAD-WRENCH-R1-RP-1-300x300.jpg)
 
-* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
+* [Hex Key Set](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/) e.g. from Blue Robotics
 
-
-<img src="https://waterlinked.com/wp-content/uploads/2020/08/BlueROV2_IntegrationKit_Complete_1600_web.jpg" alt="dvl-a50" width="300" height="300">
-
-* [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/) if using the FXTI to establish a network connection between the UGPS G2 topside and the BlueROV2, or direct purchase of a couple of [parts](#a1-integration-without-bluerov2-integration-kit) in the integration kit if not
-
-You will also need:
+![hex_set](../../img/hex_set-300x300.png)
 
 * \#1 Phillips head screwdriver
 
-Optional:
+**Optional components/tools**
 
 * Bottle of threadlocker
 * Soldering iron
