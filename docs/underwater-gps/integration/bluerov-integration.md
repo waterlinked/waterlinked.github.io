@@ -219,11 +219,57 @@ Proceed as follows.
 
 ##### Creating a network bridge
 
-On Linux, for more or less any distribution, the [instructions](https://wiki.archlinux.org/title/Network_bridge) at the Arch Linux wiki, in the section 'With iproute2', should provide a quick and simple way to do this.
+??? Info "Windows"
 
-On a Mac, the same instructions should work if the package `iproute2mac` is installed, proving an analogue of the `ip` package. Alternatively, essentially the same procedure can be followed using `ifconfig`, which should be available on a Mac, instead of `ip`.
+	To create a network bridge between the FXTI and the UGPS Topside in Microsoft Windows, open the "Control Panel" by searching for it in the startmenu. Open "Network and Internet".
 
-On Windows, the bridge can be set up via the [network connections GUI](https://www.windowscentral.com/how-set-and-manage-network-bridge-connection-windows-10).
+	![network_bridge_windows_01_network_and_internet](../../img/network_bridge_windows_01_network_and_internet.png)
+
+	Open "Network and Sharing Center".
+
+	![network_bridge_windows_02_network_and_sharing_center](../../img/network_bridge_windows_02_network_and_sharing_center.png)
+
+	Click "Change adapter settings" in the sidebar.
+
+	![network_bridge_windows_03_change_adapter_settings](../../img/network_bridge_windows_03_change_adapter_settings.png)
+
+	The "Network Connections" window (see below) shows all network adapters connected to your computer. The number and name of adapters shown depends on your computer hardware.
+
+	![network_bridge_windows_04_apaters_unplugged](../../img/network_bridge_windows_04_apaters_unplugged.png)
+
+	Now identify the adapter for the FXTI by connecting its USB-cable to the computer. A new adapter should show up, which is called "Realtek USB..." in the grey subtitle. Note its name. In the example there are two adapters in the picture below starting with "Realtek USB", one additional by a docking station. So you can identify the correct adapter best by comparing which one is new, it is "Ethernet 4".
+
+	Do the same with the UGPS Topside, connect its ethernet cable and power it up. In the shown example the red cross for adapter "Ethernet" vanishes, indicating that a device is connected to the network adapter. So in the shown example "Ethernet" is the UGPS Topside and "Ethernet 4" is the FXTI.
+
+	![network_bridge_windows_05_adapters_present](../../img/network_bridge_windows_05_adapters_present.png)
+
+	Create a network bridge between the two adapters identified in the previous step by selecting both with the help of the "Strg"-key. Then right click on one of them and select "Bridge Connections".
+
+	![network_bridge_windows_06_create_bridge](../../img/network_bridge_windows_06_create_bridge.png)
+
+	A new adapter called "Network Bridge" should appear. Right-click on it and select "Properties".
+
+	![network_bridge_windows_07_open_bridge_properties](../../img/network_bridge_windows_07_open_bridge_properties.png)
+
+	In the window "Network Bridge Properties" scroll through the lower list and select "Internet Protocol Version 4 (TCP/IPv4)". Click on the button "Properties".
+
+	![network_bridge_windows_08_bridge_properties](../../img/network_bridge_windows_08_bridge_properties.png)
+
+	In the window "Internet Protocol Version 4 (TCP/IPv4)" select "Use the following IP address" and type in the IP address "192.168.2.1" and Subnet mask "255.255.255.0". Click OK to close the window and also close the previous window "Network Bridge Properties" with OK.
+
+	![network_bridge_windows_09_ip_settings](../../img/network_bridge_windows_09_ip_settings.png)
+
+	You should now be able to access both the BlueROV by typing 192.168.2.2 in your browser address line and UGPS Topside by typing 192.168.2.94. Both have to be turned on.
+
+	![network_bridge_windows_09_ip_settings](../../img/network_bridge_windows_10_browser.png)
+
+	If you do not need the network bridge anymore, you can delete it by navigating to "Change Adapter Settings" as described above, right-clicking on the Network Bridge and then clicking "Disable".
+
+??? Info "Linux"
+	On Linux, for more or less any distribution, the [instructions](https://wiki.archlinux.org/title/Network_bridge) at the Arch Linux wiki, in the section 'With iproute2', should work.
+
+??? Info "MacOS"
+	On a Mac, the same instructions should work if the package `iproute2mac` is installed, proving an analogue of the `ip` package. Alternatively, essentially the same procedure can be followed using `ifconfig`, which should be available on a Mac, instead of `ip`.
 
 #### By FXTI modifications
 

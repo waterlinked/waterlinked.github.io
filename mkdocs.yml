@@ -25,6 +25,8 @@ markdown_extensions:
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
   - markdown.extensions.meta
+  - pymdownx.superfences
+  - pymdownx.details
 
 extra_css:
     - css/extra.css
