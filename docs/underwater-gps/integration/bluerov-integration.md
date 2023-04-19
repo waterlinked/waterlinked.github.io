@@ -331,11 +331,55 @@ Reassemble the FXTI box.
 
 ![fxti-final](../../img/fxti-final-1024x1024.png)
 
-### ArduSub Companion software update
+### BlueROV Software Update
 
-To work properly, the Water Linked UGPS system requires ArduSub Companion image version **0.0.21** or newer and the most recent stable release of QGroundControl for your operating system. If your Companion image is out of date, please follow the BlueROV2 Software [Update procedures](http://docs.bluerobotics.com/brov2/software-setup/#update-software).
+??? Info "Your BlueROV2 runs BlueOS"
 
-### Final steps
+	This section is for the R4 version of the BlueROV2 that uses the [Navigator Flight Controller](https://bluerobotics.com/store/comm-control-power/control/navigator/) or ROVs that have been upgraded to [BlueOS](https://docs.bluerobotics.com/ardusub-zola/software/onboard/) software.
+
+	!!! Info
+
+		If you have an older R1, R2, or R3 version of the BlueROV2 that uses a Pixhawk autopilot and you want to upgrade to using BlueOS, you can either do a software upgrade only [(described here)](https://docs.bluerobotics.com/ardusub-zola/software/onboard/BlueOS-1.1/installation/) or upgrade the hardware from Pixhawk to Navigator flight controller and the software [(described here)](https://bluerobotics.com/learn/navigator-retrofit-guide/).
+
+	The Water Linked UGPS system requires an extension in BlueOS to be able to communicate with the autopilot. BlueOS has to be updated to **BlueOS 1.1.0-beta.18** or newer to assure that extensions are supported sufficiently. The process of updating to the latest beta-release is described below together with enabling the UGPS extension. Make also sure you use the most recent stable release of QGroundControl for your operating system.
+
+	[//]: # ( TODO replace below update section as soon as BlueOS1.1 is released without beta with this text: Follow the Update Software section of the BlueROV Software Setup guide https://bluerobotics.com/learn/bluerov2-software-setup/#update-software)
+
+	Turn on the ROV, connect it with the FXTI to your computer and open its web interface in a browser [(details described here)](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software).
+
+	To update BlueOS to a beta-release, "Pirate Mode" has to be enabled. In the BlueOS web interface, click the cog-wheel in the side menu and turn on "Pirate Mode" in the pop-up window.
+
+	![bluerov2_blueos_update_beta_01_pirate_mode](../../img/bluerov2_blueos_update_beta_01_pirate_mode.png)
+
+	Navigate to "Version Chooser", which should now also show beta-releases in the section "Remote Versions". Click on "Download and apply" next to the latest available beta-release, here "BlueOS 1.1.0-beta.18". The update process can take some time.
+
+	![bluerov2_blueos_update_beta_02_available_updates](../../img/bluerov2_blueos_update_beta_02_available_updates.png)
+
+	After a successfull update you should see the chosen version in your "Local Versions".
+
+	![bluerov2_blueos_update_beta_03_success](../../img/bluerov2_blueos_update_beta_03_success.png)
+
+	To enable the UGPS extension navigate to the "Extensions Manager", that should show up in the side bar after the above described BlueOS update.
+
+	Click on the "Water Linked UGPS" extension.
+
+	![bluerov2_blueos_extension_installation_01_extension_manager](../../img/bluerov2_blueos_extension_installation_01_extension_manager.png)
+
+	In the pop-up make sure the latest version (> 1.0.4) is selected and click "Install".
+
+	![bluerov2_blueos_extension_installation_02_install](../../img/bluerov2_blueos_extension_installation_02_install.png)
+
+	The extension should show up in the "Installed" tab.
+
+	![bluerov2_blueos_extension_installation_03_installed](../../img/bluerov2_blueos_extension_installation_03_installed.png)
+
+??? Info "Your BlueROV2 runs Ardusub Companion"
+
+	This section is for older R1, R2, or R3 versions of the BlueROV2 that use a Pixhawk autopilot and [Companion](https://www.ardusub.com/introduction/required-software/companion-computer-software.html) software.
+
+	To work properly, the Water Linked UGPS system requires ArduSub Companion image version **0.0.21** or newer and the most recent stable release of QGroundControl for your operating system. If your Companion image is out of date, please follow the BlueROV2 Software [Update procedures](https://bluerobotics.com/learn/bluerov2-software-setup-r3-and-older/#update-software).
+
+### Final steps and daily operation
 
 1. Configure the Water Linked system with a static IP address of 192.168.2.94 according to the [Network section](../network-settings.md) of the Water Linked Documentation.
 
