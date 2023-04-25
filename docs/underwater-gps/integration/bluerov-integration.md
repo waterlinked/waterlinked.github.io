@@ -13,23 +13,26 @@ The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in s
 
 ## Integration when using the Locator-A1
 
-### Required components and tools
+### Required parts and tools
 
- [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) from WaterLinked. It contains the following parts (purpose in parentheses)
-
+[BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) from Water Linked. It contains the following parts (purpose in parentheses)
 
 1.  Mechanical parts (for physical mounting of Locator-A1)
-    * Locator-A1 mounting bracket, [printable 3D model](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip)
+    * Locator-A1 mounting bracket, [printable 3D model](https://waterlinked.com/web/content/7664?download=true)
     * rubber pad
     * 2 M4x35 Socket head cap screws
     * 2 M4 Lock Nuts
-2.  A female-to-female jumper wire, white/green (for analog connection in FXTI)
+2.  A female-to-female jumper wire, white/green (for locator connection in FXTI)
 3.  A [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370), pins 7 and 8. white/brown+white/blue (analog connection and powerline connection in FXTI)
 4.  Powerline communication (PLC) module [LX200V30](https://www.rakwireless.com/en-us/products/plc-boards-and-modules/lx200v30-plc-homeplug-av-module) (for powerline connection in UGPS Topside)
 5.  30cm Cat5e cable (for powerline connection in UGPS Topside)
 6.  8 m cable with [Binder 770 connectors](https://www.binder-connector.com/en/products/miniature-circular-connectors/bayonet-ncc-1/99-0771-002-08-bayonet-ncc-male-cable-connector-contacts-8-60-80-mm-unshielded-solder-ip67) (for analog connection and powerline connection between FXTI and UGPS Topside))
 
 ![BlueROV2 Integration Kit with labels](../../img/bluerov2_integration_kit_label.png)
+
+* [Locator-A1](https://waterlinked.com/shop/underwater-gps-g2-locator-a1-120)
+
+![locator_a1_dimensions](../../img/a1_locator.jpg)
 
 * Your [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/bluerov2/)
 
@@ -39,81 +42,82 @@ The Water Linked Underwater GPS G2 system can be integrated with a BlueROV2 in s
 
 ![wetlink_penetrator](../../img/WLP-M10-6.5MM-R1-RP-2-300x300.jpg)
 
-* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) for WetLink Penetrators from BlueRobotics
+* [WetLink Bulkhead Wrench M10](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
 
 ![bulkhead_wrench](../../img/WL-M10-BULKHEAD-WRENCH-R1-RP-1-300x300.jpg)
 
-* [Hex Key Set](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/) e.g. from Blue Robotics
+* [Hex Key Set](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/) e.g. from Blue Robotics, especially 2, 2.5 and 3 mm hex key
 
 ![hex_set](../../img/hex_set-300x300.png)
 
-* \#1 Phillips head screwdriver
+* [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
+* Isopropyl Alcohol Wipe
+* 7 mm spanner or wrench
+* 4 mm drill bit
+* [Cable jacket stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/), a utility knife, or a sharp blade
+* Cutting pliers
+* A soldering iron and solder
+* Heat shrink tube
+
 
 **Optional components/tools**
 
+* [WetLink Penetrator Assembly Block](https://bluerobotics.com/store/cables-connectors/tools/wlp-assembly-block-r1-rp/) and a vice to secure it
+* [WetLink Penetrator Plug Wrench 14mm](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) and a A 1/4 inch (6.3mm) square drive ratchet or torque wrench
+* Large flat head screwdriver
 * Bottle of threadlocker
-* Soldering iron
+* Hot air gun
 
-### Install the Locator-A1 on the BlueROV2
+### Modifications to the BlueROV2
 
-You will need to install the Locator-A1 on the BlueROV2 using components from the BlueROV2 Integration Kit. The locator will use one of the spare cable penetrations in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether.
+The Locator-A1 will use one of the spare cable penetrators in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether. The locator is attached with a mounting bracket included in the BlueROV2 Integration Kit.
 
-!!! Note
-	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. The bracket is included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/), but we also have a 3D model of a suitable [mounting bracket](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the antenna/receivers near the surface.
+#### Open the electronics enclosure
 
-#### Remove a blank penetrator
+To open the electronics enclosure, you will need the following parts and tools:
 
-To remove a blank penetrator from your BlueROV2, you will need the following tools:
-
-* 2.5 mm hex driver
-* \#1 Phillips head screwdriver
-* Penetrator wrench
+* 2.5 mm hex key
+* Large flat head screwdriver (optional)
 
 To ensure your ROV is completely powered off, please remove the battery completely from the 3” enclosure and place to the side.
 
 ![bluerov2-remove-battery](../../img/bluerov2-remove-battery-1024x768.jpg)
 
-Remove the fairings and buoyancy blocks by removing the self-tapping screws that hold the fairings to the frame.
-
-![bluerov2-remove-fairings](../../img/bluerov2-remove-fairings-1024x674.png)
-
-Remove the 4” electronics enclosure from the ROV by removing the M3x16 screws that mount the enclosure to the ROV cradle.
+Unscrew the M3x16 screws that mount the electronics enclosure to the ROV cradle (in the front and in the back). The number of screws depends on the model version of your ROV.
 
 ![bluerov2-remove-electronic](../../img/bluerov2-remove-electronic-1024x743.png)
 
-Remove the Vent Plug from the Vent Penetrator Bolt on the electronics enclosure. Remove the 4″ tube and forward dome assembly from the rear end cap.
+Remove the Vent Plug from the Vent Penetrator Bolt on the electronics enclosure. Remove the 4″ tube and forward dome assembly from the rear end cap by sliding it forward. A large flat head screw driver can help to do that.
 
 ![bluerov2-remove-vent](../../img/bluerov2-remove-vent-1024x1024.jpg)
 
-Remove the blank penetrator as pictured from the 4” End Cap with the penetrator wrench that came with the BlueROV2 kit.
+#### Replace blank penetrator with Locator-A1 penetrator
 
-![bluerov2-end-cap-remove](../../img/bluerov2-end-cap-remove-1024x576.jpg)
+To remove a blank penetrator and install the cable of the Locator-A1 into the end cap, you will need the following parts and tools:
 
-#### Install Locator-A1 penetrator
-
-To install the Locator-A1 into the end cap, you will need the following parts and tools:
-
-* [Locator-A1](https://waterlinked.com/product/locator-a1/)
+* [Locator-A1](https://waterlinked.com/shop/underwater-gps-g2-locator-a1-120)
 * [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
 * [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * Isopropyl Alcohol Wipe
-* [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
+* [WetLink Bulkhead Wrench M10](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from BlueRobotics
+* [WetLink Penetrator Assembly Block](https://bluerobotics.com/store/cables-connectors/tools/wlp-assembly-block-r1-rp/) and a vice to secure it (optional)
+* [WetLink Penetrator Plug Wrench 14mm](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) and a A 1/4 inch (6.3mm) square drive ratchet or torque wrench (optional)
 * [Cable jacket stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/), a utility knife, or a sharp blade
 * Cutting pliers
 
-One pair of twisted wires from the Locator-A1 must be connected to a spare twisted pair on the BlueROV2 tether. This can be done permanently by soldering or splicing, or by crimping on an appropriate header. For the latter you'll need:
+Remove the blank penetrator as pictured from the 4” End Cap with the penetrator bulkhead wrench.
 
-* [1x3-Pin 0.1" (2.54mm) Crimp Connector Housing](https://www.pololu.com/product/1902)
-* 2x [Male Crimp Pins for 0.1" Housings](https://www.pololu.com/product/1931)
-* [Crimping tool](https://www.pololu.com/product/1928)
+![bluerov2-end-cap-remove](../../img/bluerov2-end-cap-remove-1024x576.jpg)
 
-Remove 10 cm of the cable jacket using a cable jacket stripper, a utility knife, or a sharp blade. Cut off everything except the blue and white/blue twisted pair using cutting pliers.
+Cut the cable of the Locator-A1 to the correct length with cutting pliers. For the recommended mounting position you need a length of 1 m.
+
+<!-- TODO 1m ? -->
+
+Remove 10 cm of the cable jacket using a cable jacket stripper, a utility knife, or a sharp blade. Cut off everything except the twisted pair of wires using cutting pliers.
 
 Follow the BlueRobotics [WetLink Penetrator Assembly Guide](https://bluerobotics.com/learn/wetlink-penetrator-installation-guide/) and install the WetLink penetrator onto the Locator-A1 cable.
 
-If you intend to add a 1x3 connector, do so now.
-
-Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.
+Wipe the exterior surface of the electronics enclosure end cap clean with an isopropyl alcohol wipe, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.
 
 Remove the O-ring from the bag and apply silicone grease to it.
 
@@ -121,23 +125,41 @@ Remove the O-ring from the bag and apply silicone grease to it.
 
 Install the O-ring onto the WetLink penetrator.
 
-Install the Locator-A1 with the WetLink penetrator onto the end cap in the hole you previously removed a blank penetrator from. Tighten to finger tight, then use the bulkhead wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+Install the WetLink penetrator with the Locator-A1 cable onto the end cap in the hole you previously removed a blank penetrator from. Tighten to finger tight, then use the bulkhead wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
 
 ![bluerov2-end-cap-A1](../../img/bluerov2-end-cap-A1-1024x576.jpg)
 
-Connect the Locator-A1 wires (green/white) to a spare twisted pair of the tether (green/white).
+#### Connect Locator-A1 wires to ROV tether
 
-#### Reassemble BlueROV2 electronics enclosure
+One pair of twisted wires from the Locator-A1 (green/white) must be connected to a spare twisted pair on the BlueROV2 tether. To solder the wires together you will need:
+
+* A soldering iron and solder
+* A utility knife, or a sharp blade
+* Heat shrink tube
+* Hot air gun (optional)
+
+!!! Note
+    Alternatively to soldering you can use your favourite headers to establish an electrical connection.
+
+Remove 5mm wire insulation on both the tether wires and the locator wires with a knife.
+
+Put heat shrink tube onto the wires before soldering.
+
+Connect the Locator-A1 wires (green/white) to a spare twisted pair of the tether (recommended: green/white) by soldering.
+
+Pull the the heat shrink tube over the solder-connection and shrink it with a hot air gun or alternatively with your soldering iron turned to low.
+
+#### Reassemble BlueROV2 Electronics Enclosure
 
 To reassemble your BlueROV2 Electronics Enclosure, you will need the following parts and tools:
 
-* 4 x M3x16 screws that were placed off to the side during disassembly
+* M3x16 screws that were placed off to the side during disassembly (number depends on your BlueROV version)
 * [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
-* 2.5 mm hex driver
+* 2.5 mm hex key
 
 Reinstall 4” Watertight Enclosure onto ROV with the following steps:
 
-Apply silicone grease to the two radial O-rings on the O-Ring Flange (4” Series) that is attached to the Electronics Tray then install the Watertight Enclosure (4” Series) with installed Dome End Cap to the O-Ring Flange (4” Series).
+Apply silicone grease to the two radial O-rings on the O-Ring Flange (4” Series) that is attached to the Electronics Tray. Then slide the Watertight Enclosure (4” Series) with installed Dome End Cap over the electronics tray and the O-Ring Flange (4” Series) while trying to align the clips for the screws in the front and back.
 
 Mount the Electronics Enclosure to the frame using the M3x16 screws so that the dome is on the same side as the front center panels (the center panels without the 3 large holes). Install the M3x16 screws through the clips and into the Enclosure Cradle (4” Series). It is easier to install these screws if the clips are not fully tightened until all screws are through the clips and threading into the Enclosure Cradle (4” Series). This allows clips to rotate so you can find the threaded hole in the Enclosure Cradle (4” Series) easily.
 
@@ -147,21 +169,26 @@ Mount the Electronics Enclosure to the frame using the M3x16 screws so that the 
 
 To mount the Locator-A1 to the BlueROV2 frame, you will need the following parts and tools:
 
-* Locator-A1 mounting bracket (included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/), [printable 3D model available](https://www.waterlinked.com/hubfs/Product_Assets/Locator_A1/A1_Locator_Bracket.zip))
-* 2 x M4x35 Socket head cap screws (included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/)
-* 2x M4 Lock Nuts (included in the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/)
-* 3 mm hex driver
+* Locator-A1 mounting bracket (from [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/))
+* rubber pad (from [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/))
+* 2 M4x35 Socket head cap screws (from [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/))
+* 2 M4 Lock Nuts (from [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/))
+
+* 3 mm hex key
 * 7 mm spanner or wrench
 * 4 mm drill bit
 
-Route the locator to one side of the ROV.
+Route the locator cable to one side of the ROV.
 
 Find an appropriate spot to attach the Locator-A1 mounting bracket to the frame of the BlueROV2. Drill out two holes spaced 49.25 mm apart using a 4 mm drill bit.
 
 ![locator-a1_bracket_hole_spacing](../../img/locator-a1_bracket_hole_spacing.png)
 
+Wrap the locator in the rubber pad before inserting into the mounting bracket.
+
 Attach the Locator-A1 to the Locator-A1 mounting bracket, and secure the bracket to the BlueROV2 using the M4x35 Socket head cap screws and lock nuts.
 
+<!-- TODO picture of ROV and A1 -->
 
 ### Connect the UGPS G2 topside to the A1 locator via the BlueROV2 tether
 
