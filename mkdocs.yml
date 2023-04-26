@@ -60,7 +60,10 @@ nav:
           - Demo: underwater-gps/gui/demo-gui.md
         - Integration:
           - API: underwater-gps/integration/api.md
-          - BlueROV2 integration: underwater-gps/integration/bluerov-integration.md
+          - BlueROV2 integration:
+            - Overview: underwater-gps/integration/bluerov-integration.md
+            - BlueROV2 & Locator-A1: underwater-gps/integration/bluerov-integration-a1.md
+            - BlueROV2 & Locator-U1: underwater-gps/integration/bluerov-integration-u1.md
         - Software updates: underwater-gps/sw-update.md
       - Explorer Kit (retired):
         - Quickstart: explorer-kit/quickstart.md
