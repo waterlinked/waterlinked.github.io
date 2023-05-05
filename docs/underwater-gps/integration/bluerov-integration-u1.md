@@ -17,11 +17,13 @@ In this guide it is described how to establish a network connection between UGPS
 
 1. Set the [IP switch](../../network-settings/#ethernet) inside the UGPS G2 topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
 
-2. Connect an ethernet cable to the UGPS Topside and [power it up](https://waterlinked.github.io/underwater-gps/power-supply/). It is on when the power button is lit. Wait with plugging the ethernet cable to your computer until you monitor the network adapters (see below) to identify its adapter easier.
+2. [Connect power](https://waterlinked.github.io/underwater-gps/power-supply/) to the UGPS Topside and switch on the power, resulting in the power switch lighting up.
 
-3. Connect the BlueROV with the tether to the FXTI and plug the USB-cable into the FXTI. Power up the BlueROV. Wait with plugging the USB-cable to your computer until you monitor the network adapters (see below) to identify its adapter easier.
+3. Connect an Ethernet cable to the UGPS Topside.
 
-4. Establish a network bridge on your computer. This depends on your operating system:
+4. Connect the BlueROV with the tether to the FXTI and plug the USB-cable into the FXTI. Power up the BlueROV.
+
+5. Establish a network bridge on your computer. This depends on your operating system:
 
 ??? Info "Windows"
 
@@ -41,9 +43,9 @@ In this guide it is described how to establish a network connection between UGPS
 
 	![network_bridge_windows_04_apaters_unplugged](../../img/network_bridge_windows_04_apaters_unplugged.png)
 
-	Now identify the adapter for the FXTI by connecting its USB-cable to the computer. A new adapter should show up, which is called "Realtek USB..." in the gray subtitle. Note its name. In the example there are two adapters in the picture below starting with "Realtek USB", one additional by a docking station. So you can identify the correct adapter best by comparing which one is new, it is "Ethernet 4".
+	Now identify the adapter for the FXTI by connecting its USB-cable to the computer. Unplug and replug the cable if you plugged it in before. A new adapter should show up, which is called "Realtek USB..." in the gray subtitle. Note its name. In the example there are two adapters in the picture below starting with "Realtek USB", one additional by a docking station. So you can identify the correct adapter best by comparing which one is new, it is "Ethernet 4".
 
-	Do the same with the UGPS Topside, connect its ethernet cable. In the shown example the red cross for adapter "Ethernet" vanishes, indicating that a device is connected to the network adapter. So in the shown example "Ethernet" is the UGPS Topside and "Ethernet 4" is the FXTI.
+	Do the same with the UGPS Topside, connect its ethernet cable to the computer. In the shown example the red cross for adapter "Ethernet" vanishes, indicating that a device is connected to the network adapter. So in the shown example "Ethernet" is the UGPS Topside and "Ethernet 4" is the FXTI.
 
 	![network_bridge_windows_05_adapters_present](../../img/network_bridge_windows_05_adapters_present.png)
 

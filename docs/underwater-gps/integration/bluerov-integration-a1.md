@@ -4,7 +4,11 @@ This guide describes the hardware modifications to the ROV, FXTI and UGPS Topsid
 
 ## Required parts and tools
 
-[BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) from Water Linked. It contains the following parts (purpose in parentheses)
+* [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) from Water Linked.
+
+![BlueROV2 Integration Kit with labels](../../img/bluerov2_integration_kit_label.png)
+
+It contains the following parts (purpose in parentheses)
 
 1.  Mechanical parts (for physical mounting of Locator-A1)
     * Locator-A1 mounting bracket, [printable 3D model](https://waterlinked.com/web/content/7664?download=true)
@@ -20,7 +24,7 @@ This guide describes the hardware modifications to the ROV, FXTI and UGPS Topsid
 !!! Info "Powerline communication (PLC)"
 	The term Powerline communication describes the technology with which the FXTI and the BlueROV communicate with each other over the Fanthom-X Tether. It is usually used to transmit data and communication signals, e. g. Ethernet, on existing electrical wiring in buildings, allowing for data transfer and communication without the need for dedicated network cables.
 
-![BlueROV2 Integration Kit with labels](../../img/bluerov2_integration_kit_label.png)
+
 
 * [Locator-A1](https://waterlinked.com/shop/underwater-gps-g2-locator-a1-120)
 

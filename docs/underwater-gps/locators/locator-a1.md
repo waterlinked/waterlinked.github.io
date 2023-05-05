@@ -1,6 +1,6 @@
 # Locator-A1
 
-[Buy Locator-A1 here!](https://waterlinked.com/product/locator-a1/)
+[Buy Locator-A1 here!](https://waterlinked.com/shop/underwater-gps-g2-locator-a1-120)
 
 ## Description
 

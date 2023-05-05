@@ -2,48 +2,30 @@
 
 The Water Linked Underwater GPS G2 (from now UGPS) system can be integrated with a BlueROV2 from Blue Robotics in different ways, depending upon the choice of locator.
 
-## Recommended integration methods
+## Most common integration methods
 
-* We recommend you to use the [Locator-A1](../../locators/locator-a1) together with the [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) when integrating the UGPS system with the BlueROV2. The integration steps are described in [BlueROV2 Integration Locator-A1](bluerov-integration-a1.md). You need to do hardware modifications to the ROV, FXTI and UGPS Topside which serve two purposes: A spare twisted wire pair in the tether is used to connect the Locator-A1 and the UGPS Topside. Secondly, the UGPS Topside is connected directly to the communication between ROV and topside computer. The advantages are that no additional topside computer configuration is required and thus the integration works well across operating systems. Once installed, the Locator-A1 requires least user interaction, e. g. no accumulator needs to be charged.
+* We recommend you to use the [Locator-A1](../../locators/locator-a1) together with the [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) when integrating the UGPS system with the BlueROV2. The integration steps are described in [BlueROV2 Integration Locator-A1](bluerov-integration-a1.md). Hardware modification must be carried out on the ROV, FXTI and UGPS Topside which serve two purposes: Firstly, a spare twisted wire pair in the tether is used to connect the Locator-A1 to the UGPS Topside. Secondly, the UGPS Topside is modified to connect directly to the communication between ROV and topside computer. The advantage of integrating using this method is that there is no additional topside computer configuration required, which can be challenging with different operating systems (i.e. Linux, iOS). <!--Once installed, the Locator-A1 requires least user interaction, e. g. no accumulator needs to be charged.-->
 
-* If you want to avoid hardware modifications, we recommend you to use the [Locator-U1](../../locators/locator-u1). The locator can simply be attached to the BlueROV2 in any convenient way. However some configuration steps in the topside computer are required to establish a network bridge, so the position calculated by the UGPS Topside is available to the autopilot and with that in QGroundControl. These steps are described in [BlueROV2 Integration Locator-U1](bluerov-integration-u1.md). Be aware that setting up a network bridge in operating systems other than Windows can be challenging.
+* If you wish to avoid carrying out hardware changes to the ROV, as they are required to integrate the A1-Locator, then we recommend you to use the [Locator-U1](../../locators/locator-u1). The locator can simply be attached to the BlueROV2 in any convenient way. However some configuration steps in the topside computer are required to establish a network bridge, so the position calculated by the UGPS Topside is available in QGroundControl. These steps are described in [BlueROV2 Integration Locator-U1](bluerov-integration-u1.md). Be aware that setting up a network bridge in operating systems other than Windows can be challenging.
 
 ## Alternative integration methods
-
-* To integrate the [Locator-A1](../../locators/locator-a1) it is possible to only perform modifications to the BlueROV2 and FXTI to route the analog signal from the UGPS Topside through the FXTI and a spare twisted wire pair in the tether to the Locator-A1. Instead of modifying the UGPS Topside to connect directly to the communication between ROV and topside computer, a network bridge like recommended for the Locator-U1 has to be established. The steps in these sections are relevant
+* If you wish to use a [Locator-A1](../../locators/locator-a1), however you wish to avoid purchasing the full integration kit then this can be done. The Locator-A1 must be installed on the ROV and connected to the G2 Topside and then it is necessary to set-up a network bridge. The steps in these sections are relevant
     * [Modifications to the BlueROV2](bluerov-integration-a1.md#modifications-to-the-bluerov2)
     * [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti) with the deviation that the blue/white twisted pair between Tether Connection PCB and Binder-connector-pigtail-assembly does not need to be connected.
     * [Establish a network connection with a network bridge](bluerov-integration-u1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer)
     * [Final steps](#final-steps-of-integration-independent-of-locator)
 
-* To integrate the [Locator-U1](../../locators/locator-u1) it is possible to not use the recommended network bridge solution, but modify the FXTI and UGPS Topside with the help of the [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103) to connect directly to the communication between ROV and topside computer. The steps in these sections are relevant
+
+* If you wish to use the [Locator-U1](../../locators/locator-u1), however you wish to avoid the complication in setting up a network bridge, it is possible to integrate by using the [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103). The steps in these sections are relevant
     * [Mount the Locator-U1 to the BlueROV2 frame](bluerov-integration-u1.md#mount-the-locator-u1-to-the-bluerov2-frame)
     * [Modifications to the UGPS Topside](bluerov-integration-a1.md#modifications-to-the-ugps-topside)
     * [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti) with the deviation that the green/white twisted pair between tether and Binder-connector-pigtail-assembly does not need to be connected.
     * [Establish a network connection with powerline communication](bluerov-integration-a1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer)
     * [Final steps](#final-steps-of-integration-independent-of-locator)
 
-* If using a [Locator-D1](../../locators/locator-d1), the simplest option is to use the D1's cable, and attach the D1 locator to the BlueROV2 in any convenient way. No further hardware integration is then required. As with the Locator-U1,
+* If using a [Locator-D1](../../locators/locator-d1), use the D1's cable and attach the D1 locator to the BlueROV2 in any convenient way. No further hardware integration is then required. As with the Locator-U1,
     * [Establish a network connection with a network bridge](bluerov-integration-u1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer)
     * and follow the [final steps](#final-steps-of-integration-independent-of-locator)
-
-* To use the ROV tether rather than the [Locator-D1](../../locators/locator-d1) modifications similar to the recommended Locator-A1 integration are necessary. This is an option if the ROV has a fiber-optic tether (the Locator-A1 cannot be used in that case). The next section describes this in more detail.
-
-### Integration via the BlueROV2 tether when using a Locator-D1
-
-There are two options. The one we recommend is to proceed exactly as when [connecting the UGPS G2 topside to the A1 locator using the BlueROV2 tether](bluerov-integration-a1.md), except that where the green and white twisted pair of the A1 locator is referred to, instead both the orange and white twisted pair and the blue and white twisted pair of the [D1 locator](../../locators/locator-d1) should be used. Thus one will require three twisted pairs in the BlueROV2 tether if the [FXTI approach](bluerov-integration-a1.md#modifications-to-the-fxt) to establishing a network connection between the UGPS G2 topside and the BlueROV2 is chosen, and two if the [network bridge](bluerov-integration-u1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer) approach is chosen. If taking this approach, 'A1 locator' should be selected in the [GUI locator config](../../gui/settings/#locator-setup), not 'D1 locator' ('D1 locator' should only be selected if using the D1 locator with its supplied cable).
-
-If using a fiber-optic tether, the A1 locator cannot be used, as the electrical signal sent via the green and white pair can not easily be converted to an optical one. However, the D1 locator can be used via the integration of the previous paragraph, with the addition that a converter from RS-422 to optical should be used in between the UGPS G2 topside box and the tether, and a converter from optical to RS-422 should be used at the BlueROV2 end between the tether and the Locator-D1.
-
-!!! Note
-	Precise measurement of time-of-flight is crucial to the accuracy of the UGPS G2 positioning.
-	Thus it is important that any latency from making conversions between RS-422 and optical signals is negligible. Latency of the order of nano-seconds, which many converters have, is fine.
-
-The other option is the same, except all twisted pairs of the D1 locator are used in the integration, rather than only two of them. This will enable the UGPS G2 topside to receive the depth of the locator from its depth sensor, and the [step](bluerov-integration-u1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer) of establishing a network connection between the UGPS G2 topside unit and the BlueROV2 can be skipped. This requires three twisted pairs in the BlueROV2 tether. In this case, 'D1 locator' should be selected in the [GUI locator config](../../gui/settings/#locator-setup). This option is again possible in the case of a fiber-optic tether by means of conversion to and from RS-422 and optical.
-
-!!! Note
-        The depth sensor of the D1 locator is likely to be less accurate than the BlueROV2's depth sensor, and it is for this reason that we recommend to integrate the D1 locator as if it were an A1 locator, in the manner described in the first paragraph of this section.
-
 
 ## Final steps of integration independent of Locator
 
@@ -57,9 +39,9 @@ If you have successfully installed a Locator with one of the above linked guides
 
 	!!! Info
 
-		If you have an older R1, R2, or R3 version of the BlueROV2 that uses a Pixhawk autopilot and you want to upgrade to using BlueOS, you can either do a software upgrade only [(described here)](https://docs.bluerobotics.com/ardusub-zola/software/onboard/BlueOS-1.1/installation/) or upgrade the hardware from Pixhawk to Navigator flight controller and the software [(described here)](https://bluerobotics.com/learn/navigator-retrofit-guide/).
+		If you have an older R1, R2, or R3 version of the BlueROV2 that uses a Pixhawk autopilot and you want to upgrade to using BlueOS, you can either carry out a software upgrade only [(described here)](https://docs.bluerobotics.com/ardusub-zola/software/onboard/BlueOS-1.1/installation/) or upgrade the hardware from Pixhawk to Navigator flight controller and the software [(described here)](https://bluerobotics.com/learn/navigator-retrofit-guide/).
 
-	The Water Linked UGPS system requires an extension in BlueOS to be able to communicate with the autopilot. BlueOS has to be updated to **BlueOS 1.1.0-beta.18** or newer to assure that extensions are supported sufficiently. The process of updating to the latest beta-release is described below together with enabling the UGPS extension. Make also sure you use the most recent stable release of QGroundControl for your operating system.
+	The Water Linked UGPS system requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller). BlueOS has to be updated to **BlueOS 1.1.0-beta.18** or newer to assure that extensions are supported sufficiently. The process of updating to the latest beta-release is described below together with enabling the UGPS extension. Make also sure you use the most recent stable release of QGroundControl for your operating system.
 
 	[//]: # ( TODO replace below update section as soon as BlueOS1.1 is released without beta with this text: Follow the Update Software section of the BlueROV Software Setup guide https://bluerobotics.com/learn/bluerov2-software-setup/#update-software)
 
@@ -102,7 +84,7 @@ If you have successfully installed a Locator with one of the above linked guides
 
 ### Checking UGPS to autopilot connection on land
 
-If you open QGroundControl you should be able to establish a connection to the ROV as before UGPS integration. Furthermore you should be able to see messages of type `GPS_INPUT` in the MAVLink Inspector (click on Q-logo, then Analyze Tools, then MAVLink Inspector in sidebar). This is the MAVLink message that is provided by the UGPS BlueROV Extension to the autopilot. For detailed information about the extension see the [BlueOS Extension for UGPS GitHub page](https://github.com/waterlinked/blueos-ugps-extension).
+If you open QGroundControl you should be able to establish a connection to the ROV as before UGPS integration. Furthermore you should be able to see messages of type `GPS_INPUT` in the MAVLink Inspector (click on Q-logo, then Analyze Tools, then MAVLink Inspector in sidebar). This is the MAVLink message that is provided by the UGPS BlueROV Extension to the autopilot (Pixhawk or Navigator flight controller). For detailed information about the extension see the [BlueOS Extension for UGPS GitHub page](https://github.com/waterlinked/blueos-ugps-extension).
 
 ## Daily operation
 
