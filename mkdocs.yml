@@ -1,27 +1,27 @@
 site_name: Documentation
-site_url: 'https://waterlinked.github.io'
+site_url: "https://waterlinked.github.io"
 repo_url: https://github.com/waterlinked/waterlinked.github.io
 theme:
-    name: material
-    theme_dir: docstheme/material
-    logo: img/waterlinked_logo.png
-    favicon: img/favicon_water_linked.ico
-    palette:
-        accent: blue
-    font:
-        text: Open Sans
+  name: material
+  theme_dir: docstheme/material
+  logo: img/waterlinked_logo.png
+  favicon: img/favicon_water_linked.ico
+  palette:
+    accent: blue
+  font:
+    text: Open Sans
 extra:
-    social:
-      - icon: fontawesome/brands/github
-        link: https://github.com/waterlinked/
-      - icon: fontawesome/brands/facebook
-        link: https://www.facebook.com/waterlinked/
-      - icon: fontawesome/brands/youtube
-        link: https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/waterlinked/
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/waterlinked/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/
 
 markdown_extensions:
   - markdown.extensions.admonition
-#  - markdown.extensions.codehilite(guess_lang=false)
+  #  - markdown.extensions.codehilite(guess_lang=false)
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
   - markdown.extensions.meta
@@ -29,64 +29,64 @@ markdown_extensions:
   - pymdownx.details
 
 extra_css:
-    - css/extra.css
+  - css/extra.css
 
 nav:
-    - Home: index.md
-    - Underwater GPS:
+  - Home: index.md
+  - Underwater GPS:
       - G2:
-        - Quickstart: underwater-gps/quickstart.md
-        - Introduction: underwater-gps/introduction.md
-        - Reference frames: underwater-gps/reference-frames.md
-        - Components:
-          - Topside:
-            - Hardware: underwater-gps/hardware.md
-            - Power supply: underwater-gps/power-supply.md
-            - Network settings: underwater-gps/network-settings.md
-          - Baseline:
-            - Antenna: underwater-gps/antenna.md
-            - Receiver-D1: underwater-gps/receiver-d1.md
-          - Locator:
-            - Locator-A1: underwater-gps/locators/locator-a1.md
-            - Locator-D1: underwater-gps/locators/locator-d1.md
-            - Locator-U1: underwater-gps/locators/locator-u1.md
-        - GUI:
-          - Position: underwater-gps/gui/position.md
-          - Baseline: underwater-gps/gui/receivers.md
-          - Settings: underwater-gps/gui/settings.md
-          - Diagnostic: underwater-gps/gui/diagnostic.md
-          - Diagnostic report: underwater-gps/gui/diagnostic-report.md
-          - Warnings: underwater-gps/gui/warnings.md
-          - Demo: underwater-gps/gui/demo-gui.md
-        - Integration:
-          - API: underwater-gps/integration/api.md
-          - BlueROV2 integration:
-            - Overview: underwater-gps/integration/bluerov-integration.md
-            - BlueROV2 & Locator-A1: underwater-gps/integration/bluerov-integration-a1.md
-            - BlueROV2 & Locator-U1: underwater-gps/integration/bluerov-integration-u1.md
-        - Software updates: underwater-gps/sw-update.md
+          - Quickstart: underwater-gps/quickstart.md
+          - Introduction: underwater-gps/introduction.md
+          - Reference frames: underwater-gps/reference-frames.md
+          - Components:
+              - Topside:
+                  - Hardware: underwater-gps/hardware.md
+                  - Power supply: underwater-gps/power-supply.md
+                  - Network settings: underwater-gps/network-settings.md
+              - Baseline:
+                  - Antenna: underwater-gps/antenna.md
+                  - Receiver-D1: underwater-gps/receiver-d1.md
+              - Locator:
+                  - Locator-A1: underwater-gps/locators/locator-a1.md
+                  - Locator-D1: underwater-gps/locators/locator-d1.md
+                  - Locator-U1: underwater-gps/locators/locator-u1.md
+          - GUI:
+              - Position: underwater-gps/gui/position.md
+              - Baseline: underwater-gps/gui/receivers.md
+              - Settings: underwater-gps/gui/settings.md
+              - Diagnostic: underwater-gps/gui/diagnostic.md
+              - Diagnostic report: underwater-gps/gui/diagnostic-report.md
+              - Warnings: underwater-gps/gui/warnings.md
+              - Demo: underwater-gps/gui/demo-gui.md
+          - Integration:
+              - API: underwater-gps/integration/api.md
+              - BlueROV2 integration:
+                  - Overview: underwater-gps/integration/bluerov-integration.md
+                  - BlueROV2 & Locator-A1: underwater-gps/integration/bluerov-integration-a1.md
+                  - BlueROV2 & Locator-U1: underwater-gps/integration/bluerov-integration-u1.md
+          - Software updates: underwater-gps/sw-update.md
       - Explorer Kit (retired):
-        - Quickstart: explorer-kit/quickstart.md
-        - Introduction: explorer-kit/introduction.md
-        - Warnings: explorer-kit/warnings.md
-        - Power supply: explorer-kit/power-supply.md
-        - Network settings: explorer-kit/network-settings.md
-        - Hardware: explorer-kit/hardware.md
-        - Master-D1: master-d1.md
-        - Receiver-D1: explorer-kit/receiver-d1.md
-        - Locators:
-          - Locator-A1: explorer-kit/locators/locator-a1.md
-          - Locator-D1: explorer-kit/locators/locator-d1.md
-          - Locator-S1: explorer-kit/locators/locator-s1.md
-          - Locator-U1: explorer-kit/locators/locator-u1.md
-        - GUI:
-          - Position: explorer-kit/gui/position.md
-          - Receivers: explorer-kit/gui/receivers.md
-          - Settings: explorer-kit/gui/settings.md
-          - Diagnostic: explorer-kit/gui/diagnostic.md
-          - API: explorer-kit/gui/api.md
-        - Software updates: explorer-kit/upgrader.md
-    - DVL:
+          - Quickstart: explorer-kit/quickstart.md
+          - Introduction: explorer-kit/introduction.md
+          - Warnings: explorer-kit/warnings.md
+          - Power supply: explorer-kit/power-supply.md
+          - Network settings: explorer-kit/network-settings.md
+          - Hardware: explorer-kit/hardware.md
+          - Master-D1: master-d1.md
+          - Receiver-D1: explorer-kit/receiver-d1.md
+          - Locators:
+              - Locator-A1: explorer-kit/locators/locator-a1.md
+              - Locator-D1: explorer-kit/locators/locator-d1.md
+              - Locator-S1: explorer-kit/locators/locator-s1.md
+              - Locator-U1: explorer-kit/locators/locator-u1.md
+          - GUI:
+              - Position: explorer-kit/gui/position.md
+              - Receivers: explorer-kit/gui/receivers.md
+              - Settings: explorer-kit/gui/settings.md
+              - Diagnostic: explorer-kit/gui/diagnostic.md
+              - API: explorer-kit/gui/api.md
+          - Software updates: explorer-kit/upgrader.md
+  - DVL:
       - DVL-A50 — Introduction: dvl/dvl-a50.md
       - DVL-A125 — Introduction: dvl/dvl-a125.md
       - Interfaces: dvl/interfaces.md
@@ -94,17 +94,20 @@ nav:
       - Axes: dvl/axes.md
       - Protocol: dvl/dvl-protocol.md
       - GUI:
-        - Dashboard: dvl/gui/dashboard.md
-        - Configuration: dvl/gui/configuration.md
-        - Diagnostic report: dvl/gui/diagnostic-report.md
-        - Demo GUI: dvl/gui/demo-gui.md
+          - Dashboard: dvl/gui/dashboard.md
+          - Configuration: dvl/gui/configuration.md
+          - Diagnostic report: dvl/gui/diagnostic-report.md
+          - Demo GUI: dvl/gui/demo-gui.md
       - Dead reckoning: dvl/dead-reckoning.md
       - Integration:
-        - BlueROV2: dvl/bluerov-integration.md
+          - BlueROV2: dvl/bluerov-integration.md
       - Software updates: dvl/sw-update.md
-    - Modem:
+  - Modem:
       - Modem-M64:
-        - Introduction: modem/modem-m64.md
-      - Protocol: modem/modem-m64-protocol.md
+          - Introduction: modem-m64/modem-m64.md
+          - Protocol: modem-m64/modem-m64-protocol.md
+      - Modem-M16:
+          - Introduction: modem-m16/modem-m16.md
+          - Serial Interface: modem-m16/modem-m16-uart-interface.md
 
 copyright: © Water Linked 2018-2022
