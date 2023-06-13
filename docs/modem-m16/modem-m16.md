@@ -40,7 +40,7 @@ The tables below shows the pinning of the Modem-M16 interface. Depending on whic
 | Device length             | 47 mm (ex cable)                       |
 | Device weight (air)       | 40 gram                                |
 | Device weight (submerged) | 14 gram                                |
-| Depth rating              | 500 meter                              |
+| Depth rating              | 600 meter                              |
 | Materials                 | POM (housing),<br /> PEEK (transducer) |
 | Operating temperature     | -10 to 70 °C                           |
 | Device diameter           | 29.5 mm                                |
@@ -49,9 +49,8 @@ The tables below shows the pinning of the Modem-M16 interface. Depending on whic
 
 | Information               | All Modem M-16 Versions                |
 | :------------------------ | :------------------------------------- |
-| Range                     | 500 m                                  |
+| Range                     | 1000 m                                 |
 | Transducer directivity    | Omnidirectional                        |
-| Transducer frequency      | 56 kHz                                 |
-| Transmission              | 500 meter                              |
-| Materials                 | 10 bit/sec Half duplex                 |
+| Transducer frequency      | 58.5 kHz                               |
+| Bitrate                   | 10 bps                                 |
 
