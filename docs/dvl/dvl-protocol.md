@@ -13,7 +13,7 @@ Describes the Water Linked DVL protocols (serial and ethernet).
 
 ## Version
 
-This document describes serial protocol version `2.4.x` (major.minor.patch) and JSON protocol `json_v3`:
+This document describes serial protocol version `2.4.x` (major.minor.patch) and JSON protocol `json_v3.1` (major.minor):
 
 - MAJOR version increments represent incompatible API changes
 - MINOR version increments represent additional backwards-compatible functionality
@@ -23,6 +23,7 @@ This document describes serial protocol version `2.4.x` (major.minor.patch) and 
 
 | Software release | Serial protocol version | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- | -- |
+| 2.4.0 | 2.5.0 | json_v3.1 | Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)
 | 2.2.1 | 2.4.0 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float
 | 2.1.0 | 2.3.0 | json_v3 | Add configuration, add time_of_validity/time_of_transmission, add covariance (JSON)
 | 2.0.8 | 2.2.0 | json_v2 | Add position estimation, add IMU output
@@ -58,7 +59,7 @@ The messages are delimited by newline.
 | status | Reports if there are any issues with the DVL (0 for normal operation, 1 if operational issues such as high temperature) |
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
-| format | Format type and version for this report: `json_v3` |
+| format | Format type and version for this report: `json_v3.1` |
 | type | Report type: `velocity` |
 
 Example of TCP report (indented for legibility)
@@ -124,7 +125,7 @@ Example of TCP report (indented for legibility)
   ],
   "velocity_valid": true,
   "status": 0,
-  "format": "json_v3",
+  "format": "json_v3.1",
   "type": "velocity",
   "time_of_validity": 1638191471563017,
   "time_of_transmission": 1638191471752336
@@ -166,7 +167,7 @@ Example of a dead reckoning report.
   "yaw": 0.6173566579818726,
   "type": "position_local",
   "status": 0,
-  "format": "json_v3"
+  "format": "json_v3.1"
 }
 
 ```
@@ -187,7 +188,7 @@ The response will be as follows if the reset is successful. If unsuccessful, `su
   "success": true,
   "error_message": "",
   "result": null,
-  "format": "json_v3",
+  "format": "json_v3.1",
   "type": "response"
 }
 ```
@@ -208,7 +209,28 @@ The response will be as follows if the calibration is successful. If unsuccessfu
   "success": true,
   "error_message": "",
   "result": null,
-  "format": "json_v3",
+  "format": "json_v3.1",
+  "type": "response"
+}
+```
+
+### Trigger ping
+
+In setups where multiple acoustic sensors are used it can be useful to control the pinging of each acoustic sensor individually. By setting the configuration `acoustic_enabled = false` the pinging of the DVL can be externally controlled. Up to 15 externally trigger commands can be queued by issuing the `trigger_ping` command. The DVL will execute each ping in quick succession until no more commands are in the queue.
+
+```
+{"command":"trigger_ping"}
+```
+
+The response will be as follows if the calibration is successful. If queue is full, `success` will be `false`, and a non-empty `error_message` will be provided.
+
+```
+{
+  "response_to": "trigger_ping",
+  "success": true,
+  "error_message": "",
+  "result": null,
+  "format": "json_v3.1",
   "type": "response"
 }
 ```
@@ -224,6 +246,7 @@ The response will be as follows if the calibration is successful. If unsuccessfu
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
 | dark_mode_enabled | `true` when the LED operates as [normal](../interfaces#led-signals), `false` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
 | range_mode | `auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
+| periodic_cycling_enabled | `true` for normal operation where the DVL periodically searches for bottom lock shorter than the existing bottom lock, `false` if periodic cycling is disabled |
 
 
 #### Fetching current configuration
@@ -247,9 +270,10 @@ If the configuration is successfully fetched, the response will be in the follow
     "acoustic_enabled":true,
     "dark_mode_enabled":false,
     "mounting_rotation_offset":20.00,
-    "range_mode":"auto"
+    "range_mode":"auto",
+    "periodic_cycling_enabled":true
   },
-  "format":"json_v3",
+  "format":"json_v3.1",
   "type":"response"
 }
 ```
@@ -271,7 +295,7 @@ If the parameters are successfully set, the response will be in the following fo
   "success": true,
   "error_message": "",
   "result" :null,
-  "format": "json_v3",
+  "format": "json_v3.1",
   "type": "response"
 }
 ```
@@ -303,11 +327,12 @@ The commands in the table are shown without the checksum and without the mandato
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
-| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.4.0` |
+| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.5.0` |
 | `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,2.2.1,0xfedcba98765432` or `wrw,dvl-a50,2.2.1,0xfedcba98765432,10.11.12.140` |
-| `wcs,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode_enabled]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
-| `wcc`   | Get current configuration | `wrc,`*[speed_of_sound]*`,`*[mounting_rotation_offset]*`,`*[acoustic_enabled]*`,`*[dark_mode_enabled]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
+| `wcs,`*[configuration parameters]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
+| `wcc`   | Get current configuration | `wrc,`*[configuration parameters]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
 | `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](../dead-reckoning#starting-dead-reckoning) run |
+| `wcx`   | Trigger ping | `wra` | Successfully queued a ping |
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
@@ -412,6 +437,12 @@ Dead reckoning can be reset by issuing the `wcr` command. The reply will be an a
 
 The gyro can be calibrated by issuing the `wcg` command.  The reply will be an ack (`wra`) if the reset is successful, and a nak (`wrn`) if not.
 
+### Trigger ping (wcx)
+
+In setups where multiple acoustic sensors are used it can be useful to control the pinging of each acoustic sensor individually. By setting the configuration `acoustic_enabled = n` the pinging of the DVL can be externally controlled. Up to 15 externally trigger commands can be queued by issuing the `wcx` command. The DVL will execute each ping in quick succession until no more commands are in the queue.
+
+The reply will be an ack (`wra`) if the command is successful, and a nak (`wrn`) if queue is full.
+
 ### Change serial output protocol (wcp)
 
 The serial output protocol in use can configured by issuing the `wcp` command. The selected protocol is persistent over reboots.
@@ -448,9 +479,10 @@ wcp,3
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
 | dark_mode_enabled | `n` when the LED operates as [normal](../interfaces#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
 | range_mode |`auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
+| periodic_cycling_enabled | `y` when operating as normal, otherwise `n`. See [Configuration over JSON](../dvl-protocol#configuration-over-json) for details
 
 !!!note
-    For backward compatibility the `range_mode` parameter is optional when setting the configuration. It will always be returned when reading the configuration (`wcc`).
+    For backward compatibility the `range_mode` and `periodic_cycling_enabled` parameters are optional when setting the configuration. They will always be returned when reading the configuration (`wcc`).
     Speed of sound and mounting rotation was changed from integer to float in serial protocol 2.4.0
 
 ####  Fetching current configuration
@@ -461,7 +493,7 @@ The current configuration of the DVL can be obtained by issuing the `wcc` comman
 If the configuration is successfully fetched, the response will be in the following format. If not, a nak `wrn` will be returned.
 
 ```
-wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode]
+wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode],[periodic_cycling_enabled]
 ```
 
 #### Setting configuration parameters
@@ -470,7 +502,7 @@ Setting of configuration parameters can be carried out by issuing the `wcs` comm
 
 
 ```
-wcs,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode]
+wcs,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode],[periodic_cycling_enabled]
 ```
 
 Those parameters which are not to be set can be left blank.
@@ -478,13 +510,13 @@ Those parameters which are not to be set can be left blank.
 Example for setting dark mode without changing the other parameters:
 
 ```
-wcs,,,,y,
+wcs,,,,y,,
 ```
 
 Example for setting speed of sound to 1450 m/s and disabling acoustics, without changing the other parameters:
 
 ```
-wcs,1450,,n,,
+wcs,1450,,n,,,
 ```
 
 The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not an integer.
