@@ -52,5 +52,6 @@ The tables below shows the pinning of the Modem-M16 interface. Depending on whic
 | Range                     | 1000 m                                 |
 | Transducer directivity    | Omnidirectional                        |
 | Transducer frequency      | 58.5 kHz                               |
-| Bitrate                   | 10 bps                                 |
+| Bits per package          | 16                                     |
+| Package duration          | 1.6 seconds                            |
 
