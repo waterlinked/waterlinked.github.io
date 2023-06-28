@@ -34,7 +34,7 @@ You will also need:
 * [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 * [Plug Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) from Blue Robotics
 * (Optional) [Cable Jacket Stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/) from Blue Robotics
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-6.5MM-LC+%28for+6.5+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics
 * [Silicone grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * 5 mm universal drill bit
 * 2 x M5x12 mm stainless steel pan head screws (included with BlueROV2 mounting bracket)
@@ -48,7 +48,7 @@ You will also need:
 * Wire stripping tool
 * Zip ties
 * 4 x 30 cm (12") wires (options discussed under [Connect DVL-A50 and BlueROV2](#connect-dvl-a50-and-bluerov2)). If possible, use 2 x red and 2 x black wires.
-* 6" ethernet cable
+* 15 cm (6") ethernet cable
 
 ## Preparation
 
@@ -132,7 +132,7 @@ Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove 
 To add a penetrator to the cable you will need:
 
 * [Plug Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) from Blue Robotics
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-6.5MM-LC+%28for+6.5+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics
 * (Optional) [Cable Jacket Stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/) from Blue Robotics
 * Utility knife
 
@@ -170,6 +170,10 @@ Remove a blank penetrator, sush as the one pictured below, from the 4” End Cap
 ![bluerov2-end-cap-remove](../img/bluerov2-end-cap-remove-1024x576.jpg)
 
 ### Install DVL-A50 penetrator
+
+
+!!! note
+	The following images shows the old penetrator from BlueRobotics. The procedure is the same with the new WetLink penetrators.
 
 To install DVL-A50 into the end cap, you will need the following parts and tools:
 
@@ -287,6 +291,9 @@ Mount the Electronics Enclosure to the frame using the M3x16 screws so that the 
 
 ### Attach DVL-A50 to BlueROV2
 
+!!! note
+	The following images show the old version of the DVL-A50 with steel housing. The new housing has the same dimensions as the old.
+
 Attach the DVL-A50 to the BlueROV2 using the 2 x M5x16 screws provided with the DVL-A50 BlueROV2 Integration Kit through the two holes you've made previously.
 
 ![dvl-attached-to-bluerov2](../img/dvl_attached_to_bluerov2.png)
@@ -298,6 +305,8 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 ## Software
 
 Integration of the DVL-A50 into ArduPilot Companion currently exists in BETA stage. Details on how to get the BETA version of DVL integration with ArduSub can be found on the [ArduSub Developers website](https://www.ardusub.com/developers/dvl-integration.html).
+
+Integration of the DVL-A50 into BlueOS can be done by installing the BlueOS-Water-Linked-DVL extension from the BlueOS extension tab. The service will show in the "Extension Manager" section in BlueOS, where there are some configuration options.
 
 !!! Note
 	There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter `BARO_PROBE_EXT` to `768` and then reboot the ROV.
