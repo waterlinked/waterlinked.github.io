@@ -304,9 +304,7 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 
 ## Software
 
-Integration of the DVL-A50 into ArduPilot Companion currently exists in BETA stage. Details on how to get the BETA version of DVL integration with ArduSub can be found on the [ArduSub Developers website](https://www.ardusub.com/developers/dvl-integration.html).
-
-Integration of the DVL-A50 into BlueOS can be done by installing the BlueOS-Water-Linked-DVL extension from the BlueOS extension tab. The service will show in the "Extension Manager" section in BlueOS, where there are some configuration options.
+The DVL-A50 requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller). BlueOS has to be updated to **BlueOS 1.1.0-beta.18** or newer to assure that extensions are supported sufficiently. After the update install the BlueOS-Water-Linked-DVL extension from the BlueOS extension manager. A new menu item for the DVL will appear in the Web GUI with several configuration options.
 
 !!! Note
 	There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter `BARO_PROBE_EXT` to `768` and then reboot the ROV.
