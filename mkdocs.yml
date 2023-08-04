@@ -19,6 +19,10 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/
 
+plugins:
+  - search
+  - pdf-export
+
 markdown_extensions:
   - markdown.extensions.admonition
   #  - markdown.extensions.codehilite(guess_lang=false)
