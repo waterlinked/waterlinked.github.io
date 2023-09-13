@@ -13,7 +13,7 @@ The Modem-M16 has a 3.3 volt UART interface and a RS485 interface.
 
 | Settings         | Value  |
 | :--------------- | :----- |
-| Baud rate        | 115200 |
+| Baud rate        | 9600   |
 | Data parity stop | 8N1    |
 | Flow control     | None   |
 

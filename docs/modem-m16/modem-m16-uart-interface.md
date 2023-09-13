@@ -76,7 +76,7 @@ The table below provides an overview of the available channels:
 For instance, to configure the modem to communicate on channel 11 via the UART interface, follow these steps:
 
 1. Transmit a single "c" (0x63) character over UART.
-2. Allow a one-second interval to pass (±0.3 seconds deviation is acceptable).
+2. Allow a one-second interval to pass.
 3. Send another "c" (0x63) character over UART.
 4. Wait for less than 2 seconds / transmit immediately.
 5. Send a single "b" (0x62) character.
