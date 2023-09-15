@@ -21,17 +21,17 @@ The Modem-M16 has a 3.3 volt UART interface and a RS485 interface.
 
 The tables below shows the pinning of the Modem-M16 interface. Depending on which type is used, the wires may have different colors.
 
-| Interface      | Colour (OEM)  | Colour (Standard) | Colour (Extended) |
-| :------------- | :----------- | :--------------- | :--------------- |
-| VIN (3V - 4V2) | Orange       | Orange           | Orange           |
-| GND            | Orange/White | Orange/White     | Orange/White     |
-| UART RX        | Blue         | Blue             | NA               |
-| UART TX        | Blue/White   | Blue/White       | NA               |
-| Not in use     | Green        | Green            | NA               |
-| RS485 RX_p     | NA           | NA               | Blue             |
-| RS485 RX_n     | NA           | NA               | Blue/White       |
-| RS485 TX_p     | NA           | NA               | Green            |
-| RS485 TX_n     | NA           | NA               | Green/White      |
+| Interface      | Colour (OEM)  | Colour (Standard) | Colour (Extended)|
+| :------------- | :-----------     | :--------------- | :---------------  |
+| VIN            | Orange (3V - 4V2)| Orange (3V - 4V2)| Orange (10V - 30V)|
+| GND            | Orange/White     | Orange/White     | Orange/White      |
+| UART RX        | Blue             | Blue             | NA                |
+| UART TX        | Blue/White       | Blue/White       | NA                |
+| Not in use     | Green            | Green            | NA                |
+| RS485 RX_p     | NA               | NA               | Blue              |
+| RS485 RX_n     | NA               | NA               | Blue/White        |
+| RS485 TX_p     | NA               | NA               | Green             |
+| RS485 TX_n     | NA               | NA               | Green/White       |
 
 ## Mechnical
 
