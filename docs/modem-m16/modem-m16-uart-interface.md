@@ -1,6 +1,6 @@
 # Serial Interface
 
-The modem utilizes either a 3V3 UART or RS485 for interfacing. Users can operate the modem in different modes, configure communication channels, and retrieve diagnostic data via this serial interface. A half-duplex serial communication protocol, encompassing the following configuration, is implemented by the modem:
+The modem utilizes either a 3V3 UART or RS422 for interfacing. Users can operate the modem in different modes, configure communication channels, and retrieve diagnostic data via this serial interface. A half-duplex serial communication protocol, encompassing the following configuration, is implemented by the modem:
 
 - Baud rate: 9600 bps
 - Data bits: 8 bits per transfer

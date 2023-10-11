@@ -5,11 +5,11 @@ The Modem M16 is a two-way, half-duplex acoustic modem operating at 10bps that c
 
 ## Description
 
-The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and user configurable data link. The modem is delivered in three different versions, [OEM](https://waterlinked.com/shop/modem-m16-186#attr=111), [Standard](https://waterlinked.com/shop/modem-m16-186#attr=110), and [Extended (RS485)](https://waterlinked.com/shop/modem-m16-186#attr=112)
+The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and user configurable data link. The modem is delivered in three different versions, [OEM](https://waterlinked.com/shop/modem-m16-186#attr=111), [Standard](https://waterlinked.com/shop/modem-m16-186#attr=110), and [Extended (RS422)](https://waterlinked.com/shop/modem-m16-186#attr=112)
 
 ## Terminal Interface
 
-The Modem-M16 has a 3.3 volt UART interface and a RS485 interface.
+The Modem-M16 has a 3.3 volt UART interface and a RS422 interface.
 
 | Settings         | Value  |
 | :--------------- | :----- |
@@ -19,19 +19,29 @@ The Modem-M16 has a 3.3 volt UART interface and a RS485 interface.
 
 ## Wiring interface
 
-The tables below shows the pinning of the Modem-M16 interface. Depending on which type is used, the wires may have different colors.
+The tables below shows the pinning of the Modem-M16 interface. Depending on which type is used, the wires may have different colors. 
 
-| Interface      | Colour (OEM)  | Colour (Standard) | Colour (Extended)|
-| :------------- | :-----------     | :--------------- | :---------------  |
-| VIN            | Orange (3V - 4V2)| Orange (3V - 4V2)| Orange (10V - 30V)|
-| GND            | Orange/White     | Orange/White     | Orange/White      |
-| UART RX        | Blue             | Blue             | NA                |
-| UART TX        | Blue/White       | Blue/White       | NA                |
-| Not in use     | Green            | Green            | NA                |
-| RS485 RX_p     | NA               | NA               | Blue              |
-| RS485 RX_n     | NA               | NA               | Blue/White        |
-| RS485 TX_p     | NA               | NA               | Green             |
-| RS485 TX_n     | NA               | NA               | Green/White       |
+| Interface             | Colour (OEM)  | Colour (Standard) | Colour (Extended)|
+| :---------------------| :---------------- | :---------------  | :---------------  |
+| VIN                   | Orange (3V - 4.2V)| Orange (3V - 4.2V)| Orange (10V - 30V)|
+| GND                   | Orange-White      | Orange-White      | Orange-White      |
+| UART RX               | Blue              | Blue              | NA                |
+| UART TX               | Blue-White        | Blue-White        | NA                |
+| Shutdown (Active Low) | Green             | Green             | NA                |
+| RS422 RX+             | NA                | NA                | Blue              |
+| RS422 RX-             | NA                | NA                | Blue-White        |
+| RS422 TX+             | NA                | NA                | Green             |
+| RS422 TX-             | NA                | NA                | Green-White       |
+
+Note: Shutdown line can be used to control the ON/OFF state of the Modem. 
+If Shutdown is left floating, the Modem is ON. If Shutdown is short to GND, the modem is OFF. 
+Shutdown line can be controlled by an external open-drain, open-collector or relay device.
+DO NOT apply voltage to Shutdown line. 
+
+## Wiring OEM/Standard
+![Standard](../img/modem_m16_standard_connection.png)
+## Wiring Extended (RS422)
+![Extended](../img/modem_m16_extended_connection.png)
 
 ## Mechnical
 
