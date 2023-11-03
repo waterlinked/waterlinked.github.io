@@ -51,4 +51,4 @@ If you have questions, you are very welcome to contact our [customer support](ht
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/UGPS_G2/W-MK-21025-1_G2.pdf)
+[Datasheet](https://waterlinked.com/datasheets/ugps-g2-standard)
