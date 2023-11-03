@@ -11,7 +11,7 @@ Failure to perform gyro calibration will result in less accurate dead reckoning.
 
 ## Frame
 
-The position, speed, and roll, pitch, and yaw angles outputted by the dead reckoning algorithm are with respect to the frame defined at time zero (the time of the last reset, or else at start up) by the axes of the [body frame](../axes#body-frame) of the DVL, or the [vehicle frame](../axes#vehicle-frame) if a mounting rotation offset is set.
+The position, speed, and roll, pitch, and yaw angles outputted by the dead reckoning algorithm are with respect to the frame defined at time zero (the time of the last reset, or else at start up) by the axes of the [vehicle frame](../axes#vehicle-frame).
 
 ## Speed and position
 
