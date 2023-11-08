@@ -56,7 +56,7 @@ The messages are delimited by newline.
 | altitude | Distance to the reflecting surface along the Z axis (m) |
 | transducers | Is a list containing information from each transducer: [id, velocity (m/s), distance (m), rssi (dBm), nsd (dBm), beam_valid (True/False)] |
 | velocity_valid | If true, the DVL has a lock on the reflecting surface, and the altitude and velocities are valid (True/False) |
-| status | Reports if there are any issues with the DVL (0 for normal operation, 1 if operational issues such as high temperature) |
+| status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
 | format | Format type and version for this report: `json_v3.1` |
@@ -368,7 +368,7 @@ The report has the following format:
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds)  |
 | time | Milliseconds since last velocity report (ms) |
-| status | 0 for normal operation, 1 for operational issues such as high temperature |
+| status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
 
 Example where all velocities are valid:
 
@@ -539,7 +539,7 @@ Same purpose as the [velocity report](#velocity-report), but in an older format:
 | fom | Figure of merit, a measure of the accuracy of the velocities  (m/s) |
 | altitude | Distance to the reflecting surface along Z axis (m) |
 | valid | If `y`, the DVL has lock on the reflecting surface, and the altitude and velocities are valid (y/n) |
-| status | 0 for normal operation, 1 for operational issues such as high temperature |
+| status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
 
 Example where velocities are valid:
 
