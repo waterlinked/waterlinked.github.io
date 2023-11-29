@@ -16,14 +16,28 @@ The tables below shows the pinning of the DVL-A50 interface.
 
 | Interface           | Color |
 | :------------------ | :-- |
-| Positive (10-30V) | Red  |
 | Negative/Ground | Black   |
-| ETH TX+ | Orange/White   |
-| ETH TX- | Orange   |
+| Positive (10-30V) | Red  |
 | ETH RX+ | Green/White  |
 | ETH RX- | Green  |
+| ETH TX- | Orange   |
+| ETH TX+ | Orange/White   |
 | UART TX | Brown/White   |
 | UART RX | Brown  |
+
+#### Seacon MCOM8M Connector
+The table below shows the specific pinout for the Seacon MCOM8M connector.
+
+| Interface          | Pin  |
+| :------------------ | :-- |
+| Negative/Ground | 1  |
+| Positive (10-30V) | 2 |
+| ETH RX+ | 3  |
+| ETH RX- | 4  |
+| ETH TX- | 5  |
+| ETH TX+ | 6  |
+| UART TX | 7  |
+| UART RX | 8  |
 
 
 !!! Note
