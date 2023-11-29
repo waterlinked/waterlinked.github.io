@@ -25,6 +25,19 @@ The tables below shows the pinning of the DVL-A50 interface.
 | UART TX | Brown/White   |
 | UART RX | Brown  |
 
+The tables below shows the pinout for the MCOM8M Cconnector
+
+| Interface          | Pin |
+| :------------------ | :-- |
+| Positive (10-30V) | 2 |
+| Negative/Ground | 1  |
+| ETH TX+ | 6  |
+| ETH TX- | 5  |
+| ETH RX+ | 3  |
+| ETH RX- | 4  |
+| UART TX | 7  |
+| UART RX | 8  |
+
 
 !!! Note
 	Power must be applied to the power terminals before applying voltage to UART pins
