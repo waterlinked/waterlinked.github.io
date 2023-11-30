@@ -25,7 +25,7 @@ The tables below shows the pinning of the DVL-A50 interface.
 | UART TX | Brown/White   |
 | UART RX | Brown  |
 
-#### Seacon MCOM8M Connector
+#### Seacon MCOM8M Connector (DVL A50 only)
 The table below shows the specific pinout for the Seacon MCOM8M connector.
 
 | Interface          | Pin  |
