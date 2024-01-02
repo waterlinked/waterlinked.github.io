@@ -34,7 +34,7 @@ You will also need:
 * [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 * [Plug Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) from Blue Robotics
 * (Optional) [Cable Jacket Stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/) from Blue Robotics
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-6.5MM-LC+%28for+6.5+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics
+* [M10-7.5mm-HC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics
 * [Silicone grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * 5 mm universal drill bit
 * 2 x M5x12 mm stainless steel pan head screws (included with BlueROV2 mounting bracket)
@@ -132,7 +132,7 @@ Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove 
 To add a penetrator to the cable you will need:
 
 * [Plug Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29) from Blue Robotics
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-6.5MM-LC+%28for+6.5+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics
+* [M10-7.5mm-HC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics
 * (Optional) [Cable Jacket Stripper](https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/) from Blue Robotics
 * Utility knife
 
@@ -178,7 +178,7 @@ Remove a blank penetrator, sush as the one pictured below, from the 4” End Cap
 To install DVL-A50 into the end cap, you will need the following parts and tools:
 
 * DVL-A50 with installed cable penetrator
-* Penetrator O-ring (included with [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics)
+* Penetrator O-ring (included with [M10-7.5mm-HC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics)
 * [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 * Silicone Grease
 * Isopropyl Alcohol Wipe
