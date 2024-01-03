@@ -13,7 +13,7 @@ Describes the Water Linked DVL protocols (serial and ethernet).
 
 ## Version
 
-This document describes serial protocol version `2.4.x` (major.minor.patch) and JSON protocol `json_v3.1` (major.minor):
+This document describes serial protocol version `2.5.x` (major.minor.patch) and JSON protocol `json_v3.1` (major.minor):
 
 - MAJOR version increments represent incompatible API changes
 - MINOR version increments represent additional backwards-compatible functionality
@@ -23,6 +23,7 @@ This document describes serial protocol version `2.4.x` (major.minor.patch) and 
 
 | Software release | Serial protocol version | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- | -- |
+| 2.4.4 | 2.5.0 | json_v3.1 | Change gyro calibration to store persistently. Note: gyro calibration commands now takes up to 15 seconds.
 | 2.4.0 | 2.5.0 | json_v3.1 | Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)
 | 2.2.1 | 2.4.0 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float
 | 2.1.0 | 2.3.0 | json_v3 | Add configuration, add time_of_validity/time_of_transmission, add covariance (JSON)
@@ -694,6 +695,9 @@ Sentences TS, BI and BD are filled with relevant numbers. All other sentences ar
 | ±EEEEE | Error in velocity data in mm/s | Current error  |
 | S | Status of velocity | A = good. V = bad  |
 
+!!! note
+    Axis used in the BI sentence is the [vehicle frame](./axes.md).
+
 #### Bottom track, earth referenced distance data (BD)
 
 `:BD,±EEEEEEEE.EE,±NNNNNNNN.NN,±UUUUUUUU.UU,DDDD.DD,TTT.TT <CR><LF>`
@@ -707,20 +711,37 @@ Sentences TS, BI and BD are filled with relevant numbers. All other sentences ar
 | DDDD.DD | Range to bottom in meters | Current altitude |
 | TTT.TT | Time since last good velocity estimate in seconds. | Always 0 |
 
+#### Bottom track, ship referenced distance data (BS)
+
+- In the 2.4.0 release the BS values are always zero.
+- As of the 2.4.4 release the BS values are given by the actual velocity.
+
+`:BS,±TTTTTTTT.TT,±LLLLLLLL.LL,±NNNNNNN.NN,S <CR><LF>`
+
+
+| Field| Explanation | Value |
+| -- | -- | -- |
+| ±TTTTTTTT.TT | Transverse movement, (+ = Port to Starboard velocity relative to bottom) In mm/s | Y axis velocity |
+| ±LLLLLLLL.LL | Longitudinal movement. (+ = Aft to Forward velocity relative to bottom) In mm/s | X axis velocity |
+| ±NNNNNNN.NN | Ship velocity away from bottom in mm/s | Z axis velocity |
+| S | Status of velocity | A = good. V = bad  |
+
 
 #### Example output
 
+<!-- Copied from wl-95050/protocols/protocol_pd6_test/TestPD6Encode -->
+
 ```
 :SA, +0.00, +0.00,  0.00
-:TS,22061420273470, 0.0, +0.0,   0.0,1475.0,  0
+:TS,22020812061800, 0.0, +0.0,   0.0,1475.0,  0
 :WI,    +0,    +0,    +0,    +0,V
 :WS,    +0,    +0,    +0,V
 :WE,    +0,    +0,    +0,V
 :WD,       +0.00,       +0.00,       +0.00,   0.00,  0.00
-:BI,  -167,  +211, -1770,    +0,A
-:BS,    +0,    +0,    +0,V
+:BI,  +123,  -420, +2000,    +0,A
+:BS,  -420,  +123, +2000,A
 :BE,    +0,    +0,    +0,V
-:BD,       +0.00,       +0.00,       +0.00,  19.17,  0.00
+:BD,       +0.00,       +0.00,       +0.00,   5.32,  0.00
 ```
 
 ## Range mode configuration
