@@ -2,6 +2,8 @@
 
 It is recommended to always run the latest DVL software where possible. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
 
+The release notes for each release is available in the [GUI](../gui/dashboard) and also in the [GUI demo](https://dvl.demo.waterlinked.com/#/about).
+
 !!! Warning
 	The DVL can overheat if its software is updated whilst it is out of water, which can lead to structural damage and subsequent hardware failure. Placing it in a bucket of water, for example, should ensure sufficient cooling.
 
