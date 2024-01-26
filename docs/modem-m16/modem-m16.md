@@ -5,7 +5,7 @@ The Modem M16 is a two-way, half-duplex acoustic modem operating at 10bps that c
 
 ## Description
 
-The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and user configurable data link. The modem is delivered in three different versions, [OEM](https://waterlinked.com/shop/modem-m16-186#attr=111), [Standard](https://waterlinked.com/shop/modem-m16-186#attr=110), and [Extended (RS422)](https://waterlinked.com/shop/modem-m16-186#attr=112)
+The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and user configurable data link. The modem is delivered in four different versions, [OEM](https://waterlinked.com/shop/modem-m16-186#attr=111), [Flange](https://waterlinked.com/shop/modem-m16-186#attr=195), [Standard](https://waterlinked.com/shop/modem-m16-186#attr=159), and [Extended (RS422)](https://waterlinked.com/shop/modem-m16-186#attr=183)
 
 ## Terminal Interface
 
