@@ -2,7 +2,7 @@
 
 [Buy Antenna here!](https://waterlinked.com/product/antenna/)
 
-![antenna_expanded](https://waterlinked.com/wp-content/uploads/2020/08/Antenna_Expanded_1600_web.jpg)
+![antenna_expanded](https://waterlinked.com/web/image/product.image/32/image_1024/Antenna?unique=d71a9f4)
 
 ## Description
 
