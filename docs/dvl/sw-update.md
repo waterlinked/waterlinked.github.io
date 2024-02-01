@@ -5,7 +5,7 @@ It is recommended to always run the latest DVL software where possible. The late
 The release notes for each release is available in the [GUI](../gui/dashboard) and also in the [GUI demo](https://dvl.demo.waterlinked.com/#/about).
 
 !!! Warning
-	The DVL can overheat if its software is updated whilst it is out of water, which can lead to structural damage and subsequent hardware failure. Placing it in a bucket of water, for example, should ensure sufficient cooling.
+	During the software upgrade, the thermal protection feature is turned off. To prevent the DVL from overheating, it is important to submerge the DVL in water throughout the update process.”
 
 
 ## Automatic software update
