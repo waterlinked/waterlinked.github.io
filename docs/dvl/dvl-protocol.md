@@ -315,7 +315,7 @@ Packets sent to and received from the DVL start with a `w` and end with LF, CR+L
 | `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n`, `\r\n`, or `\r` |
 
 `Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL.
-The commands can be sent as a string or entered one character at a time from a terminal.
+The commands can be sent from a terminal program that supports sending a full line at a time. The timeout between characters is approximately 10 ms.
 
 
 !!!note
@@ -341,7 +341,7 @@ The commands in the table are shown without the checksum and without the mandato
 |         |             | `wrp,`*[details below]* | [Dead reckoning](../dead-reckoning) report |
 |         |             | `wrx,`*[details below]* | DEPRECATED: Velocities calculated (old format) |
 |         |             | `wrt,`*[details below]* | DEPRECATED: Transducer information (old format) |
-|         |             | `wr?` | Malformed request: packet cannot be understood |
+|         |             | `wr?` | Malformed request: packet cannot be understood or no newline received before timeout |
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
 |         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
 
