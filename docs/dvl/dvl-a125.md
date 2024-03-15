@@ -2,7 +2,7 @@
 
 [Buy DVL-A125 here!](https://waterlinked.com/product/dvl-a125/)
 
-![dvl_A125](../img/dvl-a125-coin-light-white.png)
+![dvl_A125](../img/WL-21037-2_DVL-A125_InHand_1600.jpg)
 
 ## Description
 The [DVL-A125](https://www.waterlinked.com/dvl/dvl-a125) is the next step up from the [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50), providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
@@ -17,7 +17,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Dimensions
 
-![dvl_A125_dimensions](../img/dvl-a125_dimensions.png)
+![dvl_A125_dimensions](../img/DVL-A125--Dimensions.png)
 
 
 ## Mounting Holes
@@ -27,18 +27,18 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Transducer numbering
 
-![dvl_A125_transducer_numbering](../img/dvl-a125_transducer_numbering.png)
+![dvl_A125_transducer_numbering](../img/DVL-A125--Transducer-Numbering.png)
 
 
 ## Transducer beam width
 
-![dvl_A125_transducer_beam](../img/dvl-a125_transducer_directivity.png)
+![dvl_A125_transducer_beam](../img/DVL-A125--Transducer-Beam-Width.png)
 
-Half-power beam width is 4.3°
+Half-power beam width is 4.1°
 
 ## Line of sight
 
-![dvl_A125_transducer_line_of_sight](../img/dvl-a125_line_of_sight.png)
+![dvl_A125_transducer_line_of_sight](../img/DVL-A125--Line-of-Sight.png)
 
 ## Datasheet
 

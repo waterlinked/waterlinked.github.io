@@ -12,7 +12,7 @@ For both the DVL-A50 and the DVL-A125.
 
 ## Wiring interface
 
-The tables below shows the pinning of the DVL-A50 interface.
+The tables below shows the pinning of the DVL interface.
 
 | Interface           | Color |
 | :------------------ | :-- |

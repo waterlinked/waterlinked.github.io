@@ -34,14 +34,14 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Transducer beam width
 
-![dvl_a50_transducer_beam](../img/dvl_transducer_directivity.svg)
+![dvl_a50_transducer_beam](../img/DVL-A50--Transducer-Beam-Width.png)
 
 Half-power beam width is 4.4°
 
 
 ## Line of sight
 
-![dvl_a50_transducer_line_of_sight](../img/dvl_line_of_sight.svg)
+![dvl_a50_transducer_line_of_sight](../img/DVL-A50--Line-of-Sight.png)
 
 ## Datasheet
 
