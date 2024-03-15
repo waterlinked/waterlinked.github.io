@@ -6,9 +6,13 @@ For both the DVL-A50 and the DVL-A125.
 
 * No green light: Power is off.
 
-* Flashing green light (slow): DVL looking for bottom lock.
+* Fixed green light: The DVL is powering on. Depending on configuration it can take ~30-60 seconds to power on.
 
-* Fixed green light: DVL has bottom lock. The LED is mostly on, and blinks quickly to indicate that it is alive.
+* Flashing green light, mostly off (slow, every few seconds): DVL looking for bottom lock.
+
+* Flashing green light, mostly on (slow, every few seconds): DVL has bottom lock.
+
+* Flashing green light (fast, many times a second): DVL is in thermal shutdown.
 
 ## Wiring interface
 
