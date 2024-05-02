@@ -42,13 +42,6 @@
         </a>
       </div>
       <div class="col-3 col-md-6 col-sm-12">
-        <a href="./modem-m64/modem-m64">
-          <img class="img-fluid"
-          src="https://waterlinked.com/web/image/product.product/125/image_512/%5BWL-21036-1%5D%20Modem%20M64"><br />
-          <h4>Modem-M64</h4>
-        </a>
-        </div>
-      <div class="col-3 col-md-6 col-sm-12">
         <a href="./modem-m16/modem-m16">
           <img class="img-fluid"
           src="https://waterlinked.com/web/image/product.product/240/image_1024/%5BWL-21048-1-S%5D%20Modem%20M16%20%28Standard%29?unique=f736508"><br />

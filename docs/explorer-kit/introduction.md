@@ -1,5 +1,7 @@
 # Introduction
 
+The Underwater GPS Explorer Kit retired and no longer available for sale.
+
 ## Underwater GPS Explorer Kit
 
 <div style="text-align: center;"><img src="../../img/pelicase.png" style="width: 550px;"></div><br>

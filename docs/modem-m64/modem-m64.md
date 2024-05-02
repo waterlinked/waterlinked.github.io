@@ -1,6 +1,6 @@
 # Modem-M64
 
-[Buy Modem-M64 here!](https://waterlinked.com/product/modem-m64/)
+The Modem-M64 is retired and no longer available for sale.
 
 ## Description
 
