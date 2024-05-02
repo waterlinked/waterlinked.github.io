@@ -67,7 +67,3 @@ Example code and libraries that can be used to communicate with the modem on the
 
 ![modem_m64_dimensions](../img/modem_m64_dimensions.png)
 
-## Datasheet
-
-[Datasheet](https://waterlinked.com/modem-m64#Downloads-%2F-Resources%E2%80%8B)
-

@@ -31,6 +31,3 @@ Once the position is known relative to the Receivers, the global position can be
 
 If you have questions, you are very welcome to contact our [customer support](https://support.waterlinked.com/en/knowledge), where we will be happy to help you.
 
-## Datasheet
-
-[Datasheet](https://www.waterlinked.com/hubfs/Product_Assets/W-MK-17020-7_Underwater_GPS_Explorer_Kit.pdf)
