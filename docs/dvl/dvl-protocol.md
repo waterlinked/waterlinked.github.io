@@ -791,10 +791,10 @@ Data fields which use more than one byte are LittleEndian encoded.
 | 7,8     | Y velocity bottom                                 | y    | mm/s          |
 | 9,10    | Z velocity bottom                                 | y    | mm/s          |
 | 11,12   | E velocity bottom                                 | y    | mm/s          |
-| 13,14   | BM1 range to bottom                               | n    |               |
-| 15,16   | BM2 range to bottom                               | n    |               |
-| 17,18   | BM3 range to bottom                               | n    |               |
-| 19,20   | BM4 range to bottom                               | n    |               |
+| 13,14   | BM1 range to bottom                               | y    | cm            |
+| 15,16   | BM2 range to bottom                               | y    | cm            |
+| 17,18   | BM3 range to bottom                               | y    | cm            |
+| 19,20   | BM4 range to bottom                               | y    | cm            |
 | 21      | Bottom status                                     | y    | bool          |
 | 22,23   | X-Velocity reference layer                        | n    |               |
 | 24,25   | Y-Velocity reference layer                        | n    |               |
