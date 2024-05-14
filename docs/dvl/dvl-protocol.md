@@ -779,6 +779,9 @@ Examples:
 
 The PD4 string is intended for use with equipment that may already have a PD4 protocol interface, removing the necessity to create a driver based on the standard Water Linked protocol. PD4 protocol is supported for output via serial and ethernet. The PD4 protocol over TCP is always enabled. The port in use is configurable in the GUl. The default port is TCP 1038.
 
+!!!note
+    PD4 support was added in software release 2.5.2 and is experimental. Please give feedback on this feature.
+
 
 ### Data Format
 PD4 is a binary protocol where fields are defined by their position in one message. 
