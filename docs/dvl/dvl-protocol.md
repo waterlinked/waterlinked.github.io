@@ -23,6 +23,7 @@ This document describes serial protocol version `2.5.x` (major.minor.patch) and 
 
 | Software release | Serial protocol version | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- | -- |
+| 2.5.2 | 2.5.0 | json_v3.1 | Add PD4 protocol support (experimental)
 | 2.4.4 | 2.5.0 | json_v3.1 | Change gyro calibration to store persistently. Note: gyro calibration commands now takes up to 15 seconds.
 | 2.4.0 | 2.5.0 | json_v3.1 | Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)
 | 2.2.1 | 2.4.0 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float
