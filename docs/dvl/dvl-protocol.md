@@ -23,6 +23,7 @@ This document describes serial protocol version `2.5.x` (major.minor.patch) and 
 
 | Software release | Serial protocol version | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- | -- |
+| 2.5.2 | 2.5.0 | json_v3.1 | Add PD4 protocol support (experimental)
 | 2.4.4 | 2.5.0 | json_v3.1 | Change gyro calibration to store persistently. Note: gyro calibration commands now takes up to 15 seconds.
 | 2.4.0 | 2.5.0 | json_v3.1 | Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)
 | 2.2.1 | 2.4.0 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float
@@ -770,3 +771,51 @@ Examples:
 
 * `=3` The DVL will search for bottom lock between 7.7 and 36m
 * `2<=3` The DVL will search for bottom lock between 1.5 and 36m
+
+
+## PD4 protocol (TCP/Serial)
+
+### Overview
+
+The PD4 string is intended for use with equipment that may already have a PD4 protocol interface, removing the necessity to create a driver based on the standard Water Linked protocol. PD4 protocol is supported for output via serial and ethernet. The PD4 protocol over TCP is always enabled. The port in use is configurable in the GUl. The default port is TCP 1038.
+
+!!!note
+    PD4 support was added in software release 2.5.2 and is experimental. Please give feedback on this feature.
+
+
+### Data Format
+PD4 is a binary protocol where fields are defined by their position in one message. 
+Data fields which use more than one byte are LittleEndian encoded.
+
+| Byte(s) | Data type                                         | used | Unit          |
+| ---     |---                                                |---   |---            |
+| 0       | DVL Data ID 7Dh                                   | y    |               |
+| 1       | Data structure ( Always equal to 0)               | y    |               |
+| 2,3     | Number of bytes                                   | y    |               |
+| 4       | System Config (0x10100011[^system_config])        | y    |               |
+| 5,6     | X velocity bottom                                 | y    | mm/s          |
+| 7,8     | Y velocity bottom                                 | y    | mm/s          |
+| 9,10    | Z velocity bottom                                 | y    | mm/s          |
+| 11,12   | E velocity bottom                                 | y    | mm/s          |
+| 13,14   | BM1 range to bottom                               | y    | cm            |
+| 15,16   | BM2 range to bottom                               | y    | cm            |
+| 17,18   | BM3 range to bottom                               | y    | cm            |
+| 19,20   | BM4 range to bottom                               | y    | cm            |
+| 21      | Bottom status                                     | y    | bool          |
+| 22,23   | X-Velocity reference layer                        | n    |               |
+| 24,25   | Y-Velocity reference layer                        | n    |               |
+| 26,27   | Z-Velocity reference layer                        | n    |               |
+| 28,29   | E-Velocity reference layer                        | n    |               |
+| 30,31   | Reference layer start                             | n    |               |
+| 32,33   | Reference layer end                               | n    |               |
+| 34      | Reference layer status                            | n    |               |
+| 35      | Time of first ping - hour                         | y    | hours         |
+| 36      | Time of first ping - minute                       | y    | minutes       |
+| 37      | Time of first ping - second                       | y    | seconds       |
+| 38      | Time of first ping - hundreths                    | y    | centi-seconds |
+| 39,40   | Bit result                                        | n    |               |
+| 41,42   | Speed of Sound                                    | y    | m/s           |
+| 43,44   | Temperature                                       | n    |               |
+| 45,46   | Checksum                                          | y    | N/A           |
+
+[^system_config]: Tells that the velocities are in ship coordinates, Tilt is used, Three beam not computed, and 600 Khz
