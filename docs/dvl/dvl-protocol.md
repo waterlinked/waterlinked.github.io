@@ -818,4 +818,15 @@ Data fields which use more than one byte are LittleEndian encoded.
 | 43,44   | Temperature                                       | n    |               |
 | 45,46   | Checksum                                          | y    | N/A           |
 
+#### Notes
+To use the BM1-BM4 correctly you should use this translation. The numbering comes from the Transducer numbering (see image below)
+**BM1** is transducer 3
+**BM2** is transducer 1
+**BM3** is transducer 4
+**BM4** is transducer 2
+![dvl_a50_transducer_numbering](../img/WL-21035-3_DVL-A50_Front_1600_transducers_crop.jpg)
+
+
+
+
 [^system_config]: Tells that the velocities are in ship coordinates, Tilt is used, Three beam not computed, and 600 Khz
