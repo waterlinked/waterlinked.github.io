@@ -2,7 +2,7 @@
 
 The Water Linked [DVLs](https://www.waterlinked.com/dvl) are designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between receipt of a DVL and having it up and running, the DVLs are shipped with an attached I/O interface, providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs, the DVL has to be integrated with the on-board electronics through a penetrator or a subsea connector.
 
-This guide details how the [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50) can be integrated with the BlueROV2. Exactly the same procedure can be carried out for the [DVL-A125](https://www.waterlinked.com/dvl/dvl-a125).
+This guide details how the [DVL-A50](dvl-a50.md) can be integrated with the BlueROV2. Exactly the same procedure can be carried out for the [DVL-A125](dvl-a125.md).
 
 ## Parts and tools
 
