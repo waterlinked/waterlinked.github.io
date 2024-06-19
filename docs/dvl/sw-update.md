@@ -27,7 +27,7 @@ If it is not possible to connect the DVL to the internet, one can proceed as fol
 * Navigate to http://[IP_ADDRESS_OF_THE_DVL]:9000 in a web browser.
 * Select 'Manual upload' and then upload the downloaded `.wlup` file.
 
-### Failure during upgrade
+### Failure during upgrade (set system time)
 
 When performing an offline software upgrade it the following error might occur: `Failed: Error upgrading: resize: non-zero exit code: exit status 1`. This error is resolved by setting the system time before performing an upgrade. Proceed as follows.
 
