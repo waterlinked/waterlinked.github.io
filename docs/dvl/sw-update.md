@@ -23,6 +23,7 @@ If it is not possible to connect the DVL to the internet, one can proceed as fol
 * Find the current version and chip ID of the DVL at *Menu -> About* in the [GUI](../gui/dashboard).
 * Manually download an update package (`.wlup`) from the [update server](https://update.waterlinked.com/) using the chip ID.
 * Verify if the downloaded version is newer than the currently running version.
+* Set system time as shown below.
 * Navigate to http://[IP_ADDRESS_OF_THE_DVL]:9000 in a web browser.
 * Select 'Manual upload' and then upload the downloaded `.wlup` file.
 
