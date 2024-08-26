@@ -14,7 +14,7 @@ The Locator has 3 mounting holes on each side for M3 screws. A default bracket i
 
 ## Charging
 
-Insert included USB-C cable into a wall adapter capable of supplying at least 500 mA and connect it to the Locator-U1. The Locator will power on normally during charging, the LED will not indicate charge status (see LED signals below). Charge time is 7 hours. Once the Locator has charged for 7 hours disconnect the USB and the Locator is ready for use.
+Insert included USB-C cable into a wall adapter capable of supplying at least 2 A and connect it to the Locator-U1. The Locator will power on normally during charging, the LED will not indicate charge status (no flashing of LED, see LED signals below). Charge time is 7 hours. Once the Locator has charged for 7 hours disconnect the USB and the Locator is ready for use.
 
 ## Powering on/off
 
