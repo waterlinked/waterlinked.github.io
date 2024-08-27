@@ -6,7 +6,7 @@
 
 The Locator-U1 is a battery powered, digital hydro acoustic locator device. It carries an internal GPS based time sync module, which means no tether is required. This Locator fits well for divers, ROVs where power is not easily accessible, or other underwater applications.
 
-The internal battery is rechargeable using the USB-C cable that follows and standard 5V USB wall charger. Before deployment in water, the Locator-U1 needs to achieve a GPS lock. The integrated status-LED shows the condition of the GPS lock. Once the Locator-U1 has lock it can operate for approximately 6 hours before needing resync with GPS.
+The internal battery is rechargeable using the USB-C cable that follows and standard 5V/2A USB wall charger. Before deployment in water, the Locator-U1 needs to achieve a GPS lock. The integrated status-LED shows the condition of the GPS lock. Once the Locator-U1 has lock it can operate for approximately 6 hours before needing resync with GPS.
 
 The Locator-U1 has a rotary switch located on the inside of the cap. This switch is used to change the channel on which the Locator is transmitting. The same channel needs to be selected in the Water Linked Underwater GPS GUI.
 
@@ -14,7 +14,7 @@ The Locator has 3 mounting holes on each side for M3 screws. A default bracket i
 
 ## Charging
 
-Insert included USB-C cable into a wall adapter capable of supplying at least 500 mA and connect it to the Locator-U1. The Locator will power on normally during charging, the LED will not indicate charge status (see LED signals below). Charge time is 7 hours. Once the Locator has charged for 7 hours disconnect the USB and the Locator is ready for use.
+Insert included USB-C cable into a wall adapter capable of supplying at least 2 A and connect it to the Locator-U1. The Locator will power on normally during charging, the LED will not indicate charge status (no flashing of LED, see LED signals below). Charge time is 7 hours. Once the Locator has charged for 7 hours disconnect the USB and the Locator is ready for use.
 
 ## Powering on/off
 

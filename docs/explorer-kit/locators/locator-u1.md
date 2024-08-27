@@ -14,7 +14,7 @@ The Locator has 3 mounting holes on each side for M3 screws. A default bracket i
 
 ## Charging
 
-Insert included USB-C cable into a wall adapter and connect it to the Locator-U1. The Locator LED will normally start pulsating while charging and turn solid green once charging has finished.
+Insert included USB-C cable into a wall adapter (2A/5V) and connect it to the Locator-U1. The Locator LED will normally start pulsating while charging and turn solid green once charging has finished.
 
 *Note*: If battery is fully discharged the pulsating will not be activated. The Locator will still charge regardless of the LED not showing the charge indication. The Locator will in this cause show searching for GPS lock or GPS lock achieved indication.
 
