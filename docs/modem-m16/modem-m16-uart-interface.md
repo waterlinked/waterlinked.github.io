@@ -28,6 +28,9 @@ In contrast, diagnostic mode offers an in-depth report over the chosen serial co
 - Communication channel (1-12, 4-bit).
 - TB Valid status to verify if the first TB is new (1-bit).
 - TX-complete status to confirm a completed transmission (1-bit).
+- Diagnostic mode (1-bit, on/off).
+- Parrot mode (1-bit, on/off).
+- Power level (2-bits, level 1 to 4), default is level 4.    
 
 A diagnostic report is triggered under the following conditions:
 
@@ -48,8 +51,10 @@ Users can access or modify three parameters in the modem:
 
 1. Communication channels.
 2. Operation mode.
-3. Report request.
-
+3. Parrot mode.
+4. Power level.
+5. Report request.
+ 
 The procedure for accessing these parameters is detailed in the following sections.
 
 ### Communication channel command
@@ -85,6 +90,31 @@ For instance, to configure the modem to communicate on channel 11 via the UART i
 
 To toggle between the diagnostic mode and transparent serial mode, users are required to send two "m" characters with a one-second interval between them.
 
+### Setting parrot mode
+Same as setting operational mode, but you have to type the character “P” (0x50) two times with a one-second interval between them. Then the modem will transmit all data it verifies as a valid incoming acoustic message.
+
+### Setting power level
+This works in the same way as setting the channel, except you have to send the character “l” (small L) (0x6C). Also the user will only have 4 levels to choose from. 
+
+Following is a table showing the available power levels:
+
+| **Power Level** | **Character** | **HEX-Value** | **Average Transmit Power consumption(mW)** | **Typical Maximum Range (m)** |
+| :-------------- | :------------ | :------------ | :----------------------------------------- | :---------------------------- |
+| 1               | "1"           | 0x31          | 390                                        | 300                           |
+| 2               | "2"           | 0x32          | 555                                        | 600                           |
+| 3               | "3"           | 0x33          | 790                                        | 900                           |
+| 4 (Default)     | "4"           | 0x34          | 1105                                       | 1000                          |
+
+**NOTE:** Maximum range can only be achieved in good conditions with low noise and a clear path between the modems.
+
+Following is an example of how to set the modem to power level 3:
+
+1. 	Transmit a single “l” (0x6C) character over UART.
+2. 	Allow a one-second interval to pass.
+3. 	Send another “l” (0x6C) character over UART.
+4.	Wait for less than 2 seconds /transmit immediately.
+5. 	Send a single “3” (0x33) character over UART.
+
 ### Request report command
 
 In both diagnostic and transparent serial modes, a report request can be initiated at any time by transmitting two "r" characters spaced one second apart. Following this request, the modem will generate the required report.
@@ -93,24 +123,27 @@ In both diagnostic and transparent serial modes, a report request can be initiat
 
 The structure of a report is as follows:
 
-| **Byte (bit)** | **Field**           | **Description**                                                                    |
-| :------------- | :------------------ | :--------------------------------------------------------------------------------- |
-| 0 (0:7)        | START_OF_FRAME (SOF)| “$”                                                                                |
-| 1:2 (0:15)     | TB                  | Transport block containing received data.                                          |
-| 3 (0:7)        | BER                 | Bit error rate                                                                     |
-| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power                                                              |
-| 5 (0:7)        | NOISE_POWER         | Relative Noise Power                                                               |
-| 6:7 (0:15)     | PACKET_VALID        | Packet valid, CRC successful                                                       |
-| 8 (0:7)        | PACKET_INVALID      | Packet invalid, CRC failed                                                         |
-| 9 (0:7)        | GIT_REV             | Firmware revision                                                                  |
-| 10:12 (0:23)   | TIME_FROM_BOOT      | Time since power up / boot in 10 ms (1 = 10 ms, 2 = 20 ms, etc.)                   |
-| 13:14 (0:15)   | CHIP_ID             | FPGA chip id                                                                       |
-| 15 (0:1)       | HW_REV              | Hardware revision                                                                  |
-| 15 (2:5)       | CHANNEL             | Communication channel (1-12)                                                       |
-| 15 (6)         | TB_VALID            | Transport block valid, used to determine if the transport block in byte 1:2 is new |
-| 15 (7)         | TX_COMPLETE         | Used to inform that a transmission is complete                                     |
-| 16 (0:7)       | RESERVED            | Reserved                                                                           |
-| 17 (0:7)       | END_OF_FRAME (EOF)  | New line (“\n”)                                                                    |
+| **Byte (bit)** | **Field**           | **Description**                                                                                |
+| :------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
+| 0 (0:7)        | START_OF_FRAME (SOF)| “$”                                                                                            |
+| 1:2 (0:15)     | TB                  | Transport block containing received data.                                                      |
+| 3 (0:7)        | BER                 | Bit error rate                                                                                 |
+| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power                                                                          |
+| 5 (0:7)        | NOISE_POWER         | Relative Noise Power                                                                           |
+| 6:7 (0:15)     | PACKET_VALID        | Packet valid, CRC successful                                                                   |
+| 8 (0:7)        | PACKET_INVALID      | Packet invalid, CRC failed                                                                     |
+| 9 (0:7)        | GIT_REV             | Firmware revision                                                                              |
+| 10:12 (0:23)   | TIME_FROM_BOOT      | Time since power up / boot in 10 ms (1 = 10 ms, 2 = 20 ms, etc.)                               |
+| 13:14 (0:15)   | CHIP_ID             | FPGA chip id                                                                                   |
+| 15 (0:1)       | HW_REV              | Hardware revision                                                                              |
+| 15 (2:5)       | CHANNEL             | Communication channel (1-12)                                                                   |
+| 15 (6)         | TB_VALID            | Transport block valid, used to determine if the transport block in byte 1:2 is new             |
+| 15 (7)         | TX_COMPLETE         | Used to inform that a transmission is complete                                                 |
+| 16 (0)         | DIAGNOSTIC_MODE     | Will send a report over UART at 4-second intervals or when new data is transmitted or received |
+| 16 (1)         | PARROT_MODE         | Will transmit the same 16 bits as it has received                                              |
+| 16 (2:3)       | POWER_LEVEL         | Level to transmit signal acoustically (0 = Level 4, 1 = level 3, 2 = level 2 and 4 = level)    |
+| 16 (4:7)       | RESERVED            | Reserved                                                                                       |
+| 17 (0:7)       | END_OF_FRAME (EOF)  | New line (“\n”)                                                                                |
 
 As previously mentioned, in diagnostic mode, reports are dispatched at 4-second intervals or when new data is transmitted or received. The following Python code is an example of a report parser:
 
@@ -151,14 +184,16 @@ def decode_packet(packet: bytes) -> Optional[Dict[str, Any]]:
        "NOISE_POWER": decoded[3],
        "PACKET_VALID": decoded[4],
        "PACKET_INVALID": decoded[5],
-       "GIT_REV": decoded[6],
+       "GIT_REV": decoded[6].to_bytes(1, "little"),
        "TIME": (decoded[9] << 16) | (decoded[8] << 8) | decoded[7],
        "CHIP_ID": decoded[10],
        "HW_REV": (decoded[11] & 0b00000011),
        "CHANNEL": (decoded[11] & 0b00111100) >> 2,
        "TB_VALID": (decoded[11] & 0b01000000) >> 6,
        "TX_COMPLETE": (decoded[11] & 0b10000000) >> 7,
-       "Unused": decoded[12],
+       "DIAGNOSTIC_MODE": (decoded[12] & 0b00000001),
+       "PARROT_MODE": (decoded[12] & 0b00000010) >> 1,
+       "LEVEL": (decoded[12] & 0b00001100) >> 2,
    }
 
 
