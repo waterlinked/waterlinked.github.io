@@ -714,8 +714,8 @@ Sentences TS, BI and BD are filled with relevant numbers. All other sentences ar
 
 #### Bottom track, ship referenced distance data (BS)
 
-- In the 2.4.0 release the BS values are always zero.
-- As of the 2.4.4 release the BS values are given by the actual velocity.
+- In the 2.4.0 software release the BS values are always zero.
+- As of the 2.4.4 software release the BS values are given by the actual velocity.
 
 `:BS,±TTTTTTTT.TT,±LLLLLLLL.LL,±NNNNNNN.NN,S <CR><LF>`
 
