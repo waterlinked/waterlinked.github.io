@@ -123,8 +123,8 @@ The structure of a report is as follows:
 | 0 (0:7)        | START_OF_FRAME (SOF)| “$”                                                                                            |
 | 1:2 (0:15)     | TB                  | Transport block containing received data.                                                      |
 | 3 (0:7)        | BER                 | Bit error rate                                                                                 |
-| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power                                                                          |
-| 5 (0:7)        | NOISE_POWER         | Relative Noise Power                                                                           |
+| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power (See warning below)                                                                         |
+| 5 (0:7)        | NOISE_POWER         | Relative Noise Power  (See warning below)                                                                         |
 | 6:7 (0:15)     | PACKET_VALID        | Packet valid, CRC successful                                                                   |
 | 8 (0:7)        | PACKET_INVALID      | Packet invalid, CRC failed                                                                     |
 | 9 (0:7)        | GIT_REV             | Firmware revision                                                                              |
@@ -139,6 +139,13 @@ The structure of a report is as follows:
 | 16 (2:3)       | POWER_LEVEL         | Level to transmit signal acoustically (0 = Level 4, 1 = level 3, 2 = level 2 and 4 = level)    |
 | 16 (4:7)       | RESERVED            | Reserved                                                                                       |
 | 17 (0:7)       | END_OF_FRAME (EOF)  | New line (“\n”)                                                                                |
+
+!!! Warning
+    **Signal Power:** This value represents the strength of the signal received by the modem when it is decoding a data packet. It ranges from 0 to 255, where 255 is the strongest signal (ideal conditions), and lower values indicate weaker signals. Importantly, when the modem is idle and not decoding or sending data, the signal power will represent the background noise, known as the "noise floor." This is because the modem is not detecting any signal during idle periods.
+
+    **Noise Power:** This value represents the background noise in the environment. When the modem is idle, the noise power and signal power will be the same, both representing the noise floor. During packet decoding, the noise power may increase due to interference, energy leakage, or other environmental factors, but this will only be noticeable when data is being processed. The signal power should always exceed the noise power when data of sufficient quality is being received for decoding.
+
+    **Summary:** It's essential to note that when the modem is idle, the signal power and noise power will be identical, representing the noise floor. Therefore, you cannot directly compare these values when the modem is idle. To assess the environment, store the noise power while the modem is idle (as the noise floor) and compare it with the signal power during packet decoding. A higher signal power compared to the stored noise floor indicates a better communication setup and environment. 
 
 As previously mentioned, in diagnostic mode, reports are dispatched at 4-second intervals or when new data is transmitted or received. The following Python code is an example of a report parser:
 
