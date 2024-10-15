@@ -2,7 +2,9 @@
 
 ## Is my DVL faulty?
 
-Below is a small list to check if your DVL is faulty or you are experiencing any issues. It starts with the basic before moving on to more advanced troubleshooting. When you come to the point of failure or the troubleshooting do not help, please submit a support ticket to our support team through our [Support portal](https://waterlinked.com/support). Please write what is the issue and how you have tested the DVL. Please describe how the test environment is setup and how the DVL is mounted. Please add any [Diagnostic reports](gui/diagnostic-report.md) and pictures of the test setup. This will help our support team greatly!  
+Below is a small list to check if your DVL is faulty or you are experiencing any issues. It starts with the basic before moving on to more advanced troubleshooting. When you come to the point of failure or the troubleshooting do not help, please submit a support ticket to our support team through our [Support portal](https://waterlinked.com/support). Please write what is the issue and how you have tested the DVL. Please describe how the test environment is setup and how the DVL is mounted. Please add any [Diagnostic reports](gui/diagnostic-report.md) and pictures of the test setup. This will help our support team greatly! 
+
+If the trouble shooting guide do not help, please check out [FAQ DVL](faq.md#faq-dvl)!  
 
 ### LED
 1. Put the DVL under water and power it on with an adequate power supply.
@@ -19,7 +21,7 @@ Below is a small list to check if your DVL is faulty or you are experiencing any
     - 1.1 One easy way to make sure the Line of sight is clear from any walls is to observe that all beam shows approximately the same distance to the bottom. If some of the beams are flickering or showing another distance it might pick up a reflection from a wall or some other obstacle in the line of sight. Obstacle free radius from the DVL to the wall depending on the distance to the bottom can be calculated with this formula: **Obstacle free radius** = tan(32.5°) × **distance from DVL to bottom**.
 2. If testing in a pool, tank or bucket it should **not** be made out of a **polished metal** or very clean surfaces. This can introduce more noise and make it harder for the DVL to get a bottom lock.
 3. Check that there are no motors, echo sunders, pumps, running house. This can create noise in the same frequency as the DVL and have an impact on the acoustic signal.
-4. Make sure the environment is not acting on the DVL in a way that makes it pitch and yaw. That will send the acoustic signal in many directions making it hard to achieve a bottom lock.    
+4. Make sure the environment is not acting on the DVL in a way that makes it pitch and yaw (waves). That will send the acoustic signal in many directions making it hard to achieve a bottom lock.    
 
 <!-- <form>
   <label for="rangeInput">Range (0.05 - 125 meters):</label>
@@ -56,5 +58,3 @@ Assuming you have checked the above and your testing environment will not affect
 2. Take picture of the test environment and how DVL is mounted to bracket or ROV.
 3. If there are know issues under certain conditions/setup please perform these tests as well and collect diagnostic reports.  
 4. Open a ticker through our support portal [Support portal](https://waterlinked.com/support) where you upload the diagnostic reports, pictures with a description of your issue. 
-
-## Test setup 

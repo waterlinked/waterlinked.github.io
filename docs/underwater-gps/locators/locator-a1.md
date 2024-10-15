@@ -10,9 +10,7 @@ The Locator-A1 has the smallest physical footprint in our series of locators. It
 
 The tables below shows the pinning of the A1 interface connectors.
 
-![a1_connector_gh](../../img/a1_connector_gh.png)
-
-![a1_connector_binder](../../img/a1_connector_binder.png)
+![a1_connector_binder](../../img/a1_connector_binder_v2.png)
 
 ## Dimensions
 

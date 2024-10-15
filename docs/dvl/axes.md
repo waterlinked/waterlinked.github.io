@@ -44,6 +44,7 @@ The body frame axes of the DVL are as follows:
 * X axis is pointing forward (LED is forward, cable backward)
 * Y axis is pointing right
 * Z axis is pointing down (mounting holes are up, transducers are down)
+* Origin is the center of the DVL and 25mm/30mm from the backplate. See [A125](../dvl-a125#dimensions) and [A50](../dvl-a50#dimensions) for their dimensions. 
 
 By default, the body frame and vehicle frame is the same and align with the DVL's [frame](../dead-reckoning#frame) for dead reckoning.
 
