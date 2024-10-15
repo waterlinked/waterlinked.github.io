@@ -29,7 +29,6 @@ In contrast, diagnostic mode offers an in-depth report over the chosen serial co
 - TB Valid status to verify if the first TB is new (1-bit).
 - TX-complete status to confirm a completed transmission (1-bit).
 - Diagnostic mode (1-bit, on/off).
-- Parrot mode (1-bit, on/off).
 - Power level (2-bits, level 1 to 4), default is level 4.    
 
 A diagnostic report is triggered under the following conditions:
@@ -51,7 +50,6 @@ Users can access or modify three parameters in the modem:
 
 1. Communication channels.
 2. Operation mode.
-3. Parrot mode.
 4. Power level.
 5. Report request.
  
@@ -89,9 +87,6 @@ For instance, to configure the modem to communicate on channel 11 via the UART i
 ### Setting operational mode command
 
 To toggle between the diagnostic mode and transparent serial mode, users are required to send two "m" characters with a one-second interval between them.
-
-### Setting parrot mode
-Same as setting operational mode, but you have to type the character “P” (0x50) two times with a one-second interval between them. Then the modem will transmit all data it verifies as a valid incoming acoustic message.
 
 ### Setting power level
 This works in the same way as setting the channel, except you have to send the character “l” (small L) (0x6C). Also the user will only have 4 levels to choose from. 
@@ -140,7 +135,7 @@ The structure of a report is as follows:
 | 15 (6)         | TB_VALID            | Transport block valid, used to determine if the transport block in byte 1:2 is new             |
 | 15 (7)         | TX_COMPLETE         | Used to inform that a transmission is complete                                                 |
 | 16 (0)         | DIAGNOSTIC_MODE     | Will send a report over UART at 4-second intervals or when new data is transmitted or received |
-| 16 (1)         | PARROT_MODE         | Will transmit the same 16 bits as it has received                                              |
+| 16 (1)         | RESERVED            | Reserved                                                                                       |
 | 16 (2:3)       | POWER_LEVEL         | Level to transmit signal acoustically (0 = Level 4, 1 = level 3, 2 = level 2 and 4 = level)    |
 | 16 (4:7)       | RESERVED            | Reserved                                                                                       |
 | 17 (0:7)       | END_OF_FRAME (EOF)  | New line (“\n”)                                                                                |
@@ -192,7 +187,6 @@ def decode_packet(packet: bytes) -> Optional[Dict[str, Any]]:
        "TB_VALID": (decoded[11] & 0b01000000) >> 6,
        "TX_COMPLETE": (decoded[11] & 0b10000000) >> 7,
        "DIAGNOSTIC_MODE": (decoded[12] & 0b00000001),
-       "PARROT_MODE": (decoded[12] & 0b00000010) >> 1,
        "LEVEL": (decoded[12] & 0b00001100) >> 2,
    }
 
