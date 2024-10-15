@@ -28,6 +28,7 @@ The tables below shows the pinning of the DVL interface.
 | ETH TX+ | Orange/White   |
 | UART TX | Brown/White   |
 | UART RX | Brown  |
+| Shielded wire | Naked (silver) | 
 
 #### Seacon MCOM8M Connector (DVL A50 only)
 The table below shows the specific pinout for the Seacon MCOM8M connector.
@@ -46,6 +47,25 @@ The table below shows the specific pinout for the Seacon MCOM8M connector.
 
 !!! Note
 	Power must be applied to the power terminals before applying voltage to UART pins
+
+## Shielded Cable Information
+
+The DVL is equipped with a shielded cable that helps protect the communication and power lines from external electromagnetic interference (EMI) and radio frequency interference (RFI). Please note that the DVL electronics themselves are not internally connected to the shield; it is up to the user to decide whether and how to connect the shield.
+
+### Connecting the Shield
+
+For optimal performance, especially when mounted on an ROV (Remotely Operated Vehicle) or AUV (Autonomous Underwater Vehicle), it is recommended to connect the shield to reduce the impact of interference on the communication and power signals. The most common connection methods are:
+
+1. **Chassis Ground**:  
+   Connecting the shield to the chassis of the ROV/AUV is the most typical practice. This method allows the shield to provide a path to ground for any noise or interference, helping to improve signal integrity. The ROV or AUV chassis often acts as a common reference point for grounding, which makes this a natural choice.
+
+2. **Common Ground**:  
+   Alternatively, you can connect the shield to the common electrical ground of the ROV/AUV. This method may be used when the electrical and signal systems are designed to share a common ground. It helps ensure that interference is grounded without creating ground loops.
+
+### Recommendation
+
+We recommend connecting the shield to the **chassis ground** of the ROV or AUV (if possible). This approach generally provides the best noise suppression by using the vehicle’s structure as a solid grounding point. However, if your system design prefers the use of a common electrical ground, that option can also be considered. Always ensure that the shield is grounded at one end only to avoid ground loops, unless your system design calls for grounding at both ends for specific applications.
+
 
 ## Terminal Interface
 
