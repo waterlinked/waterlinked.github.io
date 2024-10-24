@@ -29,7 +29,10 @@ In contrast, diagnostic mode offers an in-depth report over the chosen serial co
 - TB Valid status to verify if the first TB is new (1-bit).
 - TX-complete status to confirm a completed transmission (1-bit).
 - Diagnostic mode (1-bit, on/off).
-- Power level (2-bits, level 1 to 4), default is level 4.    
+
+<!-- 
+- Power level (2-bits, level 1 to 4), default is level 4.) 
+-->   
 
 A diagnostic report is triggered under the following conditions:
 
@@ -87,7 +90,7 @@ For instance, to configure the modem to communicate on channel 11 via the UART i
 ### Setting operational mode command
 
 To toggle between the diagnostic mode and transparent serial mode, users are required to send two "m" characters with a one-second interval between them.
-
+<!--
 ### Setting power level
 This works in the same way as setting the channel, except you have to send the character “l” (small L) (0x6C). Also the user will only have 4 levels to choose from. 
 
@@ -109,7 +112,7 @@ Following is an example of how to set the modem to power level 3:
 3. 	Send another “l” (0x6C) character over UART.
 4.	Wait for less than 2 seconds /transmit immediately.
 5. 	Send a single “3” (0x33) character over UART.
-
+-->
 ### Request report command
 
 In both diagnostic and transparent serial modes, a report request can be initiated at any time by transmitting two "r" characters spaced one second apart. Following this request, the modem will generate the required report.
@@ -136,9 +139,10 @@ The structure of a report is as follows:
 | 15 (7)         | TX_COMPLETE         | Used to inform that a transmission is complete                                                 |
 | 16 (0)         | DIAGNOSTIC_MODE     | Will send a report over UART at 4-second intervals or when new data is transmitted or received |
 | 16 (1)         | RESERVED            | Reserved                                                                                       |
-| 16 (2:3)       | POWER_LEVEL         | Level to transmit signal acoustically (0 = Level 4, 1 = level 3, 2 = level 2 and 4 = level)    |
 | 16 (4:7)       | RESERVED            | Reserved                                                                                       |
 | 17 (0:7)       | END_OF_FRAME (EOF)  | New line (“\n”)                                                                                |
+
+<!--| 16 (2:3)       | POWER_LEVEL         | Level to transmit signal acoustically (0 = Level 4, 1 = level 3, 2 = level 2 and 4 = level)    | -->
 
 !!! Warning
     **Signal Power:** This value represents the strength of the signal received by the modem when it is decoding a data packet. It ranges from 0 to 255, where 255 is the strongest signal (ideal conditions), and lower values indicate weaker signals. Importantly, when the modem is idle and not decoding or sending data, the signal power will represent the background noise, known as the "noise floor." This is because the modem is not detecting any signal during idle periods.
@@ -194,7 +198,7 @@ def decode_packet(packet: bytes) -> Optional[Dict[str, Any]]:
        "TB_VALID": (decoded[11] & 0b01000000) >> 6,
        "TX_COMPLETE": (decoded[11] & 0b10000000) >> 7,
        "DIAGNOSTIC_MODE": (decoded[12] & 0b00000001),
-       "LEVEL": (decoded[12] & 0b00001100) >> 2,
+       #"LEVEL": (decoded[12] & 0b00001100) >> 2, Not in use
    }
 
 
