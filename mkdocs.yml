@@ -103,7 +103,7 @@ nav:
           - BlueROV2: dvl/bluerov-integration.md
       - Software updates: dvl/sw-update.md
       - Troubleshooting: dvl/dvl-troubleshooting.md
-      - FAQ: dvl/faq.md
+      - DVL FAQ: dvl/faq.md
   - Modem:
       - Modem-M64 (retired):
           - Introduction: modem-m64/modem-m64.md

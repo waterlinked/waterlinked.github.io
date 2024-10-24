@@ -182,7 +182,7 @@ Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
 {"command": "reset_dead_reckoning"}
 ```
 
-The response will be as follows if the reset is successful. If unsuccessful, `success` will be `false`, and a non-empty `error_message` will be provided.
+The response will be as follows if the message is received and flag is successfully set. If unsuccessful, `success` will be `false`, and a non-empty `error_message` will be provided.
 
 ```
 {
@@ -194,6 +194,8 @@ The response will be as follows if the reset is successful. If unsuccessful, `su
   "type": "response"
 }
 ```
+!!! Note
+    There might be a small delay of approximate 50ms from success received to you can see the values zeroed out.
 
 ### Calibrate gyro
 
