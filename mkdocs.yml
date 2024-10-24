@@ -111,5 +111,6 @@ nav:
       - Modem-M16:
           - Introduction: modem-m16/modem-m16.md
           - Serial Interface: modem-m16/modem-m16-uart-interface.md
+          - M16 FAQ: modem-m16/modem-m16-faq.md
 
 copyright: © Water Linked 2018-2024

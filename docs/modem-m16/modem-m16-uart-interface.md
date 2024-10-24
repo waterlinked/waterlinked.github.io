@@ -123,8 +123,8 @@ The structure of a report is as follows:
 | 0 (0:7)        | START_OF_FRAME (SOF)| “$”                                                                                            |
 | 1:2 (0:15)     | TB                  | Transport block containing received data.                                                      |
 | 3 (0:7)        | BER                 | Bit error rate                                                                                 |
-| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power (See warning below)                                                                         |
-| 5 (0:7)        | NOISE_POWER         | Relative Noise Power  (See warning below)                                                                         |
+| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power (See warning below)                                                      |
+| 5 (0:7)        | NOISE_POWER         | Relative Noise Power  (See warning below)                                                      |
 | 6:7 (0:15)     | PACKET_VALID        | Packet valid, CRC successful                                                                   |
 | 8 (0:7)        | PACKET_INVALID      | Packet invalid, CRC failed                                                                     |
 | 9 (0:7)        | GIT_REV             | Firmware revision                                                                              |
