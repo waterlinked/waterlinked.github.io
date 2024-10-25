@@ -6,9 +6,11 @@ Below is a small list to check if your DVL is faulty or you are experiencing any
 
 If the trouble shooting guide do not help, please check out [FAQ DVL](faq.md#faq-dvl)!  
 
-### LED
+### Check if DVL is powered
 1. Put the DVL under water and power it on with an adequate power supply.
-2. Check the LED status, see [LED Signals](../interfaces#LED-Signals).
+
+### LED
+1. Check the LED status, see [LED Signals](../interfaces#LED-Signals).
 
 ### Wiring 
 1. Check that you have wired your DVL correctly, see [Wiring interface](../interfaces#wiring-interface).
@@ -18,30 +20,101 @@ If the trouble shooting guide do not help, please check out [FAQ DVL](faq.md#faq
 
 ### Environmental Check
 1. The Line og sight should be clear of any obstacles including walls, see [Line of sight](../dvl-a50#line-of-sight).
-    - 1.1 One easy way to make sure the Line of sight is clear from any walls is to observe that all beam shows approximately the same distance to the bottom. If some of the beams are flickering or showing another distance it might pick up a reflection from a wall or some other obstacle in the line of sight. Obstacle free radius from the DVL to the wall depending on the distance to the bottom can be calculated with this formula: **Obstacle free radius** = tan(32.5°) × **distance from DVL to bottom**.
+    - 1.1 One easy way to make sure the Line of sight is clear from any walls is to observe that all beam shows approximately the same distance to the bottom. If some of the beams are flickering or showing another distance it might pick up a reflection from a wall or some other obstacle in the line of sight. Obstacle free radius from the DVL to the wall depending on the distance to the bottom can be calculated with this formula: **Obstacle free radius** = tan(32.5°) × **distance from DVL to bottom**. 
 2. If testing in a pool, tank or bucket it should **not** be made out of a **polished metal** or very clean surfaces. This can introduce more noise and make it harder for the DVL to get a bottom lock.
 3. Check that there are no motors, echo sunders, pumps, running house. This can create noise in the same frequency as the DVL and have an impact on the acoustic signal.
 4. Make sure the environment is not acting on the DVL in a way that makes it pitch and yaw (waves). That will send the acoustic signal in many directions making it hard to achieve a bottom lock.    
 
-<!-- <form>
-  <label for="rangeInput">Range (0.05 - 125 meters):</label>
-  <input type="number" id="rangeInput" name="rangeInput" min="0.05" max="125" step="0.01" required>
-  <input type="button" value="Click here to calculate!" onclick="calculateSafetyDistance()">
-</form>
 
-<p id="result"></p>
 
-<script>
-function calculateSafetyDistance() {
-    const range = parseFloat(document.getElementById('rangeInput').value);
-    if (range >= 0.05 && range <= 125) {
-        const safetyDistance = Math.tan(32.5 * Math.PI / 180) * range;
-        document.getElementById('result').innerHTML = 'Obstacle free radius: ' + safetyDistance.toFixed(2) + ' meters';
-    } else {
-        document.getElementById('result').innerHTML = 'Please enter a valid range between 0.05 and 50.';
+<!-- ### Obstacle free radius calculator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        label {
+            font-size: 1.2em;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            width: 150px;
+            font-size: 1.2em;
+            margin-right: 10px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0;
+        }
+
+        input[type="number"]:focus {
+            background-color: #ffffff;
+            border-color: #45a049;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        p#result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        p#error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="rangeInput">Altitude (0.05 - 125 meters):</label>
+        <input type="number" id="rangeInput" name="rangeInput" min="0.05" max="125" step="0.01" required>
+        <input type="button" value="Click here to calculate!" onclick="calculateSafetyDistance()">
+    </form>
+
+    <p id="result"></p>
+    <p id="error"></p>
+
+    <script>
+    function calculateSafetyDistance() {
+        const rangeInput = document.getElementById('rangeInput');
+        const range = parseFloat(rangeInput.value);
+        const resultElement = document.getElementById('result');
+        const errorElement = document.getElementById('error');
+        
+        // Clear previous results and error messages
+        resultElement.innerHTML = '';
+        errorElement.innerHTML = '';
+        
+        if (range >= 0.05 && range <= 125) {
+            const safetyDistance = Math.tan(32.5 * Math.PI / 180) * range;
+            resultElement.innerHTML = 'Obstacle free radius: ' + safetyDistance.toFixed(2) + ' meters';
+        } else {
+            errorElement.innerHTML = 'Please enter a valid range between 0.05 and 125 meters.';
+        }
     }
-}
-</script> -->
+    </script>
+
+</body>
+</html> -->
+
 
 ## GUI
 1. Connect your DVL yo Ethernet by following the Network documentation, see [Setup Network](networking.md#networking). Use the [Fallback IP](networking.md#fallback-ip) if you are struggling. 
