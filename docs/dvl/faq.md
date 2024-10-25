@@ -17,7 +17,7 @@ If only the velocity output of the DVL is required, this can be ignored, as the 
 
 **Q4: Can we test/operate the DVL in air?**
 
-**A4:** It is possible to test and operate the DVL while out of the water for a short period of time, but the DVL will warm up relatively quickly, and if possible we recommend to avoid this.
+**A4:** You will **not** be able to get valid velocity measurements in air. It is possible to power the DVL while out of the water for a short period of time, but the DVL will warm up relatively quickly, and if possible we recommend to avoid this.
 
 A great setup to work with the DVL in a lab is to keep it submerged in a small bucket of water.
 
