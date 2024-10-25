@@ -182,7 +182,7 @@ Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
 {"command": "reset_dead_reckoning"}
 ```
 
-The response will be as follows if the message is received and flag is successfully set. If unsuccessful, `success` will be `false`, and a non-empty `error_message` will be provided.
+If the request is successfully received the response will have success set to true. The dead reckoning will have a delay of approximately 50ms until the positioning values being zeroed out. If the response is unsuccessful, the success will be false and a non-empty describing text will be returned in error_message.
 
 ```
 {
@@ -194,8 +194,6 @@ The response will be as follows if the message is received and flag is successfu
   "type": "response"
 }
 ```
-!!! Note
-    There might be a small delay of approximate 50ms from success received to you can see the values zeroed out.
 
 ### Calibrate gyro
 
