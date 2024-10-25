@@ -182,7 +182,7 @@ Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
 {"command": "reset_dead_reckoning"}
 ```
 
-If the request is successfully received the response will have success set to true. The dead reckoning will have a delay of approximately 50ms until the positioning values being zeroed out. If the response is unsuccessful, the success will be false and a non-empty describing text will be returned in error_message.
+If the request is successfully received the response will have 'success' set to 'true'. The dead reckoning will have a delay of approximately 50ms until the positioning values being zeroed out. If the response is unsuccessful, the 'success' will be 'false' and a non-empty describing text will be returned in 'error_message'.
 
 ```
 {
