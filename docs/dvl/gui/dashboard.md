@@ -30,7 +30,7 @@ Parameter                               |Description
 ----------------------------------------|------------------------------------------------------------------------------------------------------------------------
 Speed                                   | Speeds in x,y,z(Downward) directions with FOM that is the Euclidean norm of the standard deviations for each direction. 
 Position                                | Calculated position with FOM that is the Euclidean norm of the standard deviations for each direction. 
-Roll, pitch, Yaw                        | Orientation from the gyro.
+Roll, pitch, Yaw                        | Orientation from the gyro. When dead reckoning is reset on the DVL, the gyro reinitializes its orientation. This means that the current orientation of the DVL at the time of reset will be set as the new zero orientation. 
 
 ### Horizontal velocity
 Graphical indication of the horizontal direction of speed.
