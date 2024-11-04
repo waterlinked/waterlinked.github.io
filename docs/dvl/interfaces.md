@@ -94,7 +94,7 @@ See [networking](../networking) and the DVL's [TCP protocol](../dvl-protocol#eth
 
 ##  I/O interface
 
-The I/O Interface provides a simple means of connection to the Water Linked DVLs. It provides magnetics for the ethernet connection and utilizes the Molex Micro-Fit 3.0 power connector which is standard for Water Linked products.
+The I/O Interface provides a simple means of connection to the Water Linked DVLs. It provides magnetics for the ethernet connection and utilizes the Molex Micro-Fit 3.0 power connector (Part number: 436500204) which is standard for Water Linked products. Female connectors is listed under [Mates with Part(s)](https://www.molex.com/en-us/products/part-detail/436500204#mates-with-use-with) 
 
 There currently exists three revisions of the I/O Interface. Revision 2 and 3 are electrically identical. Revision 4 has an integrated USB-to-UART interface and a micro USB port.
 

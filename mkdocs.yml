@@ -77,7 +77,7 @@ nav:
           - Locators:
               - Locator-A1: explorer-kit/locators/locator-a1.md
               - Locator-D1: explorer-kit/locators/locator-d1.md
-              - Locator-S1: explorer-kit/locators/locator-s1.md
+              - Locator-S1 (obsolete): explorer-kit/locators/locator-s1.md
               - Locator-U1: explorer-kit/locators/locator-u1.md
           - GUI:
               - Position: explorer-kit/gui/position.md
