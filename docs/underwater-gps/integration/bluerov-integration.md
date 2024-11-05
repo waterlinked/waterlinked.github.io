@@ -41,25 +41,9 @@ If you have successfully installed a Locator with one of the above linked guides
 
 		If you have an older R1, R2, or R3 version of the BlueROV2 that uses a Pixhawk autopilot and you want to upgrade to using BlueOS, you can either carry out a software upgrade only [(described here)](https://docs.bluerobotics.com/ardusub-zola/software/onboard/BlueOS-1.1/installation/) or upgrade the hardware from Pixhawk to Navigator flight controller and the software [(described here)](https://bluerobotics.com/learn/navigator-retrofit-guide/).
 
-	The Water Linked UGPS system requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller). BlueOS has to be updated to **BlueOS 1.1.0-beta.18** or newer to assure that extensions are supported sufficiently. The process of updating to the latest beta-release is described below together with enabling the UGPS extension. Make also sure you use the most recent stable release of QGroundControl for your operating system.
+	The Water Linked UGPS system requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller). BlueOS has to be updated to **BlueOS 1.1.0** or newer to assure that extensions are supported sufficiently. Follow the Update Software section of the [BlueROV Software Setup guide](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software)
 
-	[//]: # ( TODO replace below update section as soon as BlueOS1.1 is released without beta with this text: Follow the Update Software section of the BlueROV Software Setup guide https://bluerobotics.com/learn/bluerov2-software-setup/#update-software)
-
-	Turn on the ROV, connect it with the FXTI to your computer and open its web interface in a browser [(details described here)](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software).
-
-	To update BlueOS to a beta-release, "Pirate Mode" has to be enabled. In the BlueOS web interface, click the cog-wheel in the side menu and turn on "Pirate Mode" in the pop-up window.
-
-	![bluerov2_blueos_update_beta_01_pirate_mode](../../img/bluerov2_blueos_update_beta_01_pirate_mode.png)
-
-	Navigate to "Version Chooser", which should now also show beta-releases in the section "Remote Versions". Click on "Download and apply" next to the latest available beta-release, here "BlueOS 1.1.0-beta.18". The update process can take some time.
-
-	![bluerov2_blueos_update_beta_02_available_updates](../../img/bluerov2_blueos_update_beta_02_available_updates.png)
-
-	After a successful update you should see the chosen version in your "Local Versions".
-
-	![bluerov2_blueos_update_beta_03_success](../../img/bluerov2_blueos_update_beta_03_success.png)
-
-	To enable the UGPS extension navigate to the "Extensions Manager", that should show up in the side bar after the above described BlueOS update.
+	To enable the UGPS extension navigate to "Extensions", that should show up in the side bar after the above described BlueOS update.
 
 	Click on the "Water Linked UGPS" extension.
 
