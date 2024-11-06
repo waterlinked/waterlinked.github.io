@@ -304,7 +304,21 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 
 ## Software
 
-The DVL-A50 requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller). BlueOS has to be updated to **BlueOS 1.1.0-beta.18** or newer to assure that extensions are supported sufficiently. After the update install the BlueOS-Water-Linked-DVL extension from the BlueOS extension manager. A new menu item for the DVL will appear in the Web GUI with several configuration options.
+The DVL-A50 requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller).
+BlueOS has to be updated to **BlueOS 1.1.0** or newer to assure that extensions are supported sufficiently.
+After the update install the latest BlueOS-Water-Linked-DVL extension from the BlueOS extension manager.
+
+![bluerov2_blueos_extension_installation_01_extension_manager](../img/bluerov2_blueos_extension_installation_01_extension_manager.png)
+
+* Open the interface of the DVL-extension and click the button "Load parameters for DVL". Those parameters are persistent over reboots, which means that this button only needs to be pressed once and not every time you restart the ROV.
+
+![bluerov2_blueos_dvl_extension_dvl_ugps_button_marked](../img/bluerov2_blueos_dvl_extension_buttons_marked.png)
+
+* Restart the autopilot for the parameter changes to take effect. It is not necessary to restart BlueOS.
+
+![bluerov2_blueos_restart_autopilot_marked](../img/bluerov2_blueos_restart_autopilot_marked.png)
+
+* Set the global vehicle position in the DVL extension every time you start the ROV.
 
 !!! Note
 	There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter `BARO_PROBE_EXT` to `768` and then reboot the ROV.
