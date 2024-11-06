@@ -40,7 +40,7 @@ The frequency bands of the available channels are as follows. Lower frequency ty
 
 ## Topside setup
 
-The default source for the topside position and heading is *On-board*. Since version 3.3.0 of the software, the heading of the topside unit must be set periodically because only the gyrometer of the built-in IMU is used, not the magnetometer. In the on-board mode for heading you will be prompted to enter the heading manually after startup (using an analogue compass, a mobile phone, etc).
+The default source for the topside position and heading is *On-board*. Since version 3.3.0 of the software, the heading of the topside unit must be set periodically because only the gyroscope of the built-in IMU is used, not the magnetometer. In the on-board mode for heading you will be prompted to enter the heading manually after startup (using an analogue compass, a mobile phone, etc).
 
 For best performance on boats or similar with a moving topside unit, we recommend to use an *external* input of heading data (e.g. from a GPS compass) as well as global position data. This is done via the UGPS [API](../../integration/api). An external device will likely be more accurate than the topside unit's built-in GPS receiver and IMU.
 

@@ -1,21 +1,21 @@
 ## Why to use both the Underwater GPS and DVL at the same time?
 
 * The Water Linked DVL can provide accurate velocities relative to the seabed in the body frame of the ROV at a relatively high update rate and dynamic.
-For the calculation of an absolute position, the velocities have to be integrated over time with the help of intertial measurement unit (IMU) data.
-Furthermore the user has to specify a starting position of this dead-reckoning-algorithm or a normal GPS can be used to initilaize the latter prior to a dive.
+For the calculation of an absolute position, the velocities have to be integrated over time with the help of inertial measurement unit (IMU) data.
+Furthermore the user has to specify a starting position of this dead-reckoning-algorithm or a normal GPS can be used to initialize the latter prior to a dive.
 One advantage of using a DVL only is that no infrastructure outside the ROV (like antennas, beacons...) is needed.
 As a downside small errors in sensor values accumulate over time and the position estimate drifts from the actual position.
-A typical usecase for the DVL is station keeping even in water currents. It also helps to track the approximate ROV position on a map and enables simple autonomous missions.
+A typical use case for the DVL is station keeping even in water currents. It also helps to track the approximate ROV position on a map and enables simple autonomous missions.
 
-* The Water Linked Underwater GPS is able to provide an absolute position below water which is based on the combination of a standard GPS to measure the Topside position and the Short Baseline (SBL) acoustic positioning to determine the ROV/locator position relative to the Topside. The characteristic of this combined position estimate is that it is gloabl, with little to no drift over time under the right conditions. The update rate is in general lower compared to the DVL. A typical usecase for using the Underwater GPS by itself is to visualize the ROV position on a map for manual control and findig a specific geolocation below water.
+* The Water Linked Underwater GPS is able to provide an absolute position below water which is based on the combination of a standard GPS to measure the Topside position and the Short Baseline (SBL) acoustic positioning to determine the ROV/locator position relative to the Topside. The characteristic of this combined position estimate is that it is global, with little to no drift over time under the right conditions. The update rate is in general lower compared to the DVL. A typical use case for using the Underwater GPS by itself is to visualize the ROV position on a map for manual control and finding a specific geo location below water.
 
-* When both sensor types are combined in a good manner they can compensate each others weak sides. The update rate and dynamic is that of the DVL while the position drift over time is eliminated. This is particularly useful if you want to use the positioning not only for visualisation during manual operation or position holding but longer autonomous missions (e.g. waypoint navigation). Below section "Mode "DVL+UGPS" describes how to enable this in the BlueROV control system.
+* When both sensor types are combined in a good manner they can compensate each others weak sides. The update rate and dynamic is that of the DVL while the position drift over time is eliminated. This is particularly useful if you want to use the positioning not only for visualization during manual operation or position holding but longer autonomous missions (e.g. waypoint navigation). Below section "Mode "DVL+UGPS" describes how to enable this in the BlueROV control system.
 
 ## Mode "DVL+UGPS": Fusing the data of Underwater GPS and DVL for a position estimate of the BlueROV
 
 The BlueROV uses a highly-customizable control system [Ardusub](https://www.ardusub.com/). One part of that control system is an extended Kalman filter, which is able to combine inputs from all types of sensors (gyroscope, accelerometer, compass, pressure sensor, GPS, DVL, etc.) to calculate a position estimate. This is then used to either simply show the position on a map in manual mode or as part of a feedback loop to actively control the ROV. With other words the fusion algorithm is not part of a Water Linked product but is executed in the BlueROV control system. This also means that the user is in full control of the parameters and used algorithm.
 
-Before successfull sensor fusion of Underwater GPS and DVL these conditions must be met:
+Before successful sensor fusion of Underwater GPS and DVL these conditions must be met:
 
 * The below guide is assuming you use a BlueROV running BlueOS with a version 1.1.0 (stable) or newer.
 * The DVL is installed, configured and tested successfully. Guides can be found [here](bluerov-integration.md) and on the [Blue Robotics website](https://bluerobotics.com/learn/dvl-a50-integration/)
@@ -27,7 +27,7 @@ Before successfull sensor fusion of Underwater GPS and DVL these conditions must
 * The Underwater GPS is installed, configured and tested successfully. The latest UGPS integration-guide can be found [here](../underwater-gps/integration/bluerov-integration.md).
 * Make sure you are running version 1.0.7 or newer of the [BlueOS Water Linked UGPS extension](https://github.com/waterlinked/blueos-ugps-extension).
 * The accelerometer, gyroscope, compass and pressure sensor must be calibrated well: Calibration of all sensors can be performed from QGroundControl. Detailed steps are described in the [BlueROV Software Setup](https://bluerobotics.com/learn/bluerov2-software-setup/#sensor-calibration)
-* Make sure that the compass calibration was successfull by comparing the ROV orientation shown in the map in QGroundControl to the actual ROV orientation. Land-marks like a coast-line or an analogue compass can help.
+* Make sure that the compass calibration was successful by comparing the ROV orientation shown in the map in QGroundControl to the actual ROV orientation. Land-marks like a coast-line or an analogue compass can help.
 
 !!! Note
     When you want to use the position estimate for *control* of the ROV and the UGPS Topside is on land, it is highly recommended to setup the Underwater GPS to use static position and static heading mode.  Alternatively when the UGPS Topside position is not static (on a boat or similar) you need to input heading and position data from an external GPS compass. [Details can be found here](../underwater-gps/gui/settings.md#topside-setup).
@@ -56,7 +56,7 @@ Now both sensors should be considered for the position estimate of the ROV. You 
 
 ## Mode "DVL only": How to base the ROV position estimate only on the DVL while the Underwater GPS is running
 
-In this configuration the BlueROV will base its position estimate *updates* on velocity input from the DVL as well as accerometer, gyroscope, compass and pressure sensor but not the Underwater GPS. If the latter is turned on and the UGPS extension is running, it will however be used by the autopilot to initialize the global ROV position. This mode can be useful when you experience issues with sensor fusion (Mode DVL+UGPS above) or not all of the described conditions are met. This is also the right mode when no Underwater GPS is connected.
+In this configuration the BlueROV will base its position estimate *updates* on velocity input from the DVL as well as accelerometer, gyroscope, compass and pressure sensor but not the Underwater GPS. If the latter is turned on and the UGPS extension is running, it will however be used by the autopilot to initialize the global ROV position. This mode can be useful when you experience issues with sensor fusion (Mode DVL+UGPS above) or not all of the described conditions are met. This is also the right mode when no Underwater GPS is connected.
 
 * At least the BlueOS "Water Linked DVL"-extension has to be running. The BlueOS "Water Linked UGPS"-extension can be running but is not needed. However if you don't have the Underwater GPS system connected it is best to disable that extension.
 
@@ -109,13 +109,13 @@ This section is for advanced users and developers who try to understand what hap
 
 ### What the BlueOS Water Linked DVL extension does
 
-* Below figure illustrates which events trigger which function calls and which mavlink messages. Details can be seen by looking at the sourcecode in the [GitHub repository](https://github.com/bluerobotics/BlueOS-Water-Linked-DVL).
+* Below figure illustrates which events trigger which function calls and which mavlink messages. Details can be seen by looking at the source code in the [GitHub repository](https://github.com/bluerobotics/BlueOS-Water-Linked-DVL).
 
 ![bluerov2_blueos_dvl_extension_messages](../img/bluerov2_blueos_dvl_extension_messages.png)
 
 * When the user sets the vehicle location on the extension map the first time, the origin of the autopilot global position estimate is set (SET_GPS_GLOBAL_ORIGIN). When the latter is already set, the position estimate is updated with GLOBAL_VISION_POSITION_ESTIMATE.
 
-* The main input from the DVL to the autopilot is the mavlink message VISION_POSITION_DELTA. It contains the change of position and attitude since the last message in body frame of the ROV together with the time interval since the last measurement. This corresponds directly to velocities and angular rates. The figure of merrit (FOM) provided by the DVL is scaled to a confidence value in percent.
+* The main input from the DVL to the autopilot is the mavlink message VISION_POSITION_DELTA. It contains the change of position and attitude since the last message in body frame of the ROV together with the time interval since the last measurement. This corresponds directly to velocities and angular rates. The figure of merit (FOM) provided by the DVL is scaled to a confidence value in percent.
 
 * The DVL-internal dead-reckoning exposed through the position_local-TCP-packet is currently not used on a BlueROV. A function in the extension is implemented but it is disabled. So GLOBAL_VISION_POSITION_ESTIMATE messages are sent based on DVL-measurements.
 

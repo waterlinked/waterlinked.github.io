@@ -266,7 +266,7 @@ Install the BlueRobotics ethernet switch following the [Ethernet Switch Installa
 With power and ethernet switch now sorted, connect a 6" ethernet cable from the ethernet switch to the IO Interface board.
 
 !!! Tip
-	Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface to the electroncs frame inside the BlueROV2.
+	Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface to the electronics frame inside the BlueROV2.
 
 
 ### Reassemble BlueROV2 electronics enclosure

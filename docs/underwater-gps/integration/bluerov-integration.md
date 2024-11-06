@@ -105,7 +105,7 @@ This almost certainly means that the network between the UGPS G2 topside and the
 4. Power cycle the BlueROV2.
 5. Check the PLC LED (3) on the [PLC module](bluerov-integration-a1.md#install-the-plc-module) (see box "What do the LEDs on the PLC module mean?")
 
-If the issue persists, if you are using the FXTI approach to the networking, you may wish to try the network bridge approach, as the FTXI sometimes fails to handle the connections satisfactorily. In addition, double-check that you did not skip the [Mofifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti).
+If the issue persists, if you are using the FXTI approach to the networking, you may wish to try the network bridge approach, as the FTXI sometimes fails to handle the connections satisfactorily. In addition, double-check that you did not skip the [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti).
 
 If none of this solves the problem, you are very welcome to [contact us](https://waterlinked.com/support), and we will be happy to support you.
 
