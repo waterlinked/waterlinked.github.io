@@ -100,8 +100,8 @@ nav:
           - Demo GUI: dvl/gui/demo-gui.md
       - Dead reckoning: dvl/dead-reckoning.md
       - Integration:
-          - BlueROV2: dvl/bluerov-integration.md
-          - DVL and UGPS on BlueROV2: dvl/integration-dvl-ugps.md
+          - DVL for BlueROV2: dvl/bluerov-integration.md
+          - DVL with UGPS for BlueROV2: dvl/bluerov-integration-dvl-ugps.md
       - Software updates: dvl/sw-update.md
       - Troubleshooting: dvl/dvl-troubleshooting.md
       - DVL FAQ: dvl/faq.md

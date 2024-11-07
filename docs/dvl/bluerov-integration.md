@@ -306,7 +306,11 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 
 The DVL-A50 requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller).
 BlueOS has to be updated to **BlueOS 1.1.0** or newer to assure that extensions are supported sufficiently.
-After the update install the latest BlueOS-Water-Linked-DVL extension from the BlueOS extension manager.
+
+* After the update install the latest BlueOS-Water-Linked-DVL extension from the BlueOS extension manager. It is best to disable the BlueOS "Water Linked UGPS"-extension if you have that installed.
+
+!!! Note
+	If you want to use both DVL and UGPS you can find a detailed guide [here](bluerov-integration-dvl-ugps.md)
 
 ![bluerov2_blueos_extension_installation_01_extension_manager](../img/bluerov2_blueos_extension_installation_01_extension_manager.png)
 
