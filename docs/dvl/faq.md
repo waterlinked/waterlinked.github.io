@@ -50,3 +50,7 @@ It can also be a sign of a bad connection. If the DVL has been working properly 
 **Q9: Can the DVL overheat?**
 
 **A9:** The DVL has a thermal shutdown to prevent temperatures that can damage the DVL. The DVL will give a warning that it will soon do a thermal shutdown. Please see [Protocol](dvl-protocol.md). It will shutdown at 55℃ and when it reaches below 50℃ it will automatically turn it self on an continue where it left off before the shutdown.  It will continue in a loop with shutdown and rebooting if the overheating issue is not addressed. 
+
+**Q10: What is the latency when using the API over Ethernet?**
+
+**A10:** When sending commands over TCP, the latency averages around 4 ms, with a standard deviation of 2 ms. The maximum observed latency is 13 ms.
