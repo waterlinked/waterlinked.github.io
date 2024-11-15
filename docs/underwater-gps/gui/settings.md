@@ -1,6 +1,6 @@
 # Settings
 
-![settings](../../img/settings_g2.png)
+![gui_settings_topside_setup](../../img/gui_settings_topside_setup.png)
 
 ## Locator setup
 
@@ -40,9 +40,13 @@ The frequency bands of the available channels are as follows. Lower frequency ty
 
 ## Topside setup
 
-For best performance, we recommend input heading data, and also global GPS data, from an external device, via the UGPS [API](../../integration/api), as such a device will likely be more accurate than the topside unit's built-in GPS receiver and IMU. If your deployment of the system allows for static GPS and/or heading values can be used, this is even better, but would typically necessitate that the topside unit is on land.
+The default source for the topside position and heading is *On-board*. Since version 3.3.0 of the software, the heading of the topside unit must be set periodically because only the gyroscope of the built-in IMU is used, not the magnetometer. In the on-board mode for heading you will be prompted to enter the heading manually after startup (using an analogue compass, a mobile phone, etc).
 
-Since version 3.3.0 of the software, the heading of the topside unit must periodically be set (only the gyrometer of the built-in IMU will be used, not the magnetometer). It can be done manually (using an analogue compass, or mobile phone, etc), but we recommend if possible to input from an external device.
+For best performance on boats or similar with a moving topside unit, we recommend to use an *external* input of heading data (e.g. from a GPS compass) as well as global position data. This is done via the UGPS [API](../../integration/api). An external device will likely be more accurate than the topside unit's built-in GPS receiver and IMU.
+
+If the topside unit/antenna is at a globally stationary position (like a jetty) the *static* configuration of position and heading will give best accuracy of the system. Below you can see how the position and heading is set to static. Clicking on the map button opens a map window to help you input the static position.
+
+![gui_settings_topside_setup_static_pos_marked](../../img/gui_settings_topside_setup_static_pos_marked.png)
 
 ## User preferences
 

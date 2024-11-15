@@ -27,7 +27,7 @@ In this guide it is described how to establish a network connection between UGPS
 
 ??? Info "Windows"
 
-	To create a network bridge between the FXTI/BlueROV2 and the UGPS Topside in Microsoft Windows, open the "Control Panel" by searching for it in the startmenu. Open "Network and Internet".
+	To create a network bridge between the FXTI/BlueROV2 and the UGPS Topside in Microsoft Windows, open the "Control Panel" by searching for it in the start menu. Open "Network and Internet".
 
 	![network_bridge_windows_01_network_and_internet](../../img/network_bridge_windows_01_network_and_internet.png)
 
