@@ -53,8 +53,11 @@ Users can access or modify three parameters in the modem:
 
 1. Communication channels.
 2. Operation mode.
-4. Power level.
-5. Report request.
+3. Report request.
+<!--
+4. Power Level 
+-->
+
  
 The procedure for accessing these parameters is detailed in the following sections.
 
