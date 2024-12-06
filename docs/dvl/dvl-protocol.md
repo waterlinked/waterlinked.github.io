@@ -13,7 +13,7 @@ Describes the Water Linked DVL protocols (serial and ethernet).
 
 ## Version
 
-This document describes serial protocol version `2.5.x` (major.minor.patch) and JSON protocol `json_v3.1` (major.minor):
+This document describes serial protocol version `2.6.x` (major.minor.patch) and JSON protocol `json_v3.1` (major.minor):
 
 - MAJOR version increments represent incompatible API changes
 - MINOR version increments represent additional backwards-compatible functionality
@@ -23,6 +23,7 @@ This document describes serial protocol version `2.5.x` (major.minor.patch) and 
 
 | Software release | Serial protocol version | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- | -- |
+| 2.6.1 | 2.6.0 | json_v3.1 | Serial baud rate configurable. Add PD4 protocol support in serial 'wcp' command. Some serial protocol names [changed](#change-serial-output-protocol-wcp). |
 | 2.5.2 | 2.5.0 | json_v3.1 | Add PD4 protocol support (experimental)
 | 2.4.4 | 2.5.0 | json_v3.1 | Change gyro calibration to store persistently. Note: gyro calibration commands now takes up to 15 seconds.
 | 2.4.0 | 2.5.0 | json_v3.1 | Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)
@@ -307,7 +308,7 @@ If the parameters are successfully set, the response will be in the following fo
 
 ### Overview
 
-The serial communication format is 115200 8-N-1 (no hardware flow control).
+The default serial communication format is 115200 8-N-1 (no hardware flow control). Release 2.6.1 and later allow different baud rates through GUI configuration.
 
 Packets sent to and received from the DVL start with a `w` and end with LF, CR+LF, or CR. The packet format is:
 
@@ -317,6 +318,9 @@ Packets sent to and received from the DVL start with a `w` and end with LF, CR+L
 
 `Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL.
 The commands can be sent from a terminal program that supports sending a full line at a time. The timeout between characters is approximately 10 ms.
+
+!!!note
+    Please verify the baud rate configuration in the GUI if you are unable to communicate with the default baud rate.
 
 
 !!!note
@@ -458,9 +462,12 @@ The supported protocols are:
 | Protocol number | Name | Description |
 | --------------- | ---- | ----------- |
 | 0 | Output disabled | No output on serial. Recommended if serial port is not used to lower latency on ethernet protocols. |
-| 1 | Backward compatible | All output including the deprecated `wrx` and `wrt` sentences. |
-| 2 | PD6 | PD6 protocol output. See [PD6 protocol description](../dvl-protocol#pd6-protocol-tcpserial) |
-| 3 | Latest | All output excluding the deprecated `wrx` and `wrt` sentences. |
+| 1 | WL - Serial V1 and V2 | All output including the deprecated `wrx` and `wrt` sentences. |
+| 2 | PD6 | PD6 protocol output. See [PD6 protocol description](#pd6-protocol-tcpserial) |
+| 3 | WL - Serial V2 | All output excluding the deprecated `wrx` and `wrt` sentences. |
+| 4 | Not used | Not used |
+| 5 | Not used | Not used |
+| 6 | PD4 | PD4 protocol output See [PD4 protocol description](#pd4-protocol-tcpserial) |
 
 The reply will be an ack (`wra`) if the protocol change is successful, and a nak (`wrn`) if not.
 
@@ -469,6 +476,9 @@ Example setting configuring output to use protocol number 3:
 ```
 wcp,3
 ```
+
+!!!note
+    Prior to release 2.6.1 protocol number 1 was named `Backward compatible` and protocol number 3 was named `Latest`. There is no change in functionality.
 
 ### Configuration over serial
 
