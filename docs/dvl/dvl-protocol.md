@@ -247,7 +247,7 @@ The response will be as follows if the calibration is successful. If queue is fu
 | speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
 | mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode_enabled | `true` when the LED operates as [normal](../interfaces#led-signals), `false` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
+| dark_mode_enabled | `false` when the LED operates as [normal](../interfaces#led-signals), `true` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
 | range_mode | `auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
 | periodic_cycling_enabled | `true` for normal operation where the DVL periodically searches for bottom lock shorter than the existing bottom lock, `false` if periodic cycling is disabled |
 
