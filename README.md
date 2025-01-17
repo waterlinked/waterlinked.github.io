@@ -32,5 +32,5 @@ mkdocs serve
 * Fire up your browser and go to localhost:8000
 
 ## Deploy changes to server
-After the changes have been tested and they work, push the changes to the master branch and Github will build the website and publish it on https://waterlinked.github.io.
+After the changes have been tested and they work, push the changes to the master branch and Github will build the website and publish it on https://docs.waterlinked.com.
 
