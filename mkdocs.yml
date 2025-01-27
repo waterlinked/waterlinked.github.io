@@ -33,6 +33,16 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Sonar 3D-15: 
+      - Introduction: 3d-sonar/3d-sonar-15/3d-sonar-15-introduction.md
+      - Quickstart: 3d-sonar/3d-sonar-15/3d-sonar-15-quickstart.md
+      - Interface: 
+        - Wiring: 3d-sonar/3d-sonar-15/3d-sonar-15-wiring.md
+        - GUI: 3d-sonar/3d-sonar-15/3d-sonar-15-gui.md
+        - API: 3d-sonar/3d-sonar-15/3d-sonar-15-api.md
+      - Software Updates: 3d-sonar/3d-sonar-15/3d-sonar-15-software-update.md
+      - FAQ: 3d-sonar/3d-sonar-15/3d-sonar-15-faq.md
+
   - Underwater GPS:
       - G2:
           - Quickstart: underwater-gps/quickstart.md
