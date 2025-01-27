@@ -40,3 +40,6 @@ No, there is no software installation needed. Once connected and powered on, you
 For advanced integrations, you can use the Sonar 3D-15’s API to develop custom solutions. This requires some programming knowledge but enables control and automation of the Sonar 3D-15’s functionality from your custom system.
 
 ---
+
+## 6. The performance is not as expected?
+If the performance is not as expected and you can not find a solution in this documentation, please crete a diagnostic log with you Sonar 3D-15 and submit a [support ticket](https://waterlinked.com/support) with the Sonar 3D diagnostic log file attached. 

@@ -40,6 +40,8 @@ nav:
         - Wiring: 3d-sonar/3d-sonar-15/3d-sonar-15-wiring.md
         - GUI: 3d-sonar/3d-sonar-15/3d-sonar-15-gui.md
         - API: 3d-sonar/3d-sonar-15/3d-sonar-15-api.md
+      - Integration:
+        - BlueROV2: 3d-sonar/3d-sonar-15/3d-sonar-15-bluerov-integration.md
       - Software Updates: 3d-sonar/3d-sonar-15/3d-sonar-15-software-update.md
       - FAQ: 3d-sonar/3d-sonar-15/3d-sonar-15-faq.md
 
@@ -123,5 +125,8 @@ nav:
           - Introduction: modem-m16/modem-m16.md
           - Serial Interface: modem-m16/modem-m16-uart-interface.md
           - M16 FAQ: modem-m16/modem-m16-faq.md
+  - I/O interface cards:
+          - Rev 4: io-interface-cards/rev4/io-interface-rev4.md
+
 
 copyright: © Water Linked 2018-2024
