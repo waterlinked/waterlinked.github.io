@@ -12,6 +12,21 @@
 
 ![master_d1_headers](../img/master_d1_headers.png)
 
+#### LED Indicators
+
+|LED name 	| Description 					 											|
+|-----------|---------------------------------------------------------------------------|
+| Power		| Solid green: Topside has power 											|
+| Ready		| Solid Green: Topside has booted successfully								|
+| GPS		| Blinking green: Searching for GPS lock, solid green: Topside has GPS lock |
+| LED 1		| Solid green: Firmware successfully loaded									|
+| LED 2		| Not in use																|
+| Locator	| Solid green: Locator D1 is connected										|
+| Receiver 1| Solid green: Receiver 1 connected											|
+| Receiver 2| Solid green: Receiver 2 connected											|
+| Receiver 3| Solid green: Receiver 3 connected											|
+| Receiver 4| Solid green: Receiver 4 connected											|
+
 !!! Note
 	*NC*: Not Connected.
 
