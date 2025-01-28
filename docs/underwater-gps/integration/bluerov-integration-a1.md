@@ -15,7 +15,7 @@ It contains the following parts (purpose in parentheses)
     * rubber pad
     * 2 M4x35 Socket head cap screws
     * 2 M4 Lock Nuts
-2.  A female-to-female jumper wire, white/green (for locator connection in FXTI)
+2.  A female-to-female jumper wire, white/Blue (for locator connection in FXTI)
 3.  A Binder-connector-pigtail-assembly, with [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370), pins 1/2: white/blue, pin 7/8: white/brown (analog connection and Powerline connection in FXTI)
 4.  Powerline communication (PLC) module [LX200V30](https://www.rakwireless.com/en-us/products/plc-boards-and-modules/lx200v30-plc-homeplug-av-module) (for Powerline communication in UGPS Topside)
 5.  30cm Cat5e cable (for Powerline connection in UGPS Topside)
@@ -129,7 +129,7 @@ Install the WetLink penetrator with the Locator-A1 cable onto the end cap in the
 
 ### Connect Locator-A1 wires to ROV tether
 
-One pair of twisted wires from the Locator-A1 (green/white) must be connected to a spare twisted pair on the BlueROV2 tether. To solder the wires together you will need:
+One pair of twisted wires from the Locator-A1 (blue/white) must be connected to a spare twisted pair on the BlueROV2 tether. To solder the wires together you will need:
 
 * A soldering iron and solder
 * A utility knife, or a sharp blade
@@ -137,13 +137,13 @@ One pair of twisted wires from the Locator-A1 (green/white) must be connected to
 * Hot air gun (optional)
 
 !!! Note
-    Alternatively to soldering you can use your favourite headers to establish an electrical connection.
+    Alternatively to soldering you can use your favorite headers to establish an electrical connection.
 
 Remove 5mm wire insulation on both the tether wires and the locator wires with a knife.
 
 Put heat shrink tube onto the wires before soldering.
 
-Connect the Locator-A1 wires (green/white) to a spare twisted pair of the tether (recommended: green/white) by soldering.
+Connect the Locator-A1 wires (blue/white) to a spare twisted pair of the tether (recommended: green/white) by soldering.
 
 Pull the the heat shrink tube over the solder-connection and shrink it with a hot air gun or alternatively with your soldering iron turned to low.
 
