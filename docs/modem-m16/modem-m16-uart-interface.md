@@ -11,7 +11,7 @@ Below is a summary of the new features introduced in this release:
 | **FW release (ASCII/HEX)** | **Description**                                              |
 |:--------------------------:|:-------------------------------------------------------------|
 | **o/6f**                   | Initial firmware release                                     |
-| **V/56**                   | Added power-level configuration for extended battery runtime |
+| **V/56**                   | Added power-level configuration for extended battery runtime and reduced range |
 
 ---
 
