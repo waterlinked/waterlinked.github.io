@@ -86,14 +86,24 @@ When sending commands over TCP, the average latency is around 4 ms, with a stand
 
 ---
 
-## 11. Do the DVL have RS-232?
+## 11. Does the DVL have an RS-232 interface?
 
-No, The DVL do not have RS-232 interface. It can only use the TTL UART 3.3V, which are not compatible out of the box. You would need to use an converter if you need RS-232.
+No. The DVL does **not** support RS-232. It only provides a TTL (3.3V) UART interface, which is inherently incompatible with RS-232. If RS-232 is required, you will need an external level converter.
 
 ---
 
-## 12. What is the velocity output frequency?  
+## 12. What is the velocity output frequency?
 
-The frequency will variate with the altitude. It will have an update frequency of 15 Hz when it is close to the bottom and 2-4 Hz when far from the bottom. Please see [Range mode](dvl-protocol.md#range-mode-configuration) and take a look at the table for the different ranges. When in Auto mode the DVL wil choose the range mode automatically that it finds best.
+The velocity output frequency varies with altitude.  
+- At lower altitudes (close to the seafloor), the DVL can reach an update frequency of **15 Hz**.  
+- At higher altitudes, it typically operates between **2–4 Hz**.
+
+For more details, see [Range mode](dvl-protocol.md#range-mode-configuration). In **Auto mode**, the DVL automatically selects the range mode it deems optimal.
+
+---
+
+## 13. Will the DVL work over a soft seabed, such as sand?
+
+Yes, the DVL can operate over soft bottoms. However, softer seabeds absorb more acoustic energy, which reduces the maximum altitude at which the DVL can reliably track. The degree of range reduction varies from environment to environment and may require on-site testing to determine.
 
 ---
