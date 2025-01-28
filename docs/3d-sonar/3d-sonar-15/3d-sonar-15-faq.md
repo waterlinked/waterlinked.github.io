@@ -15,11 +15,11 @@ We recommend using a power supply capable of delivering 60 W peak (surge) at 1
 ---
 
 ## 3. Does the Sonar 3D-15 have a thermal shutdown mechanism?
-Yes. The Sonar 3D-15 includes an internal thermal shutdown to prevent damage to its electronics. You will receive a warning in both the GUI and the API if the internal temperature reaches 50 °C, indicating that the unit will shut down at 55 °C if it continues to heat up.
+Yes. The Sonar 3D-15 includes an internal thermal shutdown to prevent damage to its electronics. You will receive a warning in both the GUI and the API if the internal temperature reaches 55 °C, indicating that the unit will shut down the acoustic at 60 °C if it continues to heat up. This will cause you to loose the sonar image. 
 
 **Recommended action:**  
-- Once you see the overheat warning (50 °C), immediately place the Sonar 3D-15 in water or use another method to cool it down.  
-- If the temperature reaches 55 °C, the Sonar 3D-15 will shut down to prevent permanent damage and not restart before it reaches 50°C again.
+- Once you see the overheat warning (55 °C), check that the Sonar is in water or cooled in any other way.   
+- If the temperature reaches 70 °C, the Sonar 3D-15 will shut down to prevent permanent damage and not restart before it reaches 65 °C again, and it need to reach 55 °C before you will get the sonar image back. 
 
 ---
 
