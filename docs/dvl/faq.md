@@ -6,7 +6,7 @@ Below are some frequently asked questions about the DVL. Click on a question in 
 
 ## 1. Do I need to calibrate the IMU each time I power on the DVL?
 
-No. If you use the latest software revision, the calibration is saved in memory.
+No. If you use the software version 2.4.5 or later, the calibration is saved in memory.
 
 ---
 
