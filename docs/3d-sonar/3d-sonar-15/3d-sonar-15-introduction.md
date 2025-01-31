@@ -8,7 +8,7 @@ The Water Linked Sonar 3D-15 is an advanced 3D multibeam imaging sonar designed 
 
 ## Dimensions
 
-<!-- Insert picture 2D with dimensions -->
+![Sonar 3D 15 Dimensions](../../img/transparent_background_image.png)
 
 
 ## Line of sight
