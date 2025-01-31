@@ -27,6 +27,9 @@
 | Receiver 3| Solid green: Receiver 3 connected											|
 | Receiver 4| Solid green: Receiver 4 connected											|
 
+!!! Note 
+	There is **No** indication when the **Antenna** is connected.
+
 !!! Note
 	*NC*: Not Connected.
 
