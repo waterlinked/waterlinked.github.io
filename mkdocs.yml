@@ -65,6 +65,7 @@ nav:
                   - BlueROV2 & Locator-A1: underwater-gps/integration/bluerov-integration-a1.md
                   - BlueROV2 & Locator-U1: underwater-gps/integration/bluerov-integration-u1.md
           - Software updates: underwater-gps/sw-update.md
+          - Underwater GPS FAQ: underwater-gps/ugps-faq.md
       - Explorer Kit (retired):
           - Quickstart: explorer-kit/quickstart.md
           - Introduction: explorer-kit/introduction.md

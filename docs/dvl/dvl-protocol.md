@@ -769,13 +769,13 @@ The format for configuring range mode can be as follows:
 
 The available range modes are:
 
-| Range mode | Lower altitude (m) | Upper altitude (m) |
-| -- | -- | -- |
-| 0 | 0.05 | 0.6 |
-| 1 | 0.3 | 3.0 |
-| 2 | 1.5 | 14 |
-| 3 | 7.7 | 36 |
-| 4 | 15 | max |
+| Range mode | Lower altitude (m) | Upper altitude (m) | Update rate per second (Hz) |
+| -- | -- | -- | -- |
+| 0 | 0.05 | 0.6 | 15 |
+| 1 | 0.3 | 3.0 | 10 |
+| 2 | 1.5 | 14 | 1 - 6 |
+| 3 | 7.7 | 36 | 7 - 8 |
+| 4 | 15 | max | 2 - 4 |
 
 Examples:
 

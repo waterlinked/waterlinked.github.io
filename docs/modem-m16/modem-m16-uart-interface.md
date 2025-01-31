@@ -1,217 +1,281 @@
 # Serial Interface
 
-The modem utilizes either a 3V3 UART or RS422 for interfacing. Users can operate the modem in different modes, configure communication channels, and retrieve diagnostic data via this serial interface. A half-duplex serial communication protocol, encompassing the following configuration, is implemented by the modem:
+This document describes how to configure and operate the underwater modem via its serial interface. The modem can be controlled using a 3.3V UART or RS422 connection, offering two primary operational modes (transparent serial and diagnostic), various power levels, and user-selectable communication channels.
 
-- Baud rate: 9600 bps
-- Data bits: 8 bits per transfer
-- Stop bits: 1 stop bit
-- Parity: None
+---
+
+## Firmware Release Notes
+
+Below is a summary of the new features introduced in this release:
+
+| **FW release (ASCII/HEX)** | **Description**                                              |
+|:--------------------------:|:-------------------------------------------------------------|
+| **o/6f**                   | Initial firmware release                                     |
+| **V/56**                   | Added power-level configuration for extended battery runtime and reduced range |
+
+---
+
+## Serial Interface Overview
+
+The modem implements a half-duplex serial protocol with the following default configuration:
+
+- **Baud rate:** 9600 bps  
+- **Data bits:** 8  
+- **Stop bits:** 1  
+- **Parity:** None  
+
+Users can switch between **3.3V TTL UART** or **RS422** for physical interfacing. Through this serial link, you can:
+
+- Set operational modes  
+- Change communication channels  
+- Request diagnostic reports  
+- Adjust power levels for transmission range/power consumption  
+
+---
 
 ## Operational Modes
 
-The modem provides two operational modes: transparent serial mode and diagnostic mode.
+The modem supports two main operational modes:
 
-In transparent serial mode, the modem processes two bytes of data per transmission. Upon receipt of a packet, it transmits two bytes of received data using the chosen serial protocol (OEM, Standard or Extended). Each transmission lasts approximately 1.6 seconds, as determined by the acoustic wave duration. The lack of TX buffering implies that attempting to input more than 2-bytes of data during a single transmission will lead to irretrievable packet loss, e.g. if four bytes of data are sent, only the first two bytes will be transmitted, and the remaining two bytes will be discarded.
+1. **Transparent Serial Mode**  
+   - Processes and transmits only **2 bytes** of data per packet.  
+   - Each transmission takes ~1.6 seconds (acoustic wave duration).  
+   - Data beyond the first 2 bytes in a transmission is discarded.
 
-In contrast, diagnostic mode offers an in-depth report over the chosen serial communication, containing:
+2. **Diagnostic Mode**  
+   - Sends detailed status reports, including:  
+     - Transport Block (TB)  
+     - Bit Error Rate (BER)  
+     - Signal & Noise Power  
+     - LDPC/CRC Validity  
+     - Firmware Revision  
+     - Time Since Power-Up  
+     - FPGA Chip ID, Hardware Revision  
+     - Communication Channel  
+     - TX-Complete Status  
+     - Power Level Setting  
+   - Still limited to **2 bytes** of payload per transmission (discarding any additional data).  
+   - Reports are triggered automatically when:
+     1. A new packet is received (TB Valid bit is set)  
+     2. A transmission completes (TX Complete bit is set)  
+     3. 4 seconds have elapsed since the last report  
 
-- A Transport Block (TB) that holds received data (16-bit).
-- Bit Error Rate (BER, 8-bit).
-- Signal Power (8-bit).
-- Noise Power (8-bit).
-- Packet Valid status indicating a successful LDPC decoder and CRC operation (16-bit).
-- Packet Invalid status showing an unsuccessful CRC check despite LDPC decoding (8-bit).
-- Firmware revision, represented as a Git commit hash (8-bit).
-- Time since power-up, measured in 10 ms increments (24-bit).
-- FPGA chip id (16-bit).
-- Hardware revision (2-bit).
-- Communication channel (1-12, 4-bit).
-- TB Valid status to verify if the first TB is new (1-bit).
-- TX-complete status to confirm a completed transmission (1-bit).
-- Diagnostic mode (1-bit, on/off).
+!!! note
+    You can also request a **diagnostic report** while in transparent mode. See the [Request Report Command](#request-report-command) section.
 
-<!-- 
-- Power level (2-bits, level 1 to 4), default is level 4.) 
--->   
+---
 
-A diagnostic report is triggered under the following conditions:
+## Quickstart Guide
 
-1. Receipt of a new packet, setting the TB Valid bit to ‘1’.
-2. Completion of a transmission, setting the TX Complete bit to ‘1’.
-3. After 4 seconds have passed since the last report was dispatched.
+By default:
 
-To optimize packet transmission and identify the receipt of new data, the TX-complete and TB Valid bits can be utilized while interpreting the report. Like in transparent serial mode, the modem in diagnostic mode also lacks TX buffering, therefore, accepting only 2-bytes of data for each transmission and discarding the remaining data.
+- **Operational Mode:** Transparent serial mode  
+- **Communication Channel:** 1  
 
-Reports can also be requested in the transparent serial mode, with further details provided in subsequent sections.
+For a simple point-to-point setup with two modems:  
+1. Connect each modem (via UART or RS422).  
+2. Ensure both are set to the same **channel** (default is 1).  
+3. Begin sending data; the modems will relay up to 2 bytes each ~1.6 seconds.
 
-## Quickstart guide
-By default, each modem is preprogrammed to operate in the transparent serial mode and communicate on channel 1. For a quick setup with two modems, simply connect the modems and initiate communication.
+---
 
-## Settings interface
+## Settings Interface
 
-Users can access or modify three parameters in the modem:
+You can configure the modem by issuing commands over the serial link. Four user-configurable parameters are available:
 
-1. Communication channels.
-2. Operation mode.
-3. Report request.
-<!--
-4. Power Level 
--->
+1. **Communication Channel**  
+2. **Operation Mode**  
+3. **Report Request**  
+4. **Power Level**
 
- 
-The procedure for accessing these parameters is detailed in the following sections.
+Each configuration command requires sending specific characters with a 1-second pause between them, followed by a character that selects the new value. Refer to the relevant section below.
 
-### Communication channel command
+---
 
-The modem offers 12 communication channels. Two modems can only interact if they operate on the same channel. To set the channel, users must send two "c" characters through the serial interface, separated by a one-second interval. Following the transmission of both characters, users can choose the desired channel by transmitting a single character ranging from 1 to c within 2 seconds.
+### Communication Channel Command
 
-The table below provides an overview of the available channels:
+The modem can operate on **12 channels** (1 to 12). Two modems must share the same channel to communicate.
+
+**Procedure:**
+
+1. Send `"c"` (0x63).  
+2. Wait **1 second**.  
+3. Send another `"c"` (0x63).  
+4. Within **2 seconds**, send **one character** (`"1"`–`"c"`) to set the desired channel.
 
 | **Channel** | **Character** | **HEX-Value** |
-| :---------- | :------------ | :------------ |
-| 1           | "1"           | 0x31          |
-| 2           | "2"           | 0x32          |
-| 3           | "3"           | 0x33          |
-| 4           | "4"           | 0x34          |
-| 5           | "5"           | 0x35          |
-| 6           | "6"           | 0x36          |
-| 7           | "7"           | 0x37          |
-| 8           | "8"           | 0x38          |
-| 9           | "9"           | 0x39          |
-| 10          | "a"           | 0x61          |
-| 11          | "b"           | 0x62          |
-| 12          | "c"           | 0x63          |
+|:----------:|:-------------:|:-------------:|
+| 1          | "1"           | 0x31          |
+| 2          | "2"           | 0x32          |
+| 3          | "3"           | 0x33          |
+| 4          | "4"           | 0x34          |
+| 5          | "5"           | 0x35          |
+| 6          | "6"           | 0x36          |
+| 7          | "7"           | 0x37          |
+| 8          | "8"           | 0x38          |
+| 9          | "9"           | 0x39          |
+| 10         | "a"           | 0x61          |
+| 11         | "b"           | 0x62          |
+| 12         | "c"           | 0x63          |
 
-For instance, to configure the modem to communicate on channel 11 via the UART interface, follow these steps:
+**Example (Channel 11):**
+1. Send `"c"`  
+2. Wait 1 second  
+3. Send `"c"` again  
+4. Within 2 seconds, send `"b"` (0x62)  
 
-1. Transmit a single "c" (0x63) character over UART.
-2. Allow a one-second interval to pass.
-3. Send another "c" (0x63) character over UART.
-4. Wait for less than 2 seconds / transmit immediately.
-5. Send a single "b" (0x62) character.
+---
 
-### Setting operational mode command
+### Setting Operational Mode
 
-To toggle between the diagnostic mode and transparent serial mode, users are required to send two "m" characters with a one-second interval between them.
-<!--
-### Setting power level
-This works in the same way as setting the channel, except you have to send the character “l” (small L) (0x6C). Also the user will only have 4 levels to choose from. 
+To toggle between **diagnostic mode** and **transparent serial mode**:
 
-Following is a table showing the available power levels:
+1. Send `"m"` (0x6D).  
+2. Wait **1 second**.  
+3. Send `"m"` again.  
 
-| **Power Level** | **Character** | **HEX-Value** | **Average Transmit Power consumption(mW)** | **Typical Maximum Range (m)** |
-| :-------------- | :------------ | :------------ | :----------------------------------------- | :---------------------------- |
-| 1               | "1"           | 0x31          | 390                                        | 300                           |
-| 2               | "2"           | 0x32          | 555                                        | 600                           |
-| 3               | "3"           | 0x33          | 790                                        | 900                           |
-| 4 (Default)     | "4"           | 0x34          | 1105                                       | 1000                          |
+The modem will switch modes (e.g., if you were in transparent mode, it will switch to diagnostic).
 
-**NOTE:** Maximum range can only be achieved in good conditions with low noise and a clear path between the modems.
+---
 
-Following is an example of how to set the modem to power level 3:
+### Setting Power Level
 
-1. 	Transmit a single “l” (0x6C) character over UART.
-2. 	Allow a one-second interval to pass.
-3. 	Send another “l” (0x6C) character over UART.
-4.	Wait for less than 2 seconds /transmit immediately.
-5. 	Send a single “3” (0x33) character over UART.
--->
-### Request report command
+To adjust the modem’s power level (1–4):
 
-In both diagnostic and transparent serial modes, a report request can be initiated at any time by transmitting two "r" characters spaced one second apart. Following this request, the modem will generate the required report.
+1. Send `"l"` (0x6C).  
+2. Wait **1 second**.  
+3. Send `"l"` again.  
+4. Within 2 seconds, send one character (`"1"`, `"2"`, `"3"`, or `"4"`).
 
-## Packet structure of report
+| **Power Level** | **Character** | **HEX-Value** | **Avg. TX Power (mW)** | **Typical Max Range (m)** |
+|:--------------:|:-------------:|:-------------:|:----------------------:|:-------------------------:|
+| 1              | "1"           | 0x31          | 390                    | 300                       |
+| 2              | "2"           | 0x32          | 555                    | 600                       |
+| 3              | "3"           | 0x33          | 790                    | 900                       |
+| 4 (Default)    | "4"           | 0x34          | 1105                   | 1000                      |
 
-The structure of a report is as follows:
+!!! note
+    Maximum range is highly dependent on environmental factors, including noise levels and line-of-sight conditions between modems.
 
-| **Byte (bit)** | **Field**           | **Description**                                                                                |
-| :------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
-| 0 (0:7)        | START_OF_FRAME (SOF)| “$”                                                                                            |
-| 1:2 (0:15)     | TB                  | Transport block containing received data.                                                      |
-| 3 (0:7)        | BER                 | Bit error rate                                                                                 |
-| 4 (0:7)        | SIGNAL_POWER        | Relative Signal Power (See warning below)                                                      |
-| 5 (0:7)        | NOISE_POWER         | Relative Noise Power  (See warning below)                                                      |
-| 6:7 (0:15)     | PACKET_VALID        | Packet valid, CRC successful                                                                   |
-| 8 (0:7)        | PACKET_INVALID      | Packet invalid, CRC failed                                                                     |
-| 9 (0:7)        | GIT_REV             | Firmware revision                                                                              |
-| 10:12 (0:23)   | TIME_FROM_BOOT      | Time since power up / boot in 10 ms (1 = 10 ms, 2 = 20 ms, etc.)                               |
-| 13:14 (0:15)   | CHIP_ID             | FPGA chip id                                                                                   |
-| 15 (0:1)       | HW_REV              | Hardware revision                                                                              |
-| 15 (2:5)       | CHANNEL             | Communication channel (1-12)                                                                   |
-| 15 (6)         | TB_VALID            | Transport block valid, used to determine if the transport block in byte 1:2 is new             |
-| 15 (7)         | TX_COMPLETE         | Used to inform that a transmission is complete                                                 |
-| 16 (0)         | DIAGNOSTIC_MODE     | Will send a report over UART at 4-second intervals or when new data is transmitted or received |
-| 16 (1)         | RESERVED            | Reserved                                                                                       |
-| 16 (4:7)       | RESERVED            | Reserved                                                                                       |
-| 17 (0:7)       | END_OF_FRAME (EOF)  | New line (“\n”)                                                                                |
+**Example (Set Power Level 3):**
+1. Send `"l"` (0x6C).  
+2. Wait 1 second.  
+3. Send `"l"` (0x6C) again.  
+4. Within 2 seconds, send `"3"` (0x33).  
 
-<!--| 16 (2:3)       | POWER_LEVEL         | Level to transmit signal acoustically (0 = Level 4, 1 = level 3, 2 = level 2 and 4 = level)    | -->
+---
 
-!!! Warning
-    **Signal Power:** This value represents the strength of the signal received by the modem when it is decoding a data packet. It ranges from 0 to 255, where 255 is the strongest signal (ideal conditions), and lower values indicate weaker signals. Importantly, when the modem is idle and not decoding or sending data, the signal power will represent the background noise, known as the "noise floor." This is because the modem is not detecting any signal during idle periods.
+### Request Report Command
 
-    **Noise Power:** This value represents the background noise in the environment. When the modem is idle, the noise power and signal power will be the same, both representing the noise floor. During packet decoding, the noise power may increase due to interference, energy leakage, or other environmental factors, but this will only be noticeable when data is being processed. The signal power should always exceed the noise power when data of sufficient quality is being received for decoding.
+In **both** diagnostic and transparent modes, you can request a report at any time:
 
-    **Summary:** It's essential to note that when the modem is idle, the signal power and noise power will be identical, representing the noise floor. Therefore, you cannot directly compare these values when the modem is idle. To assess the environment, store the noise power while the modem is idle (as the noise floor) and compare it with the signal power during packet decoding. A higher signal power compared to the stored noise floor indicates a better communication setup and environment. 
+1. Send `"r"` (0x72).  
+2. Wait **1 second**.  
+3. Send `"r"` (0x72) again.
 
-As previously mentioned, in diagnostic mode, reports are dispatched at 4-second intervals or when new data is transmitted or received. The following Python code is an example of a report parser:
+The modem will immediately generate a diagnostic report.
+
+---
+
+## Packet Structure of the Diagnostic Report
+
+When in diagnostic mode (or upon a report request in transparent mode), the modem sends an **18-byte** report. The byte layout is:
+
+| **Byte (bit)** | **Field**              | **Description**                                                                                 |
+|:--------------:|:-----------------------|:-----------------------------------------------------------------------------------------------:|
+| 0 (0:7)        | `START_OF_FRAME (SOF)` | “$” (0x24)                                                                                      |
+| 1:2 (0:15)     | `TB`                   | Transport block containing 2 bytes of received data.                                            |
+| 3 (0:7)        | `BER`                  | Bit error rate                                                                                  |
+| 4 (0:7)        | `SIGNAL_POWER`         | Relative signal power (0–255)                                                                   |
+| 5 (0:7)        | `NOISE_POWER`          | Relative noise power (0–255)                                                                    |
+| 6:7 (0:15)     | `PACKET_VALID`         | Indicates packet integrity: LDPC decode + CRC successful                                        |
+| 8 (0:7)        | `PACKET_INVALID`       | CRC check failed                                                                                |
+| 9 (0:7)        | `GIT_REV`              | Firmware revision (Git commit hash, 8-bit)                                                      |
+| 10:12 (0:23)   | `TIME_FROM_BOOT`       | Time since power-up in 10 ms increments                                                         |
+| 13:14 (0:15)   | `CHIP_ID`              | FPGA chip ID                                                                                    |
+| 15 (0:1)       | `HW_REV`               | Hardware revision (2 bits)                                                                      |
+| 15 (2:5)       | `CHANNEL`              | Active communication channel (1–12)                                                             |
+| 15 (6)         | `TB_VALID`             | Transport block valid bit; indicates new TB data                                               |
+| 15 (7)         | `TX_COMPLETE`          | Indicates that a transmission has finished                                                      |
+| 16 (0)         | `DIAGNOSTIC_MODE`      | 1 if in diagnostic mode; 0 otherwise                                                            |
+| 16 (1)         | `RESERVED`             | Reserved bit                                                                                    |
+| 16 (2:3)       | `POWER_LEVEL`          | Current power level (0 = L4, 1 = L3, 2 = L2, 3 = L1)                                             |
+| 16 (4:7)       | `RESERVED`             | Reserved bits                                                                                   |
+| 17 (0:7)       | `END_OF_FRAME (EOF)`   | New line (“\n”)                                                                                 |
+
+!!! warning
+    **Signal Power & Noise Power**  
+    - Both range from 0 to 255.  
+    - When the modem is idle (not transmitting or receiving), **Signal Power** reflects the background noise floor, which should match **Noise Power**.  
+    - **During** packet decoding, `SIGNAL_POWER` should be **greater** than `NOISE_POWER` for a successful decode.
+
+    **Practical Tip**  
+    - Record the Noise Power while idle as your baseline (noise floor).  
+    - Compare that with Signal Power during active communication.  
+    - The bigger the gap, the better the link quality.
+
+---
+
+### Example Python Report Parser
 
 ```python
 def decode_packet(packet: bytes) -> Optional[Dict[str, Any]]:
-   """
-   Decode a packet received from the modem.
+    """
+    Decode a packet received from the modem.
 
+    Parameters
+    ----------
+    packet : bytes
+        The raw packet (18 bytes) starting with '$' (0x24) and ending with '\n' (0x0A).
 
-   Parameters
-   ----------
-   packet : bytes
-       The raw packet received from the modem. The packet should be 18 bytes long and start with
-        '$' (0x24) and end with '\n' (0x0A).
+    Returns
+    -------
+    Optional[Dict[str, Any]]
+        A dictionary with decoded values if valid, or None otherwise.
+    """
+    if len(packet) != 18 or packet[0] != ord('$') or packet[-1] != ord('\n'):
+        return None
 
+    # The 16 bytes after the '$' and before the '\n'
+    data = packet[1:17]
+    decoded = struct.unpack("<HBBBHBBBBBHBB", data)
 
-   Returns
-   -------
-   Optional[Dict[str, Any]]
-       A dictionary with decoded values if the packet is valid, None otherwise.
+    decoded_dict = {
+        "TR_BLOCK": decoded[0],
+        "BER": decoded[1],
+        "SIGNAL_POWER": decoded[2],
+        "NOISE_POWER": decoded[3],
+        "PACKET_VALID": decoded[4],
+        "PACKET_INVALID": decoded[5],
+        "GIT_REV": decoded[6].to_bytes(1, "little"),
+        "TIME": (decoded[9] << 16) | (decoded[8] << 8) | decoded[7],
+        "CHIP_ID": decoded[10],
+        "HW_REV": decoded[11] & 0b00000011,
+        "CHANNEL": (decoded[11] & 0b00111100) >> 2,
+        "TB_VALID": (decoded[11] & 0b01000000) >> 6,
+        "TX_COMPLETE": (decoded[11] & 0b10000000) >> 7,
+        "DIAGNOSTIC_MODE": decoded[12] & 0b00000001,
+        "LEVEL": (decoded[12] & 0b00001100) >> 2,
+    }
 
-
-   """
-   if len(packet) != 18 or packet[0] != '$' or packet[-1] != '\n':
-       return None
-
-
-   # The 128-bit data excluding the SOF and EOF characters
-   data = packet[1:17]
-
-   decoded = struct.unpack("<HBBBHBBBBBHBB", data)
-
-
-   decoded_dict = {
-       "TR_BLOCK": decoded[0],
-       "BER": decoded[1],
-       "SIGNAL_POWER": decoded[2],
-       "NOISE_POWER": decoded[3],
-       "PACKET_VALID": decoded[4],
-       "PACKET_INVALID": decoded[5],
-       "GIT_REV": decoded[6].to_bytes(1, "little"),
-       "TIME": (decoded[9] << 16) | (decoded[8] << 8) | decoded[7],
-       "CHIP_ID": decoded[10],
-       "HW_REV": (decoded[11] & 0b00000011),
-       "CHANNEL": (decoded[11] & 0b00111100) >> 2,
-       "TB_VALID": (decoded[11] & 0b01000000) >> 6,
-       "TX_COMPLETE": (decoded[11] & 0b10000000) >> 7,
-       "DIAGNOSTIC_MODE": (decoded[12] & 0b00000001),
-       #"LEVEL": (decoded[12] & 0b00001100) >> 2, Not in use
-   }
-
-
-   return decoded_dict
+    return decoded_dict
 ```
 
-## Ensuring successful transmission and optimising
+## Ensuring Successful Transmission & Optimization
 
-In the diagnostic mode, a report is transmitted immediately after the completion of a transmission. To optimise the transmission baud rate, users can buffer data and transmit two bytes whenever a high TX-complete bit is received. This method guarantees efficient and continuous data transmission. In the transparent serial mode, successful transmission is ensured by sending two bytes and waiting for more than 1.6 seconds before transmitting the next two bytes.
+### Diagnostic Mode
+A report is sent immediately after each transmission.  
+Monitor the **TX_COMPLETE** bit in the report to know when the modem is ready for the next 2-byte packet. This approach maximizes overall throughput.
 
-## Flash memory considerations
-Setting modem mode and channel results in a flash write operation. Thus ensure that the modem is not powered off during this operation. The modem will not respond to any commands during this time. The flash write operation takes approximately 1 second to complete.
+### Transparent Serial Mode
+Send 2 bytes, then wait at least **1.6 seconds** (the transmission duration) before sending the next 2 bytes to avoid data loss.
 
+---
+
+## Flash Memory Considerations
+Changing the **modem mode**, **channel**, or **power level** initiates a **flash write operation**, which takes about **1 second**. During this time:
+
+- The modem will **not respond** to commands.  
+- **Do not power off** the modem to avoid corrupting settings.
+
+Once the flash write completes, the modem resumes normal operation with the updated configuration.

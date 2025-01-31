@@ -1,56 +1,122 @@
-**Q1: Do I need to calibrate the IMU each time I power on the DVL?**
+# DVL FAQ
 
-**A1:** No. If you use the latest software revision it will be saved in memory.
+Below are some frequently asked questions about the DVL. Click on a question in the table of contents to the right or simply scroll down to read the FAQs.
 
-**Q2: Will the temperature effect the IMU?**
+---
 
-**A2:** Yes, the IMU will perform different under different temperatures then what it was calibrated at.
+## 1. Do I need to calibrate the IMU each time I power on the DVL?
 
-**Q3: Why does the yaw angle change rapidly?**
+No. If you use the software version 2.4.5 or later, the calibration is saved in memory.
 
-**A3:** Yaw angle in the DVL GUI seems to increase or otherwise change rapidly
-This is likely due to the DVL's gyrometer not having being calibrated. See the following for more on the calibration.
+---
 
-[Calibrate the IMU](dead-reckoning.md#starting-dead-reckoning)
+## 2. Will the temperature affect the IMU?
 
-If only the velocity output of the DVL is required, this can be ignored, as the yaw angle is not used in the velocity algorithms. It is only if the DVL's dead reckoning functionality will be used that the yaw angle is relevant and calibration is needed.
+Yes. The IMU will perform differently under temperatures that differ significantly from the conditions at which it was calibrated.
 
-**Q4: Can we test/operate the DVL in air?**
+---
 
-**A4:** You will **not** be able to get valid velocity measurements in air. It is possible to power the DVL while out of the water for a short period of time, but the DVL will warm up relatively quickly, and if possible we recommend to avoid this.
+## 3. Why does the yaw angle change rapidly?
 
-A great setup to work with the DVL in a lab is to keep it submerged in a small bucket of water.
+Yaw angle in the DVL GUI may increase or otherwise change rapidly if the DVL’s gyro has not been calibrated or temperature changes.  
+Please see the following for more on calibration: [Calibrate the IMU](dead-reckoning.md#starting-dead-reckoning)
 
-We know that it may be impractical to completely avoid using the DVL in air when it is mounted. An option is to disable the acoustics of the DVL when it is out of the air, which will slow down the heating up. There is an option for this in the DVL GUI under 'Configuration'.
+!!! Note
+    If only the velocity output of the DVL is required, you can ignore changes in yaw angle. The yaw angle is only relevant (and thus calibration is needed) if the DVL’s dead reckoning functionality is used.
 
-If you do use the DVL in air, we strongly recommend to make sure that the software is on version 2.0.8 or higher, as the DVL will then shut down if it reaches a too high temperature.
+---
 
-**Q5: What is the connector on the DVL?**
+## 4. Can we test/operate the DVL in air?
 
-**A5:** How to connect to the DVL over ethernet or serial
+You will **not** be able to get valid velocity measurements in air.  
+It is possible to power the DVL out of the water for a short time, but the DVL warms up quickly. If possible, we recommend avoiding this.
 
-The DVL A50/A125 is supplied with cable tail which has an interface board attached, containing an ethernet connector allowing you to simply plug an ethernet cable to connect to your computer. The interface board also allows for serial output: from Revision 4, there is a Micro-USB port, and one can simply plug in a USB cable from it to your computer. In earlier revisions, the interface board contains a UART interface which can be soldered too.
+A great setup for lab work is to keep the DVL submerged in a small bucket of water.
 
-The interface can be removed when the DVL is mounted permanently on a vehicle, in which case the wiring interface should be referred to, allowing set-up of ethernet and/or serial as required. Water Linked does not provide a connector for this purpose.
+We realize it may be impractical to avoid air usage altogether when the DVL is mounted. One option is to disable the DVL’s acoustics while it is out of water to reduce heating. This option is available under **Configuration** in the DVL GUI.
 
-**Q6: Can the DVL be used as an ADCP?**
+!!! Note
+    If you do use the DVL in air, we strongly recommend running software version 2.0.8 or higher, which allows the DVL to shut down safely if it reaches a critical temperature.
 
-**A6:** No. The algorithms in the DVL are specifically designed to work with reflections from the sea floor. An ADCP relies on reflections from particles in the water at different depths, which would require slightly different treatment.
+---
 
-**Q7: DVL looses connection?**
+## 5. What is the connector on the DVL?
 
-**A7:** If, for example when testing the DVL in a bucket, the DVL periodically loses connection (i.e. some data is received but then connection is lost, and this pattern repeats), the most likely explanation is insufficient power/current being supplied to the DVL. Please try a power supply with a higher voltage and current capability (i.e. 18V with up to 2A draw, or 24V with up to 1.5A draw, or similar).
+The DVL A50/A125 is supplied with a cable tail that includes an interface board containing:
 
-It can also be a sign of a bad connection. If the DVL has been working properly until it suddenly start loosing connection it is recommended to check the cable for damage and the termination of the DVL to your ROV computer. 
+- An Ethernet connector, allowing a direct plug-and-play link to your computer.
+- A Micro-USB port (Revision 4 I/O card), enabling USB output. Simply plug a USB cable from the DVL to your computer.
 
-**Q8: What is the Source level (dB re 1 μPa @ 1 m)?**
+Earlier revisions have a UART interface on the board, which can be soldered to for serial connections.
 
-**A8:** The transmit source level have a maximum of 200 dB.
+The interface board can be removed for permanent mounting on a vehicle. Refer to the wiring interface documentation for setting up Ethernet and/or serial connections as needed. Water Linked does not provide a specific connector for this purpose.
 
-**Q9: Can the DVL overheat?**
+---
 
-**A9:** The DVL has a thermal shutdown to prevent temperatures that can damage the DVL. The DVL will give a warning that it will soon do a thermal shutdown. Please see [Protocol](dvl-protocol.md). It will shutdown at 55℃ and when it reaches below 50℃ it will automatically turn it self on an continue where it left off before the shutdown.  It will continue in a loop with shutdown and rebooting if the overheating issue is not addressed. 
+## 6. Can the DVL be used as an ADCP?
 
-**Q10: What is the latency when using the API over Ethernet?**
+No. The DVL’s algorithms are specifically designed to track reflections from the seafloor. An ADCP requires measuring reflections from water-borne particles at various depths, which uses a different processing approach.
 
-**A10:** When sending commands over TCP, the latency averages around 4 ms, with a standard deviation of 2 ms. The maximum observed latency is 13 ms.
+---
+
+## 7. Why does the DVL lose connection?
+
+If you notice periodic data dropouts or lost connections, there are a few common causes to consider:
+
+1. **Insufficient Power**  
+
+    If the DVL is not receiving enough power, you may see periodic dropouts.  
+
+    - Try using a power supply with higher voltage/current (for instance, 18V at up to 2A or 24V at up to 1.5A).
+
+2. **Poor Physical Connection**  
+
+    - If the DVL was previously functioning but suddenly loses connection, inspect cables, connectors, and any terminations on the ROV or topside computer.
+
+3. **Thermal Shutdown**  
+
+    - To protect the DVL from damage due to overheating, it may shut down automatically. This will result in a lost connection until it cools and restarts.
+
+---
+
+## 8. What is the Source level (dB re 1 μPa @ 1 m)?
+
+The maximum transmit source level is 200 dB.
+
+---
+
+## 9. Can the DVL overheat?
+
+Yes. The DVL has a thermal shutdown to avoid damage. It will issue a warning before shutting down at 55℃. Once it cools below 50℃, it automatically restarts. If the overheating issue is not addressed, it may repeat this shutdown/restart cycle.
+
+For more details, see [Protocol](dvl-protocol.md).
+
+---
+
+## 10. What is the latency when using the API over Ethernet?
+
+When sending commands over TCP, the average latency is around 4 ms, with a standard deviation of 2 ms. The maximum observed latency is 13 ms.
+
+---
+
+## 11. Does the DVL have an RS-232 interface?
+
+No. The DVL does **not** support RS-232. It only provides a TTL (3.3V) UART interface, which is inherently incompatible with RS-232. If RS-232 is required, you will need an external level converter.
+
+---
+
+## 12. What is the velocity output frequency?
+
+The velocity output frequency varies with altitude.  
+- At lower altitudes (close to the seafloor), the DVL can reach an update frequency of **15 Hz**.  
+- At higher altitudes, it typically operates between **2–4 Hz**.
+
+For more details, see [Range mode](dvl-protocol.md#range-mode-configuration). In **Auto mode**, the DVL automatically selects the range mode it deems optimal.
+
+---
+
+## 13. Will the DVL work over a soft seabed, such as sand?
+
+Yes, the DVL can operate over soft bottoms. However, softer seabeds absorb more acoustic energy, which reduces the maximum altitude at which the DVL can reliably track. The degree of range reduction varies from environment to environment and may require on-site testing to determine.
+
+---
