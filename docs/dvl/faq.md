@@ -43,6 +43,7 @@ We realize it may be impractical to avoid air usage altogether when the DVL is m
 ## 5. What is the connector on the DVL?
 
 The DVL A50/A125 is supplied with a cable tail that includes an interface board containing:
+
 - An Ethernet connector, allowing a direct plug-and-play link to your computer.
 - A Micro-USB port (Revision 4 I/O card), enabling USB output. Simply plug a USB cable from the DVL to your computer.
 
@@ -58,11 +59,23 @@ No. The DVL’s algorithms are specifically designed to track reflections from t
 
 ---
 
-## 7. The DVL loses connection. Why?
+## 7. Why does the DVL lose connection?
 
-If you notice periodic data dropouts or lost connections (e.g., when testing in a small bucket), the most common culprit is insufficient power. Try using a power supply with higher voltage/current (e.g., 18V at up to 2A, or 24V at up to 1.5A).
+If you notice periodic data dropouts or lost connections, there are a few common causes to consider:
 
-It can also be due to a poor physical connection. If the DVL was previously functioning correctly but suddenly loses connection, please check the cable, connectors, and any terminations on the ROV or topside computer.
+1. **Insufficient Power**  
+
+    If the DVL is not receiving enough power, you may see periodic dropouts.  
+
+    - Try using a power supply with higher voltage/current (for instance, 18V at up to 2A or 24V at up to 1.5A).
+
+2. **Poor Physical Connection**  
+
+    - If the DVL was previously functioning but suddenly loses connection, inspect cables, connectors, and any terminations on the ROV or topside computer.
+
+3. **Thermal Shutdown**  
+
+    - To protect the DVL from damage due to overheating, it may shut down automatically. This will result in a lost connection until it cools and restarts.
 
 ---
 
