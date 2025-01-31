@@ -18,7 +18,7 @@ Yes. The IMU will perform differently under temperatures that differ significant
 
 ## 3. Why does the yaw angle change rapidly?
 
-Yaw angle in the DVL GUI may increase or otherwise change rapidly if the DVL’s gyrometer has not been calibrated.  
+Yaw angle in the DVL GUI may increase or otherwise change rapidly if the DVL’s gyro has not been calibrated or temperature changes.  
 Please see the following for more on calibration: [Calibrate the IMU](dead-reckoning.md#starting-dead-reckoning)
 
 !!! Note
