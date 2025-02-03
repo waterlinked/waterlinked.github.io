@@ -20,7 +20,9 @@ Plug one end of the Ethernet cable into the I/O card, and connect the other end 
 Wait approximately 30 seconds for the Sonar 3D-15 to finish booting up.
 
 ## 5. Configure your computer’s network
-Assign your computer an IP address in the `192.168.194.x` range (for example, `192.168.194.100`) with a netmask of `255.255.255.0`.  
+Assign your computer an IP address in the `192.168.194.x` range (for example, `192.168.194.100`) with a netmask of `255.255.255.0`.
+!!! Note
+    How to change your network will variate from different operating systems and versions. Please search the web for how to do this for your operating system.
 <!-- Insert two images side by side (Linux and Windows network config) -->
 
 ## 6. Access the Sonar GUI
