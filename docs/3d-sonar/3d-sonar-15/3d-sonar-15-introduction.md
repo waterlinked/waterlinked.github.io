@@ -1,9 +1,14 @@
 # Sonar 3D-15
 
-The Water Linked Sonar 3D-15 is an advanced 3D multibeam imaging sonar designed to enhance underwater exploration and navigation. With real-time 3D imaging capabilities, it provides a comprehensive view of submerged environments, even in low-visibility conditions. Its compact design, weighing just 0.5 kilograms in water, and a depth rating of 300 meters make it suitable for a wide range of remotely operated vehicles (ROVs), from the smallest to larger models. The sonar offers a 15-meter acoustic range with a 90-degree horizontal and 40-degree vertical field of view. Users can access real-time data through a web-based Graphical User Interface (GUI) and integrate the system with third-party software via a detailed Application Programming Interface (API). This user-friendly design simplifies installation and operation, empowering users to navigate and identify targets effectively in challenging underwater conditions.
+* The Water Linked Sonar 3D-15 is an advanced 3D multibeam imaging sonar designed to enhance underwater exploration and navigation. 
+* With real-time 3D imaging capabilities, it provides a comprehensive view of submerged environments, even in low-visibility conditions. 
+
 
 <!-- Insert image of 3d sonar below -->
-![Sonar 3D 15](../../img/Sonar-3D-15-front.png)
+<div style="text-align: center;">
+  <img src="../../../img/Sonar 3D-15-handheld-2.png" alt="Sonar 3D 15" width="500" />
+</div>
+<!-- ![Sonar 3D 15](../../img/Sonar 3D-15-handheld-2.png) -->
 
 
 ## Dimensions
@@ -11,9 +16,17 @@ The Water Linked Sonar 3D-15 is an advanced 3D multibeam imaging sonar designed 
 ![Sonar 3D 15 Dimensions](../../img/SonarTransparentBG.png)
 
 
-## Line of sight
+## Field of view
 
-The Sonar 3D-15 need a clear view wih no obstacles, ROV chassis, and extrusions to work as intended. That is why the Sonar need a clear Line of Sight as shown in the drawing below.
+The Sonar 3D-15 provides an opening angle as described in the table below.
+
+| Specification        | Range             |
+|----------------------|-------------------|
+| Pitch (opening)      | -20° to +20°      |
+| Yaw (opening)        | -45° to +45°      |
+| Vertical coverage    | 40° total         |
+| Horizontal coverage  | 90° total         |
+
 
 <!-- Insert drawing of Line of Sight -->
 
