@@ -26,7 +26,7 @@ Yes. The Sonar 3D-15 includes an internal thermal shutdown to prevent damage to 
 ## 4. What are the default network settings of the Sonar 3D-15?
 By default, the Sonar 3D-15 uses **DHCP** (Dynamic Host Configuration Protocol). This means it attempts to get an IP address automatically from a DHCP server on your network.
 
-However, the Sonar 3D-15 is always accessible via its **fallback IP** `192.168.194.96`, even if no DHCP server is present. To use the fallback IP, configure your computer's network interface to an IP address in the `192.168.194.x` range (e.g., `192.168.194.100`) with a netmask of `255.255.255.0`.
+However, the Sonar 3D-15 is always accessible via its **fallback IP** `192.168.194.96`, even if no DHCP server is present. To use the fallback IP, configure your computer's network interface to an IP address in the `192.168.194.x` range (e.g., `192.168.194.90`) with a netmask of `255.255.255.0`.
 
 ### Can I disable DHCP and set a static IP?
 Yes, you can disable DHCP in the config settings in the GUI and specify a custom static IP address. This is helpful if you need a fixed IP in your networking environment.
