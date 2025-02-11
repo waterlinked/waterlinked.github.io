@@ -1,1 +1,1 @@
-# Integration guide ofr the BlueROV2
+# Integration guide for the BlueROV2
