@@ -127,7 +127,7 @@ If the trouble shooting guide do not help, please check out [FAQ DVL](faq.md#faq
 ## Collecting data
 Assuming you have checked the above and your testing environment will not affect the performance of the DVL you can now start collecting data!
 
-1. Go into the [Diagnostic report](https://waterlinked.github.io/dvl/gui/diagnostic-report/) and collect data. Fill the description with relevant information of the test environment and observed issue.
+1. Go into the [Diagnostic report](gui/diagnostic-report.md) and collect data. Fill the description with relevant information of the test environment and observed issue.
 2. Take picture of the test environment and how DVL is mounted to bracket or ROV.
 3. If there are know issues under certain conditions/setup please perform these tests as well and collect diagnostic reports.  
 4. Open a ticker through our support portal [Support portal](https://waterlinked.com/support) where you upload the diagnostic reports, pictures with a description of your issue. 
