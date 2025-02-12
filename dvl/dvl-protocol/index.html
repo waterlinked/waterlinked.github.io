@@ -1,0 +1,3830 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://waterlinked.github.io/dvl/dvl-protocol/">
+      
+      <link rel="icon" href="../../img/favicon_water_linked.ico">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.2.0">
+    
+    
+      
+        <title>Protocol - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Open Sans";--md-code-font-family:""}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#water-linked-dvl-protocol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../img/waterlinked_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Protocol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/waterlinked/waterlinked.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../img/waterlinked_logo.png" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/waterlinked/waterlinked.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Underwater GPS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Underwater GPS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Underwater GPS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        G2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="G2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          G2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/reference-frames/" class="md-nav__link">
+        Reference frames
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4_1" type="checkbox" id="__nav_2_1_4_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4_1">
+        Topside
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Topside" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Topside
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/power-supply/" class="md-nav__link">
+        Power supply
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/network-settings/" class="md-nav__link">
+        Network settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4_2" type="checkbox" id="__nav_2_1_4_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4_2">
+        Baseline
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Baseline" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Baseline
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/antenna/" class="md-nav__link">
+        Antenna
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/receiver-d1/" class="md-nav__link">
+        Receiver-D1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4_3" type="checkbox" id="__nav_2_1_4_3" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4_3">
+        Locator
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Locator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Locator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/locators/locator-a1/" class="md-nav__link">
+        Locator-A1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/locators/locator-d1/" class="md-nav__link">
+        Locator-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/locators/locator-u1/" class="md-nav__link">
+        Locator-U1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5" type="checkbox" id="__nav_2_1_5" >
+      
+      <label class="md-nav__link" for="__nav_2_1_5">
+        GUI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GUI" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/position/" class="md-nav__link">
+        Position
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/receivers/" class="md-nav__link">
+        Baseline
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/diagnostic/" class="md-nav__link">
+        Diagnostic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/diagnostic-report/" class="md-nav__link">
+        Diagnostic report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/warnings/" class="md-nav__link">
+        Warnings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/demo-gui/" class="md-nav__link">
+        Demo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_6" type="checkbox" id="__nav_2_1_6" >
+      
+      <label class="md-nav__link" for="__nav_2_1_6">
+        Integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integration" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_6_2" type="checkbox" id="__nav_2_1_6_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_6_2">
+        BlueROV2 integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="BlueROV2 integration" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          BlueROV2 integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/bluerov-integration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/bluerov-integration-a1/" class="md-nav__link">
+        BlueROV2 & Locator-A1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/bluerov-integration-u1/" class="md-nav__link">
+        BlueROV2 & Locator-U1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/sw-update/" class="md-nav__link">
+        Software updates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/ugps-faq/" class="md-nav__link">
+        Underwater GPS FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Explorer Kit (retired)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Explorer Kit (retired)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Explorer Kit (retired)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/warnings/" class="md-nav__link">
+        Warnings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/power-supply/" class="md-nav__link">
+        Power supply
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/network-settings/" class="md-nav__link">
+        Network settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-d1/" class="md-nav__link">
+        Master-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/receiver-d1/" class="md-nav__link">
+        Receiver-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_9" type="checkbox" id="__nav_2_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_2_9">
+        Locators
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Locators" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Locators
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-a1/" class="md-nav__link">
+        Locator-A1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-d1/" class="md-nav__link">
+        Locator-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-s1/" class="md-nav__link">
+        Locator-S1 (obsolete)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-u1/" class="md-nav__link">
+        Locator-U1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_10" type="checkbox" id="__nav_2_2_10" >
+      
+      <label class="md-nav__link" for="__nav_2_2_10">
+        GUI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GUI" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/position/" class="md-nav__link">
+        Position
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/receivers/" class="md-nav__link">
+        Receivers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/diagnostic/" class="md-nav__link">
+        Diagnostic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/upgrader/" class="md-nav__link">
+        Software updates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        DVL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DVL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          DVL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-a50/" class="md-nav__link">
+        DVL-A50 — Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-a125/" class="md-nav__link">
+        DVL-A125 — Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        Networking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axes/" class="md-nav__link">
+        Axes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Protocol
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Protocol
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#water-linked-dvl-protocol" class="md-nav__link">
+    Water Linked DVL protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    Version
+  </a>
+  
+    <nav class="md-nav" aria-label="Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-history-overview" class="md-nav__link">
+    Version history overview
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-protocol-tcp" class="md-nav__link">
+    JSON protocol (TCP)
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON protocol (TCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-and-transducer-report" class="md-nav__link">
+    Velocity-and-transducer report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-reckoning-report" class="md-nav__link">
+    Dead reckoning report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-dead-reckoning" class="md-nav__link">
+    Reset dead reckoning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrate-gyro" class="md-nav__link">
+    Calibrate gyro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-ping" class="md-nav__link">
+    Trigger ping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-over-json" class="md-nav__link">
+    Configuration over JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration over JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-parameters" class="md-nav__link">
+    Configuration parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-current-configuration" class="md-nav__link">
+    Fetching current configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-configuration-parameters" class="md-nav__link">
+    Setting configuration parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-protocol" class="md-nav__link">
+    Serial Protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="Serial Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-overview" class="md-nav__link">
+    Command overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-report-wrz" class="md-nav__link">
+    Velocity report (wrz)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transducer-report-wru" class="md-nav__link">
+    Transducer report (wru)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-reckoning-report-wrp" class="md-nav__link">
+    Dead reckoning report (wrp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-dead-reckoning-wcr" class="md-nav__link">
+    Reset dead reckoning (wcr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrate-gyro-wcg" class="md-nav__link">
+    Calibrate gyro (wcg)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-ping-wcx" class="md-nav__link">
+    Trigger ping (wcx)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-serial-output-protocol-wcp" class="md-nav__link">
+    Change serial output protocol (wcp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-over-serial" class="md-nav__link">
+    Configuration over serial
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration over serial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-parameters_1" class="md-nav__link">
+    Configuration parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-current-configuration_1" class="md-nav__link">
+    Fetching current configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-configuration-parameters_1" class="md-nav__link">
+    Setting configuration parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-report-old-format-wrx-deprecated" class="md-nav__link">
+    Velocity report, old format (wrx) [Deprecated]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transducer-report-old-format-wrt-deprecated" class="md-nav__link">
+    Transducer report, old format (wrt) [Deprecated]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum" class="md-nav__link">
+    Checksum
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pd6-protocol-tcpserial" class="md-nav__link">
+    PD6 protocol (TCP/Serial)
+  </a>
+  
+    <nav class="md-nav" aria-label="PD6 protocol (TCP/Serial)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-overview_1" class="md-nav__link">
+    Command overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Command overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timing-and-scaling-data-ts" class="md-nav__link">
+    Timing and scaling data (TS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-track-instrument-referenced-velocity-data-bi" class="md-nav__link">
+    Bottom track, instrument referenced velocity data (BI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-track-earth-referenced-distance-data-bd" class="md-nav__link">
+    Bottom track, earth referenced distance data (BD)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-track-ship-referenced-distance-data-bs" class="md-nav__link">
+    Bottom track, ship referenced distance data (BS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output" class="md-nav__link">
+    Example output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-mode-configuration" class="md-nav__link">
+    Range mode configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pd4-protocol-tcpserial" class="md-nav__link">
+    PD4 protocol (TCP/Serial)
+  </a>
+  
+    <nav class="md-nav" aria-label="PD4 protocol (TCP/Serial)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-format" class="md-nav__link">
+    Data Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        GUI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/diagnostic-report/" class="md-nav__link">
+        Diagnostic report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/demo-gui/" class="md-nav__link">
+        Demo GUI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dead-reckoning/" class="md-nav__link">
+        Dead reckoning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      <label class="md-nav__link" for="__nav_3_9">
+        Integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluerov-integration/" class="md-nav__link">
+        DVL for BlueROV2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluerov-integration-dvl-ugps/" class="md-nav__link">
+        DVL with UGPS for BlueROV2
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sw-update/" class="md-nav__link">
+        Software updates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        DVL FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Modem
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modem" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Modem
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Modem-M64 (retired)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modem-M64 (retired)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Modem-M64 (retired)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m64/modem-m64/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m64/modem-m64-protocol/" class="md-nav__link">
+        Protocol
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Modem-M16
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modem-M16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modem-M16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m16/modem-m16/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m16/modem-m16-uart-interface/" class="md-nav__link">
+        Serial Interface
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m16/modem-m16-faq/" class="md-nav__link">
+        M16 FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#water-linked-dvl-protocol" class="md-nav__link">
+    Water Linked DVL protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    Version
+  </a>
+  
+    <nav class="md-nav" aria-label="Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-history-overview" class="md-nav__link">
+    Version history overview
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-protocol-tcp" class="md-nav__link">
+    JSON protocol (TCP)
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON protocol (TCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-and-transducer-report" class="md-nav__link">
+    Velocity-and-transducer report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-reckoning-report" class="md-nav__link">
+    Dead reckoning report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-dead-reckoning" class="md-nav__link">
+    Reset dead reckoning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrate-gyro" class="md-nav__link">
+    Calibrate gyro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-ping" class="md-nav__link">
+    Trigger ping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-over-json" class="md-nav__link">
+    Configuration over JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration over JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-parameters" class="md-nav__link">
+    Configuration parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-current-configuration" class="md-nav__link">
+    Fetching current configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-configuration-parameters" class="md-nav__link">
+    Setting configuration parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-protocol" class="md-nav__link">
+    Serial Protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="Serial Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-overview" class="md-nav__link">
+    Command overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-report-wrz" class="md-nav__link">
+    Velocity report (wrz)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transducer-report-wru" class="md-nav__link">
+    Transducer report (wru)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-reckoning-report-wrp" class="md-nav__link">
+    Dead reckoning report (wrp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-dead-reckoning-wcr" class="md-nav__link">
+    Reset dead reckoning (wcr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrate-gyro-wcg" class="md-nav__link">
+    Calibrate gyro (wcg)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-ping-wcx" class="md-nav__link">
+    Trigger ping (wcx)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-serial-output-protocol-wcp" class="md-nav__link">
+    Change serial output protocol (wcp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-over-serial" class="md-nav__link">
+    Configuration over serial
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration over serial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-parameters_1" class="md-nav__link">
+    Configuration parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-current-configuration_1" class="md-nav__link">
+    Fetching current configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-configuration-parameters_1" class="md-nav__link">
+    Setting configuration parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-report-old-format-wrx-deprecated" class="md-nav__link">
+    Velocity report, old format (wrx) [Deprecated]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transducer-report-old-format-wrt-deprecated" class="md-nav__link">
+    Transducer report, old format (wrt) [Deprecated]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum" class="md-nav__link">
+    Checksum
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pd6-protocol-tcpserial" class="md-nav__link">
+    PD6 protocol (TCP/Serial)
+  </a>
+  
+    <nav class="md-nav" aria-label="PD6 protocol (TCP/Serial)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-overview_1" class="md-nav__link">
+    Command overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Command overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timing-and-scaling-data-ts" class="md-nav__link">
+    Timing and scaling data (TS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-track-instrument-referenced-velocity-data-bi" class="md-nav__link">
+    Bottom track, instrument referenced velocity data (BI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-track-earth-referenced-distance-data-bd" class="md-nav__link">
+    Bottom track, earth referenced distance data (BD)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-track-ship-referenced-distance-data-bs" class="md-nav__link">
+    Bottom track, ship referenced distance data (BS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output" class="md-nav__link">
+    Example output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-mode-configuration" class="md-nav__link">
+    Range mode configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pd4-protocol-tcpserial" class="md-nav__link">
+    PD4 protocol (TCP/Serial)
+  </a>
+  
+    <nav class="md-nav" aria-label="PD4 protocol (TCP/Serial)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-format" class="md-nav__link">
+    Data Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/waterlinked/waterlinked.github.io/edit/master/docs/dvl/dvl-protocol.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Protocol</h1>
+                
+                <h2 id="water-linked-dvl-protocol">Water Linked DVL protocol</h2>
+<p>Describes the Water Linked DVL protocols (serial and ethernet).</p>
+<h2 id="terminology">Terminology</h2>
+<ul>
+<li>DVL - Doppler Velocity Log - Uses hydro-acoustic beams to measure the velocity at which the DVL is moving across a surface (typically an unmoving one such as the sea bottom), and the distance to this surface.</li>
+<li>ACK - Acknowledgement. The command issued was successful.</li>
+<li>NAK - Negative acknowledgement. The command issued failed.</li>
+<li>Ping - A pulse of sound sent by the DVL</li>
+<li>Time of validity - Timestamp of the surface reflection ('center of ping')</li>
+<li>Time of transmission - Timestamp taken directly before sending data over the serial or TCP protocols. The difference between time of transmission and time of validity includes both the time for the acoustic wave to travel from the surface from which it was reflected back to the DVL, and the decoding and processing of this signal internally in the DVL.</li>
+</ul>
+<h2 id="version">Version</h2>
+<p>This document describes serial protocol version <code>2.6.x</code> (major.minor.patch) and JSON protocol <code>json_v3.1</code> (major.minor):</p>
+<ul>
+<li>MAJOR version increments represent incompatible API changes</li>
+<li>MINOR version increments represent additional backwards-compatible functionality</li>
+<li>PATCH version increments represent backwards-compatible bug fixes</li>
+</ul>
+<h3 id="version-history-overview">Version history overview</h3>
+<table>
+<thead>
+<tr>
+<th>Software release</th>
+<th>Serial protocol version</th>
+<th>Ethernet protocol version</th>
+<th>Main protocol improvements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.6.1</td>
+<td>2.6.0</td>
+<td>json_v3.1</td>
+<td>Serial baud rate configurable. Add PD4 protocol support in serial 'wcp' command. Some serial protocol names <a href="#change-serial-output-protocol-wcp">changed</a>.</td>
+</tr>
+<tr>
+<td>2.5.2</td>
+<td>2.5.0</td>
+<td>json_v3.1</td>
+<td>Add PD4 protocol support (experimental)</td>
+</tr>
+<tr>
+<td>2.4.4</td>
+<td>2.5.0</td>
+<td>json_v3.1</td>
+<td>Change gyro calibration to store persistently. Note: gyro calibration commands now takes up to 15 seconds.</td>
+</tr>
+<tr>
+<td>2.4.0</td>
+<td>2.5.0</td>
+<td>json_v3.1</td>
+<td>Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)</td>
+</tr>
+<tr>
+<td>2.2.1</td>
+<td>2.4.0</td>
+<td>json_v3</td>
+<td>Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float</td>
+</tr>
+<tr>
+<td>2.1.0</td>
+<td>2.3.0</td>
+<td>json_v3</td>
+<td>Add configuration, add time_of_validity/time_of_transmission, add covariance (JSON)</td>
+</tr>
+<tr>
+<td>2.0.8</td>
+<td>2.2.0</td>
+<td>json_v2</td>
+<td>Add position estimation, add IMU output</td>
+</tr>
+<tr>
+<td>1.6.0</td>
+<td>2.1.0</td>
+<td>-</td>
+<td>Initial (velocity only)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="json-protocol-tcp">JSON protocol (TCP)</h2>
+<h3 id="overview">Overview</h3>
+<p>The DVL supports sending velocity, transducer, and position updates using the Transmission Control Protocol (TCP). The DVL runs a TCP server on port 16171.</p>
+<p>The format of each packet is JSON.</p>
+<h3 id="velocity-and-transducer-report">Velocity-and-transducer report</h3>
+<p>A velocity-and-transducer report is sent for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.</p>
+<p>The X, Y, and Z axes are with respect to <a href="../axes#body-frame">body frame</a> of the DVL, or the <a href="../axes#vehicle-frame">vehicle frame</a> if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.</p>
+<p>The messages are delimited by newline.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>Milliseconds since last velocity report (ms)</td>
+</tr>
+<tr>
+<td>vx</td>
+<td>Velocity in x direction (m/s)</td>
+</tr>
+<tr>
+<td>vy</td>
+<td>Velocity in y direction (m/s)</td>
+</tr>
+<tr>
+<td>vz</td>
+<td>Velocity in z direction (m/s)</td>
+</tr>
+<tr>
+<td>fom</td>
+<td>Figure of merit, a measure of the accuracy of the velocities (m/s)</td>
+</tr>
+<tr>
+<td>covariance</td>
+<td>Covariance matrix for the velocities. The figure of merit is calculated from this (entries in (m/s)^2)</td>
+</tr>
+<tr>
+<td>altitude</td>
+<td>Distance to the reflecting surface along the Z axis (m)</td>
+</tr>
+<tr>
+<td>transducers</td>
+<td>Is a list containing information from each transducer: [id, velocity (m/s), distance (m), rssi (dBm), nsd (dBm), beam_valid (True/False)]</td>
+</tr>
+<tr>
+<td>velocity_valid</td>
+<td>If true, the DVL has a lock on the reflecting surface, and the altitude and velocities are valid (True/False)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use.</td>
+</tr>
+<tr>
+<td>time_of_validity</td>
+<td>Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds)</td>
+</tr>
+<tr>
+<td>time_of_transmission</td>
+<td>Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds)</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Format type and version for this report: <code>json_v3.1</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>Report type: <code>velocity</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example of TCP report (indented for legibility)</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;time&quot;: 106.3935775756836,
+  &quot;vx&quot;: -3.713480691658333e-05,
+  &quot;vy&quot;: 5.703703573090024e-05,
+  &quot;vz&quot;: 2.4990416932269e-05,
+  &quot;fom&quot;: 0.00016016385052353144,
+  &quot;covariance&quot;: [
+    [
+      2.4471841442164077e-08,
+      -3.3937477272871774e-09,
+      -1.6659699175747278e-09
+    ],
+    [
+      -3.3937477272871774e-09,
+      1.4654466085062268e-08,
+      4.0409570134514183e-10
+    ],
+    [
+      -1.6659699175747278e-09,
+      4.0409570134514183e-10,
+      1.5971971523143225e-09
+    ]
+  ],
+  &quot;altitude&quot;: 0.4949815273284912,
+  &quot;transducers&quot;: [
+    {
+      &quot;id&quot;: 0,
+      &quot;velocity&quot;: 0.00010825289791682735,
+      &quot;distance&quot;: 0.5568000078201294,
+      &quot;rssi&quot;: -30.494251251220703,
+      &quot;nsd&quot;: -88.73271179199219,
+      &quot;beam_valid&quot;: true
+    },
+    {
+      &quot;id&quot;: 1,
+      &quot;velocity&quot;: -1.4719001228513662e-05,
+      &quot;distance&quot;: 0.5663999915122986,
+      &quot;rssi&quot;: -31.095735549926758,
+      &quot;nsd&quot;: -89.5116958618164,
+      &quot;beam_valid&quot;: true
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;velocity&quot;: 2.7863150535267778e-05,
+      &quot;distance&quot;: 0.537600040435791,
+      &quot;rssi&quot;: -27.180519104003906,
+      &quot;nsd&quot;: -96.98075103759766,
+      &quot;beam_valid&quot;: true
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;velocity&quot;: 1.9419496311456896e-05,
+      &quot;distance&quot;: 0.5472000241279602,
+      &quot;rssi&quot;: -28.006759643554688,
+      &quot;nsd&quot;: -88.32147216796875,
+      &quot;beam_valid&quot;: true
+    }
+  ],
+  &quot;velocity_valid&quot;: true,
+  &quot;status&quot;: 0,
+  &quot;format&quot;: &quot;json_v3.1&quot;,
+  &quot;type&quot;: &quot;velocity&quot;,
+  &quot;time_of_validity&quot;: 1638191471563017,
+  &quot;time_of_transmission&quot;: 1638191471752336
+}
+</code></pre></div>
+<h3 id="dead-reckoning-report">Dead reckoning report</h3>
+<p>A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by <a href="../dead-reckoning">dead reckoning</a>, with respect to a <a href="../dead-reckoning#frame">frame</a> defined by the axes of the DVL's <a href="../axes#body-frame">body frame</a>, or <a href="../axes#vehicle-frame">vehicle frame</a> if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ts</td>
+<td>Time stamp of report (Unix timestamp in seconds)</td>
+</tr>
+<tr>
+<td>x</td>
+<td>Distance in X direction (m)</td>
+</tr>
+<tr>
+<td>y</td>
+<td>Distance in Y direction (m)</td>
+</tr>
+<tr>
+<td>z</td>
+<td>Distance in downward direction (m)</td>
+</tr>
+<tr>
+<td>std</td>
+<td>Standard deviation (figure of merit) for position (m)</td>
+</tr>
+<tr>
+<td>roll</td>
+<td>Rotation around X axis (degrees)</td>
+</tr>
+<tr>
+<td>pitch</td>
+<td>Rotation around Y axis (degrees)</td>
+</tr>
+<tr>
+<td>yaw</td>
+<td>Rotation around Z axis, i.e. heading (degrees)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Report type: <code>position_local</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Reports if there are any issues with the DVL (0 if no errors, 1 otherwise)</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Format type and version for this report: <code>json_v3</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example of a dead reckoning report.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;ts&quot;: 49056.809,
+  &quot;x&quot;: 12.43563613697886467,
+  &quot;y&quot;: 64.617631152402609587,
+  &quot;z&quot;: 1.767641898933798075,
+  &quot;std&quot;: 0.001959984190762043,
+  &quot;roll&quot;: 0.6173566579818726,
+  &quot;pitch&quot;: 0.6173566579818726,
+  &quot;yaw&quot;: 0.6173566579818726,
+  &quot;type&quot;: &quot;position_local&quot;,
+  &quot;status&quot;: 0,
+  &quot;format&quot;: &quot;json_v3.1&quot;
+}
+</code></pre></div>
+<h3 id="reset-dead-reckoning">Reset dead reckoning</h3>
+<p>Dead reckoning can be reset by issuing the <code>reset_dead_reckoning</code> command:</p>
+<div class="highlight"><pre><span></span><code>{&quot;command&quot;: &quot;reset_dead_reckoning&quot;}
+</code></pre></div>
+<p>If the request is successfully received the response will have 'success' set to 'true'. The dead reckoning will have a delay of approximately 50ms until the positioning values being zeroed out. If the response is unsuccessful, the 'success' will be 'false' and a non-empty describing text will be returned in 'error_message'.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;response_to&quot;:&quot;reset_dead_reckoning&quot;,
+  &quot;success&quot;: true,
+  &quot;error_message&quot;: &quot;&quot;,
+  &quot;result&quot;: null,
+  &quot;format&quot;: &quot;json_v3.1&quot;,
+  &quot;type&quot;: &quot;response&quot;
+}
+</code></pre></div>
+<h3 id="calibrate-gyro">Calibrate gyro</h3>
+<p>The gyro can be calibrated by issuing the <code>calibrate_gyro</code> command:</p>
+<div class="highlight"><pre><span></span><code>{&quot;command&quot;:&quot;calibrate_gyro&quot;}
+</code></pre></div>
+<p>The response will be as follows if the calibration is successful. If unsuccessful, <code>success</code> will be <code>false</code>, and a non-empty <code>error_message</code> will be provided.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;response_to&quot;: &quot;calibrate_gyro&quot;,
+  &quot;success&quot;: true,
+  &quot;error_message&quot;: &quot;&quot;,
+  &quot;result&quot;: null,
+  &quot;format&quot;: &quot;json_v3.1&quot;,
+  &quot;type&quot;: &quot;response&quot;
+}
+</code></pre></div>
+<h3 id="trigger-ping">Trigger ping</h3>
+<p>In setups where multiple acoustic sensors are used it can be useful to control the pinging of each acoustic sensor individually. By setting the configuration <code>acoustic_enabled = false</code> the pinging of the DVL can be externally controlled. Up to 15 external trigger commands can be queued by issuing the <code>trigger_ping</code> command. The DVL will execute each ping in quick succession until no more commands are in the queue.</p>
+<div class="highlight"><pre><span></span><code>{&quot;command&quot;:&quot;trigger_ping&quot;}
+</code></pre></div>
+<p>The response will be as follows if the calibration is successful. If queue is full, <code>success</code> will be <code>false</code>, and a non-empty <code>error_message</code> will be provided.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;response_to&quot;: &quot;trigger_ping&quot;,
+  &quot;success&quot;: true,
+  &quot;error_message&quot;: &quot;&quot;,
+  &quot;result&quot;: null,
+  &quot;format&quot;: &quot;json_v3.1&quot;,
+  &quot;type&quot;: &quot;response&quot;
+}
+</code></pre></div>
+<h3 id="configuration-over-json">Configuration over JSON</h3>
+<h4 id="configuration-parameters">Configuration parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>speed_of_sound</td>
+<td>Speed of sound (1000-2000 m/s). Integer</td>
+</tr>
+<tr>
+<td>mounting_rotation_offset</td>
+<td>See the definition of the <a href="../axes#vehicle-frame">vehicle frame</a> of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer</td>
+</tr>
+<tr>
+<td>acoustic_enabled</td>
+<td><code>true</code> for normal operation of the DVL,<code>false</code> when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air)</td>
+</tr>
+<tr>
+<td>dark_mode_enabled</td>
+<td><code>false</code> when the LED operates as <a href="../interfaces#led-signals">normal</a>, <code>true</code> for no blinking of the LED (e.g. if the LED is interfering with a camera)</td>
+</tr>
+<tr>
+<td>range_mode</td>
+<td><code>auto</code> when operating as normal, otherwise see <a href="../dvl-protocol#range-mode-configuration">range mode configuration</a></td>
+</tr>
+<tr>
+<td>periodic_cycling_enabled</td>
+<td><code>true</code> for normal operation where the DVL periodically searches for bottom lock shorter than the existing bottom lock, <code>false</code> if periodic cycling is disabled</td>
+</tr>
+</tbody>
+</table>
+<h4 id="fetching-current-configuration">Fetching current configuration</h4>
+<p>The current configuration of the DVL can be obtained by issuing the <code>get_config</code> command:</p>
+<div class="highlight"><pre><span></span><code>{&quot;command&quot;: &quot;get_config&quot;}
+</code></pre></div>
+<p>If the configuration is successfully fetched, the response will be in the following format. If not, <code>success</code> will be false, a non-empty <code>error_message</code> string will be provided, and <code>result</code> will be <code>null</code>.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;response_to&quot;:&quot;get_config&quot;,
+  &quot;success&quot;:true,
+  &quot;error_message&quot;:&quot;&quot;,
+  &quot;result&quot;:{
+    &quot;speed_of_sound&quot;:1475.00,
+    &quot;acoustic_enabled&quot;:true,
+    &quot;dark_mode_enabled&quot;:false,
+    &quot;mounting_rotation_offset&quot;:20.00,
+    &quot;range_mode&quot;:&quot;auto&quot;,
+    &quot;periodic_cycling_enabled&quot;:true
+  },
+  &quot;format&quot;:&quot;json_v3.1&quot;,
+  &quot;type&quot;:&quot;response&quot;
+}
+</code></pre></div>
+<h4 id="setting-configuration-parameters">Setting configuration parameters</h4>
+<p>Setting of configuration parameters can be carried out by issuing a <code>set_config</code> in the following format, including those parameters which are to be set:</p>
+<div class="highlight"><pre><span></span><code>{&quot;command&quot;:&quot;set_config&quot;,&quot;parameters&quot;:{&quot;speed_of_sound&quot;:1480}}
+</code></pre></div>
+<p>If the parameters are successfully set, the response will be in the following format. If not, <code>success</code> will be false, and a non-empty <code>error_message</code> string will be provided.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;response_to&quot;: &quot;set_config&quot;,
+  &quot;success&quot;: true,
+  &quot;error_message&quot;: &quot;&quot;,
+  &quot;result&quot; :null,
+  &quot;format&quot;: &quot;json_v3.1&quot;,
+  &quot;type&quot;: &quot;response&quot;
+}
+</code></pre></div>
+<h2 id="serial-protocol">Serial Protocol</h2>
+<h3 id="overview_1">Overview</h3>
+<p>The default serial communication format is 115200 8-N-1 (no hardware flow control). Release 2.6.1 and later allow different baud rates through GUI configuration.</p>
+<p>Packets sent to and received from the DVL start with a <code>w</code> and end with LF, CR+LF, or CR. The packet format is:</p>
+<table>
+<thead>
+<tr>
+<th>Start byte</th>
+<th>Direction</th>
+<th>Command</th>
+<th>Options (0 to many)</th>
+<th>Checksum</th>
+<th>End byte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>w</code></td>
+<td><code>c</code> or <code>r</code></td>
+<td><code>x</code></td>
+<td><code>,[option]</code></td>
+<td><code>*xx</code></td>
+<td><code>\n</code>, <code>\r\n</code>, or <code>\r</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>Direction</code> is <code>c</code> (short for 'command') for packets sent to the DVL, and <code>r</code> (short for 'response') for packets sent from the DVL.
+The commands can be sent from a terminal program that supports sending a full line at a time. The timeout between characters is approximately 10 ms.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please verify the baud rate configuration in the GUI if you are unable to communicate with the default baud rate.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The checksum is optional when sending commands to the DVL. The DVL always returns a checksum. The checksum algorithm
+is CRC-8 and it is formatted as a hexadecimal number using 2 lower-case characters (ex: <code>*c3</code>). See <a href="#checksum">below</a> for details.</p>
+</div>
+<h3 id="command-overview">Command overview</h3>
+<p>The commands in the table are shown without the checksum and without the mandatory line ending (any of <code>\n</code>, <code>\r\n</code>, or <code>\r</code>) for readability. In all cases, the response to a submitted command may be <code>wrn</code>, <code>wr?</code>, or <code>wr!</code> (see below for details), but only the format of a successful response is listed.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Response</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wcv</code></td>
+<td>Get protocol version</td>
+<td><code>wrv,</code><em>[major],[minor],[patch]</em></td>
+<td>Protocol version. eg: <code>wrv,2.5.0</code></td>
+</tr>
+<tr>
+<td><code>wcw</code></td>
+<td>Get product detail</td>
+<td><code>wrw,</code><em>[name]</em>,<em>[version]</em>,<em>[chipID]</em>,<em>[IP address]</em></td>
+<td>Where type is dvl, name is product name, version is software version, chip ID is the chip ID and <em>optionally</em> the IP address if connected to DHCP server: eg: <code>wrw,dvl-a50,2.2.1,0xfedcba98765432</code> or <code>wrw,dvl-a50,2.2.1,0xfedcba98765432,10.11.12.140</code></td>
+</tr>
+<tr>
+<td><code>wcs,</code><em>[configuration parameters]</em></td>
+<td>Set configuration parameters</td>
+<td><code>wra</code></td>
+<td>Successfully set the specified configuration parameters. See <a href="#configuration-over-serial">Configuration</a> for details</td>
+</tr>
+<tr>
+<td><code>wcc</code></td>
+<td>Get current configuration</td>
+<td><code>wrc,</code><em>[configuration parameters]</em></td>
+<td>Entire current configuration. See <a href="#configuration-over-serial">Configuration</a> for details</td>
+</tr>
+<tr>
+<td><code>wcr</code></td>
+<td>Reset dead reckoning</td>
+<td><code>wra</code></td>
+<td>Successfully started a new <a href="../dead-reckoning#starting-dead-reckoning">dead reckoning</a> run</td>
+</tr>
+<tr>
+<td><code>wcx</code></td>
+<td>Trigger ping</td>
+<td><code>wra</code></td>
+<td>Successfully queued a ping</td>
+</tr>
+<tr>
+<td><code>wcg</code></td>
+<td>Calibrate gyro</td>
+<td><code>wra</code></td>
+<td>Successfully calibrated gyro</td>
+</tr>
+<tr>
+<td><code>wcp</code></td>
+<td>Change serial output protocol</td>
+<td><code>wra</code></td>
+<td>Successfully changed output protocol</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wrz,</code><em>[details below]</em></td>
+<td>Velocities calculated</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wru,</code><em>[details below]</em></td>
+<td>Transducer information</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wrp,</code><em>[details below]</em></td>
+<td><a href="../dead-reckoning">Dead reckoning</a> report</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wrx,</code><em>[details below]</em></td>
+<td>DEPRECATED: Velocities calculated (old format)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wrt,</code><em>[details below]</em></td>
+<td>DEPRECATED: Transducer information (old format)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wr?</code></td>
+<td>Malformed request: packet cannot be understood or no newline received before timeout</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wr!</code></td>
+<td>Malformed request: packet does not match the given checksum</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>wrn</code></td>
+<td>Not acknowledged (nack): an error occurred when handling the packet</td>
+</tr>
+</tbody>
+</table>
+<h3 id="velocity-report-wrz">Velocity report (wrz)</h3>
+<p>A velocity report is outputted for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.</p>
+<p>The X, Y, and Z axes are with respect to <a href="../axes#body-frame">body frame</a> of the DVL, or the <a href="../axes#vehicle-frame">vehicle frame</a> if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.</p>
+<p>The report has the following format:
+<code>wrz,</code><em>[vx],[vy],[vz],[valid],[altitude],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]</em></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vx</td>
+<td>Velocity in x direction (m/s)</td>
+</tr>
+<tr>
+<td>vy</td>
+<td>Velocity in y direction (m/s)</td>
+</tr>
+<tr>
+<td>vz</td>
+<td>Velocity in z direction (m/s)</td>
+</tr>
+<tr>
+<td>valid</td>
+<td>If <code>y</code>, the DVL has a lock on the reflecting surface, and the altitude and velocities are valid (y/n)</td>
+</tr>
+<tr>
+<td>altitude</td>
+<td>Measured altitude to the bottom (m)</td>
+</tr>
+<tr>
+<td>fom</td>
+<td>Figure of merit, a measure of the accuracy of the velocities (m/s)</td>
+</tr>
+<tr>
+<td>covariance</td>
+<td>Covariance matrix for the velocities. The figure of merit is calculated from this. 9 entries ((m/s)^2) separated by ;</td>
+</tr>
+<tr>
+<td>time_of_validity</td>
+<td>Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds)</td>
+</tr>
+<tr>
+<td>time_of_transmission</td>
+<td>Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds)</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Milliseconds since last velocity report (ms)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use.</td>
+</tr>
+</tbody>
+</table>
+<p>Example where all velocities are valid:</p>
+<div class="highlight"><pre><span></span><code>wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
+</code></pre></div>
+<h3 id="transducer-report-wru">Transducer report (wru)</h3>
+<p>A transducer report is outputted for each of the four transducers of the DVL for each velocity calculation of the DVL. The rate will be the same as that of the velocity report. If the transducer did not receive a signal which could be successfully decoded, <code>distance</code> will be set to -1, and <code>velocity</code> will be set to 0. RSSI and NSD will be outputted in all cases.</p>
+<p>The report has the following format:
+<code>wru,</code><em>[id],[velocity],[distance],[rssi],[nsd]</em></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Transducer number</td>
+</tr>
+<tr>
+<td>velocity</td>
+<td>Velocity in the direction of the transducer (m/s)</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>Distance (parallel to the transducer beam, i.e. not the vertical distance) to the reflecting surface from this transducer (m)</td>
+</tr>
+<tr>
+<td>rssi</td>
+<td>Received signal strength indicator: strength of the signal received by this transducer (dBm)</td>
+</tr>
+<tr>
+<td>nsd</td>
+<td>Noise spectral density: strength of the background noise received by this transducer (dBm)</td>
+</tr>
+</tbody>
+</table>
+<p>Example where all data is valid:</p>
+<div class="highlight"><pre><span></span><code>wru,0,0.070,1.10,-40,-95*9c
+wru,1,-0.500,1.25,-62,-104*f0
+wru,2,2.200,1.40,-56,-98*18
+wru,3,1.800,1.35,-58,-96*a3
+</code></pre></div>
+<h3 id="dead-reckoning-report-wrp">Dead reckoning report (wrp)</h3>
+<p>A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by <a href="../dead-reckoning">dead reckoning</a>, with respect to a <a href="../dead-reckoning#frame">frame</a> defined by the axes of the DVL's <a href="../axes#body-frame">body frame</a>, or <a href="../axes#vehicle-frame">vehicle frame</a> if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.</p>
+<p>The format is:
+<code>wrp,</code><em>[time_stamp],[x],[y],[z],[pos_std],[roll],[pitch],[yaw],[status]</em></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time_stamp</td>
+<td>Time stamp of report (Unix timestamp in seconds)</td>
+</tr>
+<tr>
+<td>x</td>
+<td>Distance in X direction (m)</td>
+</tr>
+<tr>
+<td>y</td>
+<td>Distance in Y direction (m)</td>
+</tr>
+<tr>
+<td>z</td>
+<td>Distance in downward direction (m)</td>
+</tr>
+<tr>
+<td>pos_std</td>
+<td>Standard deviation (Figure of merit) for position (m)</td>
+</tr>
+<tr>
+<td>roll</td>
+<td>Rotation around X axis (degrees)</td>
+</tr>
+<tr>
+<td>pitch</td>
+<td>Rotation around Y axis (degrees)</td>
+</tr>
+<tr>
+<td>yaw</td>
+<td>Rotation around Z axis, i.e. heading (degrees)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Reports if there are any issues with the DVL (0 if no errors, 1 otherwise)</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,0*de
+wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,0*e2
+</code></pre></div>
+<h3 id="reset-dead-reckoning-wcr">Reset dead reckoning (wcr)</h3>
+<p>Dead reckoning can be reset by issuing the <code>wcr</code> command. The reply will be an ack (<code>wra</code>) if the reset is successful, and a nak (<code>wrn</code>) if not.</p>
+<h3 id="calibrate-gyro-wcg">Calibrate gyro (wcg)</h3>
+<p>The gyro can be calibrated by issuing the <code>wcg</code> command.  The reply will be an ack (<code>wra</code>) if the reset is successful, and a nak (<code>wrn</code>) if not.</p>
+<h3 id="trigger-ping-wcx">Trigger ping (wcx)</h3>
+<p>In setups where multiple acoustic sensors are used it can be useful to control the pinging of each acoustic sensor individually. By setting the configuration <code>acoustic_enabled = n</code> the pinging of the DVL can be externally controlled. Up to 15 external trigger commands can be queued by issuing the <code>wcx</code> command. The DVL will execute each ping in quick succession until no more commands are in the queue.</p>
+<p>The reply will be an ack (<code>wra</code>) if the command is successful, and a nak (<code>wrn</code>) if queue is full.</p>
+<h3 id="change-serial-output-protocol-wcp">Change serial output protocol (wcp)</h3>
+<p>The serial output protocol in use can configured by issuing the <code>wcp</code> command. The selected protocol is persistent over reboots.</p>
+<div class="highlight"><pre><span></span><code>wcp,[protocol number]
+</code></pre></div>
+<p>The supported protocols are:</p>
+<table>
+<thead>
+<tr>
+<th>Protocol number</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Output disabled</td>
+<td>No output on serial. Recommended if serial port is not used to lower latency on ethernet protocols.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>WL - Serial V1 and V2</td>
+<td>All output including the deprecated <code>wrx</code> and <code>wrt</code> sentences.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PD6</td>
+<td>PD6 protocol output. See <a href="#pd6-protocol-tcpserial">PD6 protocol description</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>WL - Serial V2</td>
+<td>All output excluding the deprecated <code>wrx</code> and <code>wrt</code> sentences.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Not used</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Not used</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PD4</td>
+<td>PD4 protocol output See <a href="#pd4-protocol-tcpserial">PD4 protocol description</a></td>
+</tr>
+</tbody>
+</table>
+<p>The reply will be an ack (<code>wra</code>) if the protocol change is successful, and a nak (<code>wrn</code>) if not.</p>
+<p>Example setting configuring output to use protocol number 3:</p>
+<div class="highlight"><pre><span></span><code>wcp,3
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to release 2.6.1 protocol number 1 was named <code>Backward compatible</code> and protocol number 3 was named <code>Latest</code>. There is no change in functionality.</p>
+</div>
+<h3 id="configuration-over-serial">Configuration over serial</h3>
+<h4 id="configuration-parameters_1">Configuration parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>speed_of_sound</td>
+<td>Speed of sound (1000-2000 m/s). Float</td>
+</tr>
+<tr>
+<td>mounting_rotation_offset</td>
+<td>See the definition of the <a href="../axes#vehicle-frame">vehicle frame</a> of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float</td>
+</tr>
+<tr>
+<td>acoustic_enabled</td>
+<td><code>y</code> for normal operation of the DVL,<code>n</code> when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air)</td>
+</tr>
+<tr>
+<td>dark_mode_enabled</td>
+<td><code>n</code> when the LED operates as <a href="../interfaces#led-signals">normal</a>. <code>y</code> for no blinking of LED (e.g. if the LED is interfering with a camera)</td>
+</tr>
+<tr>
+<td>range_mode</td>
+<td><code>auto</code> when operating as normal, otherwise see <a href="../dvl-protocol#range-mode-configuration">range mode configuration</a></td>
+</tr>
+<tr>
+<td>periodic_cycling_enabled</td>
+<td><code>y</code> when operating as normal, otherwise <code>n</code>. See <a href="../dvl-protocol#configuration-over-json">Configuration over JSON</a> for details</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For backward compatibility the <code>range_mode</code> and <code>periodic_cycling_enabled</code> parameters are optional when setting the configuration. They will always be returned when reading the configuration (<code>wcc</code>).
+Speed of sound and mounting rotation was changed from integer to float in serial protocol 2.4.0</p>
+</div>
+<h4 id="fetching-current-configuration_1">Fetching current configuration</h4>
+<p>The current configuration of the DVL can be obtained by issuing the <code>wcc</code> command.</p>
+<p>If the configuration is successfully fetched, the response will be in the following format. If not, a nak <code>wrn</code> will be returned.</p>
+<div class="highlight"><pre><span></span><code>wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode],[periodic_cycling_enabled]
+</code></pre></div>
+<h4 id="setting-configuration-parameters_1">Setting configuration parameters</h4>
+<p>Setting of configuration parameters can be carried out by issuing the <code>wcs</code> command in the following format.</p>
+<div class="highlight"><pre><span></span><code>wcs,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode],[periodic_cycling_enabled]
+</code></pre></div>
+<p>Those parameters which are not to be set can be left blank.</p>
+<p>Example for setting dark mode without changing the other parameters:</p>
+<div class="highlight"><pre><span></span><code>wcs,,,,y,,
+</code></pre></div>
+<p>Example for setting speed of sound to 1450 m/s and disabling acoustics, without changing the other parameters:</p>
+<div class="highlight"><pre><span></span><code>wcs,1450,,n,,,
+</code></pre></div>
+<p>The response will be an ack <code>wra</code> if the parameters are successfully set, a nak <code>wrn</code> if the command was successfully parsed but the parameters were not successfully set, and a malformed request <code>wr?</code> if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either <code>speed_of_sound</code> or <code>mounting_rotation_offset</code> was not an integer.</p>
+<p>The new configuration will not be returned in the response, but can be obtained by issuing a <code>wcc</code> command as above.</p>
+<h3 id="velocity-report-old-format-wrx-deprecated">Velocity report, old format (wrx) [Deprecated]</h3>
+<p>Same purpose as the <a href="#velocity-report">velocity report</a>, but in an older format:</p>
+<p><code>wrx,</code><em>[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]</em></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>Milliseconds since last velocity report (ms)</td>
+</tr>
+<tr>
+<td>vx</td>
+<td>Velocity in x direction (m/s)</td>
+</tr>
+<tr>
+<td>vy</td>
+<td>Velocity in y direction (m/s)</td>
+</tr>
+<tr>
+<td>vz</td>
+<td>Velocity in z direction (m/s)</td>
+</tr>
+<tr>
+<td>fom</td>
+<td>Figure of merit, a measure of the accuracy of the velocities  (m/s)</td>
+</tr>
+<tr>
+<td>altitude</td>
+<td>Distance to the reflecting surface along Z axis (m)</td>
+</tr>
+<tr>
+<td>valid</td>
+<td>If <code>y</code>, the DVL has lock on the reflecting surface, and the altitude and velocities are valid (y/n)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use.</td>
+</tr>
+</tbody>
+</table>
+<p>Example where velocities are valid:</p>
+<div class="highlight"><pre><span></span><code>wrx,112.83,0.007,0.017,0.006,0.000,0.93,y,0*d2
+wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
+wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
+</code></pre></div>
+<p>Example where velocities and altitude are not valid and a high temperature warning occurs:</p>
+<div class="highlight"><pre><span></span><code>wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
+wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
+wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
+</code></pre></div>
+<h3 id="transducer-report-old-format-wrt-deprecated">Transducer report, old format (wrt) [Deprecated]</h3>
+<p>Same purpose as the <a href="#transducer-report">transducer report</a>, but in an older format, and combining the data of all four transducers:</p>
+<p><code>wrt,</code><em>[dist_1],[dist_2],[dist_3],[dist_4]</em></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dist_1</td>
+<td>Distance (parallel to the transducer beam, i.e. not the vertical distance) to reflecting surface from transducer 1 (m)</td>
+</tr>
+<tr>
+<td>dist_2</td>
+<td>Distance to reflecting surface from transducer 2 (m)</td>
+</tr>
+<tr>
+<td>dist_3</td>
+<td>Distance to reflecting surface from transducer 3 (m)</td>
+</tr>
+<tr>
+<td>dist_4</td>
+<td>Distance to reflecting surface from transducer 4 (m)</td>
+</tr>
+</tbody>
+</table>
+<p>Example where all distances are valid:</p>
+<div class="highlight"><pre><span></span><code>wrt,15.00,15.20,14.90,14.20*b1
+wrt,14.90,15.10,14.80,14.10*ac
+</code></pre></div>
+<p>Example where distance is not valid for transducer 4:</p>
+<div class="highlight"><pre><span></span><code>wrt,14.90,15.10,14.80,-1.00*53
+wrt,15.00,15.20,14.90,-1.00*71
+</code></pre></div>
+<h3 id="checksum">Checksum</h3>
+<p>The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
+Checksum is formatted as a hexadecimal number using 2 lower-case characters (ex: <code>*c3</code>).</p>
+<p>Compatible implementations:</p>
+<ul>
+<li>Python 3: <a href="https://pypi.org/project/crcmod/">crcmod</a> <code>crcmod.predefined.mkPredefinedCrcFun("crc-8")</code></li>
+<li>Golang: <a href="github.com/sigurn/crc8">github.com/sigurn/crc8</a> <code>crc8.MakeTable(crc8.CRC8)</code></li>
+</ul>
+<p>Example for how to verify checksum using Python 3 and <a href="https://pypi.org/project/crcmod/">crcmod</a>:</p>
+<div class="highlight"><pre><span></span><code>crc = crcmod.predefined.mkPredefinedCrcFun(&quot;crc-8&quot;)
+sentence = b&quot;wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39&quot;
+data, checksum = sentence.split(b&quot;*&quot;)
+
+if crc(data) == int(checksum, 16):
+    print(&quot;CRC valid&quot;)
+else:
+    print(&quot;CRC invalid&quot;)
+</code></pre></div>
+<p>The <a href="https://pypi.org/project/crcmod/">crcmod</a> python package can generate code in other languages. Here is an example (subject to the <a href="https://opensource.org/licenses/MIT">MIT License</a>) for C which should be straightforward to adapt to other languages.</p>
+<div class="highlight"><pre><span></span><code>static const uint8_t lookup_table[256] = {
+    0x00U,0x07U,0x0EU,0x09U,0x1CU,0x1BU,0x12U,0x15U,
+    0x38U,0x3FU,0x36U,0x31U,0x24U,0x23U,0x2AU,0x2DU,
+    0x70U,0x77U,0x7EU,0x79U,0x6CU,0x6BU,0x62U,0x65U,
+    0x48U,0x4FU,0x46U,0x41U,0x54U,0x53U,0x5AU,0x5DU,
+    0xE0U,0xE7U,0xEEU,0xE9U,0xFCU,0xFBU,0xF2U,0xF5U,
+    0xD8U,0xDFU,0xD6U,0xD1U,0xC4U,0xC3U,0xCAU,0xCDU,
+    0x90U,0x97U,0x9EU,0x99U,0x8CU,0x8BU,0x82U,0x85U,
+    0xA8U,0xAFU,0xA6U,0xA1U,0xB4U,0xB3U,0xBAU,0xBDU,
+    0xC7U,0xC0U,0xC9U,0xCEU,0xDBU,0xDCU,0xD5U,0xD2U,
+    0xFFU,0xF8U,0xF1U,0xF6U,0xE3U,0xE4U,0xEDU,0xEAU,
+    0xB7U,0xB0U,0xB9U,0xBEU,0xABU,0xACU,0xA5U,0xA2U,
+    0x8FU,0x88U,0x81U,0x86U,0x93U,0x94U,0x9DU,0x9AU,
+    0x27U,0x20U,0x29U,0x2EU,0x3BU,0x3CU,0x35U,0x32U,
+    0x1FU,0x18U,0x11U,0x16U,0x03U,0x04U,0x0DU,0x0AU,
+    0x57U,0x50U,0x59U,0x5EU,0x4BU,0x4CU,0x45U,0x42U,
+    0x6FU,0x68U,0x61U,0x66U,0x73U,0x74U,0x7DU,0x7AU,
+    0x89U,0x8EU,0x87U,0x80U,0x95U,0x92U,0x9BU,0x9CU,
+    0xB1U,0xB6U,0xBFU,0xB8U,0xADU,0xAAU,0xA3U,0xA4U,
+    0xF9U,0xFEU,0xF7U,0xF0U,0xE5U,0xE2U,0xEBU,0xECU,
+    0xC1U,0xC6U,0xCFU,0xC8U,0xDDU,0xDAU,0xD3U,0xD4U,
+    0x69U,0x6EU,0x67U,0x60U,0x75U,0x72U,0x7BU,0x7CU,
+    0x51U,0x56U,0x5FU,0x58U,0x4DU,0x4AU,0x43U,0x44U,
+    0x19U,0x1EU,0x17U,0x10U,0x05U,0x02U,0x0BU,0x0CU,
+    0x21U,0x26U,0x2FU,0x28U,0x3DU,0x3AU,0x33U,0x34U,
+    0x4EU,0x49U,0x40U,0x47U,0x52U,0x55U,0x5CU,0x5BU,
+    0x76U,0x71U,0x78U,0x7FU,0x6AU,0x6DU,0x64U,0x63U,
+    0x3EU,0x39U,0x30U,0x37U,0x22U,0x25U,0x2CU,0x2BU,
+    0x06U,0x01U,0x08U,0x0FU,0x1AU,0x1DU,0x14U,0x13U,
+    0xAEU,0xA9U,0xA0U,0xA7U,0xB2U,0xB5U,0xBCU,0xBBU,
+    0x96U,0x91U,0x98U,0x9FU,0x8AU,0x8DU,0x84U,0x83U,
+    0xDEU,0xD9U,0xD0U,0xD7U,0xC2U,0xC5U,0xCCU,0xCBU,
+    0xE6U,0xE1U,0xE8U,0xEFU,0xFAU,0xFDU,0xF4U,0xF3U,
+};
+
+uint8_t crc8(uint8_t *message, int message_length) {
+    uint8_t checksum = 0;
+    while (message_length &gt; 0) {
+        checksum = lookup_table[*message ^ checksum];
+        message++;
+        message_length--;
+    }
+    return checksum;
+}
+</code></pre></div>
+<h2 id="pd6-protocol-tcpserial">PD6 protocol (TCP/Serial)</h2>
+<h3 id="overview_2">Overview</h3>
+<p>The PD6 support allows for integration with equipment that may already have a PD6 protocol interface, removing the necessity to create a driver based on the standard Water Linked protocol.
+PD6 protocol is supported for output via serial and ethernet.
+PD6 protocol over TCP is always enabled. The port in use is configurable in the GUI. The default port is TCP 1037.
+The serial output can be configured to output PD6 using the <a href="#change-serial-output-protocol-wcp">Change serial output protocol</a> command.</p>
+<h3 id="command-overview_1">Command overview</h3>
+<p>Sentences TS, BI and BD are filled with relevant numbers. All other sentences are set to zero values.</p>
+<h4 id="timing-and-scaling-data-ts">Timing and scaling data (TS)</h4>
+<p><code>:TS,YYMMDDHHmmsshh,SS.S,+TT.T,DDDD.D,CCCC.C,BBB &lt;CR&gt;&lt;LF&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Explanation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YYMMDDHHmmsshh</td>
+<td>Year, month, day, hour, minute, second, hundredths of seconds</td>
+<td>Report timestamp</td>
+</tr>
+<tr>
+<td>SS.S</td>
+<td>Salinity in parts per thousand (ppt).</td>
+<td>Always 0</td>
+</tr>
+<tr>
+<td>DDDD.D</td>
+<td>Depth of transducer face in meters.</td>
+<td>Always 0</td>
+</tr>
+<tr>
+<td>CCCC.C</td>
+<td>Speed of sound in meters per second.</td>
+<td>Configured speed of sound</td>
+</tr>
+<tr>
+<td>BBB</td>
+<td>Built-in Test (BIT) result code.</td>
+<td>Always 0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bottom-track-instrument-referenced-velocity-data-bi">Bottom track, instrument referenced velocity data (BI)</h4>
+<p><code>:BI,±XXXXX,±YYYYY,±ZZZZZ,±EEEEE,S &lt;CR&gt;&lt;LF&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Explanation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>±XXXXX</td>
+<td>X-axis velocity data in mm/s</td>
+<td>Current speed</td>
+</tr>
+<tr>
+<td>±YYYYY</td>
+<td>Y-axis velocity data in mm/s</td>
+<td>Current speed</td>
+</tr>
+<tr>
+<td>±ZZZZZ</td>
+<td>Z-axis velocity data in mm/s</td>
+<td>Current speed</td>
+</tr>
+<tr>
+<td>±EEEEE</td>
+<td>Error in velocity data in mm/s</td>
+<td>Current error</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Status of velocity</td>
+<td>A = good. V = bad</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Axis used in the BI sentence is the <a href="../axes/">vehicle frame</a>.</p>
+</div>
+<h4 id="bottom-track-earth-referenced-distance-data-bd">Bottom track, earth referenced distance data (BD)</h4>
+<p><code>:BD,±EEEEEEEE.EE,±NNNNNNNN.NN,±UUUUUUUU.UU,DDDD.DD,TTT.TT &lt;CR&gt;&lt;LF&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Explanation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>±EEEEEEEE.EE</td>
+<td>East distance in meters.</td>
+<td>Always 0</td>
+</tr>
+<tr>
+<td>±NNNNNNNN.NN</td>
+<td>North distance in meters.</td>
+<td>Always 0</td>
+</tr>
+<tr>
+<td>±UUUUUUUU.UU</td>
+<td>Upward distance in meters.</td>
+<td>Always 0</td>
+</tr>
+<tr>
+<td>DDDD.DD</td>
+<td>Range to bottom in meters</td>
+<td>Current altitude</td>
+</tr>
+<tr>
+<td>TTT.TT</td>
+<td>Time since last good velocity estimate in seconds.</td>
+<td>Always 0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bottom-track-ship-referenced-distance-data-bs">Bottom track, ship referenced distance data (BS)</h4>
+<ul>
+<li>In the 2.4.0 software release the BS values are always zero.</li>
+<li>As of the 2.4.4 software release the BS values are given by the actual velocity.</li>
+</ul>
+<p><code>:BS,±TTTTTTTT.TT,±LLLLLLLL.LL,±NNNNNNN.NN,S &lt;CR&gt;&lt;LF&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Explanation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>±TTTTTTTT.TT</td>
+<td>Transverse movement, (+ = Port to Starboard velocity relative to bottom) In mm/s</td>
+<td>Y axis velocity</td>
+</tr>
+<tr>
+<td>±LLLLLLLL.LL</td>
+<td>Longitudinal movement. (+ = Aft to Forward velocity relative to bottom) In mm/s</td>
+<td>X axis velocity</td>
+</tr>
+<tr>
+<td>±NNNNNNN.NN</td>
+<td>Ship velocity away from bottom in mm/s</td>
+<td>Z axis velocity</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Status of velocity</td>
+<td>A = good. V = bad</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-output">Example output</h4>
+<!-- Copied from wl-95050/protocols/protocol_pd6_test/TestPD6Encode -->
+
+<div class="highlight"><pre><span></span><code>:SA, +0.00, +0.00,  0.00
+:TS,22020812061800, 0.0, +0.0,   0.0,1475.0,  0
+:WI,    +0,    +0,    +0,    +0,V
+:WS,    +0,    +0,    +0,V
+:WE,    +0,    +0,    +0,V
+:WD,       +0.00,       +0.00,       +0.00,   0.00,  0.00
+:BI,  +123,  -420, +2000,    +0,A
+:BS,  -420,  +123, +2000,A
+:BE,    +0,    +0,    +0,V
+:BD,       +0.00,       +0.00,       +0.00,   5.32,  0.00
+</code></pre></div>
+<h2 id="range-mode-configuration">Range mode configuration</h2>
+<p>Range mode configuration can be used to instruct the DVL to only search for bottom lock in a limited altitude range. This can improve performance when operating in environments where you know the DVL minimum and/or maximum altitude. (Eg when operating in a river or pool)</p>
+<p>The format for configuring range mode can be as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Range specifier</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>The DVL will search for bottom lock in it's full operational area (Default)</td>
+</tr>
+<tr>
+<td><code>=a</code></td>
+<td>The DVL is locked to range mode <code>a</code> where <code>b</code> is a number from <code>0-4</code></td>
+</tr>
+<tr>
+<td><code>a&lt;=b</code></td>
+<td>The DVL will search for bottom lock within range mode <code>a</code> and <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<p>The available range modes are:</p>
+<table>
+<thead>
+<tr>
+<th>Range mode</th>
+<th>Lower altitude (m)</th>
+<th>Upper altitude (m)</th>
+<th>Update rate per second (Hz)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.05</td>
+<td>0.6</td>
+<td>15</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.3</td>
+<td>3.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.5</td>
+<td>14</td>
+<td>1 - 6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.7</td>
+<td>36</td>
+<td>7 - 8</td>
+</tr>
+<tr>
+<td>4</td>
+<td>15</td>
+<td>max</td>
+<td>2 - 4</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<ul>
+<li><code>=3</code> The DVL will search for bottom lock between 7.7 and 36m</li>
+<li><code>2&lt;=3</code> The DVL will search for bottom lock between 1.5 and 36m</li>
+</ul>
+<h2 id="pd4-protocol-tcpserial">PD4 protocol (TCP/Serial)</h2>
+<h3 id="overview_3">Overview</h3>
+<p>The PD4 string is intended for use with equipment that may already have a PD4 protocol interface, removing the necessity to create a driver based on the standard Water Linked protocol. PD4 protocol is supported for output via serial and ethernet. The PD4 protocol over TCP is always enabled. The port in use is configurable in the GUl. The default port is TCP 1038.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PD4 support was added in software release 2.5.2 and is experimental. Please give feedback on this feature.</p>
+</div>
+<h3 id="data-format">Data Format</h3>
+<p>PD4 is a binary protocol where fields are defined by their position in one message. 
+Data fields which use more than one byte are LittleEndian encoded.</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Data type</th>
+<th>used</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>DVL Data ID 7Dh</td>
+<td>y</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Data structure ( Always equal to 0)</td>
+<td>y</td>
+<td></td>
+</tr>
+<tr>
+<td>2,3</td>
+<td>Number of bytes</td>
+<td>y</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>System Config (0x10100011<sup id="fnref:system_config"><a class="footnote-ref" href="#fn:system_config">1</a></sup>)</td>
+<td>y</td>
+<td></td>
+</tr>
+<tr>
+<td>5,6</td>
+<td>X velocity bottom</td>
+<td>y</td>
+<td>mm/s</td>
+</tr>
+<tr>
+<td>7,8</td>
+<td>Y velocity bottom</td>
+<td>y</td>
+<td>mm/s</td>
+</tr>
+<tr>
+<td>9,10</td>
+<td>Z velocity bottom</td>
+<td>y</td>
+<td>mm/s</td>
+</tr>
+<tr>
+<td>11,12</td>
+<td>E velocity bottom</td>
+<td>y</td>
+<td>mm/s</td>
+</tr>
+<tr>
+<td>13,14</td>
+<td>BM1 range to bottom</td>
+<td>y</td>
+<td>cm</td>
+</tr>
+<tr>
+<td>15,16</td>
+<td>BM2 range to bottom</td>
+<td>y</td>
+<td>cm</td>
+</tr>
+<tr>
+<td>17,18</td>
+<td>BM3 range to bottom</td>
+<td>y</td>
+<td>cm</td>
+</tr>
+<tr>
+<td>19,20</td>
+<td>BM4 range to bottom</td>
+<td>y</td>
+<td>cm</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Bottom status</td>
+<td>y</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>22,23</td>
+<td>X-Velocity reference layer</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>24,25</td>
+<td>Y-Velocity reference layer</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>26,27</td>
+<td>Z-Velocity reference layer</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>28,29</td>
+<td>E-Velocity reference layer</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>30,31</td>
+<td>Reference layer start</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>32,33</td>
+<td>Reference layer end</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>34</td>
+<td>Reference layer status</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>35</td>
+<td>Time of first ping - hour</td>
+<td>y</td>
+<td>hours</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Time of first ping - minute</td>
+<td>y</td>
+<td>minutes</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Time of first ping - second</td>
+<td>y</td>
+<td>seconds</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Time of first ping - hundreths</td>
+<td>y</td>
+<td>centi-seconds</td>
+</tr>
+<tr>
+<td>39,40</td>
+<td>Bit result</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>41,42</td>
+<td>Speed of Sound</td>
+<td>y</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td>43,44</td>
+<td>Temperature</td>
+<td>n</td>
+<td></td>
+</tr>
+<tr>
+<td>45,46</td>
+<td>Checksum</td>
+<td>y</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h4 id="notes">Notes</h4>
+<p>To use the BM1-BM4 correctly you should use this translation. The numbering comes from the Transducer numbering (see image below)
+<strong>BM1</strong> is transducer 3
+<strong>BM2</strong> is transducer 1
+<strong>BM3</strong> is transducer 4
+<strong>BM4</strong> is transducer 2
+<img alt="dvl_a50_transducer_numbering" src="../../img/WL-21035-3_DVL-A50_Front_1600_transducers_crop.jpg" /></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:system_config">
+<p>Tells that the velocities are in ship coordinates, Tilt is used, Three beam not computed, and 600 Khz&#160;<a class="footnote-backref" href="#fnref:system_config" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../axes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Axes" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Axes
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../gui/dashboard/" class="md-footer__link md-footer__link--next" aria-label="Next: Dashboard" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Dashboard
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Water Linked 2018-2024
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/waterlinked/" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/waterlinked/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+    
+  </body>
+</html>

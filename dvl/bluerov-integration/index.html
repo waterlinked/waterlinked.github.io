@@ -1,0 +1,2246 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://waterlinked.github.io/dvl/bluerov-integration/">
+      
+      <link rel="icon" href="../../img/favicon_water_linked.ico">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.2.0">
+    
+    
+      
+        <title>DVL for BlueROV2 - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Open Sans";--md-code-font-family:""}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../img/waterlinked_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DVL for BlueROV2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/waterlinked/waterlinked.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../img/waterlinked_logo.png" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/waterlinked/waterlinked.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Underwater GPS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Underwater GPS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Underwater GPS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        G2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="G2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          G2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/reference-frames/" class="md-nav__link">
+        Reference frames
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4_1" type="checkbox" id="__nav_2_1_4_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4_1">
+        Topside
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Topside" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Topside
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/power-supply/" class="md-nav__link">
+        Power supply
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/network-settings/" class="md-nav__link">
+        Network settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4_2" type="checkbox" id="__nav_2_1_4_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4_2">
+        Baseline
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Baseline" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Baseline
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/antenna/" class="md-nav__link">
+        Antenna
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/receiver-d1/" class="md-nav__link">
+        Receiver-D1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4_3" type="checkbox" id="__nav_2_1_4_3" >
+      
+      <label class="md-nav__link" for="__nav_2_1_4_3">
+        Locator
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Locator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Locator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/locators/locator-a1/" class="md-nav__link">
+        Locator-A1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/locators/locator-d1/" class="md-nav__link">
+        Locator-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/locators/locator-u1/" class="md-nav__link">
+        Locator-U1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5" type="checkbox" id="__nav_2_1_5" >
+      
+      <label class="md-nav__link" for="__nav_2_1_5">
+        GUI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GUI" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/position/" class="md-nav__link">
+        Position
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/receivers/" class="md-nav__link">
+        Baseline
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/diagnostic/" class="md-nav__link">
+        Diagnostic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/diagnostic-report/" class="md-nav__link">
+        Diagnostic report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/warnings/" class="md-nav__link">
+        Warnings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/gui/demo-gui/" class="md-nav__link">
+        Demo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_6" type="checkbox" id="__nav_2_1_6" >
+      
+      <label class="md-nav__link" for="__nav_2_1_6">
+        Integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integration" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_6_2" type="checkbox" id="__nav_2_1_6_2" >
+      
+      <label class="md-nav__link" for="__nav_2_1_6_2">
+        BlueROV2 integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="BlueROV2 integration" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_1_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          BlueROV2 integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/bluerov-integration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/bluerov-integration-a1/" class="md-nav__link">
+        BlueROV2 & Locator-A1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/integration/bluerov-integration-u1/" class="md-nav__link">
+        BlueROV2 & Locator-U1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/sw-update/" class="md-nav__link">
+        Software updates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../underwater-gps/ugps-faq/" class="md-nav__link">
+        Underwater GPS FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Explorer Kit (retired)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Explorer Kit (retired)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Explorer Kit (retired)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/warnings/" class="md-nav__link">
+        Warnings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/power-supply/" class="md-nav__link">
+        Power supply
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/network-settings/" class="md-nav__link">
+        Network settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-d1/" class="md-nav__link">
+        Master-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/receiver-d1/" class="md-nav__link">
+        Receiver-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_9" type="checkbox" id="__nav_2_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_2_9">
+        Locators
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Locators" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Locators
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-a1/" class="md-nav__link">
+        Locator-A1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-d1/" class="md-nav__link">
+        Locator-D1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-s1/" class="md-nav__link">
+        Locator-S1 (obsolete)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/locators/locator-u1/" class="md-nav__link">
+        Locator-U1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_10" type="checkbox" id="__nav_2_2_10" >
+      
+      <label class="md-nav__link" for="__nav_2_2_10">
+        GUI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GUI" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/position/" class="md-nav__link">
+        Position
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/receivers/" class="md-nav__link">
+        Receivers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/diagnostic/" class="md-nav__link">
+        Diagnostic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/gui/api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer-kit/upgrader/" class="md-nav__link">
+        Software updates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        DVL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DVL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          DVL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-a50/" class="md-nav__link">
+        DVL-A50 — Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-a125/" class="md-nav__link">
+        DVL-A125 — Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        Networking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axes/" class="md-nav__link">
+        Axes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-protocol/" class="md-nav__link">
+        Protocol
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        GUI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/diagnostic-report/" class="md-nav__link">
+        Diagnostic report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/demo-gui/" class="md-nav__link">
+        Demo GUI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dead-reckoning/" class="md-nav__link">
+        Dead reckoning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" checked>
+      
+      <label class="md-nav__link" for="__nav_3_9">
+        Integration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DVL for BlueROV2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        DVL for BlueROV2
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parts-and-tools" class="md-nav__link">
+    Parts and tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Parts and tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-will-need" class="md-nav__link">
+    You will need
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separate-io-interface-from-dvl-a50" class="md-nav__link">
+    Separate I/O Interface from DVL-A50
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attaching-the-bluerov2-mounting-bracket" class="md-nav__link">
+    Attaching the BlueROV2 mounting bracket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-cable-lenght" class="md-nav__link">
+    Final cable lenght
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io-interface-preparation" class="md-nav__link">
+    I/O Interface preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-penetrator" class="md-nav__link">
+    Adding a penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-blank-penetrator" class="md-nav__link">
+    Removing a blank penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dvl-a50-penetrator" class="md-nav__link">
+    Install DVL-A50 penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinstall-io-interface-board" class="md-nav__link">
+    Reinstall I/O Interface Board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-bluerov2" class="md-nav__link">
+    Connect to BlueROV2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reassemble-bluerov2-electronics-enclosure" class="md-nav__link">
+    Reassemble BlueROV2 electronics enclosure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attach-dvl-a50-to-bluerov2" class="md-nav__link">
+    Attach DVL-A50 to BlueROV2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluerov-integration-dvl-ugps/" class="md-nav__link">
+        DVL with UGPS for BlueROV2
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sw-update/" class="md-nav__link">
+        Software updates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dvl-troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        DVL FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Modem
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modem" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Modem
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Modem-M64 (retired)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modem-M64 (retired)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Modem-M64 (retired)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m64/modem-m64/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m64/modem-m64-protocol/" class="md-nav__link">
+        Protocol
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Modem-M16
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modem-M16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modem-M16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m16/modem-m16/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m16/modem-m16-uart-interface/" class="md-nav__link">
+        Serial Interface
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modem-m16/modem-m16-faq/" class="md-nav__link">
+        M16 FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parts-and-tools" class="md-nav__link">
+    Parts and tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Parts and tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-will-need" class="md-nav__link">
+    You will need
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separate-io-interface-from-dvl-a50" class="md-nav__link">
+    Separate I/O Interface from DVL-A50
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attaching-the-bluerov2-mounting-bracket" class="md-nav__link">
+    Attaching the BlueROV2 mounting bracket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-cable-lenght" class="md-nav__link">
+    Final cable lenght
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io-interface-preparation" class="md-nav__link">
+    I/O Interface preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-penetrator" class="md-nav__link">
+    Adding a penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-blank-penetrator" class="md-nav__link">
+    Removing a blank penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dvl-a50-penetrator" class="md-nav__link">
+    Install DVL-A50 penetrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinstall-io-interface-board" class="md-nav__link">
+    Reinstall I/O Interface Board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-bluerov2" class="md-nav__link">
+    Connect to BlueROV2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reassemble-bluerov2-electronics-enclosure" class="md-nav__link">
+    Reassemble BlueROV2 electronics enclosure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attach-dvl-a50-to-bluerov2" class="md-nav__link">
+    Attach DVL-A50 to BlueROV2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/waterlinked/waterlinked.github.io/edit/master/docs/dvl/bluerov-integration.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>DVL for BlueROV2</h1>
+                
+                <h2 id="introduction">Introduction</h2>
+<p>The Water Linked <a href="https://www.waterlinked.com/dvl">DVLs</a> are designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between receipt of a DVL and having it up and running, the DVLs are shipped with an attached I/O interface, providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs, the DVL has to be integrated with the on-board electronics through a penetrator or a subsea connector.</p>
+<p>This guide details how the <a href="../dvl-a50/">DVL-A50</a> can be integrated with the BlueROV2. Exactly the same procedure can be carried out for the <a href="../dvl-a125/">DVL-A125</a>.</p>
+<h2 id="parts-and-tools">Parts and tools</h2>
+<p>What parts and tools needed depends on whether you intend to permanently attach the DVL-A50 to the BlueROV2, have it semi-permanently attached, or use a subsea connector for quick installation/removal.</p>
+<p>This guide details how to permanently attach the DVL-A50 to a BlueROV2.</p>
+<h3 id="you-will-need">You will need</h3>
+<p><img src="../../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg" alt="dvl-a50" width="300" height="300"></p>
+<ul>
+<li><a href="https://waterlinked.com/shop/dvl-a50-114#attr=8,53">DVL-A50</a></li>
+</ul>
+<p><img alt="bluerov2_front" src="../../img/bluerov2_front_300x300.png" /></p>
+<ul>
+<li><a href="https://bluerobotics.com/store/rov/bluerov2/bluerov2/">BlueROV2</a></li>
+</ul>
+<p><img src="../../img/ETHSWITCH-R1-RP-1024x768.jpg" alt="ETHSWITCH-R1-RP" width="300" height="300"></p>
+<ul>
+<li>Small ethernet switch. The one pictured here is from <a href="https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/">BlueRobotics</a>, and ideal for use in the BlueROV2.</li>
+</ul>
+<p><img src="https://waterlinked.com/web/image/product.product/115/image_1024/%5BWL-51000-1%5D%20DVL%20A50%20Mounting%20Bracket?unique=0a09975" alt="dvl-bracket" width="300" height="300"></p>
+<ul>
+<li><a href="https://waterlinked.com/shop/dvl-a50-mounting-bracket-115#attr=">DVL-A50 Bracket</a>. This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.</li>
+</ul>
+<p>You will also need:</p>
+<ul>
+<li><a href="https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/tool-hex-set-r1/">Hex Key Set</a> from Blue Robotics</li>
+<li><a href="https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10">Bulkhead Wrench</a> from Blue Robotics</li>
+<li><a href="https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29">Plug Wrench</a> from Blue Robotics</li>
+<li>(Optional) <a href="https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/">Cable Jacket Stripper</a> from Blue Robotics</li>
+<li><a href="https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&amp;attribute_package-quantity=1-Pack">M10-7.5mm-HC WetLink Penetrator</a> from Blue Robotics</li>
+<li><a href="https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/">Silicone grease</a></li>
+<li>5 mm universal drill bit</li>
+<li>2 x M5x12 mm stainless steel pan head screws (included with BlueROV2 mounting bracket)</li>
+<li>4 x M3x4 mm stainless steel countersunk flat head screws (included with BlueROV2 mounting bracket)</li>
+<li>Soldering iron</li>
+<li>Solder wire</li>
+<li>Wire cutter</li>
+<li>Tweezers or nose pliers</li>
+<li>Solder wick and/or desoldering pump</li>
+<li>Utility knife</li>
+<li>Wire stripping tool</li>
+<li>Zip ties</li>
+<li>4 x 30 cm (12") wires (options discussed under <a href="#connect-dvl-a50-and-bluerov2">Connect DVL-A50 and BlueROV2</a>). If possible, use 2 x red and 2 x black wires.</li>
+<li>15 cm (6") ethernet cable</li>
+</ul>
+<h2 id="preparation">Preparation</h2>
+<h3 id="separate-io-interface-from-dvl-a50">Separate I/O Interface from DVL-A50</h3>
+<p>The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the I/O Interface board. We recommend you do so near the end where the I/O Interface board is to begin with.</p>
+<p><img alt="cut-io-interface-rev3" src="../../img/cut-io-interface-rev3.jpeg" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The DVL-A50 cable is permanently attached and non-replaceable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!</p>
+</div>
+<h3 id="attaching-the-bluerov2-mounting-bracket">Attaching the BlueROV2 mounting bracket</h3>
+<ul>
+<li>Attach the BlueROV2 mounting bracket to the DVL-A50 using the 4 x M3x6 screws provided with the DVL-A50 BlueROV2 Integration Kit.</li>
+</ul>
+<p><img alt="attaching-mounting-bracket-to-dvl" src="../../img/screw_on_dvl_bracket_to_dvl.png" /></p>
+<p>The BlueROV2 mounting bracket can be attached to the BlueROV2 in one of the 2 places indicated in the image below (standard BlueROV2).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this configuration the DVL-A50 is pointing backwards meaning both the x-direction and the y-direction are flipped. Multiplying the velocity data in x- and y-direction with -1 will flip coordinates back again to the same perspective frame of the BlueROV2.</p>
+</div>
+<p><img alt="attaching-mounting-bracket-to-bluerov-standard" src="../../img/bluerov2-dvl-mounting-positions.png" /></p>
+<p>If your BlueROV2 has the Heavy Configuration upgrade, the BlueROV2 mounting bracket can be attached such that the DVL-A50 is within the BlueROV2 frame. This allows for a minimum working distance of 0 cm for the DVL-A50.</p>
+<p><img alt="attaching-mounting-bracket-to-bluerov-heavy" src="../../img/bluerov2-heavy-dvl-mounting-positions.png" /></p>
+<ul>
+<li>Mark 2 hole positions on the BlueROV2 frame for attaching the BlueROV2 mounting bracket and drill through the frame using a 5 mm universal drill bit.</li>
+</ul>
+<p><img alt="mark-hole-positions-in-bluerov-frame" src="../../img/mark-hole-positions-in-bluerov-frame.jpeg" /> <img alt="drilling-holes-in-bluerov-frame" src="../../img/drilling-holes-in-bluerov-frame.jpeg" /></p>
+<p>Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x16 mm screws. No need to secure the bracket in place as more work must be done on the cable end.</p>
+<p><img alt="check-a50-bracket-fit" src="../../img/check-a50-bracket-fit.jpeg" /></p>
+<h3 id="final-cable-lenght">Final cable lenght</h3>
+<p>With the DVL-A50 now attached to the BlueROV2 frame, find the appropriate cable length needed by leading the cable back to the penetrator end cap of the BlueROV2 and add the length of the electronics enclosure (30 cm) to the cable. This is the <em>minimum</em> required cable length.</p>
+<p><img alt="measure-cable-length-of-a50" src="../../img/measure-cable-length-of-a50.jpeg" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We recommend adding at least another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.</p>
+</div>
+<p>Cut the cable to the final length.</p>
+<p><img alt="cutting-final-cabel-length-a50" src="../../img/cutting-final-cabel-length-a50.jpeg" /></p>
+<h2 id="installation">Installation</h2>
+<p>The DVL-A50 will be permanently installed on the BlueROV2 with the I/O Interface board (supplied with the DVL-A50).</p>
+<h3 id="io-interface-preparation">I/O Interface preparation</h3>
+<p>To prepare the I/O Interface Board you will need:</p>
+<ul>
+<li>Soldering iron</li>
+<li>Wire cutter</li>
+<li>Tweezers or nose pliers</li>
+<li>Solder wick and/or desoldering pump</li>
+</ul>
+<p>Cut off the zip tie holding the cable onto the I/O Interface board.</p>
+<p><img alt="cut-zip-tie-io-interface" src="../../img/cut-zip-tie-io-interface.jpeg" /></p>
+<p>Cut off the individual wires soldered onto the I/O Interface board. Leave enough wire to grab onto with tweezers or nose pliers.</p>
+<p><img alt="remove-wires-io-interface" src="../../img/remove-wires-io-interface.jpeg" /></p>
+<p>Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove any excess solder from the now desoldered through hole pads.</p>
+<p><img alt="desoldered-io-interface" src="../../img/desoldered-io-interface.jpeg" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using too much force or heat may delaminate the I/O Interface PCB, rendering the I/O Interface board useless.</p>
+</div>
+<h3 id="adding-a-penetrator">Adding a penetrator</h3>
+<p>To add a penetrator to the cable you will need:</p>
+<ul>
+<li><a href="https://bluerobotics.com/store/cables-connectors/tools/wlp-plug-wrench-vp/?attribute_plug-hex-size=14+mm+Hex+%28for+5.5+mm%2C+6.5+mm%2C+7.5+mm%2C+8.5+mm+penetrators%29">Plug Wrench</a> from Blue Robotics</li>
+<li><a href="https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&amp;attribute_package-quantity=1-Pack">M10-7.5mm-HC WetLink Penetrator</a> from Blue Robotics</li>
+<li>(Optional) <a href="https://bluerobotics.com/store/cables-connectors/tools/cable-jacket-stripper/">Cable Jacket Stripper</a> from Blue Robotics</li>
+<li>Utility knife</li>
+</ul>
+<p>Strip off 25-30 cm of the cable jacket using a cable jacket stripper, a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping <a href="https://bluerobotics.com/learn/cable-stripping/">here</a>.</p>
+<p><img alt="stripped-a50-cable" src="../../img/stripped-a50-cable.jpeg" /></p>
+<p>Follow the <a href="https://bluerobotics.com/learn/wetlink-penetrator-installation-guide/">WetLink Penetrator Assembly Guide</a> by BlueRobotics to add a penetrator on the DVL-A50 cable.</p>
+<h3 id="removing-a-blank-penetrator">Removing a blank penetrator</h3>
+<p>To remove a blank penetrator from your BlueROV2, you will need the following tools:</p>
+<ul>
+<li>2.5 mm hex driver</li>
+<li><a href="https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10">Bulkhead Wrench</a> from Blue Robotics</li>
+</ul>
+<p>To ensure your ROV is completely powered off, please remove the battery completely from the 3” enclosure and place to the side.</p>
+<p><img alt="bluerov2-remove-battery" src="../../img/bluerov2-remove-battery-1024x768.jpg" /></p>
+<p>(Optional) Remove the fairings and buoyancy blocks by removing the self-tapping screws that hold the fairings to the frame.</p>
+<p><img alt="bluerov2-remove-fairings" src="../../img/bluerov2-remove-fairings-1024x674.png" /></p>
+<p>Remove the 4” electronics enclosure from the ROV by removing the M3x16 screws that mount the enclosure to the ROV cradle.</p>
+<p><img alt="bluerov2-remove-electronic" src="../../img/bluerov2-remove-electronic-1024x743.png" /></p>
+<p>Remove the Vent Plug from the Vent Penetrator Bolt on the electronics enclosure. Remove the 4″ tube and forward dome assembly from the rear end cap.</p>
+<p><img alt="bluerov2-remove-vent" src="../../img/bluerov2-remove-vent-1024x1024.jpg" /></p>
+<p>Remove a blank penetrator, sush as the one pictured below, from the 4” End Cap with the penetrator wrench.</p>
+<p><img alt="bluerov2-end-cap-remove" src="../../img/bluerov2-end-cap-remove-1024x576.jpg" /></p>
+<h3 id="install-dvl-a50-penetrator">Install DVL-A50 penetrator</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following images shows the old penetrator from BlueRobotics. The procedure is the same with the new WetLink penetrators.</p>
+</div>
+<p>To install DVL-A50 into the end cap, you will need the following parts and tools:</p>
+<ul>
+<li>DVL-A50 with installed cable penetrator</li>
+<li>Penetrator O-ring (included with <a href="https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&amp;attribute_package-quantity=1-Pack">M10-7.5mm-HC WetLink Penetrator</a> from Blue Robotics)</li>
+<li><a href="https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10">Bulkhead Wrench</a> from Blue Robotics</li>
+<li>Silicone Grease</li>
+<li>Isopropyl Alcohol Wipe</li>
+</ul>
+<p>Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.</p>
+<p>Remove the O-ring from the bag</p>
+<p>Install the O-ring onto the DVL-A50 cable penetrator and apply silicone grease to it.</p>
+<p><img alt="grease-o-ring-on-a50-penetrator" src="../../img/grease-o-ring-on-a50-penetrator.jpeg" /> <img alt="o-ring-on-a50-penetrator" src="../../img/o-ring-on-a50-penetrator.jpeg" /></p>
+<p>Push the wires throught the hole in the end cap where you previously removed a blank penetrator from.</p>
+<p><img alt="a50-wires-through-bluerov2-end-cap" src="../../img/a50-wires-through-bluerov2-end-cap.jpeg" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Since the penetrator has to be screwed on, adding a bit of tape around the end of the wires helps them stay untangles while turning. Also twisting the DVL-A50 cable in a clock-wise direction will aid in screwing on the penetrator.</p>
+</div>
+<p>Screw on the DVL-A50 cable penetrator to the end cap. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.</p>
+<p><img alt="screwed-in-a50-penetrator" src="../../img/screwed-in-a50-penetrator.jpeg" /> <img alt="tightened-a50-penetrator" src="../../img/tightened-a50-penetrator.jpeg" /></p>
+<h3 id="reinstall-io-interface-board">Reinstall I/O Interface Board</h3>
+<p>To reinstall the I/O Interface Board onto the DVL-A50 cable you will need:</p>
+<ul>
+<li>Wire stripping tool</li>
+<li>Soldering iron</li>
+<li>Solder wire</li>
+<li>Zip tie</li>
+</ul>
+<p>With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below. The blue pair can be removed as it is not used for the DVL-A50.</p>
+<p><img alt="stripped-wires-a50" src="../../img/stripped-wires-a50.jpeg" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complementing color, this is <strong>not</strong> the reality and only for reference). Keep track of which white wire is paired with which colored wire! Also note that the wiring in the images below differ from that of the table below. Please follow the table!</p>
+</div>
+<p>Re-solder the leads of the DVL-A50 cable to the I/O Interface board following the table below:</p>
+<table>
+<thead>
+<tr>
+<th>DVL-A50 cable</th>
+<th style="text-align: left;">I/O Interface pad</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Diameter (mm)</th>
+<th style="text-align: left;">AWG#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="4tp2p_black_lead" src="../../img/4tp2p_black_lead.png" /></td>
+<td style="text-align: left;">GND</td>
+<td style="text-align: left;">Power ground</td>
+<td style="text-align: left;">0.6 mm</td>
+<td style="text-align: left;">22</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_red_lead" src="../../img/4tp2p_red_lead.png" /></td>
+<td style="text-align: left;">VIN</td>
+<td style="text-align: left;">Power in</td>
+<td style="text-align: left;">0.6 mm</td>
+<td style="text-align: left;">22</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_white-orange_lead" src="../../img/4tp2p_white-orange_lead.png" /></td>
+<td style="text-align: left;">TD+</td>
+<td style="text-align: left;">Ethernet TX+</td>
+<td style="text-align: left;">0.6 mm</td>
+<td style="text-align: left;">22</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_orange_lead" src="../../img/4tp2p_orange_lead.png" /></td>
+<td style="text-align: left;">TD-</td>
+<td style="text-align: left;">Ethernet TX-</td>
+<td style="text-align: left;">0.4 mm</td>
+<td style="text-align: left;">26</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_white-green_lead" src="../../img/4tp2p_white-green_lead.png" /></td>
+<td style="text-align: left;">RD+</td>
+<td style="text-align: left;">Ethernet RX+</td>
+<td style="text-align: left;">0.4 mm</td>
+<td style="text-align: left;">26</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_green_lead" src="../../img/4tp2p_green_lead.png" /></td>
+<td style="text-align: left;">RD-</td>
+<td style="text-align: left;">Ethernet RX-</td>
+<td style="text-align: left;">0.4 mm</td>
+<td style="text-align: left;">26</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_white-brown_lead" src="../../img/4tp2p_white-brown_lead.png" /></td>
+<td style="text-align: left;">TX</td>
+<td style="text-align: left;">Serial UART TX</td>
+<td style="text-align: left;">0.4 mm</td>
+<td style="text-align: left;">26</td>
+</tr>
+<tr>
+<td><img alt="4tp2p_brown_lead" src="../../img/4tp2p_brown_lead.png" /></td>
+<td style="text-align: left;">RX</td>
+<td style="text-align: left;">Serial UART RX</td>
+<td style="text-align: left;">0.4 mm</td>
+<td style="text-align: left;">26</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="io-interface-wires" src="../../img/io-interface-wires-300px.png" />  <img alt="soldered-wires-to-io-interface" src="../../img/soldered-wires-to-io-interface.jpeg" /></p>
+<p>Zip tie the soldered wires to the I/O Interface board to protect the solder joints.</p>
+<p><img alt="zip-tied-wires-a50" src="../../img/zip-tied-wires-a50.jpeg" /></p>
+<h3 id="connect-to-bluerov2">Connect to BlueROV2</h3>
+<p>To connect the DVL-A50 to the BlueROV2 you will need:</p>
+<ul>
+<li>2 x 30 cm (12") wires for power to the DVL-A50</li>
+<li><a href="https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/">BlueRobotics ethernet switch</a></li>
+<li>6" ethernet cable</li>
+<li>Zip ties</li>
+</ul>
+<p>To provide power to the DVL-A50 you can either use (A) a 2-pin <a href="https://octopart.com/214751-2022-molex-109474124">Molex MicroFit3.0 cable assembly</a>, (B) solder on a <a href="https://octopart.com/691137710002-w%C3%BCrth+elektronik-78871135">Würth screw terminal</a>, or (C) directly solder on 2 wires to the power pads.</p>
+<p><img alt="io_interface_power" src="../../img/io_interface_power.png" /></p>
+<ul>
+<li>Connect VIN to the positive Power Terminal Block inside the BlueROV2 by either stripping off 6-8 mm of the wire and screw it in place, or add a spade terminal for a # 6 screw (M3.5) and screw in place.</li>
+</ul>
+<p><img alt="power_terminal_positive" src="../../img/power_terminal_positive.png" /></p>
+<ul>
+<li>Connect GND to the negative Power Terminal Block by either stripping off 6-8 mm of the wire and screw it in place, or add a spade terminal for a # 6 screw (M3.5) and screw in place.</li>
+</ul>
+<p><img alt="power_terminal_negative" src="../../img/power_terminal_negative.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Power Terminal Blocks are unregulated and directly connected to the battery. Any short may generate several amps which will fry most circuits. Check that the wires are secured properly in both ends.</p>
+</div>
+<p>Install the BlueRobotics ethernet switch following the <a href="https://bluerobotics.com/learn/ethernet-switch-installation-guide-for-the-bluerov2/">Ethernet Switch Installation Guide for the BlueROV2</a> by BlueRobotics.</p>
+<p>With power and ethernet switch now sorted, connect a 6" ethernet cable from the ethernet switch to the IO Interface board.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface to the electronics frame inside the BlueROV2.</p>
+</div>
+<h3 id="reassemble-bluerov2-electronics-enclosure">Reassemble BlueROV2 electronics enclosure</h3>
+<p>To reassemble your BlueROV2 Electronics Enclosure, you will need the following parts and tools:</p>
+<ul>
+<li>4 x M3x16 screws that were placed off to the side during disassembly</li>
+<li>Silicone Grease</li>
+<li>2.5 mm hex driver</li>
+</ul>
+<p>Reinstall 4” Watertight Enclosure onto ROV with the following steps:</p>
+<ul>
+<li>Apply silicone grease to the two radial O-rings on the O-Ring Flange (4” Series) that is attached to the Electronics Tray.</li>
+<li>Install the Watertight Enclosure (4” Series) with installed Dome End Cap to the O-Ring Flange (4” Series).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use caution when sliding the 4" Watertight Enclosure over the electronics as space may be tight (collides with electronics) and wires can get trapped between the 4" tube and the 4" end cap.</p>
+</div>
+<p>Mount the Electronics Enclosure to the frame using the M3x16 screws so that the dome is on the same side as the front center panels (the center panels without the 3 large holes). Install the M3x16 screws through the clips and into the Enclosure Cradle (4” Series). It is easier to install these screws if the clips are not fully tightened until all screws are through the clips and threading into the Enclosure Cradle (4” Series). This allows clips to rotate so you can find the threaded hole in the Enclosure Cradle (4” Series) easily.</p>
+<p><img alt="bluerov2-remove-electronic" src="../../img/bluerov2-remove-electronic-1024x743.png" /></p>
+<h3 id="attach-dvl-a50-to-bluerov2">Attach DVL-A50 to BlueROV2</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following images show the old version of the DVL-A50 with steel housing. The new housing has the same dimensions as the old.</p>
+</div>
+<p>Attach the DVL-A50 to the BlueROV2 using the 2 x M5x16 screws provided with the DVL-A50 BlueROV2 Integration Kit through the two holes you've made previously.</p>
+<p><img alt="dvl-attached-to-bluerov2" src="../../img/dvl_attached_to_bluerov2.png" /></p>
+<p>Excess cable can be bundled together and attached to the BlueROV2 frame using zip ties.</p>
+<p><img alt="bundled-excess-dvl-cable" src="../../img/bundled_excess_dvl_cable.png" /></p>
+<h2 id="software">Software</h2>
+<p>The DVL-A50 requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller).
+BlueOS has to be updated to <strong>BlueOS 1.1.0</strong> or newer to assure that extensions are supported sufficiently.</p>
+<ul>
+<li>After the update install the latest BlueOS-Water-Linked-DVL extension from the BlueOS extension manager. It is best to disable the BlueOS "Water Linked UGPS"-extension if you have that installed.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to use both DVL and UGPS you can find a detailed guide <a href="../bluerov-integration-dvl-ugps/">here</a></p>
+</div>
+<p><img alt="bluerov2_blueos_extension_installation_01_extension_manager" src="../../img/bluerov2_blueos_extension_installation_01_extension_manager.png" /></p>
+<ul>
+<li>Open the interface of the DVL-extension and click the button "Load parameters for DVL". Those parameters are persistent over reboots, which means that this button only needs to be pressed once and not every time you restart the ROV.</li>
+</ul>
+<p><img alt="bluerov2_blueos_dvl_extension_dvl_ugps_button_marked" src="../../img/bluerov2_blueos_dvl_extension_buttons_marked.png" /></p>
+<ul>
+<li>Restart the autopilot for the parameter changes to take effect. It is not necessary to restart BlueOS.</li>
+</ul>
+<p><img alt="bluerov2_blueos_restart_autopilot_marked" src="../../img/bluerov2_blueos_restart_autopilot_marked.png" /></p>
+<ul>
+<li>Set the global vehicle position in the DVL extension every time you start the ROV.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter <code>BARO_PROBE_EXT</code> to <code>768</code> and then reboot the ROV.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../dead-reckoning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dead reckoning" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Dead reckoning
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../bluerov-integration-dvl-ugps/" class="md-footer__link md-footer__link--next" aria-label="Next: DVL with UGPS for BlueROV2" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              DVL with UGPS for BlueROV2
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © Water Linked 2018-2024
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/waterlinked/" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/waterlinked/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+    
+  </body>
+</html>
