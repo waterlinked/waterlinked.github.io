@@ -13,12 +13,15 @@
 
 ## Dimensions
 
-![Sonar 3D 15 Dimensions](../../img/SonarTransparentBG.png)
+![Sonar 3D 15 Dimensions](../../img/Sonar-3D-15-dimensions_2.png)
 
+The cable can be bent as shown in the image up to 90 degrees without causing any damage. 
 
 ## Field of view
 
-The Sonar 3D-15 provides an opening angle as described in the table below.
+The Sonar 3D-15 provides an opening angle as described in the tables below for the different modes. 
+
+### Navigation 
 
 | Specification        | Range             |
 |----------------------|-------------------|
@@ -27,6 +30,15 @@ The Sonar 3D-15 provides an opening angle as described in the table below.
 | Vertical coverage    | 40° total         |
 | Horizontal coverage  | 90° total         |
 
+
+### Inspection
+
+| Specification        | Range             |
+|----------------------|-------------------|
+| Pitch (opening)      | -20° to +20°      |
+| Yaw (opening)        | -20° to +20°      |
+| Vertical coverage    | 40° total         |
+| Horizontal coverage  | 40° total         |
 
 <!-- Insert drawing of Line of Sight -->
 

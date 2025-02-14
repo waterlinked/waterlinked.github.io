@@ -19,7 +19,7 @@ Yes. The Sonar 3D-15 includes an internal thermal shutdown to prevent damage to 
 
 **Recommended action:**  
 - Once you see the overheat warning (55 °C), check that the Sonar is in water or cooled in any other way.   
-- If the temperature reaches 70 °C, the Sonar 3D-15 will shut down to prevent permanent damage and not restart before it reaches 65 °C again, and it need to reach 55 °C before you will get the sonar image back. 
+- If the temperature reaches 70 °C, the Sonar 3D-15 will shut down to prevent permanent damage and not restart before it reaches 65 °C again, and it must reach 55 °C before you will get the sonar image back. 
 
 ---
 

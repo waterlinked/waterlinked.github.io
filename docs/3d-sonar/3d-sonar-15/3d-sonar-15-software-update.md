@@ -1,6 +1,6 @@
 # Software Updates
 
-Keeping your Sonar 3D-15 up to date is highly recommended. You can update the software [automatically](#automatic-software-update) or [manually (offline)](#offline-software-update). Release notes for each version are available in the device’s [GUI](../gui/dashboard) and in the [GUI demo](https://dvl.demo.waterlinked.com/#/about).
+Keeping your Sonar 3D-15 up to date is highly recommended. You can update the software [automatically](#automatic-software-update) or [manually (offline)](#offline-software-update). 
 
 !!! warning
     **Thermal protection is disabled during software upgrades.**  
@@ -17,7 +17,7 @@ Keeping your Sonar 3D-15 up to date is highly recommended. You can update the so
     If you are using a personal computer, you may need to bridge your computer’s network interfaces (e.g., Wi-Fi to Ethernet) so that the Sonar 3D-15 can reach the internet.
 
 2. **Access the Sonar GUI**  
-   In your web browser, go to:  http://[IP_ADDRESS_OF_THE_SONAR]:9000
+   In your web browser, go to:  http://[IP_ADDRESS_OF_THE_SONAR]:9000/#/
 
 
 3. **Check and Install**  
@@ -28,18 +28,19 @@ The GUI automatically checks for new software versions. If an update is found, f
 ## Offline Software Update
 
 1. **Get Current Version and Chip ID**  
-In the Sonar GUI, select “Menu → About” to note the current software version and the **Chip ID**.
+In the Sonar GUI, select “Advanced → config → Diagnostics → Firmware upgrade” to note the current software version and the **Chip ID**.
 
 2. **Download the Update Package**  
 Visit the [update server](https://update.waterlinked.com/) to locate the correct `.wlup` file for your Sonar’s Chip ID. Confirm that the downloaded version is newer than your current version.
 
 3. **Set System Time (If Needed)**  
 If you encounter an error (e.g., `Failed: Error upgrading: resize: non-zero exit code: exit status 1`), you must set the system time:
-- Open the Sonar GUI and select **Configuration** → **Advanced configuration**.  
-- Under **System time configuration**, choose **Manual time** and click **Set manual time**.
+
+    - Open the Sonar GUI and select **Advanced** → **Config**
+    - Under **Time** choose **use computer time** and click **save**.
 
 4. **Upload the Update File**  
-Return to: http://[IP_ADDRESS_OF_THE_SONAR]:9000
+Return to: http://[IP_ADDRESS_OF_THE_SONAR]:9000/#/
 Select **Software upgrade**, choose **Manual upload**, and then upload the `.wlup` file.
 
 5. **Complete the Upgrade**  

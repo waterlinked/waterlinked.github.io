@@ -40,9 +40,9 @@ nav:
         - Wiring: 3d-sonar/3d-sonar-15/3d-sonar-15-wiring.md
         - LED: 3d-sonar/3d-sonar-15/3d-sonar-15-led.md
         - GUI: 3d-sonar/3d-sonar-15/3d-sonar-15-gui.md
-        - API: 3d-sonar/3d-sonar-15/3d-sonar-15-api.md
-#      - Integration:
+      - Integration:
  #       - BlueROV2: 3d-sonar/3d-sonar-15/3d-sonar-15-bluerov-integration.md
+         - API: 3d-sonar/3d-sonar-15/3d-sonar-15-api.md
       - Software Updates: 3d-sonar/3d-sonar-15/3d-sonar-15-software-update.md
       - Networking: 3d-sonar/3d-sonar-15/3d-sonar-15-networking.md
       - FAQ: 3d-sonar/3d-sonar-15/3d-sonar-15-faq.md
